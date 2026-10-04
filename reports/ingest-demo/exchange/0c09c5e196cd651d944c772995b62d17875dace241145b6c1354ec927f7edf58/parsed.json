@@ -1,0 +1,11 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-d11f3afe31ab3eda",
+  "reason": "Both select make with meeting to mean arrange a discussion; tense and participants differ without changing the collocational ability. Personal uncertainty concerns a different ability.",
+  "pattern_label": "Conventional verb combinations for arranging meetings",
+  "pattern_description": "The learner uses make a meeting when intending to arrange or schedule a discussion. Repeated contexts support a meeting-specific verb combination pattern, without implying a general deficit for all collocations.",
+  "conversation_contexts": [
+    "Coordinate a discussion with colleagues about a shared project",
+    "Plan when and how a group will meet to solve a problem"
+  ]
+}

@@ -1,0 +1,1 @@
+{"decision": "keep", "reason": "The report distinguishes arranging from attending or manufacturing. Make a meeting is a nonconventional combination for the specified meaning, and arrange or schedule are useful meaning-preserving alternatives. Attribution and spontaneous mode are supported."}

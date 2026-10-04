@@ -1,113 +1,99 @@
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
 
-from thoth.contracts import Observation, PipelineResult, TAXONOMY
-from thoth.engine import aggregate, lesson_targets
+from thoth.engine import learner_state
 
 
-def write_json(path: Path, value: object):
+def write_json(path, value):
+    path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def evidence_markdown(observations: list[Observation], title: str) -> str:
-    lines = [f"# {title}", "", "Raw support scores are observable signals, not probabilities.", ""]
-    for o in observations:
-        lines += [f"## {o.id}", "", f"Session: {o.session_id}; construction: {o.construction}",
-                  f"Outcome: {o.outcome.value}; mode: {o.production_mode.value}; evidence: {o.evidence_type.value}",
-                  f"Verifier: {o.verifier_decision}; support score: {o.raw_support_score}/4; pipeline: {o.pipeline_id}",
-                  f"Source offsets: [{o.source_start}, {o.source_end}) (Python Unicode characters)", "",
-                  "Learner:", "", "> " + o.learner_utterance, ""]
-        if o.corrected_form:
-            lines += ["Reported correction (not automatically authoritative):", "", "> " + o.corrected_form, ""]
-        lines += ["Verifier reason: " + o.verifier_reason, "", "Source excerpt:", "",
-                  *("> " + line for line in o.source_span.splitlines()), ""]
-    if not observations:
-        lines += ["No accepted evidence; this is not a claim of error-free speech.", ""]
+def evidence(records):
+    lines = []
+    for r in records:
+        o = r["observation"]
+        lines += [f"### {o.id}", "", f"Session: {o.session_id}; date: {r['occurred_on']}",
+                  f"Mode: {o.production_mode}; performance: {o.performance}; evidence: {o.evidence_type}",
+                  "", "> " + o.learner_quote, "", "Intent: " + o.communicative_intent,
+                  "Production ability: " + o.learning_dimension, "Observed behavior: " + o.observed_behavior,
+                  "Suggested alternatives (model suggestions, not reported corrections): " + (" / ".join(o.suggested_forms) or "none"),
+                  "Hypothesis (not a mental-process fact): " + (o.hypothesis or "none"),
+                  f"Review: {o.review.decision} — {o.review.reason}",
+                  f"Grouping: {r['resolution'].decision} — {r['resolution'].reason}",
+                  "Compared evidence: " + (r["resolution"].candidate_id or "none") + "; membership root: " + r["root_id"],
+                  f"Report source [{o.source_start}, {o.source_end}):", "",
+                  *("> " + line for line in o.source_excerpt.splitlines()), ""]
     return "\n".join(lines)
 
 
-def export_session(root: Path, session: dict, run_id: str, result: PipelineResult):
-    directory = root / "sessions" / session["id"]
-    directory.mkdir(parents=True, exist_ok=True)
-    raw_path = directory / "raw.md"
-    if raw_path.exists() and raw_path.read_bytes().decode("utf-8") != session["raw"]:
-        raise ValueError("Refusing to overwrite conflicting raw artifact")
-    raw_path.write_text(session["raw"], encoding="utf-8")
-    run_dir = directory / "runs" / run_id
-    if run_dir.exists():
-        raise ValueError("Refusing to overwrite an extraction artifact")
-    run_dir.mkdir(parents=True)
-    write_json(run_dir / "observations.json", [o.model_dump(mode="json") for o in result.observations])
-    write_json(run_dir / "audit.json", result.model_dump(mode="json"))
-    (run_dir / "evidence-pack.md").write_text(evidence_markdown(result.observations, "Session Evidence Pack"), encoding="utf-8")
-    write_json(directory / "active-run.json", {"run_id": run_id, "pipeline_id": result.pipeline["pipeline_id"]})
-
-
-def state_markdown(state: dict) -> str:
-    lines = ["# Learner State", "", f"Sessions: {state['sessions']}; accepted observations: {state['observations']}", "",
-             "Facts below are deterministic. Interpretations are hypotheses, not diagnoses.", ""]
-    lines += ["- " + a for a in state["assumptions"]] + [""]
-    for family, entry in state["constructions"].items():
-        lines += [f"## {entry['label']} (`{family}`)", "", f"Sessions observed: {entry['sessions_observed']}; last seen: {entry['last_seen']}", "",
-                  "| Production mode | Successes | Failures | Posterior mean | 95% credible interval |",
-                  "|---|---:|---:|---:|---|"]
-        for mode, stats in entry["modes"].items():
-            lo, hi = stats["credible_interval_95"]
-            estimate = f"{stats['posterior_mean']:.3f}" if stats["attempts"] else "prior only"
-            lines.append(f"| {mode} | {stats['successes']} | {stats['failures']} | {estimate} | [{lo:.3f}, {hi:.3f}] |")
-        lines += ["", "Model: Beta(1,1) prior; posterior Beta(1+successes, 1+failures).",
-                  f"Opportunities: {entry['opportunities']}; self-corrections: {entry['self_corrections']}; uncertain: {entry['uncertain_observations']}",
-                  f"Trend: {entry['trend']['label']}", "", "Hypothesis: " + entry["interpretation"],
-                  "Mode comparison: " + entry["mode_gap"]["interpretation"],
-                  "Recent failed spontaneous evidence IDs: " + ", ".join(entry["practice_evidence_ids"]),
-                  "", "Unknowns:", ""]
-        lines += ["- " + x for x in entry["unknowns"]] or ["- Transfer to unobserved contexts remains untested."]
-        lines += ["", "Recent evidence IDs: " + ", ".join(entry["recent_evidence_ids"]), ""]
+def pattern_summary(pattern):
+    lines = [f"## {pattern['label']} — {pattern['id']}", "",
+             "Evidence-grounded model description (hypothesis): " + pattern["description"], "",
+             f"Evidence: {pattern['observations']} observations, {pattern['sessions']} sessions, {pattern['dates']} distinct dates.",
+             "", "| Mode | Successful | Difficulty | Uncertain |", "|---|---:|---:|---:|"]
+    lines += [f"| {mode} | {c['successful']} | {c['difficulty']} | {c['uncertain']} |" for mode, c in pattern["modes"].items()]
+    lines += ["", f"Opportunities: {pattern['opportunities']}; self-repairs: {pattern['self_corrections']}",
+              f"Recent spontaneous: {pattern['recent_successes']} successful, {pattern['recent_difficulties']} difficulty.",
+              f"Lesson status: {pattern['status']}", "Interpretation: " + pattern["interpretation"],
+              "Mode comparison: " + pattern["mode_note"], "", "Unknowns:",
+              *("- " + text for text in pattern["unknowns"]), "",
+              "Evidence IDs: " + ", ".join(pattern["evidence_ids"]), ""]
     return "\n".join(lines)
 
 
-def lesson_markdown(state: dict) -> str:
-    selected = lesson_targets(state)
-    lines = ["# Next Lesson Brief", "", "Focus on accurate spontaneous English production in natural conversation.", "",
-             "## Primary practice targets", ""]
-    lines += ["- " + TAXONOMY[f] + " (`" + f + "`): " + str(state["constructions"][f]["recent_spontaneous_failures"]) + " recent spontaneous failures; evidence: " + ", ".join(state["constructions"][f]["practice_evidence_ids"])
-              for f in selected["primary"]] or ["- Insufficient repeated evidence for a primary difficulty. Collect evidence first."]
-    lines += ["", "## Observation targets", ""]
-    lines += ["- " + TAXONOMY[f] + ": collect spontaneous attempts, especially questions and negatives."
-              for f in selected["observation"]] or ["- Broaden contexts and record both successful and unsuccessful attempts."]
-    lines += ["", "## Observed strengths", ""]
-    lines += ["- " + TAXONOMY[f] for f in selected["strengths"]] or ["- Insufficient data to claim a stable strength."]
-    lines += ["", "## Teaching strategy", "",
-              "- Favor spontaneous conversation; create natural contexts for targets without prescribing wording.",
-              "- Do not interrupt every error. Record exact quotes and corrections after the conversation.",
-              "- Test transfer to new topics; distinguish spontaneous speech from prompted and controlled practice.",
-              "- Verify negative and question forms; avoid treating legitimate alternatives as failures.",
-              "- Record non-selected targets as opportunities, separately from grammatical attempts.",
-              "- Compare guided and spontaneous performance without diagnosing a retrieval cause.",
-              "- Recheck dated evidence in today's conversation before choosing a practice task.",
-              "", "## Selection rationale", "", selected["selection_rule"], ""]
+def lesson_brief(state):
+    lines = ["# Next Lesson Brief", "", "Practice natural speaking; treat the following interpretations as hypotheses.",
+             "Recheck old evidence in this conversation. Do not prescribe target wording before spontaneous production.", ""]
+    for label, statuses in [("Practice", {"practice"}), ("Observe / collect", {"collect"}),
+                            ("Recent strength / recovery", {"recent_strength", "recovery"})]:
+        selected = [p for p in state["patterns"] if p["status"] in statuses][:2]
+        lines += ["## " + label, ""]
+        for p in selected:
+            lines += [f"### {p['label']} ({p['id']})", "", p["interpretation"],
+                      "Evidence: " + ", ".join(p["practice_evidence_ids"] if p["status"] == "practice" else p["evidence_ids"]), "",
+                      "Conversation contexts:", *("- " + c for c in p["conversation_contexts"]), ""]
+        if not selected:
+            lines += ["No pattern sufficiently supported for this section.", ""]
+    if state["isolated"]:
+        lines += ["## Isolated evidence to revisit (not diagnosed difficulties)", ""]
+        lines += [f"- {r['dimension']} — {r['id']}; collect context without assuming recurrence." for r in state["isolated"][:3]]
+    lines += ["", "## How to observe", "",
+              "- Use new topics and natural reasons to communicate; do not ask for a named grammatical form.",
+              "- Record successful and difficult spontaneous attempts, not only corrections.",
+              "- Keep prompted/controlled practice distinct; give feedback after a meaningful speaking turn.",
+              "- Record opportunities and self-repairs separately; neither is automatically failure or avoidance.",
+              "- Accept legitimate alternatives and context-appropriate registers.", ""]
     return "\n".join(lines)
 
 
-def export_learner(root: Path, observations: list[Observation], sessions: dict) -> dict:
-    state = aggregate(observations, sessions)
-    learner = root / "learner"
-    write_json(learner / "learner-state.json", state)
-    (learner / "learner-state.md").write_text(state_markdown(state), encoding="utf-8")
-    (learner / "next-lesson.md").write_text(lesson_markdown(state), encoding="utf-8")
-    # Current derived packs are replaceable; immutable source/run artifacts are
-    # elsewhere. Remove only our known generated construction outputs.
-    for family in TAXONOMY.keys() - state["constructions"].keys():
-        stale = learner / "evidence" / (family + ".md")
-        if stale.exists() and stale.read_text(encoding="utf-8").startswith("# Learner State\n"):
-            stale.unlink()
-    for family, entry in state["constructions"].items():
-        path = learner / "evidence" / (family + ".md")
-        path.parent.mkdir(parents=True, exist_ok=True)
-        pack = state_markdown({**state, "constructions": {family: entry}})
-        pack += "\n" + evidence_markdown([o for o in observations if o.construction == family], "Auditable Evidence")
-        path.write_text(pack, encoding="utf-8")
+def export(root, store, policy):
+    root = Path(root)
+    state = learner_state(store, policy)
+    write_json(root / "learner-state.json", state)
+    (root / "learner-state.md").write_text("# Current Learner State\n\n" +
+          f"{state['sessions']} sessions; {state['observations']} observations; {len(state['patterns'])} patterns.\n\n" +
+          "\n".join("- " + a for a in state["assumptions"]) + "\n\n" +
+          "\n".join(pattern_summary(p) for p in state["patterns"]) +
+          "\n## Isolated observations\n\n" + "\n".join(f"- {o['id']}: {o['dimension']}" for o in state["isolated"]) + "\n")
+    (root / "next-lesson.md").write_text(lesson_brief(state))
+    records = store.records()
+    # Derived packs are current views, not a second historical product path.
+    patterns_dir = root / "patterns"
+    if patterns_dir.exists():
+        shutil.rmtree(patterns_dir)
+    patterns_dir.mkdir()
+    for p in state["patterns"]:
+        members = [r for r in records if r["root_id"] == p["root_id"]]
+        (patterns_dir / (p["id"] + ".md")).write_text("# Pattern Evidence Pack\n\n" + pattern_summary(p) + "\n" + evidence(members))
+    for session in store.sources():
+        directory = root / "sessions" / session["id"]
+        directory.mkdir(parents=True, exist_ok=True)
+        (directory / "report.md").write_text(session["raw"])
+        write_json(directory / "audit.json", json.loads(session["audit"]))
+        (directory / "evidence-pack.md").write_text("# Session Evidence Pack\n\n" + evidence([r for r in records if r["session_id"] == session["id"]]))
     return state

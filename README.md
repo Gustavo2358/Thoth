@@ -1,215 +1,137 @@
 # Thoth
 
-MVP local para transformar relatórios de speaking em evidências rastreáveis, acumular o histórico de produção e preparar a próxima aula. A interface é uma CLI em Python; não há frontend, áudio, autenticação, vector database ou framework de agentes.
+Thoth é um learner model local para produção de inglês em speaking. Ele observa relatórios de conversas e descobre padrões específicos daquela pessoa. As habilidades linguísticas são descritas livremente; nenhuma lista de construções existe no runtime.
 
-**Status: `NOT_READY_FOR_PERSONAL_PILOT`.** O software funciona, mas a avaliação assistida por esta conversa compartilha autor com os dados sintéticos. Os resultados não demonstram generalização para relatórios reais. Consulte [o relatório final](reports/benchmark-final.md) e [a análise do experimento](reports/experiment.md).
+O loop é:
 
-A [validação adicional de adaptação por perfis](reports/adaptive-validation.md) encontrou e corrigiu falhas nas decisões. Após as correções, 22/22 perfis sintéticos passaram, incluindo 8 reservados após freeze. Uma amostra de duas sessões também percorreu o adapter manual com respostas desta conversa. Esses resultados aprovam as regras nesses casos; ainda não demonstram precisão em relatórios reais nem ganho de aprendizado.
+```text
+relatório → observations revisadas → embedding local → candidatos
+          → resolução semântica → padrões recorrentes
+          → learner state → brief para a próxima conversa
+```
 
-## Instalação e quickstart
+O banco começa vazio. Exemplos e benchmarks sintéticos não são carregados automaticamente. O software não mede ganho de aprendizado nem está qualificado para uso sem revisão. A recomendação atual é um piloto pessoal supervisionado: [relatório experimental](reports/final.md).
 
-Requer Python 3.11+; instalação e testes verificados com Python 3.12 em Linux. Execute na raiz deste checkout:
+## Instalação
+
+Python 3.12+ em Linux/macOS, com acesso à internet durante a instalação:
 
 ```bash
 bash scripts/setup.sh
 source .venv/bin/activate
-learner ingest examples/session-01.md --provider offline --date 2026-01-01
-learner ingest examples/session-02.md --provider offline --date 2026-01-08
-learner ingest examples/session-03.md --provider offline --date 2026-01-15
-learner state
-learner next-lesson
-pytest -q
+thoth state
 ```
 
-`requirements.lock` fixa as versões usadas. A instalação não altera esse arquivo nem as declarações do projeto. O baseline offline aceita um dialeto restrito de relatórios com blocos narrativos e citações atribuídas (`The learner said: "..."`). Serve para demonstrar o fluxo e testar a infraestrutura; não interpreta arbitrariamente toda a língua inglesa. O provider padrão agora é **`manual`**: o runtime real do MVP usa sua assinatura do ChatGPT, sem API key ou chamadas pagas. `--provider` e `--llm` são aliases.
+O setup instala dependências fixadas, o modelo oficial `en_core_web_md` do spaCy e roda os testes. O download do modelo tem aproximadamente 33,5 MB. A instalação limpa foi testada com Python 3.12. Embeddings e consultas posteriores funcionam localmente, sem rede. A rede continua necessária para usar ChatGPT ou a API opcional.
 
-Os exemplos resultam em 3 sessões e 11 observações, com dificuldades preliminares em duração no present perfect e modal perfect. Os produtos incluem intervalos largos e `insufficient_data` para tendência. Exemplos de saída persistidos para revisão estão em [examples/generated](examples/generated).
+O modelo fornece vetores de palavras de 300 dimensões. Thoth calcula a média dos tokens conhecidos e normaliza o vetor. É uma solução simples, com limitações de representação contextual medidas no benchmark. O fingerprint combina a capacidade de produção e a intenção comunicativa normalizadas; não inclui a frase bruta nem o resultado da tentativa. Não há segundo modelo ou fallback remoto.
 
-Os argumentos globais precedem o comando:
+SQLite guarda relatórios, observations, memberships, decisões e vetores float32. A busca é um produto escalar exato sobre os poucos vetores locais. Isso dispensa extensão SQLite, servidor vetorial e índices adicionais. O hash dos pesos permite detectar uma troca acidental de modelo. Copiar o banco, os arquivos de intercâmbio e reinstalar as mesmas dependências basta para continuar; artifacts podem ser regenerados.
+
+## Sessões com sua assinatura do ChatGPT
+
+Prepare um relatório depois da conversa contendo trechos atribuídos ao aluno, contexto/intenção, indicação de produção espontânea ou guiada e correções realmente feitas. Inclua produções bem-sucedidas, além de dificuldades. O relatório pode ser em português ou inglês; as descrições pedagógicas estruturadas devem ser em inglês para o embedding local.
+
+Não precisa de transcrição exata do áudio. Preserve o relatório como fonte pedagógica e indique quando a atribuição ou o modo forem desconhecidos. [Um exemplo](examples/session-01.md) mostra o formato livre; não existe template obrigatório.
 
 ```bash
-learner --db data/experiment.db --artifacts artifacts/experiment ingest examples/session-01.md --provider offline
-learner history SES-<id>
-learner reprocess SES-<id> --provider offline
+thoth ingest minha-sessao.md --date 2026-10-04 --model 'ChatGPT / nome do modelo usado'
 ```
 
-Reprocessar acrescenta uma run e muda somente o ponteiro ativo. O raw e todas as extrações anteriores permanecem auditáveis; uma falha de extração não troca a run ativa. Reingerir o mesmo conteúdo não duplica sessões ou tentativas. Duas aulas com texto byte-a-byte idêntico são consideradas a mesma sessão; diferencie o conteúdo com o cabeçalho da aula. A data padrão é a data local na primeira ingestão; para um histórico reproduzível, informe `--date`.
+O comando informa um `request.txt` e um `response.txt` pendentes em `data/exchange/<hash>/`. A primeira chamada faz extração; depois vêm revisão e resolução, conforme necessário.
 
-## Arquitetura
+1. Copie o conteúdo completo de `request.txt` para ChatGPT.
+2. Salve a resposta original em `response.txt`, sem editar nem remover cercas Markdown se o modelo as produziu. O contrato exige JSON puro; uma resposta inválida deve aparecer como falha.
+3. Repita o mesmo comando. Respostas anteriores são reutilizadas e a próxima interação fica pendente.
+4. Continue até a sessão terminar. Uma pendência retorna código 2; validação inválida retorna 1; sucesso retorna 0.
+
+A sessão inteira só é gravada quando todas as etapas terminam. Repetir o mesmo relatório/data é idempotente. Ingira em ordem cronológica. Relatórios diferentes na mesma data não contam como recorrência longitudinal independente.
+
+Também é possível colar respostas no terminal:
+
+```bash
+thoth ingest minha-sessao.md --date 2026-10-04 --model 'ChatGPT / nome do modelo usado' --interactive
+```
+
+Finalize cada resposta com `END_JSON`. Para importar arquivos, nomeie cada resposta `<hash-da-request>.txt` e use:
+
+```bash
+thoth import respostas/ --model 'ChatGPT / nome do modelo usado'
+```
+
+Depois retome o comando de ingestão. O modo por arquivos e o interativo usam o mesmo adapter e o mesmo payload lógico. A identidade do modelo é uma declaração do operador, não uma identificação automática. Não existe integração programática com sua assinatura ChatGPT.
+
+Requests, respostas originais, SHA-256 e parsed JSON ficam disponíveis para auditoria. Respostas anteriores não podem ser sobrescritas. Se quiser repetir uma interação inválida, use outra pasta `--exchange`. Uma associação já gravada não tem comando de edição: um erro confirmado exige reconstruir um banco novo a partir dos relatórios, com outro intercâmbio. Revise as respostas antes de concluir a ingestão durante o piloto.
+
+## Estado, padrões e próxima conversa
+
+```bash
+thoth patterns
+thoth state
+thoth next-lesson
+```
+
+Os comandos escrevem:
 
 ```text
-arquivo UTF-8 preservado
-  → LLMPort (ManualChatGPTAdapter, OpenAIAdapter ou baseline offline)
-  → prompt / JSON schema / Proposal[]
-  → normalização de IDs + provenance literal
-  → verifier com prompt separado
-  → Observation IR + sinais determinísticos de suporte
-  → SQLite (raw imutável, runs imutáveis, ponteiro ativo)
-  → engine determinístico
-  → learner-state.json/.md + Evidence Packs + next-lesson.md
+artifacts/
+  learner-state.json
+  learner-state.md
+  next-lesson.md
+  patterns/PAT-<id>.md
+  sessions/SES-<id>/
+    report.md
+    audit.json
+    evidence-pack.md
 ```
 
-`contracts.py` contém contratos Pydantic estritos. Campos inesperados, incluindo `confidence`, são rejeitados. `pipeline.py` não consulta o learner state para classificar uma observação. `engine.py` consome apenas Observations e datas das sessões; não depende de provider, relatório, rede ou LLM. `storage.py` usa SQLite e triggers de imutabilidade, sem ORM ou migrações desnecessárias. A versão da base é verificada com `PRAGMA user_version`.
+O Session Evidence Pack aponta trechos da fonte. O Pattern Evidence Pack mostra significado proposto, todas as observations, datas, modalidades, sucessos/dificuldades, justificativas das associações e lacunas. Contagens e memberships vêm do sistema; a descrição linguística é uma hipótese da LLM.
 
-Oito famílias canônicas e `unclassified` estão em `contracts.py`. São versionados schema, taxonomia, prompts e implementações; hashes invalidam calibração após mudanças no pipeline. Aliases conhecidos são normalizados; strings livres desconhecidas viram `unclassified` e não geram contagens gramaticais.
+Uma observation separa intenção comunicativa, dimensão de produção e comportamento nesta ocorrência. Modo, performance e tipo de evidência são conceitos pequenos da aplicação. A dificuldade linguística é texto livre. O verifier pode rejeitar uma preferência estilística, uma alternativa regional legítima ou uma afirmação infundada sobre tradução mental. Casos incertos continuam isolados.
 
-`llm.py` constrói um único payload lógico: messages e JSON schema estrito. Manual e OpenAI usam esse mesmo construtor, com testes de igualdade tanto para extractor quanto para verifier. O arquivo manual renderiza esses mesmos messages e o contrato de saída para copiar no ChatGPT; os campos HTTP de transporte (modelo API, temperatura) são específicos do provider. A experiência do ChatGPT não oferece necessariamente os mesmos controles de amostragem, contexto ou versão do modelo da API.
+A busca recupera até três grupos de evidências pelos seus exemplares mais próximos. O resolver examina seus membros e decide `same_pattern`, `related_but_different`, `new_pattern` ou `insufficient_evidence`. Similaridade nunca decide membership. `new_pattern` é uma decisão de separação: não cria automaticamente um Pattern.
 
-## OpenAI e endpoints compatíveis
+A política calibrada exige evidência revisada em pelo menos duas datas para materializar um padrão emergente. A prioridade exige pelo menos três datas e dificuldades espontâneas em pelo menos duas das três últimas datas com tentativas. Duas datas recentes com sucessos espontâneos e sem dificuldades nelas sinalizam recuperação, preservando o histórico. Esses critérios são heurísticas conservadoras de organização, não medidas de domínio ou verdades pedagógicas universais.
 
-Configure `THOTH_API_KEY` de forma segura no ambiente. Não coloque a chave no repositório, em respostas de benchmark ou em relatórios. Uma `OPENAI_API_KEY` já existente também é aceita. Variáveis opcionais:
+O brief distingue prática, coleta e força/recuperação recente. Sugere contextos comunicativos naturais, com até duas prioridades por bloco. O agente usa o brief para conduzir uma conversa, sem exigir uma expressão-alvo antes de observar produção espontânea. Formas sugeridas e evidências completas ficam nos packs para feedback posterior.
 
-| Variável | Padrão | Uso |
-|---|---|---|
-| `THOTH_MODEL` | `gpt-4.1-mini` | Extractor |
-| `THOTH_VERIFIER_MODEL` | Modelo do extractor | Verifier |
-| `THOTH_BASE_URL` | `https://api.openai.com/v1` | Endpoint compatível com Chat Completions e JSON schema |
+Opportunities e self-corrections permanecem eventos incertos; não contam automaticamente como falhas. Sucessos controlados não provam disponibilidade espontânea. Hipóteses de transferência do português ou dificuldade de recuperação continuam hipóteses.
+
+## API opcional
+
+Configure `OPENAI_API_KEY` fora do chat e selecione explicitamente um modelo compatível com Chat Completions e Structured Outputs:
 
 ```bash
-learner ingest minha-sessao.md --provider openai --date 2026-10-04
-learner ingest minha-sessao.md --provider openai --model MODELO --verifier-model OUTRO_MODELO
+thoth ingest minha-sessao.md --date 2026-10-04 --provider openai --model MODELO
 ```
 
-São usados structured outputs, schema estrito, temperatura zero, TLS verificado e chamadas separadas. O verifier recebe somente excerpt e fatos propostos, sem raciocínio do extractor ou histórico do aluno. Concordância entre chamadas é um sinal, não prova absoluta. Nem todo endpoint/modelo compatível suporta o mesmo formato; refusals, truncamento e erros interrompem a run. Não há fallback silencioso. O adapter foi testado com transporte HTTP simulado; nenhuma chamada paga à API foi executada neste trabalho.
+Os contratos e mensagens são os mesmos do adapter manual. A API é cobrada separadamente da assinatura. Os experimentos deste repositório não fizeram chamadas pagas. O adapter foi testado com HTTP simulado; seu comportamento com um modelo remoto ainda não foi qualificado.
 
-## ManualChatGPTAdapter: uso real com sua assinatura
+## Experimentos
 
-Não precisa de API key. A aplicação gera o prompt; você o copia para o ChatGPT e devolve a resposta original. Use conversas novas, sem gold, learner state ou correções suas. Para a verificação, envie somente o novo prompt independente; não acrescente o raciocínio do extractor. Informe em `--model` o nome do modelo que aparece na experiência que está usando; o sistema registra esse nome como declaração do operador, sem inventar uma identidade de modelo.
+[Resultados e limitações](reports/final.md), [calibração](reports/calibration.json), [holdout original](reports/holdout/result.json) e [diagnóstico posterior](reports/holdout/diagnostics.json) estão disponíveis. O benchmark principal isola retrieval e agrupamento usando observations sintéticas já revisadas. O teste completo de ingestão cobre três relatórios adicionais. Isso não equivale a uma avaliação independente de extração sobre conversas reais.
+
+O runtime não recebe o gold, que mora em arquivos separados de `benchmark/data/`. Development serviu para corrigir implementação; calibration escolheu parâmetros; código, dados, política, dependências e identidade declarada dos modelos foram congelados antes do holdout. `benchmark/freeze.json` é um registro experimental, não um formato versionado do produto.
+
+Para novas avaliações, use diretórios de saída/intercâmbio próprios:
 
 ```bash
-learner ingest minha-sessao.md --llm manual --interactive \
-  --model "ChatGPT / MODELO_SELECIONADO" --responses-dir data/minhas-interacoes
+thoth benchmark --split development --output reports/experimento-development --exchange data/experimento-development --model 'ChatGPT / modelo'
+thoth benchmark --split calibrate --output reports
+thoth benchmark --split calibration --output reports/experimento-calibration --exchange data/experimento-calibration --model 'ChatGPT / modelo'
+thoth benchmark --split review --output reports/experimento-review --exchange data/experimento-review --model 'ChatGPT / modelo'
+thoth benchmark --split freeze --freeze-file benchmark/experimento-freeze.json --model 'ChatGPT / modelo'
+thoth benchmark --split holdout --freeze-file benchmark/experimento-freeze.json --output reports/experimento-holdout --exchange data/experimento-holdout --model 'ChatGPT / modelo'
 ```
 
-O terminal mostra messages, documento e schema. Primeiro devolva a resposta do extractor `{"observations": [...]}`; depois responda aos prompts de verifier (`supported`/`unsupported`/`uncertain` e reason). Termine cada paste com uma linha `END_JSON`, ou Ctrl+D. Sem resposta, o request permanece pending. Sem `--interactive`, os prompts são salvos para preencher por arquivos, e o comando retorna pending em vez de chamar API.
+Responda prompts pelo mesmo fluxo manual. Um resultado concluído não é sobrescrito. O freeze entregue registra caminhos do ambiente desta execução; em outro checkout gere um freeze próprio para reproduzir os casos já conhecidos. Reproduzir respostas salvas não constitui um novo holdout. Para qualificar uma alteração após estudar estes resultados, prepare novos casos reservados.
 
-**Nunca edite a resposta do ChatGPT antes da avaliação.** O adapter salva `response.txt` antes de fazer parsing, inclusive para JSON inválido, campos extras ou markdown fences. Não remove fences, não repara JSON e não sobrescreve uma resposta existente com conteúdo diferente. A validação exige o mesmo schema emitido para a API, inclusive campos opcionais explicitamente `null`. Para uma nova tentativa, preserve o ensaio anterior e use um novo diretório de interações. Uma resposta errada é um resultado medido, não algo a consertar silenciosamente.
+Os scripts `benchmark/build_dataset.py` e `benchmark/build_reviews.py` são a autoria explícita das fixtures. Não os execute sobre um experimento congelado. O script `benchmark/analyze_run.py` verifica hashes e produz diagnósticos posteriores, sem alterar previsões nem o resultado primário.
 
-### Benchmark por arquivos, com retomada
+Para exercitar a ingestão com os intercâmbios originais já salvos, use um banco separado:
 
 ```bash
-learner benchmark --llm manual --model "ChatGPT / MODELO_SELECIONADO" \
-  --responses-dir data/manual-benchmark --export requests/
+thoth --db /tmp/thoth-demo.db --artifacts /tmp/thoth-demo-artifacts ingest examples/session-01.md --date 2026-03-01 --model 'Codex / modelo desta conversa' --exchange reports/ingest-demo/exchange
+thoth --db /tmp/thoth-demo.db --artifacts /tmp/thoth-demo-artifacts ingest examples/session-02.md --date 2026-03-08 --model 'Codex / modelo desta conversa' --exchange reports/ingest-demo/exchange
+thoth --db /tmp/thoth-demo.db --artifacts /tmp/thoth-demo-artifacts ingest examples/session-03.md --date 2026-03-15 --model 'Codex / modelo desta conversa' --exchange reports/ingest-demo/exchange
 ```
-
-Gera arquivos como `requests/001-extractor.txt`, `002-extractor.txt` e `manifest.json`, sem labels. Copie cada prompt para o ChatGPT e salve a **resposta original** em `responses/001-extractor.txt` etc., mantendo os nomes. Não há envelope JSON para criar à mão.
-
-```bash
-learner benchmark --llm manual --model "ChatGPT / MODELO_SELECIONADO" \
-  --responses-dir data/manual-benchmark --import responses/ --export requests/
-```
-
-Essa execução importa as respostas e exporta todos os verifier prompts necessários para as extrações já disponíveis. Copie os novos `NNN-verifier.txt` para conversas independentes, salve as respectivas respostas em `responses/`, e reexecute o mesmo comando. Respostas já importadas são idempotentes. Se há respostas ainda pendentes, o exit code é 2; falhas de schema concluídas dão 1; uma avaliação completa sem falhas de schema dá 0. A documentação de métricas distingue pending de abstenção do modelo.
-
-Não é possível preparar verifier prompts antes de existir a extração, pois eles contêm as observations efetivamente propostas. Não usamos gold para fabricar propostas. Se a extração é inválida, aquela sessão é registrada como falha, sem gerar observations artificiais ou pular a sessão no denominador. JSON inválido em um verifier também invalida a sessão para persistência/contagens, preservando todas as interações e falhas. Na aplicação, uma run incompleta/inválida não troca a run ativa do histórico.
-
-Trocar `--model`, verifier ou desenho de avaliação exige um diretório de exchange diferente. O diretório padrão é `data/manual-chat`, ignorado pelo Git. A assinatura do ChatGPT não é integrada automaticamente: o transporte é sua cópia e colagem no ChatGPT, sem automação de login ou consumo de API.
-
-### Auditoria
-
-```text
-data/manual-benchmark/
-  exchange.json
-  cases/<request-hash>/
-    request.json          # payload lógico, modelo, mode, versões e hashes
-    request.txt           # texto exato para o ChatGPT
-    response.txt          # resposta original, inclusive inválida
-    capture.json          # hash da resposta original
-    parsed.json           # apenas quando o parsing/contrato passa
-    validation.json       # sucesso ou erros do contrato
-
-reports/manual/runs/<run>/cases/<session>/
-  metadata.json           # modelo/mode, pipeline e dataset
-  request.txt
-  response.txt
-  parsed.json             # observations aceitas pelo pipeline
-  gold.json
-  result.json
-  interactions/           # cada extractor/verifier com seu raw e parsing
-```
-
-Pending não entra nos denominadores de qualidade; aparece em case_counts/coverage, sem calibração ou recomendação final até completar o split. Respostas inválidas entram como falhas de schema e observações gold perdidas, com FN/recall reportados. Arquivos de gold ficam somente nos artifacts internos de avaliação, separados do diretório exportado para o modelo.
-
-Calibração via manual-chat valida **este pipeline + estes prompts + o modelo disponível nessa experiência do ChatGPT**. Ela não se transfere automaticamente para API ou outro modelo. Um ensaio manual com gold independente pode qualificar o runtime sem nenhuma API. `--evaluation-design independent` registra sua declaração sobre o desenho experimental; não certifica automaticamente cegamento. Use essa declaração somente quando os labels forem independentes da inferência e o holdout realmente reservado. O padrão é `unverified`.
-
-O adapter `text` antigo continua disponível para compatibilidade com os envelopes de `benchmark/chat-evaluation/qualified/`. Esse arquivo registra o ensaio anterior assistido nesta conversa, com decisões compartilhando autor e templates com gold. Não constitui avaliação independente. `scripts/assemble_chat_responses.py` é um formatter daquele ensaio e **não deve preencher novas respostas de ChatGPT manual**. Os resultados antigos foram preservados; seus freezes/calibrações foram invalidados pelo hash da implementação nova e não são reutilizados silenciosamente.
-
-## Provenance, fatos e incerteza
-
-Cada observação aceita tem offsets Unicode exatos para excerpt e fala do aluno. Apenas diferenças de whitespace são normalizadas; não há fuzzy matching, normalização semântica ou correção inventada. Excerpts ausentes/ambíguos, fala inexistente, correção ausente e comentários sem origem são rejeitados antes de persistir. A origem é verificada novamente ao reconstruir o estado.
-
-A presença da frase não prova sozinha que a interpretação ou a atribuição de speaker esteja correta: essa qualidade depende do verifier e do benchmark. As Observations incertas permanecem auditáveis sem contaminar a contagem de tentativas. Oportunidades e autocorreções são contadas separadamente. Uma paráfrase correta não é failure da construção que o professor esperava.
-
-O `raw_support_score` é a soma de quatro sinais booleanos do código:
-
-1. Provenance válido.
-2. Classificação canônica conhecida.
-3. Verifier retornou `supported`.
-4. Correção explícita presente no excerpt para `explicit_correction`.
-
-O score **não é uma probabilidade** e não é escolhido pela LLM. Um ponto adicional por correção explícita mede um sinal disponível, não a autoridade infalível do professor. O report de calibração mede a precisão observada por bucket, com N e intervalo Wilson. Não reutilizamos mappings entre pipelines; `validate_calibration` rejeita hashes diferentes. Essas frequências são qualidade da classificação, não capacidade do aluno. Não entram no learner state como `confidence`.
-
-Somente tentativas gramaticais apoiadas pelo verifier contam em acertos/erros. O modelo de accuracy é Beta(1,1) + successes/failures separados para spontaneous, prompted, controlled e unknown. Uma média 0,4 com 1 sucesso e 2 falhas significa posterior Beta(2,3), com intervalo 95% aproximadamente [0,068, 0,806]; não significa domínio estabelecido. A independência das tentativas e a representatividade dos relatórios são suposições, frequentemente imperfeitas.
-
-Trend é descritivo: exige pelo menos 4 datas distintas e 5 tentativas espontâneas em cada metade temporal. Delta de accuracy >=0,20 indica improving; <=-0,20 declining; caso contrário stable. Dados insuficientes dão insufficient_data. Isso não é teste de significância.
-
-Targets para a próxima aula exigem >=3 tentativas espontâneas e falhas espontâneas em >=2 datas distintas entre as últimas 3 datas com tentativas espontâneas da construção. Exercícios controlados e oportunidades não apagam essa janela. A ordenação considera falhas recentes e cita as falhas que justificam a prática. Construções com menos de 5 tentativas, intervalo de largura >0,5, menos de duas datas espontâneas ou cobertura incompleta de perguntas/negações espontâneas viram alvos de coleta. Forças exigem evidência em duas datas e ausência de falhas na janela recente. As regras são conservadoras e não equivalem a diagnóstico ou eficácia pedagógica comprovada.
-
-## Dados e artifacts
-
-```text
-data/app.db                               # local, ignorado pelo Git
-artifacts/sessions/<id>/raw.md             # fonte preservada
-artifacts/sessions/<id>/runs/<run>/        # observations, audit, evidence-pack
-artifacts/sessions/<id>/active-run.json
-artifacts/learner/learner-state.json
-artifacts/learner/learner-state.md
-artifacts/learner/evidence/<construction>.md
-artifacts/learner/next-lesson.md
-benchmark/datasets/{development,calibration,holdout_test}/
-benchmark/manifest.json                   # versão e hashes dos inputs/gold
-reports/runs/<eval>/                      # qualification arquivada
-reports/{benchmark-final.md,benchmark-final.json,calibration.json}
-```
-
-O source e a auditoria também ficam no SQLite. Os packs globais são produtos atuais regeneráveis; packs de sessões/runs permanecem históricos. Para responder “por que existe essa dificuldade?”, abra o pack da construção: ele contém contagens, quotes, correções reportadas, decisões do verifier, IDs e offsets. A reconstrução usa somente a run ativa de cada sessão, evitando duplicar tentativas em reprocessamentos.
-
-## Benchmark e calibração
-
-Existem 24 sessões, 384 gold observations e 384 blocos narrativos: 8 sessões/128 observations por split. Cada split tem 40 blocos com erros gold, 72 controles negativos de erro e 56 blocos adversariais; categorias se sobrepõem. Os golds são fixtures linguísticas explicitamente definidas, nunca inferência do pipeline. Há 8 famílias, múltiplos erros, controle de estilo/vocabulário, perguntas/negação, oportunidade, teacher-only, ambiguidade, teacher errado, irrelevância e emprego encerrado.
-
-Os documentos e valores lexicais/temporais são diferentes entre splits, mas os templates gramaticais se repetem. O holdout não foi executado antes do congelamento; isso não o torna um estudo externo cego, especialmente no ensaio de chat solicitado. O escopo de anotação considera famílias-alvo locais; não pretende catalogar toda construção correta incidental.
-
-```bash
-# development: pode revelar problemas e orientar alterações
-learner benchmark --provider offline --split development --output reports/my-development
-
-# Somente depois de finalizar código/prompts/dataset:
-learner freeze --provider offline --freeze-file reports/my-freeze.json
-learner benchmark --provider offline --split qualify --freeze-file reports/my-freeze.json --output reports/my-qualification
-
-# Para qualificação manual: use uma versão com casos novos reservados e
-# mantenha modelo, desenho e diretório de exchange iguais em todas as etapas.
-learner freeze --llm manual --dataset CAMINHO_DATASET_NOVO \
-  --model "ChatGPT / MODELO_SELECIONADO" --evaluation-design independent \
-  --responses-dir data/qualificacao-manual --freeze-file reports/manual-freeze.json
-learner benchmark --llm manual --dataset CAMINHO_DATASET_NOVO \
-  --model "ChatGPT / MODELO_SELECIONADO" --evaluation-design independent \
-  --responses-dir data/qualificacao-manual --split qualify \
-  --freeze-file reports/manual-freeze.json --export requests/qualificacao/
-# Importe os raws e reexecute para completar calibration e depois holdout.
-```
-
-`qualify` ajusta buckets exclusivamente em calibration e depois avalia holdout_test. Exige freeze compatível e manifest intacto; outputs são arquivados por run, e os arquivos finais são ponteiros/cópias de conveniência. Não execute novamente o gerador de dataset para mascarar alteração de fixtures já qualificadas. Após expor os erros de um holdout, não use aquele split como novo teste cego de uma versão ajustada: crie uma nova versão e casos reservados diferentes.
-
-API é opcional. Se futuramente mudar para API, faça development com `--provider openai`, configure modelos, congele esse pipeline com outro `--freeze-file` e qualifique com as mesmas flags/modelos. Não reutilize a calibração manual ou do baseline. Não há API key nem gasto de API no fluxo manual, offline ou nos testes.
-
-Matching é um multiset one-to-one por sessão: posição exata da utterance + texto normalizado apenas em whitespace + construção + outcome + modo + evidence_type + issue_kind + feature + correção. Não há correspondência aproximada. O report distingue metrics de todas as observações das tentativas gramaticais; mostra FP/FN, provenance, abstenções, grupos, matriz de confusão e accuracy de outcome nos exemplos alinhados (JSON). Recall mede cobertura; sessões com zero predictions não são “testes aprovados”. Abstenção é uncertain / accepted, com missing gold reportado à parte.
-
-Na avaliação assistida, todos os buckets tiveram 100% de precisão observada, mas dois possuem somente N=8. Isso não demonstra separação útil de suporte nem confiança generalizável. Brier/ECE estão explicitamente `null`: não apresentamos tiers como probabilidades individuais calibradas.
-
-## Testes e limites atuais
-
-Unitários e integração funcionam sem internet e sem LLM: schema, parsing HTTP simulado, provenance, deduplicação, speaker teacher-only, estatística, modes, trend, persistência, reprocessamento, artifacts, matching, calibração, freeze e CLI. Há testes metamórficos de ruído, ordem, texto irrelevante, formatação e remoção de correções.
-
-O baseline offline perdeu cobertura fora de números/formatos estreitos, e concordar com a correção errada do professor é uma classe importante que o verifier precisa conter. O ensaio de chat foi perfeito nesse gold conhecido, mas não mediu generalização. Ainda faltam avaliação externa com inputs novos, gold revisado independentemente e um modelo/provider identificável. Use os dados de exemplo para explorar o software; mantenha revisão humana das evidências antes de construir histórico real.

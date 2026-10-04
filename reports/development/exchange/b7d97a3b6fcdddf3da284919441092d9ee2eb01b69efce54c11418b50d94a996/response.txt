@@ -1,0 +1,1 @@
+{"decision": "new_pattern", "candidate_id": null, "reason": "The legitimate British time-reference phrase informs context-appropriate regional usage, not personal uncertainty. Sharing conversational-English terminology and a high score does not justify joining the uncertainty evidence.", "pattern_label": null, "pattern_description": null, "conversation_contexts": []}

@@ -1,0 +1,8 @@
+{
+  "decision": "new_pattern",
+  "candidate_id": null,
+  "reason": "Expressing a state spanning a past starting point and the present is distinct from expressing uncertainty or selecting a medication verb. Surface copulas and high similarity do not establish the same production ability.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

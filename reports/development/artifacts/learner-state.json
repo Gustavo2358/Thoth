@@ -1,0 +1,384 @@
+{
+  "sessions": 4,
+  "observations": 25,
+  "patterns": [
+    {
+      "id": "PAT-622529f44a6e",
+      "root_id": "OBS-622529f44a6e8411",
+      "label": "Verb choices for arranging meetings",
+      "description": "Repeated meeting proposals or descriptions select make a meeting for organizing or holding a discussion. Follow both difficult and successful conventional meeting expressions across spontaneous contexts.",
+      "conversation_contexts": [
+        "Arrange a discussion involving several people",
+        "Explain how a recent team discussion was organized",
+        "Negotiate the purpose and timing of a future meeting"
+      ],
+      "observations": 3,
+      "sessions": 3,
+      "dates": 3,
+      "modes": {
+        "spontaneous": {
+          "successful": 0,
+          "difficulty": 3,
+          "uncertain": 0
+        },
+        "prompted": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "controlled": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "unknown": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 0,
+      "status": "practice",
+      "interpretation": "Recurring spontaneous difficulties on independent dates; cause is not directly observed.",
+      "mode_note": "Guided and spontaneous evidence remain separate.",
+      "recent_successes": 0,
+      "recent_difficulties": 3,
+      "evidence_ids": [
+        "OBS-622529f44a6e8411",
+        "OBS-e9f6272dc0587684",
+        "OBS-351ad28bc1c2078f"
+      ],
+      "practice_evidence_ids": [
+        "OBS-622529f44a6e8411",
+        "OBS-e9f6272dc0587684",
+        "OBS-351ad28bc1c2078f"
+      ],
+      "unknowns": [
+        "Transfer to new topics and registers is untested.",
+        "Opportunities do not prove avoidance; L1 transfer and retrieval causes remain hypotheses."
+      ]
+    },
+    {
+      "id": "PAT-6862d281f395",
+      "root_id": "OBS-6862d281f3958606",
+      "label": "Register of requests to friends",
+      "description": "Routine requests to close friends repeatedly use bureaucratic or ceremonial wording. Observe more relaxed request formulations in comparable relationships, while accepting formal registers when context warrants them.",
+      "conversation_contexts": [
+        "Ask a friend for a routine favor",
+        "Negotiate small requests during a casual activity",
+        "Discuss how wording changes between friends and officials"
+      ],
+      "observations": 3,
+      "sessions": 3,
+      "dates": 3,
+      "modes": {
+        "spontaneous": {
+          "successful": 0,
+          "difficulty": 3,
+          "uncertain": 0
+        },
+        "prompted": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "controlled": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "unknown": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 0,
+      "status": "practice",
+      "interpretation": "Recurring spontaneous difficulties on independent dates; cause is not directly observed.",
+      "mode_note": "Guided and spontaneous evidence remain separate.",
+      "recent_successes": 0,
+      "recent_difficulties": 3,
+      "evidence_ids": [
+        "OBS-6862d281f3958606",
+        "OBS-255d9d085ba77dbb",
+        "OBS-1a753b6e6a255f57"
+      ],
+      "practice_evidence_ids": [
+        "OBS-6862d281f3958606",
+        "OBS-255d9d085ba77dbb",
+        "OBS-1a753b6e6a255f57"
+      ],
+      "unknowns": [
+        "Transfer to new topics and registers is untested.",
+        "Opportunities do not prove avoidance; L1 transfer and retrieval causes remain hypotheses."
+      ]
+    },
+    {
+      "id": "PAT-d8eff92b89e9",
+      "root_id": "OBS-d8eff92b89e98b36",
+      "label": "Verb choices for decisions",
+      "description": "Two occurrences combine do with decision rather than a conventional make/reach combination. This is a specific decision-collocation pattern; additional spontaneous contexts should be collected before prioritizing it.",
+      "conversation_contexts": [
+        "Explain how a difficult choice was reached",
+        "Compare decisions made by a group and an individual",
+        "Describe choosing among competing options"
+      ],
+      "observations": 2,
+      "sessions": 2,
+      "dates": 2,
+      "modes": {
+        "spontaneous": {
+          "successful": 0,
+          "difficulty": 2,
+          "uncertain": 0
+        },
+        "prompted": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "controlled": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "unknown": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 0,
+      "status": "collect",
+      "interpretation": "Emerging or incompletely sampled pattern; collect more independent spontaneous evidence.",
+      "mode_note": "Guided and spontaneous evidence remain separate.",
+      "recent_successes": 0,
+      "recent_difficulties": 2,
+      "evidence_ids": [
+        "OBS-d8eff92b89e98b36",
+        "OBS-e27ff4e16de0ec4b"
+      ],
+      "practice_evidence_ids": [
+        "OBS-d8eff92b89e98b36",
+        "OBS-e27ff4e16de0ec4b"
+      ],
+      "unknowns": [
+        "Transfer to new topics and registers is untested.",
+        "Opportunities do not prove avoidance; L1 transfer and retrieval causes remain hypotheses."
+      ]
+    },
+    {
+      "id": "PAT-3e8977374410",
+      "root_id": "OBS-3e89773744103ec7",
+      "label": "Expressing ongoing duration",
+      "description": "Earlier simple-present duration selections are followed by suitable spontaneous past-to-present expressions. Positive evidence suggests recovery in these contexts; it does not establish mastery or a mental explanation of earlier difficulty.",
+      "conversation_contexts": [
+        "Compare how long present routines have continued",
+        "Describe responsibilities that started earlier and still hold",
+        "Explain continuity in living arrangements across changes"
+      ],
+      "observations": 4,
+      "sessions": 4,
+      "dates": 4,
+      "modes": {
+        "spontaneous": {
+          "successful": 2,
+          "difficulty": 2,
+          "uncertain": 0
+        },
+        "prompted": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "controlled": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "unknown": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 0,
+      "status": "recovery",
+      "interpretation": "Previously difficult; recent spontaneous successes suggest recovery. Transfer remains untested.",
+      "mode_note": "Guided and spontaneous evidence remain separate.",
+      "recent_successes": 2,
+      "recent_difficulties": 1,
+      "evidence_ids": [
+        "OBS-3e89773744103ec7",
+        "OBS-161bc75b30be8914",
+        "OBS-36b7ddf1d4d18d09",
+        "OBS-67a83a75d355af65"
+      ],
+      "practice_evidence_ids": [
+        "OBS-161bc75b30be8914"
+      ],
+      "unknowns": [
+        "Transfer to new topics and registers is untested.",
+        "Opportunities do not prove avoidance; L1 transfer and retrieval causes remain hypotheses."
+      ]
+    },
+    {
+      "id": "PAT-da3a6e1af340",
+      "root_id": "OBS-da3a6e1af340bdfd",
+      "label": "Natural expression of personal uncertainty",
+      "description": "Earlier noun-based uncertainty phrasing is compatible with Portuguese influence, not proof of translation. Recent natural spontaneous expressions provide evidence of improvement in the same conversational ability; continue testing unobserved situations.",
+      "conversation_contexts": [
+        "Discuss a proposal with uncertain consequences",
+        "Explain what remains unclear about a choice",
+        "Weigh options when information is incomplete"
+      ],
+      "observations": 4,
+      "sessions": 4,
+      "dates": 4,
+      "modes": {
+        "spontaneous": {
+          "successful": 2,
+          "difficulty": 2,
+          "uncertain": 0
+        },
+        "prompted": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "controlled": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "unknown": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 0,
+      "status": "recovery",
+      "interpretation": "Previously difficult; recent spontaneous successes suggest recovery. Transfer remains untested.",
+      "mode_note": "Guided and spontaneous evidence remain separate.",
+      "recent_successes": 2,
+      "recent_difficulties": 1,
+      "evidence_ids": [
+        "OBS-da3a6e1af340bdfd",
+        "OBS-dafaf78029148226",
+        "OBS-ae16d7a703625214",
+        "OBS-b4c08f9d2765f5b5"
+      ],
+      "practice_evidence_ids": [
+        "OBS-dafaf78029148226"
+      ],
+      "unknowns": [
+        "Transfer to new topics and registers is untested.",
+        "Opportunities do not prove avoidance; L1 transfer and retrieval causes remain hypotheses."
+      ]
+    },
+    {
+      "id": "PAT-7a9d11ddd29e",
+      "root_id": "OBS-7a9d11ddd29e2ffa",
+      "label": "Spontaneous past-regret phrasing",
+      "description": "Valid spontaneous paraphrases and a successful teacher-directed compact regret expression inform the same production ability. A task-related availability difference is possible, but the evidence does not prove avoidance, knowledge or a retrieval deficit. Collect unprompted transfer evidence.",
+      "conversation_contexts": [
+        "Reflect on a past choice and a preferable alternative",
+        "Discuss a missed opportunity without prescribing a form",
+        "Explain lessons learned from an earlier action"
+      ],
+      "observations": 3,
+      "sessions": 3,
+      "dates": 3,
+      "modes": {
+        "spontaneous": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 2
+        },
+        "prompted": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "controlled": {
+          "successful": 1,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "unknown": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        }
+      },
+      "opportunities": 2,
+      "self_corrections": 0,
+      "status": "collect",
+      "interpretation": "Emerging or incompletely sampled pattern; collect more independent spontaneous evidence.",
+      "mode_note": "Guided and spontaneous evidence remain separate.",
+      "recent_successes": 0,
+      "recent_difficulties": 0,
+      "evidence_ids": [
+        "OBS-7a9d11ddd29e2ffa",
+        "OBS-02a781961ce7833d",
+        "OBS-dfd031759fe50566"
+      ],
+      "practice_evidence_ids": [],
+      "unknowns": [
+        "Transfer to new topics and registers is untested.",
+        "Opportunities do not prove avoidance; L1 transfer and retrieval causes remain hypotheses.",
+        "Fewer than two dates with spontaneous attempts."
+      ]
+    }
+  ],
+  "isolated": [
+    {
+      "id": "OBS-9e3b08d6d3bbccd1",
+      "dimension": "Expressing agreement with an interlocutor",
+      "performance": "difficulty",
+      "reason": "Expressing agreement with the lexical verb agree concerns a different form-selection ability from calibrating the register of requests. No earlier comparable agreement evidence is provided."
+    },
+    {
+      "id": "OBS-af831f2eec632afd",
+      "dimension": "Unresolved interpretation of doubt wording",
+      "performance": "uncertain",
+      "reason": "Observation review is unresolved; retain isolated evidence."
+    },
+    {
+      "id": "OBS-66918b01a720785b",
+      "dimension": "Time reference appropriate to the speaker's English variety",
+      "performance": "successful",
+      "reason": "The legitimate British time-reference phrase informs context-appropriate regional usage, not personal uncertainty. Sharing conversational-English terminology and a high score does not justify joining the uncertainty evidence."
+    },
+    {
+      "id": "OBS-3855c8c01a8b90c0",
+      "dimension": "Expressing advice with the verb suggest",
+      "performance": "difficulty",
+      "reason": "Reporting a suggestion with the verb suggest concerns its complementation and reported advice, not expressing personal uncertainty. The high score does not supply comparable evidence of this new ability."
+    },
+    {
+      "id": "OBS-9652f8547514bdd2",
+      "dimension": "Expressing advice with the verb suggest",
+      "performance": "difficulty",
+      "reason": "Both observations report a suggested action using suggest followed by a person and a to-infinitive. They inform the same complement-selection ability, but recurrence within this single session does not establish a longitudinal difficulty."
+    },
+    {
+      "id": "OBS-f3661661e6b9fdd2",
+      "dimension": "Expressing advice with the verb suggest",
+      "performance": "difficulty",
+      "reason": "The new sentence has the same suggest complementation choice as both candidate events. Group it for comparison while leaving longitudinal promotion to the application; all these reports occur on one date."
+    }
+  ],
+  "assumptions": [
+    "Counts describe selected report evidence, not mastery or a representative proficiency score.",
+    "Repeated reports on one date do not establish longitudinal recurrence.",
+    "Pattern descriptions and causal interpretations are model hypotheses; quotes and memberships are auditable."
+  ]
+}

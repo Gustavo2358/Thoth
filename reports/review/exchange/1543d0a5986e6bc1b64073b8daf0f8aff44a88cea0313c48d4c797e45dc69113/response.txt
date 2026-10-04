@@ -1,0 +1,1 @@
+{"decision": "reject", "reason": "I have a question is a conventional clarification request. A shorter alternative is optional, and the excerpt does not establish a mental Portuguese translation process."}

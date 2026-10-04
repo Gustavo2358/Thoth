@@ -1,0 +1,11 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-d11cbbe7f8d5832f",
+  "reason": "Extremely expensive naturally accomplishes the same emphatic high-cost intent as the earlier unconventional price formulations. An idiom is not required for success. Regional time reference and continuing-state duration are different abilities.",
+  "pattern_label": "Natural emphasis of high prices",
+  "pattern_description": "Reports include unconventional literal body-part price expressions and a natural extremely-expensive description. Earlier wording is consistent with Portuguese-like expressions, while its cause remains hypothetical; successful emphasis does not require any particular idiom.",
+  "conversation_contexts": [
+    "Compare travel options and explain which prices feel excessive",
+    "Discuss whether an expensive purchase is worth its cost"
+  ]
+}

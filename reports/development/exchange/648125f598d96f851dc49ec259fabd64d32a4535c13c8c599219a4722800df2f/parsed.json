@@ -1,0 +1,8 @@
+{
+  "decision": "related_but_different",
+  "candidate_id": "OBS-622529f44a6e8411",
+  "reason": "Both concern conventional verb-noun combinations, but making/reaching a decision and arranging/holding a meeting require different collocational choices. Keep their evidence separate rather than creating a broad catch-all collocation pattern.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

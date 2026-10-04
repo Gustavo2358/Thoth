@@ -1,0 +1,12 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-998745912d16fd37",
+  "reason": "Ceremonial request wording again appears for a routine favor between close friends. The same contextual register calibration is evidenced across the matching members; uncertainty and regret do not belong to it.",
+  "pattern_label": "Request register in informal relationships",
+  "pattern_description": "Routine favor requests between friends repeatedly use conspicuously official or ceremonial wording. Observe contextual register choices without treating all formal language as deficient or ignoring legitimate politeness alternatives.",
+  "conversation_contexts": [
+    "Ask a friend for a routine favor",
+    "Negotiate help during a relaxed shared activity",
+    "Compare requests to a friend and to an institution"
+  ]
+}

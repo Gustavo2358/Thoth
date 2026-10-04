@@ -1,0 +1,87 @@
+{
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / modelo desta conversa",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "cases": 12,
+  "correct": 12,
+  "false_difficulties_before_review": 8,
+  "false_difficulties_after_review": 0,
+  "valid_difficulties_lost": 0,
+  "results": [
+    {
+      "id": "case-01",
+      "expected": "keep",
+      "actual": "keep",
+      "reason": "The clarified informal uncertainty intent supports observing the unusual with a doubt phrasing and considering a conventional uncertainty clause. Portuguese influence is framed cautiously, not asserted as a mental-process fact."
+    },
+    {
+      "id": "case-02",
+      "expected": "keep",
+      "actual": "keep",
+      "reason": "The report explicitly means arranging a discussion rather than attending a meeting. Make a meeting is not the conventional arrangement collocation in that sense; arranging, scheduling or holding preserves the intent."
+    },
+    {
+      "id": "case-03",
+      "expected": "keep",
+      "actual": "keep",
+      "reason": "The continuing job and its past starting point support a past-to-present duration form. The selected simple present does not conventionally express that temporal relationship with since 2020 in this context."
+    },
+    {
+      "id": "case-04",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "I have doubts about the safety is a natural expression of skepticism. The noun formulation accurately fits this meaning; an uncertainty alternative does not establish an error or unnatural production."
+    },
+    {
+      "id": "case-05",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "I would like a coffee, please is an ordinary polite café order. Can I get a coffee is an alternative, not evidence that the original production is excessively formal or deficient."
+    },
+    {
+      "id": "case-06",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "At the weekend is a legitimate British English time expression. Replacing it with the American on the weekend is a regional preference, not correction of a speaking difficulty."
+    },
+    {
+      "id": "case-07",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "Capitalization and apostrophes concern transcription conventions, not this spoken production. The source reports no spoken-form defect, so these written details cannot establish a speaking difficulty."
+    },
+    {
+      "id": "case-08",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "I have a question is a conventional clarification request. A shorter alternative is optional, and the excerpt does not establish a mental Portuguese translation process."
+    },
+    {
+      "id": "case-09",
+      "expected": "uncertain",
+      "actual": "uncertain",
+      "reason": "Doubt wording can express skepticism or be conventional in some varieties. Missing intended meaning and variety prevent a supported difficulty judgment; Portuguese influence remains only a possibility."
+    },
+    {
+      "id": "case-10",
+      "expected": "keep",
+      "actual": "keep",
+      "reason": "Hereby request the loan uses official ceremonial register for a tiny casual favor to a close friend. The stated relationship and situation support observing register calibration, rather than a general grammatical defect."
+    },
+    {
+      "id": "case-11",
+      "expected": "uncertain",
+      "actual": "uncertain",
+      "reason": "The quoted suggest construction is linguistically problematic, but attribution to the learner is unresolved. An intentionally incorrect teacher example must not become learner evidence."
+    },
+    {
+      "id": "case-12",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "The spontaneous regret expression is legitimate. Prior practice of another form does not prove knowledge, inability to retrieve, or deliberate avoidance. Non-use is not a difficulty by itself."
+    }
+  ],
+  "design": "Same-author adversarial proposed observations; no independent model or annotation review"
+}

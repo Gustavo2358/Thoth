@@ -1,0 +1,8 @@
+{
+  "decision": "new_pattern",
+  "candidate_id": null,
+  "reason": "The observation concerns complement selection after suggest when reporting advice. Past-to-present duration, regret availability and interpersonal request tone are separate abilities; advice and requests being socially related does not justify grouping this verb-specific syntax with request tone.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

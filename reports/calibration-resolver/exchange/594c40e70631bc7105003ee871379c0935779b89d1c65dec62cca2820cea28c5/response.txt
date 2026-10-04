@@ -1,0 +1,1 @@
+{"decision": "new_pattern", "candidate_id": null, "reason": "A state spanning past and present has temporal form-selection constraints absent from uncertainty phrasing and meeting collocations. Neither candidate is the same ability or a sufficiently specific related target.", "pattern_label": null, "pattern_description": null, "conversation_contexts": []}

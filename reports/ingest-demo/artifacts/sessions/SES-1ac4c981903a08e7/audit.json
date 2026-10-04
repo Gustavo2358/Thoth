@@ -1,0 +1,287 @@
+{
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / modelo desta conversa",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "embedding": {
+    "model": "spaCy/en_core_web_md",
+    "package": "3.8.0",
+    "weights_sha256": "1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5",
+    "dimensions": 300,
+    "pooling": "mean of nonzero token vectors; L2 normalized"
+  },
+  "interactions": [
+    {
+      "stage": "extract",
+      "request": "1885c47b9f4c28efa85bbbb7b9a6898c0e8d0fb3c6bd5cfc7d638d6a85196e40",
+      "response_hash": "2f411c5d262acbce4fc472927ac22e98bf32bc59e35282ec07cce8c2cca98cf0",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "review",
+      "request": "217d853d874de2edf10d6f06e355ab63ba9973574dd63c00d39912998e67b5ea",
+      "response_hash": "43292c390ce27ed878cc6c16ed457bfea790266ae74018a30bc4ae5f7c989bc9",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "review",
+      "request": "eb2e259ab15a4f11d994ab553c1476c69a39aa7c80f73dbda9241556b8276b43",
+      "response_hash": "257963372462d166274d9a5f5d395483ad34259410b8586270ef84a265fd01d8",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "08ef5c0af01c28b0defc7bf76cc1c017f0b185e45fcc8250d7d37f675d0658db",
+      "response_hash": "d507aa6e420426b12f1954b3dda4600eb63bdb97ed9e020b88fd2f3820296f7a",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "e339e99574cc29806225893962986d0f462b85ad739c60bf36a1c7dc9db03f23",
+      "response_hash": "25fdb5a71db71200c23df9488fb8f35632d0ea9c20cae24b0c9af292a51df73c",
+      "model": "Codex / modelo desta conversa"
+    }
+  ],
+  "rejected": [],
+  "grouping": [
+    {
+      "observation_id": "OBS-9d14eaff5eb17309",
+      "candidates": [
+        {
+          "candidate_id": "OBS-8edd62bd9dfaf105",
+          "root_id": "OBS-c81778573ccaca98",
+          "similarity": 0.948062,
+          "pattern": {
+            "id": "PAT-c81778573cca",
+            "root_id": "OBS-c81778573ccaca98",
+            "label": "Natural expression of personal uncertainty",
+            "description": "The observed doubt-based formulations are understandable but unconventional for personal conversational uncertainty. They are consistent with Portuguese-like noun constructions, without establishing the learner's production process.",
+            "contexts": "[\"Clarify an unclear instruction before making a choice\", \"Discuss uncertainty about the details of a plan\"]"
+          },
+          "evidence": [
+            {
+              "id": "OBS-c81778573ccaca98",
+              "date": "2026-03-01",
+              "source_excerpt": "During an unscripted conversation about planning a weekend trip, the learner asked a friend: \"I'm with a doubt about the booking.\" They clarified that they wanted to ask whether breakfast was included, rather than express distrust of the hotel. No target expression had been supplied.",
+              "learner_quote": "I'm with a doubt about the booking.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Ask for clarification about something unclear",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Used an unusual with-a-doubt formulation for a clarification question. The intended question is understandable, but this construction is not a conventional conversational expression of uncertainty in this context.",
+              "suggested_forms": [
+                "I have a question about the booking.",
+                "I'm not sure whether breakfast is included."
+              ],
+              "hypothesis": "The formulation is consistent with Portuguese-like noun constructions; its cause is not directly observed."
+            },
+            {
+              "id": "OBS-8edd62bd9dfaf105",
+              "date": "2026-03-08",
+              "source_excerpt": "In an unprompted conversation about an instruction that was unclear, the learner said: \"I stayed in doubt about which button to press.\" They explained that they were unsure which option to choose. No wording had been supplied.",
+              "learner_quote": "I stayed in doubt about which button to press.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain uncertainty about which option to choose",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Used stayed in doubt for remaining unsure about a choice. The meaning is understandable, but stayed in doubt is not the conventional conversational formulation for this personal uncertainty.",
+              "suggested_forms": [
+                "I was still unsure which button to press.",
+                "I still wasn't sure which button to press."
+              ],
+              "hypothesis": "This formulation is compatible with Portuguese-like noun-based expression; the production process itself is unobserved."
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-63325eb7bc56b75f",
+          "root_id": "OBS-d11f3afe31ab3eda",
+          "similarity": 0.763009,
+          "pattern": {
+            "id": "PAT-d11f3afe31ab",
+            "root_id": "OBS-d11f3afe31ab3eda",
+            "label": "Conventional verb combinations for arranging meetings",
+            "description": "The learner uses make a meeting when intending to arrange or schedule a discussion. Repeated contexts support a meeting-specific verb combination pattern, without implying a general deficit for all collocations.",
+            "contexts": "[\"Coordinate a discussion with colleagues about a shared project\", \"Plan when and how a group will meet to solve a problem\"]"
+          },
+          "evidence": [
+            {
+              "id": "OBS-d11f3afe31ab3eda",
+              "date": "2026-03-01",
+              "source_excerpt": "Later, while spontaneously suggesting that the team arrange a discussion, the learner said: \"We should make a meeting on Friday.\" They meant schedule a discussion, not attend one or create a physical object. No wording was supplied by the teacher.",
+              "learner_quote": "We should make a meeting on Friday.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Propose arranging a discussion",
+              "learning_dimension": "Selecting conventional verb combinations when arranging meetings",
+              "observed_behavior": "Selected make a meeting to mean schedule or arrange a discussion; make does not conventionally express arranging a meeting here.",
+              "suggested_forms": [
+                "We should arrange a meeting for Friday.",
+                "We should schedule a meeting for Friday."
+              ],
+              "hypothesis": null
+            },
+            {
+              "id": "OBS-63325eb7bc56b75f",
+              "date": "2026-03-08",
+              "source_excerpt": "When spontaneously explaining how colleagues organized a project discussion, the learner said: \"They made a meeting yesterday.\" They meant the colleagues arranged a meeting. The report does not imply that the learner translated mentally from Portuguese.",
+              "learner_quote": "They made a meeting yesterday.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Report that colleagues arranged a discussion",
+              "learning_dimension": "Selecting conventional verb combinations when arranging meetings",
+              "observed_behavior": "Used made a meeting to express arranging a discussion rather than attending one. Arranged or scheduled would conventionally express this meaning.",
+              "suggested_forms": [
+                "They arranged a meeting yesterday.",
+                "They scheduled a meeting yesterday."
+              ],
+              "hypothesis": null
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "same_pattern",
+        "candidate_id": "OBS-8edd62bd9dfaf105",
+        "reason": "The new occurrence successfully realizes the same personal-uncertainty ability as the earlier difficulty examples. Its ticket topic and positive performance do not create a different dimension; meeting verbs remain separate.",
+        "pattern_label": "Natural expression of personal uncertainty",
+        "pattern_description": "Evidence includes unconventional doubt-based formulations and a natural spontaneous I'm not sure formulation. The earlier wording is consistent with Portuguese-like noun constructions, but neither its cause nor broader spontaneous availability is established.",
+        "conversation_contexts": [
+          "Clarify uncertainty before choosing between travel options",
+          "Discuss what is unclear about a shared plan"
+        ]
+      }
+    },
+    {
+      "observation_id": "OBS-52e8f27e2009836a",
+      "candidates": [
+        {
+          "candidate_id": "OBS-d11f3afe31ab3eda",
+          "root_id": "OBS-d11f3afe31ab3eda",
+          "similarity": 0.986987,
+          "pattern": {
+            "id": "PAT-d11f3afe31ab",
+            "root_id": "OBS-d11f3afe31ab3eda",
+            "label": "Conventional verb combinations for arranging meetings",
+            "description": "The learner uses make a meeting when intending to arrange or schedule a discussion. Repeated contexts support a meeting-specific verb combination pattern, without implying a general deficit for all collocations.",
+            "contexts": "[\"Coordinate a discussion with colleagues about a shared project\", \"Plan when and how a group will meet to solve a problem\"]"
+          },
+          "evidence": [
+            {
+              "id": "OBS-d11f3afe31ab3eda",
+              "date": "2026-03-01",
+              "source_excerpt": "Later, while spontaneously suggesting that the team arrange a discussion, the learner said: \"We should make a meeting on Friday.\" They meant schedule a discussion, not attend one or create a physical object. No wording was supplied by the teacher.",
+              "learner_quote": "We should make a meeting on Friday.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Propose arranging a discussion",
+              "learning_dimension": "Selecting conventional verb combinations when arranging meetings",
+              "observed_behavior": "Selected make a meeting to mean schedule or arrange a discussion; make does not conventionally express arranging a meeting here.",
+              "suggested_forms": [
+                "We should arrange a meeting for Friday.",
+                "We should schedule a meeting for Friday."
+              ],
+              "hypothesis": null
+            },
+            {
+              "id": "OBS-63325eb7bc56b75f",
+              "date": "2026-03-08",
+              "source_excerpt": "When spontaneously explaining how colleagues organized a project discussion, the learner said: \"They made a meeting yesterday.\" They meant the colleagues arranged a meeting. The report does not imply that the learner translated mentally from Portuguese.",
+              "learner_quote": "They made a meeting yesterday.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Report that colleagues arranged a discussion",
+              "learning_dimension": "Selecting conventional verb combinations when arranging meetings",
+              "observed_behavior": "Used made a meeting to express arranging a discussion rather than attending one. Arranged or scheduled would conventionally express this meaning.",
+              "suggested_forms": [
+                "They arranged a meeting yesterday.",
+                "They scheduled a meeting yesterday."
+              ],
+              "hypothesis": null
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-c81778573ccaca98",
+          "root_id": "OBS-c81778573ccaca98",
+          "similarity": 0.794749,
+          "pattern": {
+            "id": "PAT-c81778573cca",
+            "root_id": "OBS-c81778573ccaca98",
+            "label": "Natural expression of personal uncertainty",
+            "description": "The observed doubt-based formulations are understandable but unconventional for personal conversational uncertainty. They are consistent with Portuguese-like noun constructions, without establishing the learner's production process.",
+            "contexts": "[\"Clarify an unclear instruction before making a choice\", \"Discuss uncertainty about the details of a plan\"]"
+          },
+          "evidence": [
+            {
+              "id": "OBS-c81778573ccaca98",
+              "date": "2026-03-01",
+              "source_excerpt": "During an unscripted conversation about planning a weekend trip, the learner asked a friend: \"I'm with a doubt about the booking.\" They clarified that they wanted to ask whether breakfast was included, rather than express distrust of the hotel. No target expression had been supplied.",
+              "learner_quote": "I'm with a doubt about the booking.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Ask for clarification about something unclear",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Used an unusual with-a-doubt formulation for a clarification question. The intended question is understandable, but this construction is not a conventional conversational expression of uncertainty in this context.",
+              "suggested_forms": [
+                "I have a question about the booking.",
+                "I'm not sure whether breakfast is included."
+              ],
+              "hypothesis": "The formulation is consistent with Portuguese-like noun constructions; its cause is not directly observed."
+            },
+            {
+              "id": "OBS-8edd62bd9dfaf105",
+              "date": "2026-03-08",
+              "source_excerpt": "In an unprompted conversation about an instruction that was unclear, the learner said: \"I stayed in doubt about which button to press.\" They explained that they were unsure which option to choose. No wording had been supplied.",
+              "learner_quote": "I stayed in doubt about which button to press.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain uncertainty about which option to choose",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Used stayed in doubt for remaining unsure about a choice. The meaning is understandable, but stayed in doubt is not the conventional conversational formulation for this personal uncertainty.",
+              "suggested_forms": [
+                "I was still unsure which button to press.",
+                "I still wasn't sure which button to press."
+              ],
+              "hypothesis": "This formulation is compatible with Portuguese-like noun-based expression; the production process itself is unobserved."
+            },
+            {
+              "id": "OBS-9d14eaff5eb17309",
+              "date": "2026-03-15",
+              "source_excerpt": "In a spontaneous conversation about choosing a train ticket, the learner said: \"I'm not sure which option includes a return trip.\" This naturally expressed uncertainty and was produced without a model phrase or correction.",
+              "learner_quote": "I'm not sure which option includes a return trip.",
+              "production_mode": "spontaneous",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express uncertainty about a choice and clarify its details",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Used a conventional I'm not sure formulation to express personal uncertainty and identify what needed clarification, without supplied wording.",
+              "suggested_forms": [],
+              "hypothesis": null
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "same_pattern",
+        "candidate_id": "OBS-d11f3afe31ab3eda",
+        "reason": "The make a meeting selection repeats the earlier collocational choice for arranging discussions across different situations. The uncertainty examples concern a distinct production ability.",
+        "pattern_label": "Conventional verb combinations for arranging meetings",
+        "pattern_description": "Across reported situations the learner selects make a meeting to mean arrange or schedule a discussion. This supports a specific verb combination pattern rather than a general diagnosis about all collocations.",
+        "conversation_contexts": [
+          "Organize a project discussion with colleagues",
+          "Coordinate a group discussion to resolve a planning issue"
+        ]
+      }
+    }
+  ]
+}

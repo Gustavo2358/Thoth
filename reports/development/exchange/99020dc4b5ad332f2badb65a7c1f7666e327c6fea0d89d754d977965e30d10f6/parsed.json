@@ -1,0 +1,12 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-622529f44a6e8411",
+  "reason": "Both events concern arranging or holding a meeting and select make where a conventional meeting verb is needed. The collocational target and communicative purpose match despite tense variation.",
+  "pattern_label": "Verb choices for arranging meetings",
+  "pattern_description": "The learner repeatedly uses make a meeting for organizing or holding a discussion. Observe spontaneous use of conventional meeting collocations and retain successful alternatives as evidence of this same ability.",
+  "conversation_contexts": [
+    "Plan a discussion involving several colleagues",
+    "Explain how a group arranged its last discussion",
+    "Negotiate when and why a team should meet"
+  ]
+}

@@ -1,276 +1,269 @@
 from __future__ import annotations
 
 import hashlib
+import itertools
 import json
-import re
-import uuid
-from datetime import datetime, timezone
+import sqlite3
+from collections import Counter
 from pathlib import Path
 
-from thoth.adapters import Adapter
-from thoth.artifacts import write_json
-from thoth.contracts import digest
-from thoth.evaluation import calibrate, evaluate, reliability, score_session, validate_calibration
-from thoth.llm import InvalidLLMResponse, PendingLLMResponse
-from thoth.pipeline import pipeline_metadata, process
-from thoth.provenance import locate, validate
+import numpy as np
+
+from thoth.artifacts import export, write_json
+from thoth.contracts import Observation, Policy
+from thoth.embeddings import pedagogical_text
+from thoth.llm import PendingResponse
+from thoth.pipeline import resolve
+from thoth.storage import Store
+from thoth.contracts import Review
+from thoth import prompts
 
 
-def dataset_metadata(root: Path) -> tuple[dict, dict]:
-    path = root / "manifest.json"
-    manifest = json.loads(path.read_text())
-    return manifest, {"version": manifest["dataset_version"], "manifest_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+def dataset(split):
+    path = Path("benchmark/data") / split
+    sessions = json.loads((path / "sessions.json").read_bytes())
+    gold = json.loads((path / "gold.json").read_bytes())
+    return sessions, gold
 
 
-def check_dataset(root: Path, manifest: dict, split: str):
-    directory = root / "datasets" / split
-    expected = manifest["splits"][split]["sha256"]
-    actual = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in directory.iterdir() if p.is_file()}
-    if actual != expected:
-        raise ValueError(f"Dataset content differs from versioned manifest: {split}")
+def describe(values):
+    return {"n": len(values), "min": float(min(values)), "median": float(np.median(values)),
+            "max": float(max(values)), "p10": float(np.quantile(values, .1)), "p90": float(np.quantile(values, .9))} if values else {"n": 0}
 
 
-def run_split(root: Path, split: str, adapter: Adapter, manifest: dict,
-              audit_root: Path | None = None) -> tuple[list[dict], dict]:
-    check_dataset(root, manifest, split)
-    records = []
-    for path in sorted((root / "datasets" / split).glob("*.md")):
-        raw = path.read_text(encoding="utf-8")
-        gold = json.loads(path.with_suffix(".gold.json").read_text())
-        for block in gold["blocks"]:
-            block["source_start"], block["source_end"] = locate(raw, block["source_span"])
-        for g in gold["observations"]:
-            start, end = locate(raw, g["source_span"])
-            quote = re.search(r"\s+".join(re.escape(t) for t in g["learner_utterance"].split()), raw[start:end])
-            g["learner_start"] = start + quote.start()
-        # Provider never sees gold. Only the text enters process().
-        interaction_start = len(getattr(adapter, "interactions", []))
-        status, error, result = "completed", None, None
+def embedding_pair_ablation(split, embedder, cutoff):
+    sessions, gold = dataset(split)
+    observations = [Observation.model_validate(o) for s in sessions for o in s["observations"]]
+    vectors = embedder.embed([pedagogical_text(o) for o in observations])
+    tp = fp = fn = 0
+    for i, j in itertools.combinations(range(len(observations)), 2):
+        a, b = observations[i], observations[j]
+        if a.review.decision != "keep" or b.review.decision != "keep":
+            continue
+        same = gold[a.id]["group"] is not None and gold[a.id]["group"] == gold[b.id]["group"]
+        predicted = float(vectors[i] @ vectors[j]) >= cutoff
+        tp += same and predicted
+        fp += predicted and not same
+        fn += same and not predicted
+    return {"cutoff_from_calibration": cutoff, "true_same_pairs": tp, "false_merge_pairs": fp,
+            "false_split_pairs": fn, "precision": tp / (tp + fp) if tp + fp else None,
+            "recall": tp / (tp + fn) if tp + fn else None,
+            "scope": "Independent pair classification research baseline, not transitive clustering or a runtime decision path"}
+
+
+def calibration(embedder, output):
+    sessions, gold = dataset("calibration")
+    observations = [Observation.model_validate(o) for s in sessions for o in s["observations"]]
+    vectors = embedder.embed([pedagogical_text(o) for o in observations])
+    raw_vectors = embedder.embed([o.learner_quote for o in observations])
+
+    def retrieval_curve(vs):
+        totals, hits, history = 0, Counter(), []
+        for o, vector in zip(observations, vs):
+            group = gold[o.id]["group"]
+            relevant = [r for r in history if group is not None and gold[r["id"]]["group"] == group]
+            if relevant and o.review.decision == "keep":
+                totals += 1
+                ranked = sorted(history, key=lambda r: (-float(np.dot(vector, r["vector"])), r["id"]))
+                for k in range(1, 7):
+                    hits[k] += any(gold[r["id"]]["group"] == group for r in ranked[:k])
+            if o.review.decision == "keep":
+                history.append(dict(id=o.id, vector=vector))
+        return {str(k): {"queries": totals, "hits": hits[k], "recall": hits[k] / totals if totals else None} for k in range(1, 7)}
+
+    curve, raw_curve = retrieval_curve(vectors), retrieval_curve(raw_vectors)
+    eligible = [k for k in range(1, 7) if curve[str(k)]["recall"] == 1]
+    neighbors = min(eligible) if eligible else max(range(1, 7), key=lambda k: curve[str(k)]["recall"])
+    same, different = [], []
+    for i, j in itertools.combinations(range(len(observations)), 2):
+        a, b = observations[i], observations[j]
+        if a.review.decision != "keep" or b.review.decision != "keep":
+            continue
+        shared = gold[a.id]["group"] is not None and gold[a.id]["group"] == gold[b.id]["group"]
+        (same if shared else different).append(float(np.dot(vectors[i], vectors[j])))
+    # Promotion/priority outcomes are judged on every temporal prefix. Gold
+    # recurring groups require independent dates; a two-date group stays collect.
+    pattern_trials, practice_trials = [], []
+    for threshold in [2, 3]:
+        missed = premature = 0
+        for group in {g["group"] for g in gold.values()} - {None}:
+            dates = {s["occurred_on"] for s in sessions for o in s["observations"] if gold[o["id"]]["group"] == group}
+            expected = len(dates) >= 2
+            actual = len(dates) >= threshold
+            missed += expected and not actual
+            premature += not expected and actual
+        pattern_trials.append(dict(dates=threshold, missed=missed, premature=premature))
+    for threshold in [2, 3, 4]:
+        wrong = 0
+        for cutoff in [s["occurred_on"] for s in sessions]:
+            for group in {g["group"] for g in gold.values()} - {None}:
+                dates = {s["occurred_on"] for s in sessions if s["occurred_on"] <= cutoff
+                         for o in s["observations"] if gold[o["id"]]["group"] == group}
+                # The annotated pedagogy intentionally treats two dates as emerging,
+                # not a practice diagnosis. This is a small conservative design study.
+                expected = len(dates) >= 3
+                wrong += expected != (len(dates) >= threshold)
+        practice_trials.append(dict(dates=threshold, incorrect_prefix_decisions=wrong))
+    pattern_dates = min(pattern_trials, key=lambda x: (x["premature"], x["missed"], x["dates"]))["dates"]
+    practice_dates = min(practice_trials, key=lambda x: (x["incorrect_prefix_decisions"], x["dates"]))["dates"]
+    policy = Policy(neighbors=neighbors, pattern_dates=pattern_dates, practice_dates=practice_dates)
+    write_json(Path(__file__).with_name("policy.json"), policy.model_dump())
+    # An embedding-only pair classifier can avoid all known false merges only by
+    # setting a cutoff above the largest calibration different-pattern score.
+    # Measure its missed same pairs; never install this cutoff in the runtime.
+    baseline_cutoff = float(np.nextafter(max(different), float("inf")))
+    report = {"embedding": embedder.metadata, "policy": policy.model_dump(), "pedagogical_retrieval": curve,
+              "raw_quote_retrieval": raw_curve, "same_pair_similarities": describe(same),
+              "different_pair_similarities": describe(different), "promotion_trials": pattern_trials,
+              "practice_trials": practice_trials, "similarity_cutoff": None,
+              "cutoff_reason": "Different-pattern similarities overlap same-pattern values; scores cannot decide membership. No cutoff removes candidates before semantic review.",
+              "limitations": "Same-author reviewed IR; priority targets are a conservative pedagogical rubric, not an empirical learning-effect estimate.",
+              "pair_distributions": {"same": same, "different": different},
+              "embedding_only_pairs": embedding_pair_ablation("calibration", embedder, baseline_cutoff)}
+    write_json(Path(output) / "calibration.json", report)
+    return report
+
+
+def freeze_metadata(embedder, policy, resolver=None):
+    paths = sorted(Path(__file__).parent.glob("*.py")) + [Path(__file__).with_name("policy.json"), Path("requirements.lock"), Path("reports/calibration.json")]
+    paths += sorted(Path("benchmark/data").glob("*/*.json"))
+    return {"files": {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},
+            "embedding": embedder.metadata, "policy": policy.model_dump(), "resolver": resolver,
+            "gates": {"false_merge_pairs": 0, "premature_patterns": 0, "missed_recurrences": 0,
+                      "retrieval_recall_min": .95, "pairwise_recall_min": .90},
+            "design": "Same-author synthetic reviewed IR + manual semantic adjudication; no independent blindness"}
+
+
+def score(records, state, gold, retrieval):
+    tp = false_merge = false_split = 0
+    details = {"false_merge": [], "false_split": []}
+    for a, b in itertools.combinations(records, 2):
+        ga, gb = gold[a["id"]]["group"], gold[b["id"]]["group"]
+        same_gold = ga is not None and ga == gb
+        same_actual = a["root_id"] == b["root_id"]
+        if same_gold and same_actual:
+            tp += 1
+        elif same_actual and not same_gold:
+            false_merge += 1
+            details["false_merge"].append([a["id"], b["id"]])
+        elif same_gold and not same_actual:
+            false_split += 1
+            details["false_split"].append([a["id"], b["id"]])
+    root_members = {}
+    for r in records:
+        root_members.setdefault(r["root_id"], []).append(r)
+    recurring = {g for g in {v["group"] for v in gold.values()} - {None}
+                 if len({r["occurred_on"] for r in records if gold[r["id"]]["group"] == g}) >= 2}
+    covered = set()
+    premature = []
+    for p in state["patterns"]:
+        members = root_members[p["root_id"]]
+        groups = {gold[r["id"]]["group"] for r in members}
+        if len(groups) == 1 and None not in groups and next(iter(groups)) in recurring:
+            covered |= groups
+        else:
+            premature.append(p["id"])
+    categories = Counter(r["actual"] for r in retrieval)
+    resolution_scored = [r for r in retrieval if r["expected"] is not None]
+    relevant = [r for r in retrieval if r["same_existed"]]
+    conditional = [r for r in resolution_scored if not r["same_existed"] or r["retrieval_hit"]]
+    precision = tp / (tp + false_merge) if tp + false_merge else None
+    recall = tp / (tp + false_split) if tp + false_split else None
+    return {"pairwise": {"true_same_pairs": tp, "false_merge_pairs": false_merge, "false_split_pairs": false_split,
+                         "precision": precision, "recall": recall}, "pair_errors": details,
+            "premature_patterns": premature, "missed_recurrences": sorted(recurring - covered),
+            "retrieval": {"queries_with_prior_same": len(relevant), "hits": sum(r["retrieval_hit"] for r in relevant),
+                          "recall": sum(r["retrieval_hit"] for r in relevant) / len(relevant) if relevant else None},
+            "resolution": {"decisions": dict(categories), "queries": len(resolution_scored),
+                           "correct": sum(r["actual"] == r["expected"] for r in resolution_scored),
+                           "conditional_queries": len(conditional),
+                           "conditional_correct": sum(r["actual"] == r["expected"] for r in conditional)},
+            "notes": "Pairwise precision penalizes mixing abilities; recall penalizes separating manifestations of one ability. Singleton observations have no true pair and cannot improve recall by abstention."}
+
+
+def run(split, embedder, llm, policy, output, freeze_file):
+    output = Path(output)
+    before = freeze_metadata(embedder, policy, llm.metadata() if llm is not None else None)
+    if split == "holdout" and json.loads(Path(freeze_file).read_bytes()) != before:
+        raise ValueError("Freeze current code, data, model and policy before opening holdout")
+    if (output / "result.json").exists():
+        raise ValueError("Evaluation exists; use a fresh output directory")
+    sessions, gold = dataset(split)
+    # Gold never goes into resolve(). It is used only below for scoring decisions.
+    retrieval = []
+    # Replay from a clean SQLite each time; original manual responses are cached.
+    # A resumed experiment must not retrieve its own future/previously committed
+    # sessions. Product ingestion uses the persistent Store, unchanged by this.
+    with Store(":memory:") as store:
+        for session in sessions:
+            observations = [Observation.model_validate(o) for o in session["observations"]]
+            vectors = embedder.embed([pedagogical_text(o) for o in observations])
+            previous, records, summaries = store.records(), [], {}
+            for o, vector in zip(observations, vectors):
+                history = previous + records
+                decision, root, retrieved = resolve(o, vector, history, store.patterns(), policy, llm)
+                group, related = gold[o.id]["group"], gold[o.id]["related"]
+                same_existed = group is not None and any(gold[r["id"]]["group"] == group for r in history)
+                hit = any(any(gold[e["id"]]["group"] == group for e in c["evidence"]) for c in retrieved) if same_existed else False
+                expected = "insufficient_evidence" if gold[o.id]["unresolved"] else "same_pattern" if same_existed else \
+                           "related_but_different" if related and any(gold[r["id"]]["group"] == related for r in history) else "new_pattern"
+                retrieval.append(dict(observation_id=o.id, expected=expected, actual=decision.decision,
+                                      same_existed=same_existed, retrieval_hit=hit,
+                                      candidates=[dict(candidate_id=c["candidate_id"], score=c["similarity"]) for c in retrieved]))
+                if decision.decision == "same_pattern":
+                    summaries[root] = (decision.pattern_label, decision.pattern_description, decision.conversation_contexts)
+                records.append(dict(id=o.id, observation=o, root_id=root, vector=vector, occurred_on=session["occurred_on"],
+                                    session_id=o.session_id, embedding_model=embedder.model, resolution=decision))
+            store.commit_session(session["raw"], session["occurred_on"], records, summaries,
+                                 {"model": llm.metadata(), "scope": "Reviewed synthetic IR → local embedding → actual semantic resolver",
+                                  "interactions": llm.trace}, policy)
+        state = export(output / "artifacts", store, policy)
+        records = store.records()
+        metrics = score(records, state, gold, retrieval)
+        with sqlite3.connect(output / "learner.db") as saved:
+            store.db.backup(saved)
+    if freeze_metadata(embedder, policy, llm.metadata()) != before:
+        raise ValueError("Implementation/data changed during the experiment")
+    report = {"split": split, "metadata": before, "model": llm.metadata(), "metrics": metrics, "queries": retrieval,
+              "sessions": len(sessions), "observations": len(records), "patterns": len(state["patterns"]),
+              "learner_decisions": [{k: p[k] for k in ("id", "label", "status", "dates", "recent_successes", "recent_difficulties")} for p in state["patterns"]],
+              "recommendation": "NOT_QUALIFIED_FOR_UNREVIEWED_USE", "learning_gain": "NOT_MEASURED"}
+    gates = before["gates"]
+    report["controlled_gates"] = {
+        "no_false_merge": metrics["pairwise"]["false_merge_pairs"] == gates["false_merge_pairs"],
+        "no_premature_pattern": len(metrics["premature_patterns"]) == gates["premature_patterns"],
+        "no_missed_recurrence": len(metrics["missed_recurrences"]) == gates["missed_recurrences"],
+        "retrieval": metrics["retrieval"]["recall"] is not None and metrics["retrieval"]["recall"] >= gates["retrieval_recall_min"],
+        "pairwise_recall": metrics["pairwise"]["recall"] is not None and metrics["pairwise"]["recall"] >= gates["pairwise_recall_min"]}
+    report["controlled_suite_passed"] = all(report["controlled_gates"].values())
+    if split == "holdout":
+        cutoff = json.loads(Path("reports/calibration.json").read_bytes())["embedding_only_pairs"]["cutoff_from_calibration"]
+        report["embedding_only_pairs"] = embedding_pair_ablation(split, embedder, cutoff)
+    write_json(output / "result.json", report)
+    return report
+
+
+def review_benchmark(llm, output):
+    path = Path("benchmark/data/review")
+    proposals = json.loads((path / "proposals.json").read_bytes())
+    gold = json.loads((path / "gold.json").read_bytes())
+    results, pending = [], []
+    for p in proposals:
+        o = p["observation"]
         try:
-            result = process(raw, gold["session_id"], adapter)
-        except PendingLLMResponse as failure:
-            status, error = "pending", str(failure)
-        except InvalidLLMResponse as failure:
-            status, error = "invalid", str(failure)
-        interactions = getattr(adapter, "interactions", [])[interaction_start:]
-        invalid = 0
-        for o in result.observations if result else []:
-            try:
-                actual = validate(raw, o.source_span, o.learner_utterance, o.corrected_form, o.teacher_comment)
-                invalid += actual != (o.source_start, o.source_end)
-            except ValueError:
-                invalid += 1
-        proposals = result.trace[0]["response"]["observations"] if result else []
-        before_verifier = []
-        for p in proposals:
-            try:
-                start, end = validate(raw, p["source_span"], p["learner_utterance"], p.get("corrected_form"), p.get("teacher_comment"))
-                quote = re.search(r"\s+".join(re.escape(t) for t in p["learner_utterance"].split()), raw[start:end])
-                p = {**p, "learner_start": start + quote.start()}
-                before_verifier.append(p)
-            except ValueError:
-                pass
-        record = {"session_id": gold["session_id"], "split": split, "status": status, "error": error,
-                        "predictions": [o.model_dump(mode="json") for o in result.observations] if result else [],
-                        "gold": gold["observations"], "blocks": gold["blocks"],
-                        "accepted_invalid_provenance": invalid,
-                        "rejected_provenance": sum(r.reason.startswith("provenance:") for r in result.rejected) if result else 0,
-                        "provenance_valid_proposals_before_verifier": before_verifier,
-                        "rejected": [r.model_dump(mode="json") for r in result.rejected] if result else [],
-                        "trace": result.trace if result else interactions, "interactions": interactions}
-        records.append(record)
-        if audit_root is not None:
-            archive_case(audit_root / gold["session_id"], raw, record, adapter, manifest["dataset_version"])
-    return records, evaluate(records)
-
-
-def archive_case(directory: Path, raw: str, record: dict, adapter: Adapter, dataset_version: str):
-    import shutil
-    directory.mkdir(parents=True, exist_ok=True)
-    (directory / "raw.md").write_text(raw, encoding="utf-8")
-    write_json(directory / "metadata.json", {"dataset_version": dataset_version, "split": record["split"],
-               "session_id": record["session_id"], "pipeline": pipeline_metadata(adapter)})
-    write_json(directory / "gold.json", record["gold"])
-    write_json(directory / "parsed.json", record["predictions"])
-    metrics = None if record["status"] == "pending" else score_session(record["predictions"], record["gold"])[0]
-    write_json(directory / "result.json", {"status": record["status"], "error": record["error"], "metrics": metrics,
-                                         "trace": record["trace"]})
-    for number, interaction in enumerate(record["interactions"], 1):
-        source = Path(interaction["case_directory"])
-        target = directory / "interactions" / f"{number:03d}-{interaction['stage'].lower()}"
-        target.mkdir(parents=True, exist_ok=True)
-        for filename in ("request.txt", "request.json", "response.txt", "capture.json", "parsed.json", "validation.json"):
-            if (source / filename).exists():
-                shutil.copyfile(source / filename, target / filename)
-        if interaction["stage"] == "Extraction":
-            for filename in ("request.txt", "response.txt"):
-                if (source / filename).exists():
-                    shutil.copyfile(source / filename, directory / filename)
-
-
-def ablation(records: list[dict]) -> dict:
-    before = [{**r, "predictions": r["provenance_valid_proposals_before_verifier"]} for r in records if r.get("status") != "pending"]
-    # Full evaluation includes support-score-independent metrics; accepted source
-    # invariants remain deterministic in both stages.
-    baseline = evaluate(before)
-    after = evaluate(records)
-    return {"provenance_only": {k: baseline[k] for k in ("precision", "recall", "false_positives", "negative_blocks_with_false_error")},
-            "with_verifier": {k: after[k] for k in ("precision", "recall", "false_positives", "negative_blocks_with_false_error")},
-            "interpretation": "Same-pipeline comparison on calibration data; agreement is an observable signal, not independent proof. A different verifier model is configurable."}
-
-
-def freeze(root: Path, adapter: Adapter, path: Path):
-    manifest, dataset = dataset_metadata(root)
-    # Verify manifest/content integrity without evaluating or reporting holdout examples.
-    for split in manifest["splits"]:
-        check_dataset(root, manifest, split)
-    record = {"frozen_at": datetime.now(timezone.utc).isoformat(), "pipeline": pipeline_metadata(adapter), "dataset": dataset,
-              "qualification_rules": {"minimum_grammar_precision": .95, "maximum_negative_error_rate": .02,
-                                      "maximum_accepted_hallucinated_provenance": 0,
-                                      "minimum_ambiguous_uncertain_or_absent_rate": .90,
-                                      "real_model_required": True, "maximum_schema_failed_cases": 0},
-              "note": "Pipeline and dataset frozen before first holdout evaluation; qualification outputs are archived. Never tune this version against holdout errors."}
-    if path.exists():
-        existing = json.loads(path.read_text())
-        if existing["pipeline"] != record["pipeline"] or existing["dataset"] != dataset:
-            raise ValueError("Existing freeze differs; create a new version with a NEW holdout")
-        return existing
-    write_json(path, record)
-    return record
-
-
-def percent(value: float | None) -> str:
-    return "n/a" if value is None else f"{value:.1%}"
-
-
-def report_markdown(report: dict) -> str:
-    metrics = report["metrics"]
-    lines = ["# Final benchmark qualification", "", f"Recommendation: **{report['recommendation']}**", "",
-             f"Run: {report['run_id']}; created: {report['created_at']}",
-              f"Provider: {report['pipeline']['provider']}; extractor: {report['pipeline']['model']}; verifier: {report['pipeline']['verifier_model']}",
-             f"Mode: {report['pipeline'].get('mode', report['pipeline']['provider'])}",
-             f"Pipeline: `{report['pipeline']['pipeline_id']}`; dataset: `{report['dataset']['version']}`", "",
-             "This report measures a frozen pipeline on synthetic holdout sessions. Offline rule results do not qualify an LLM or arbitrary real reports.", "",
-             "## Composition", ""]
-    for split, composition in report["composition"].items():
-        lines.append(f"- {split}: {composition['sessions']} sessions; {composition['narrative_blocks']} narrative blocks; {composition['gold_observations']} gold observations; {composition['negative_error_control_blocks']} negative error controls; {composition['adversarial_blocks']} adversarial blocks.")
-    lines += ["", "## Holdout results", "", "| Metric | Result |", "|---|---:|",
-              f"| Exact-match precision | {percent(metrics['precision'])} |",
-              f"| Recall | {percent(metrics['recall'])} |", f"| F1 | {percent(metrics['f1'])} |",
-              f"| False positive observations | {metrics['false_positives']} |",
-              f"| False negatives | {metrics['false_negatives']} |",
-              f"| Grammar-attempt precision | {percent(metrics['grammar_attempt_metrics']['precision'])} |",
-              f"| Accepted hallucinated provenance | {metrics['accepted_hallucinated_provenance']} |",
-              f"| Rejected invalid provenance proposals | {metrics['rejected_provenance']} |",
-              f"| Cases with invalid original model JSON/schema | {metrics['schema_validation_failed_cases']} |",
-              f"| Uncertain accepted observations | {metrics['uncertain_observations']} |",
-              f"| Abstention rate (uncertain / accepted) | {percent(metrics['abstention_rate'])} |",
-              f"| Negative control blocks with false grammar error | {metrics['negative_blocks_with_false_error']} / {metrics['negative_error_control_blocks']} |",
-              f"| Ambiguous blocks with uncertainty or no grammar fact | {percent(report['ambiguity_safe_rate'])} |", "",
-              "## By construction", "", "| Construction | TP | FP | FN | Precision | Recall | F1 |", "|---|---:|---:|---:|---:|---:|---:|"]
-    for family, m in metrics["by_construction"].items():
-        lines.append(f"| {family} | {m['tp']} | {m['false_positives']} | {m['false_negatives']} | {percent(m['precision'])} | {percent(m['recall'])} | {percent(m['f1'])} |")
-    lines += ["", "## By evidence type", "", "| Evidence | Precision | Recall | FP | FN |", "|---|---:|---:|---:|---:|"]
-    for evidence, m in metrics["by_evidence_type"].items():
-        lines.append(f"| {evidence} | {percent(m['precision'])} | {percent(m['recall'])} | {m['false_positives']} | {m['false_negatives']} |")
-    lines += ["", "## Ambiguous and adversarial categories", "", "| Category | Precision | Recall | FP | FN |", "|---|---:|---:|---:|---:|"]
-    for category, m in metrics["by_category"].items():
-        lines.append(f"| {category} | {percent(m['precision'])} | {percent(m['recall'])} | {m['false_positives']} | {m['false_negatives']} |")
-    lines += ["", "## Outcome confusion matrix", "", "Rows/columns use exact learner utterance + construction alignment; missed and extra are explicit.", ""]
-    lines += [f"- {k}: {n}" for k, n in metrics["outcome_confusion_matrix"].items()]
-    lines += ["", "## Support calibration", "", "Calibration is fitted only on calibration, never development or holdout. Scores are tiers, not individual probabilities.", "",
-              "| Raw score | Calibration N | Calibration correct | Calibration precision | Wilson 95% interval | Holdout N | Holdout actual precision |",
-              "|---|---:|---:|---:|---|---:|---:|"]
-    for score, bucket in report["calibration"]["buckets"].items():
-        held = report["reliability"]["buckets"][score]
-        interval = bucket["wilson_interval_95"]
-        display = "unmeasured" if interval is None else f"[{interval[0]:.3f}, {interval[1]:.3f}]"
-        lines.append(f"| {score} | {bucket['observations']} | {bucket['correct']} | {percent(bucket['empirical_precision'])} | {display} | {held['observations']} | {percent(held['actual_precision'])} |")
-    lines += ["", report["reliability"]["reason"], "", "### Verifier utility (calibration split)", "",
-              "```json", json.dumps(report["verifier_ablation"], indent=2), "```", "",
-              "## Matching and limitations", "", report["matching"], ""]
-    lines += ["- " + limitation for limitation in report["limitations"]]
-    lines += ["", "## Failures", "", f"Unmatched/missing observations: {len(metrics['failures'])}. The complete list is retained in benchmark-final.json. Below are examples; none were used to tune the frozen pipeline.", ""]
-    for failure in metrics["failures"][:10]:
-        obs = failure.get("prediction", failure.get("gold"))
-        lines += [f"- {failure['session_id']} / {failure['kind']}: `{obs['construction']}` / {obs['outcome']} / {obs['evidence_type']}: “{obs['learner_utterance']}”"]
-    lines += ["", "## Qualification", ""]
-    lines += ["- " + reason for reason in report["qualification_reasons"]]
-    lines += ["", "Manual ChatGPT is a real MVP runtime and can be qualified without API credentials. Record the selected model, preserve original responses, and use independent gold/new reserved cases. Calibration applies to this runtime and does not transfer automatically to an API model.", ""]
-    return "\n".join(lines)
-
-
-def qualify(root: Path, output: Path, adapter: Adapter, freeze_path: Path) -> dict:
-    if not freeze_path.exists():
-        raise ValueError("Freeze the pipeline before qualification")
-    frozen = json.loads(freeze_path.read_text())
-    manifest, dataset = dataset_metadata(root)
-    pipeline = pipeline_metadata(adapter)
-    if pipeline != frozen["pipeline"] or dataset != frozen["dataset"]:
-        raise ValueError("Pipeline/dataset differs from frozen qualification version")
-    run_id = "EVAL-" + uuid.uuid4().hex[:16]
-    run_dir = output / "runs" / run_id
-    run_dir.mkdir(parents=True)
-    write_json(run_dir / "freeze.json", frozen)
-    # Preserve completed calibration even if real-model holdout later fails.
-    calibration_records, calibration_metrics = run_split(root, "calibration", adapter, manifest, run_dir / "cases" / "calibration")
-    if calibration_metrics["case_counts"]["pending"]:
-        progress = {"status": "pending", "run_id": run_id, "phase": "calibration", "metrics": calibration_metrics,
-                    "message": "Original responses pending; no calibration or qualification published"}
-        write_json(run_dir / "progress.json", progress)
-        return progress
-    calibration = calibrate(calibration_records, pipeline, dataset)
-    write_json(run_dir / "calibration.json", calibration)
-    write_json(run_dir / "calibration-predictions.json", calibration_records)
-    validate_calibration(calibration, pipeline, dataset)
-    holdout_records, metrics = run_split(root, "holdout_test", adapter, manifest, run_dir / "cases" / "holdout_test")
-    if metrics["case_counts"]["pending"]:
-        progress = {"status": "pending", "run_id": run_id, "phase": "holdout_test", "metrics": metrics,
-                    "message": "Holdout responses pending; qualification not published"}
-        write_json(run_dir / "progress.json", progress)
-        return progress
-    write_json(run_dir / "holdout-predictions.json", holdout_records)
-    ambiguous = [(r, b) for r in holdout_records for b in r["blocks"] if b["category"] == "ambiguous"]
-    safe = sum(not any(p["outcome"] != "uncertain" and b["source_start"] <= p["learner_start"] < b["source_end"] for p in r["predictions"]) for r, b in ambiguous)
-    ambiguity_rate = safe / len(ambiguous) if ambiguous else None
-    thresholds = frozen["qualification_rules"]
-    reasons = []
-    if pipeline["provider"] == "offline-rules":
-        reasons.append("No actual LLM evaluation was executed: offline baseline quality is not evidence of real-model or real-report readiness.")
-    elif pipeline["provider"] == "text-input":
-        reasons.append("Chat-assisted text responses were evaluated, but the same assistant authored the synthetic experiment; independent blinded real-model validation remains unproven.")
-    elif pipeline["provider"] == "manual-chatgpt" and pipeline.get("evaluation_design") != "independent":
-        reasons.append("Manual ChatGPT is the intended runtime; independent evaluation design is unverified or shares authorship with gold. API access is not required.")
-    if pipeline["provider"] == "manual-chatgpt" and pipeline["model"] == "ChatGPT / unspecified":
-        reasons.append("Record the selected ChatGPT model label before qualification; the runtime is currently unspecified.")
-    if metrics["schema_validation_failed_cases"] or calibration_metrics["schema_validation_failed_cases"]:
-        reasons.append("Original model responses failed schema validation; failures are retained and scored, not repaired or omitted.")
-    precision = metrics["grammar_attempt_metrics"]["precision"]
-    if precision is None or precision < thresholds["minimum_grammar_precision"]:
-        reasons.append("Grammar-attempt exact-match precision is below the preregistered 95% threshold.")
-    if metrics["negative_error_false_positive_rate"] is None or metrics["negative_error_false_positive_rate"] > thresholds["maximum_negative_error_rate"]:
-        reasons.append("Negative error control rate exceeds the preregistered 2% threshold or is unmeasured.")
-    if metrics["accepted_hallucinated_provenance"]:
-        reasons.append("Accepted source hallucination detected.")
-    if ambiguity_rate is None or ambiguity_rate < thresholds["minimum_ambiguous_uncertain_or_absent_rate"]:
-        reasons.append("Ambiguous safety rate is below the preregistered 90% threshold or is unmeasured.")
-    report = {"run_id": run_id, "created_at": datetime.now(timezone.utc).isoformat(), "pipeline": pipeline,
-              "dataset": dataset, "composition": {s: {k: v for k, v in c.items() if k != "sha256"} for s, c in manifest["splits"].items()},
-              "metrics": metrics, "calibration_metrics": calibration_metrics, "calibration": calibration,
-              "reliability": reliability(holdout_records, calibration), "verifier_ablation": ablation(calibration_records),
-              "ambiguity_safe_rate": ambiguity_rate, "frozen_at": frozen["frozen_at"],
-              "recommendation": "NOT_READY_FOR_PERSONAL_PILOT" if reasons else "READY_FOR_PERSONAL_PILOT",
-              "qualification_reasons": reasons or ["Frozen real-model pipeline passed the preregistered synthetic qualification gates; start only a supervised personal pilot."],
-              "matching": "One-to-one multiset match within each session on exact learner character offset, whitespace-normalized utterance and correction, canonical construction, outcome, production mode, evidence type, issue kind, and feature. Predictions first undergo independent source-offset validation. No fuzzy matching. Identical quotes in different contexts cannot match each other. Per-construction precision/recall, not an inflated true-negative accuracy. Teacher-correction semantics must match too.",
-              "limitations": ["Hand-authored gold and fixed narrative templates; lexical/time values and session documents are disjoint across splits, but grammatical templates overlap.",
-                              "The holdout is untouched by execution until pipeline freeze, but is not an independently blinded human study.",
-                              "Observations in a session are correlated. Bucket sample sizes are not independent students or real speaking sessions.",
-                              "Exact provenance prevents nonexistent utterances, but source presence alone cannot prove semantic or speaker attribution accuracy.",
-                              "Statistical learner accuracy is conditional on observed attempts; missing opportunities and selective teacher reporting cause sampling bias.",
-                              "No generalization to ASR/transcripts, arbitrary report phrasing, real student speech, or different pipeline versions has been demonstrated."]}
-    write_json(run_dir / "benchmark-final.json", report)
-    (run_dir / "benchmark-final.md").write_text(report_markdown(report), encoding="utf-8")
-    output.mkdir(parents=True, exist_ok=True)
-    for name in ("benchmark-final.json", "calibration.json", "benchmark-final.md"):
-        (output / name).write_bytes((run_dir / name).read_bytes())
+            review = llm.call("review", prompts.REVIEW, {"excerpt": o["source_excerpt"], "observation": o}, Review)
+        except PendingResponse:
+            pending.append(p["id"])
+            continue
+        results.append(dict(id=p["id"], expected=gold[p["id"]], actual=review.decision, reason=review.reason))
+    if pending:
+        raise PendingResponse(f"{len(pending)} review prompts exported in the exchange")
+    kept = [r for r in results if r["actual"] == "keep"]
+    expected_kept = [r for r in results if r["expected"] == "keep"]
+    report = {"model": llm.metadata(), "cases": len(results), "correct": sum(r["expected"] == r["actual"] for r in results),
+              "false_difficulties_before_review": sum(r["expected"] != "keep" for r in results),
+              "false_difficulties_after_review": sum(r["expected"] != "keep" for r in kept),
+              "valid_difficulties_lost": sum(r["actual"] != "keep" for r in expected_kept), "results": results,
+              "design": "Same-author adversarial proposed observations; no independent model or annotation review"}
+    write_json(Path(output) / "review-ablation.json", report)
     return report

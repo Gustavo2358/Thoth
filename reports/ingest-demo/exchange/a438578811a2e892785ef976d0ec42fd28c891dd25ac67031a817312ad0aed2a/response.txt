@@ -1,0 +1,1 @@
+{"decision": "keep", "reason": "Learner attribution, spontaneous mode and clarification intent are explicit. With a doubt is an unconventional formulation for this intended question; suggested forms preserve its meaning, and the transfer interpretation remains a cautious hypothesis."}

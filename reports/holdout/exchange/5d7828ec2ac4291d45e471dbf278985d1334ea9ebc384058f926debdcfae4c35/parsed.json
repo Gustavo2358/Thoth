@@ -1,0 +1,11 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-bb673ca5ed1bd29a",
+  "reason": "The present-perfect ownership duration successfully expresses the continuing-state span represented by marriage and ownership evidence. Using for years instead of a since starting point changes how duration is specified, not the core past-to-present state-marking ability.",
+  "pattern_label": "Expressing states continuing from the past",
+  "pattern_description": "Difficulty examples use simple present for states explicitly continuing from earlier, while positive spontaneous examples use appropriate past-to-present duration forms. This supports the same continuing-state ability across starting-point and elapsed-duration expressions.",
+  "conversation_contexts": [
+    "Explain the history of an ongoing relationship or responsibility",
+    "Discuss how long current personal and professional situations have lasted"
+  ]
+}

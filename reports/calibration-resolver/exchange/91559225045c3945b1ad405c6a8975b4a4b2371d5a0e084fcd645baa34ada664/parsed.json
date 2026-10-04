@@ -1,0 +1,8 @@
+{
+  "decision": "related_but_different",
+  "candidate_id": "OBS-528e682bebe2faa9",
+  "reason": "Decision and meeting expressions both involve conventional verb-noun choices, but their collocational targets differ. The higher-scoring uncertainty candidate is not the relevant relationship. Keep decision evidence separate.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

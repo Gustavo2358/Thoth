@@ -1,0 +1,93 @@
+{
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / modelo desta conversa",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "embedding": {
+    "model": "spaCy/en_core_web_md",
+    "package": "3.8.0",
+    "weights_sha256": "1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5",
+    "dimensions": 300,
+    "pooling": "mean of nonzero token vectors; L2 normalized"
+  },
+  "interactions": [
+    {
+      "stage": "extract",
+      "request": "ff58356b441b622fc09b283a77a08fe75319b6be738e369c0dad007900fac070",
+      "response_hash": "24cdb7a8844ca04b40b5e8b7f47f9ba40cc8a1729ad7a9c3e81e647a407628b3",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "review",
+      "request": "a438578811a2e892785ef976d0ec42fd28c891dd25ac67031a817312ad0aed2a",
+      "response_hash": "df4547c6c680562fb861b27d0a286c4d8fecac3c040107fc44057334b5b0f6f4",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "review",
+      "request": "70785510a97dff28c90ced8b2f4ce21904c21799513a56a89cf7ac4a046eb1af",
+      "response_hash": "4df5ff14c0a97d932684efedf2fc537bce89bdab5c3acb284af5a159d6a3efa3",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "450878e6a41f4ef4ab1004630493c89e9dfaa597c1ff76fd9dcfa2219393bb4a",
+      "response_hash": "2187d7357e3d74c4b7d24da08a067f98765d745871f9dd8d0829d22cbc8328af",
+      "model": "Codex / modelo desta conversa"
+    }
+  ],
+  "rejected": [],
+  "grouping": [
+    {
+      "observation_id": "OBS-c81778573ccaca98",
+      "candidates": [],
+      "decision": {
+        "decision": "new_pattern",
+        "candidate_id": null,
+        "reason": "No earlier supported evidence to compare; retain an isolated observation.",
+        "pattern_label": null,
+        "pattern_description": null,
+        "conversation_contexts": []
+      }
+    },
+    {
+      "observation_id": "OBS-d11f3afe31ab3eda",
+      "candidates": [
+        {
+          "candidate_id": "OBS-c81778573ccaca98",
+          "root_id": "OBS-c81778573ccaca98",
+          "similarity": 0.752322,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-c81778573ccaca98",
+              "date": "2026-03-01",
+              "source_excerpt": "During an unscripted conversation about planning a weekend trip, the learner asked a friend: \"I'm with a doubt about the booking.\" They clarified that they wanted to ask whether breakfast was included, rather than express distrust of the hotel. No target expression had been supplied.",
+              "learner_quote": "I'm with a doubt about the booking.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Ask for clarification about something unclear",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Used an unusual with-a-doubt formulation for a clarification question. The intended question is understandable, but this construction is not a conventional conversational expression of uncertainty in this context.",
+              "suggested_forms": [
+                "I have a question about the booking.",
+                "I'm not sure whether breakfast is included."
+              ],
+              "hypothesis": "The formulation is consistent with Portuguese-like noun constructions; its cause is not directly observed."
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "new_pattern",
+        "candidate_id": null,
+        "reason": "Arranging meetings requires a conventional verb combination; the candidate concerns expressing personal uncertainty. A shared conversational setting does not make these the same production ability.",
+        "pattern_label": null,
+        "pattern_description": null,
+        "conversation_contexts": []
+      }
+    }
+  ]
+}

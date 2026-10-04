@@ -1,0 +1,801 @@
+{
+  "split": "holdout",
+  "metadata": {
+    "files": {
+      "/workspace/Thoth/src/thoth/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/workspace/Thoth/src/thoth/artifacts.py": "10f7aa06ccdd5cbc839a3397e0fdd5dc941102da273bcd485d3135abe635e08f",
+      "/workspace/Thoth/src/thoth/benchmark.py": "2fe60a3efa57e698df2aaee930e1aef50a4482116e80a51af488fe0fdd79f957",
+      "/workspace/Thoth/src/thoth/cli.py": "e5b263cce1f292daab0cb7ffb719ce07d35a737bb89a175e3861a8e8e1e8cce6",
+      "/workspace/Thoth/src/thoth/contracts.py": "0e7c2879c56b35f87934f72c5923668ee756bce3eb1c51f112efd1e54832d22c",
+      "/workspace/Thoth/src/thoth/embeddings.py": "7d4c7b489f3626245a4b60debe72c04b976abcebcfbc479ffe9115379f7f3f09",
+      "/workspace/Thoth/src/thoth/engine.py": "2b8e63d303ca025e6bd500995adc860ab6203338131cd536f1840f7f9955b079",
+      "/workspace/Thoth/src/thoth/llm.py": "a3b2091a656b37b24c14a788d29ca87989a1b86dfbf39a352c8e7eeb44b70089",
+      "/workspace/Thoth/src/thoth/pipeline.py": "23ac8c1feadf9a462eb7595aae6500fed038d18f8f6a8af6eb03b85a78fa09c6",
+      "/workspace/Thoth/src/thoth/prompts.py": "32387c204a8d3b2f5d0ed71e9b35b82ce44bbf594ee9b5b67f221bc9c9b85148",
+      "/workspace/Thoth/src/thoth/provenance.py": "17c2882b72d216cda441d7a664f3ca6d578fa2d5a6f0cff0ddfc677b379913bf",
+      "/workspace/Thoth/src/thoth/storage.py": "803f20a5aaf52e95fe7bca59a741f6db66959016e3eb6c0302eec0d8ec999d36",
+      "/workspace/Thoth/src/thoth/policy.json": "48dc810b2d83af8c82bc777eba73d93727a79ea42422b1be204ffda2ba52b5f2",
+      "requirements.lock": "7495d65b8ab3a53a17c1431065170f39efb55b1c19969469ed72e4003d610051",
+      "reports/calibration.json": "bda20cbc6ef4347f90d4f2f068263dd3bdf0b11f549793d32ddeda6fa63a5c31",
+      "benchmark/data/calibration/gold.json": "5713b9f49ad81ea5bf9e18ef20afb9f2c3033bcf8fdfe1b488cacec3e6bda674",
+      "benchmark/data/calibration/sessions.json": "c0e0201cfa0143f2d37c4f1f247d1b7ad7915af0ace7b999874351eb8be2fedb",
+      "benchmark/data/development/gold.json": "fca8dddbbfc6f706f9968bbfcca78d54ac6593f390b2e26b77b1776aaf884c91",
+      "benchmark/data/development/sessions.json": "e5c20434e322e655b6aed03745d2f6090ab09188cfabdf91379bc087d514e242",
+      "benchmark/data/holdout/gold.json": "3b789c15d856dcfc9a472717389fd29dabc433b03aa7e42f76cd90fa42506d29",
+      "benchmark/data/holdout/sessions.json": "76ea4ddf6d9b7737905e496dc5b2a265a24e47aebb4f9a75a649934175eed4c3",
+      "benchmark/data/review/gold.json": "dabeff088b2e254ca8e6aff62cacf81225036f938f796f0b60a1538f2cbd7887",
+      "benchmark/data/review/proposals.json": "745c93c6dedc53a27e30c4d7a3bcd7ff048c6b878213a573782349d905d78b87"
+    },
+    "embedding": {
+      "model": "spaCy/en_core_web_md",
+      "package": "3.8.0",
+      "weights_sha256": "1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5",
+      "dimensions": 300,
+      "pooling": "mean of nonzero token vectors; L2 normalized"
+    },
+    "policy": {
+      "neighbors": 3,
+      "pattern_dates": 2,
+      "practice_dates": 3
+    },
+    "resolver": {
+      "provider": "manual-chatgpt",
+      "model": "Codex / modelo desta conversa",
+      "identity": "operator declaration, not automatically verified"
+    },
+    "gates": {
+      "false_merge_pairs": 0,
+      "premature_patterns": 0,
+      "missed_recurrences": 0,
+      "retrieval_recall_min": 0.95,
+      "pairwise_recall_min": 0.9
+    },
+    "design": "Same-author synthetic reviewed IR + manual semantic adjudication; no independent blindness"
+  },
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / modelo desta conversa",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "metrics": {
+    "pairwise": {
+      "true_same_pairs": 28,
+      "false_merge_pairs": 0,
+      "false_split_pairs": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "pair_errors": {
+      "false_merge": [],
+      "false_split": []
+    },
+    "premature_patterns": [],
+    "missed_recurrences": [],
+    "retrieval": {
+      "queries_with_prior_same": 17,
+      "hits": 17,
+      "recall": 1.0
+    },
+    "resolution": {
+      "decisions": {
+        "new_pattern": 12,
+        "same_pattern": 17,
+        "insufficient_evidence": 1,
+        "related_but_different": 1
+      },
+      "queries": 31,
+      "correct": 29,
+      "conditional_queries": 31,
+      "conditional_correct": 29
+    },
+    "notes": "Pairwise precision penalizes mixing abilities; recall penalizes separating manifestations of one ability. Singleton observations have no true pair and cannot improve recall by abstention."
+  },
+  "queries": [
+    {
+      "observation_id": "OBS-978494d19600caa0",
+      "expected": "new_pattern",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": []
+    },
+    {
+      "observation_id": "OBS-0878ab95308f72f8",
+      "expected": "new_pattern",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.816425
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-63c6ed514d749c55",
+      "expected": "new_pattern",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.905289
+        },
+        {
+          "candidate_id": "OBS-0878ab95308f72f8",
+          "score": 0.795383
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-599fca286bdee34a",
+      "expected": "new_pattern",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.881155
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.870816
+        },
+        {
+          "candidate_id": "OBS-0878ab95308f72f8",
+          "score": 0.752521
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-b2ff8bdfd9de15aa",
+      "expected": "new_pattern",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.931933
+        },
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.924488
+        },
+        {
+          "candidate_id": "OBS-599fca286bdee34a",
+          "score": 0.854373
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-99a09f69e93ecb05",
+      "expected": "related_but_different",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.863596
+        },
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.85401
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.828916
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-b89921319b66e39a",
+      "expected": "new_pattern",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.86408
+        },
+        {
+          "candidate_id": "OBS-599fca286bdee34a",
+          "score": 0.806423
+        },
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.805199
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-d11cbbe7f8d5832f",
+      "expected": "new_pattern",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.897336
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.861399
+        },
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.843132
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-236999341b288c68",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.943291
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.898162
+        },
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.883836
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-9c0c6df6a11fe6bf",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-0878ab95308f72f8",
+          "score": 0.921279
+        },
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.868625
+        },
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.862758
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-8769d1e94276876e",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.956185
+        },
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.909541
+        },
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.880958
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-5e6f442f2be357da",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-599fca286bdee34a",
+          "score": 0.902601
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.901374
+        },
+        {
+          "candidate_id": "OBS-236999341b288c68",
+          "score": 0.884563
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-2f1f241b6c3f5100",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.932435
+        },
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.892515
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.882556
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-733cc0a424548ec7",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-99a09f69e93ecb05",
+          "score": 0.907915
+        },
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.820647
+        },
+        {
+          "candidate_id": "OBS-2f1f241b6c3f5100",
+          "score": 0.807321
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-084854271c029861",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-d11cbbe7f8d5832f",
+          "score": 0.963214
+        },
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.92102
+        },
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.890193
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-f13a57f93a813e69",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.92606
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.910199
+        },
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.887577
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-adcb29237f58c0ee",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-0878ab95308f72f8",
+          "score": 0.9442
+        },
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.833565
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.828722
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-bb673ca5ed1bd29a",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.97036
+        },
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.922882
+        },
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.909823
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-f2fcaf5d1cabec94",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-5e6f442f2be357da",
+          "score": 0.933484
+        },
+        {
+          "candidate_id": "OBS-236999341b288c68",
+          "score": 0.898116
+        },
+        {
+          "candidate_id": "OBS-bb673ca5ed1bd29a",
+          "score": 0.885197
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-fa04e5abe38a6009",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.956974
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.924581
+        },
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.902764
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-a945568b5f8f9de5",
+      "expected": "insufficient_evidence",
+      "actual": "insufficient_evidence",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-236999341b288c68",
+          "score": 0.906667
+        },
+        {
+          "candidate_id": "OBS-bb673ca5ed1bd29a",
+          "score": 0.863035
+        },
+        {
+          "candidate_id": "OBS-5e6f442f2be357da",
+          "score": 0.852575
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-1f83d184766ef340",
+      "expected": "new_pattern",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.896107
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.889531
+        },
+        {
+          "candidate_id": "OBS-5e6f442f2be357da",
+          "score": 0.883832
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-f7e56bcc32665a51",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-d11cbbe7f8d5832f",
+          "score": 0.953026
+        },
+        {
+          "candidate_id": "OBS-1f83d184766ef340",
+          "score": 0.897869
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.886714
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-3bbed089bf58d5f8",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-978494d19600caa0",
+          "score": 0.935951
+        },
+        {
+          "candidate_id": "OBS-084854271c029861",
+          "score": 0.934942
+        },
+        {
+          "candidate_id": "OBS-5e6f442f2be357da",
+          "score": 0.885968
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-617ca44d80be7fc1",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-bb673ca5ed1bd29a",
+          "score": 0.926334
+        },
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.910352
+        },
+        {
+          "candidate_id": "OBS-f13a57f93a813e69",
+          "score": 0.909158
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-fc629e8363628bd6",
+      "expected": "new_pattern",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.878987
+        },
+        {
+          "candidate_id": "OBS-2f1f241b6c3f5100",
+          "score": 0.864149
+        },
+        {
+          "candidate_id": "OBS-599fca286bdee34a",
+          "score": 0.85785
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-ca07af95727013f3",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-fc629e8363628bd6",
+          "score": 1.0
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.878987
+        },
+        {
+          "candidate_id": "OBS-2f1f241b6c3f5100",
+          "score": 0.864149
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-19668befcaa362d1",
+      "expected": "same_pattern",
+      "actual": "same_pattern",
+      "same_existed": true,
+      "retrieval_hit": true,
+      "candidates": [
+        {
+          "candidate_id": "OBS-fc629e8363628bd6",
+          "score": 1.0
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.878987
+        },
+        {
+          "candidate_id": "OBS-2f1f241b6c3f5100",
+          "score": 0.864149
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-48610ca5b3e53523",
+      "expected": "related_but_different",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.886053
+        },
+        {
+          "candidate_id": "OBS-1f83d184766ef340",
+          "score": 0.882181
+        },
+        {
+          "candidate_id": "OBS-fa04e5abe38a6009",
+          "score": 0.880473
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-3cee5403a9e82fab",
+      "expected": "related_but_different",
+      "actual": "related_but_different",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-f13a57f93a813e69",
+          "score": 0.872049
+        },
+        {
+          "candidate_id": "OBS-b2ff8bdfd9de15aa",
+          "score": 0.851795
+        },
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.839575
+        }
+      ]
+    },
+    {
+      "observation_id": "OBS-a74025a2e7054dbd",
+      "expected": "new_pattern",
+      "actual": "new_pattern",
+      "same_existed": false,
+      "retrieval_hit": false,
+      "candidates": [
+        {
+          "candidate_id": "OBS-63c6ed514d749c55",
+          "score": 0.908972
+        },
+        {
+          "candidate_id": "OBS-084854271c029861",
+          "score": 0.89629
+        },
+        {
+          "candidate_id": "OBS-5e6f442f2be357da",
+          "score": 0.892297
+        }
+      ]
+    }
+  ],
+  "sessions": 4,
+  "observations": 31,
+  "patterns": 7,
+  "learner_decisions": [
+    {
+      "id": "PAT-0878ab95308f",
+      "label": "Conventional wording for taking medication",
+      "status": "practice",
+      "dates": 3,
+      "recent_successes": 0,
+      "recent_difficulties": 3
+    },
+    {
+      "id": "PAT-599fca286bde",
+      "label": "Tone calibrated to discretionary peer requests",
+      "status": "practice",
+      "dates": 3,
+      "recent_successes": 0,
+      "recent_difficulties": 3
+    },
+    {
+      "id": "PAT-d11cbbe7f8d5",
+      "label": "Natural emphasis of high prices",
+      "status": "practice",
+      "dates": 3,
+      "recent_successes": 1,
+      "recent_difficulties": 2
+    },
+    {
+      "id": "PAT-99a09f69e93e",
+      "label": "Conventional verb combinations for mistakes",
+      "status": "collect",
+      "dates": 2,
+      "recent_successes": 0,
+      "recent_difficulties": 2
+    },
+    {
+      "id": "PAT-63c6ed514d74",
+      "label": "Expressing states continuing from the past",
+      "status": "recovery",
+      "dates": 4,
+      "recent_successes": 2,
+      "recent_difficulties": 1
+    },
+    {
+      "id": "PAT-978494d19600",
+      "label": "Natural expression of personal uncertainty",
+      "status": "recovery",
+      "dates": 4,
+      "recent_successes": 2,
+      "recent_difficulties": 1
+    },
+    {
+      "id": "PAT-b2ff8bdfd9de",
+      "label": "Spontaneous expression of past regret",
+      "status": "collect",
+      "dates": 3,
+      "recent_successes": 0,
+      "recent_difficulties": 0
+    }
+  ],
+  "recommendation": "NOT_QUALIFIED_FOR_UNREVIEWED_USE",
+  "learning_gain": "NOT_MEASURED",
+  "controlled_gates": {
+    "no_false_merge": true,
+    "no_premature_pattern": true,
+    "no_missed_recurrence": true,
+    "retrieval": true,
+    "pairwise_recall": true
+  },
+  "controlled_suite_passed": true,
+  "embedding_only_pairs": {
+    "cutoff_from_calibration": 0.9183867573738099,
+    "true_same_pairs": 19,
+    "false_merge_pairs": 7,
+    "false_split_pairs": 9,
+    "precision": 0.7307692307692307,
+    "recall": 0.6785714285714286,
+    "scope": "Independent pair classification research baseline, not transitive clustering or a runtime decision path"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-c81778573ccaca98",
+  "reason": "Both occurrences express personal uncertainty using unconventional doubt-based formulations. Booking clarification and choosing a button differ in topic, while the relevant conversational ability is shared. Meeting collocation is a separate ability.",
+  "pattern_label": "Natural expression of personal uncertainty",
+  "pattern_description": "The observed doubt-based formulations are understandable but unconventional for personal conversational uncertainty. They are consistent with Portuguese-like noun constructions, without establishing the learner's production process.",
+  "conversation_contexts": [
+    "Clarify an unclear instruction before making a choice",
+    "Discuss uncertainty about the details of a plan"
+  ]
+}

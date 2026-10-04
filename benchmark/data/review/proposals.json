@@ -1,0 +1,182 @@
+[
+  {
+    "id": "case-01",
+    "observation": {
+      "source_excerpt": "Review case 1. The report quotes: \"I'm with a doubt about that plan.\" The learner meant being unsure about a proposal in informal conversation.",
+      "learner_quote": "I'm with a doubt about that plan.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "The learner meant being unsure about a proposal in informal conversation.",
+      "learning_dimension": "Natural expression of personal uncertainty",
+      "observed_behavior": "Used an unusual noun-based uncertainty formulation",
+      "suggested_forms": [],
+      "hypothesis": "The wording is consistent with Portuguese influence; the mental process is unobserved."
+    }
+  },
+  {
+    "id": "case-02",
+    "observation": {
+      "source_excerpt": "Review case 2. The report quotes: \"We should make a meeting.\" The learner meant arranging a group discussion, not attending an existing meeting.",
+      "learner_quote": "We should make a meeting.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "The learner meant arranging a group discussion, not attending an existing meeting.",
+      "learning_dimension": "Conventional verbs for arranging meetings",
+      "observed_behavior": "Used make with meeting to mean arrange or hold",
+      "suggested_forms": [],
+      "hypothesis": null
+    }
+  },
+  {
+    "id": "case-03",
+    "observation": {
+      "source_excerpt": "Review case 3. The report quotes: \"I work here since 2020.\" The job began in 2020 and still continues today.",
+      "learner_quote": "I work here since 2020.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "The job began in 2020 and still continues today.",
+      "learning_dimension": "Expressing ongoing duration",
+      "observed_behavior": "Selected simple present for a situation continuing from a past beginning",
+      "suggested_forms": [],
+      "hypothesis": null
+    }
+  },
+  {
+    "id": "case-04",
+    "observation": {
+      "source_excerpt": "Review case 4. The report quotes: \"I have doubts about the safety of this plan.\" The learner was expressing skepticism about the plan's safety.",
+      "learner_quote": "I have doubts about the safety of this plan.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "The learner was expressing skepticism about the plan's safety.",
+      "learning_dimension": "Natural expression of uncertainty",
+      "observed_behavior": "Incorrectly used the noun doubts instead of I'm not sure",
+      "suggested_forms": [],
+      "hypothesis": null
+    }
+  },
+  {
+    "id": "case-05",
+    "observation": {
+      "source_excerpt": "Review case 5. The report quotes: \"I would like a coffee, please.\" The learner was politely ordering in a café.",
+      "learner_quote": "I would like a coffee, please.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "The learner was politely ordering in a café.",
+      "learning_dimension": "Natural informal requests",
+      "observed_behavior": "Used overly formal wording; should have said Can I get a coffee",
+      "suggested_forms": [],
+      "hypothesis": null
+    }
+  },
+  {
+    "id": "case-06",
+    "observation": {
+      "source_excerpt": "Review case 6. The report quotes: \"We met at the weekend.\" This conversation uses British English and describes when they met.",
+      "learner_quote": "We met at the weekend.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "This conversation uses British English and describes when they met.",
+      "learning_dimension": "Natural time reference",
+      "observed_behavior": "Used at the weekend instead of on the weekend; this is an English error",
+      "suggested_forms": [],
+      "hypothesis": null
+    }
+  },
+  {
+    "id": "case-07",
+    "observation": {
+      "source_excerpt": "Review case 7. The report quotes: \"i dont know\" The report uses automated transcription and gives no evidence of a spoken-form problem.",
+      "learner_quote": "i dont know",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "The report uses automated transcription and gives no evidence of a spoken-form problem.",
+      "learning_dimension": "Producing accurate spoken English",
+      "observed_behavior": "Omitted capitalization and apostrophe in speech",
+      "suggested_forms": [],
+      "hypothesis": null
+    }
+  },
+  {
+    "id": "case-08",
+    "observation": {
+      "source_excerpt": "Review case 8. The report quotes: \"I have a question about that.\" The learner was asking for clarification in an ordinary conversation.",
+      "learner_quote": "I have a question about that.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "The learner was asking for clarification in an ordinary conversation.",
+      "learning_dimension": "Natural clarification requests",
+      "observed_behavior": "Used a noun-based formulation instead of a shorter alternative",
+      "suggested_forms": [],
+      "hypothesis": "The learner directly translated from Portuguese."
+    }
+  },
+  {
+    "id": "case-09",
+    "observation": {
+      "source_excerpt": "Review case 9. The report quotes: \"I have a doubt about it.\" The report does not explain the intent or English variety; it could mean skepticism or a question.",
+      "learner_quote": "I have a doubt about it.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "The report does not explain the intent or English variety; it could mean skepticism or a question.",
+      "learning_dimension": "Conversational uncertainty phrasing",
+      "observed_behavior": "Used doubt as a noun and may have intended a question",
+      "suggested_forms": [],
+      "hypothesis": "Could be compatible with Portuguese influence, but intent is unclear."
+    }
+  },
+  {
+    "id": "case-10",
+    "observation": {
+      "source_excerpt": "Review case 10. The report quotes: \"I hereby request the loan of your pen.\" The learner was asking a close friend for a tiny nonurgent favor in casual conversation.",
+      "learner_quote": "I hereby request the loan of your pen.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "The learner was asking a close friend for a tiny nonurgent favor in casual conversation.",
+      "learning_dimension": "Register of everyday favor requests",
+      "observed_behavior": "Used ceremonial official wording in a relaxed friendship context",
+      "suggested_forms": [],
+      "hypothesis": null
+    }
+  },
+  {
+    "id": "case-11",
+    "observation": {
+      "source_excerpt": "Review case 11. The report quotes: \"He suggested me to go.\" The report does not identify whether this quote came from the learner or the teacher's deliberately incorrect example.",
+      "learner_quote": "He suggested me to go.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "The report does not identify whether this quote came from the learner or the teacher's deliberately incorrect example.",
+      "learning_dimension": "Natural reporting of suggestions",
+      "observed_behavior": "The learner used an unsuitable suggest complement",
+      "suggested_forms": [],
+      "hypothesis": null
+    }
+  },
+  {
+    "id": "case-12",
+    "observation": {
+      "source_excerpt": "Review case 12. The report quotes: \"It would have been better to call earlier.\" The learner produced this valid regret expression spontaneously after previously practicing another equivalent form.",
+      "learner_quote": "It would have been better to call earlier.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "The learner produced this valid regret expression spontaneously after previously practicing another equivalent form.",
+      "learning_dimension": "Spontaneous past-regret phrasing",
+      "observed_behavior": "Used a valid alternative rather than a previously practiced form",
+      "suggested_forms": [],
+      "hypothesis": "The learner knows the form but cannot retrieve it and deliberately avoided it."
+    }
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-d11cbbe7f8d5832f",
+  "reason": "Both use unconventional literal body-part wording to emphasize a high price. Hotel and ticket differ in topic, while the emphatic price-expression ability is shared. Similar possible L1 influence on uncertainty does not justify merging the uncertainty group.",
+  "pattern_label": "Natural emphasis of high prices",
+  "pattern_description": "The learner has used literal body-part formulations to emphasize that something is expensive. The repeated wording is consistent with Portuguese-like price expressions, while the production cause remains unobserved and conventional nonidiomatic alternatives are also acceptable.",
+  "conversation_contexts": [
+    "Compare travel costs and explain which options feel expensive",
+    "Discuss whether a purchase offers reasonable value"
+  ]
+}

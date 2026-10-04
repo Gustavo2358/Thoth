@@ -1,0 +1,12 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-7a9d11ddd29e2ffa",
+  "reason": "Both are valid spontaneous paraphrases expressing past regret during opportunities for a previously practiced compact form. They inform the same availability question, but neither non-use is a grammatical failure or proof of deliberate avoidance.",
+  "pattern_label": "Spontaneous past-regret phrasing",
+  "pattern_description": "Several opportunities use legitimate alternatives for past regret. This may motivate observing availability of compact retrospective expressions, but non-use does not establish avoidance or a retrieval deficit. Compare future spontaneous and guided production without treating paraphrases as errors.",
+  "conversation_contexts": [
+    "Reflect on a past decision and what could have gone differently",
+    "Discuss lessons learned from a missed opportunity",
+    "Compare preferable alternatives to an earlier action"
+  ]
+}

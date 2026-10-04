@@ -1,0 +1,1 @@
+{"decision": "new_pattern", "candidate_id": null, "reason": "Arranging meetings requires a conventional verb combination; the candidate concerns expressing personal uncertainty. A shared conversational setting does not make these the same production ability.", "pattern_label": null, "pattern_description": null, "conversation_contexts": []}

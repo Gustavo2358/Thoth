@@ -1,0 +1,11 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-3855c8c01a8b90c0",
+  "reason": "Both observations report a suggested action using suggest followed by a person and a to-infinitive. They inform the same complement-selection ability, but recurrence within this single session does not establish a longitudinal difficulty.",
+  "pattern_label": "Reporting suggestions naturally",
+  "pattern_description": "Observed suggest-plus-person-plus-infinitive formulations invite checking how suggested actions are reported. These events alone do not establish recurrence across independent sessions or a cognitive cause.",
+  "conversation_contexts": [
+    "Report advice someone offered during a discussion",
+    "Compare suggestions made for solving a problem"
+  ]
+}

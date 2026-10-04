@@ -1,0 +1,118 @@
+{
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / modelo desta conversa",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "scope": "Reviewed synthetic IR → local embedding → actual semantic resolver",
+  "interactions": [
+    {
+      "stage": "resolve",
+      "request": "71e2ee22ec335aed48017fe779416df261dac1ca6a7f0148e4688e66ce3dfc05",
+      "response_hash": "4e9c06cb71174d0de85ce7f35c384f9caa86c0c0b9e4446e00f4030fdf239d73",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "a5957681cadecfe1d18f282de1caabca107f79bbd3d7d456ab612e83d37e5588",
+      "response_hash": "c455e63849075d8cd318bfcfaf5d234a1c310b21e3deb4278096151d8e86ef42",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "ff672f03ab681d696ae9ff5ef2a2aa91b6cfcdddb1d5fc4f40bfe9dde9e37440",
+      "response_hash": "d5d6390b700e2cedd9d3a0603fbc895ba397b5893b7b081bead2071c7214b545",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "74d177ac5d19ed51505b3d322066b38a326b5fcf68304ed1d1e917c285950cd3",
+      "response_hash": "1f42e9f541c1569ee989115667e941541d3d67720e7ee73f05a75e9860e55cac",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "648125f598d96f851dc49ec259fabd64d32a4535c13c8c599219a4722800df2f",
+      "response_hash": "5ebf78b8688cb33eba7a46f18f7ffa9fdbe9b68d98dfde62855919361dcf5ca5",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "2da9ab743806c10c147de8b5a9e28f6f40f5ee054d2bded90f7477f956f6a10b",
+      "response_hash": "dc136e62228f24f4c670ce8c5efae1e2cf4e0f9fc3a518214b369bfbb6788a57",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "fe6dfb90c26aec82744417c1d700636449a6f392b4f2083aafc3a7027587c17a",
+      "response_hash": "07c546c5d614c923a156e250b308c4c759deb0575a1a0591e42d0fc1c2d1a776",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "99020dc4b5ad332f2badb65a7c1f7666e327c6fea0d89d754d977965e30d10f6",
+      "response_hash": "8035a508a59d0005a5f34def48e68ee7bed3d3bbd1264a6e796b5c9312433beb",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "caeb58d0606e22473a75df0c30d107009577b553ea798edb6cc764d59b507560",
+      "response_hash": "1f07e97d2b8b85455ac2f5081e1704f7b87e073797829c55a180d9717212ab99",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "fa5aa227cfb13856700855e17bbc92324442dc13f64e4fff12cdba9072b9f325",
+      "response_hash": "256eacd467cbf320307b05b740ad439e5b2adc2ac9e3cb26ac9f84dc551bc0b8",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "fc310fcd972cfef6efa1b384b94d3ecc485c034eb6dfb450456fe1ae56fd829e",
+      "response_hash": "3ae98d64ece469b91ec6c78045bd05a412823fabc73e584a4d60db378e385252",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "d02dc0e0e67267a7a39fb2fce765d8f69dcc575b4308c654646e4bc739dc715d",
+      "response_hash": "f87be7583275e6ef8fa4f88c1e4da96d1c05110d27ec8d4aef45aa106bd99561",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "7f16cedb115e6fea6f0725b1c533367e71ff744cf3f3b2e6401dd6c4cb845471",
+      "response_hash": "ece0b9d76e2f056e86e2888c33f7c37e56d5cb8e33b2d3473cd3e5f3ce32b371",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "e8f2cf64073c15cbb71ca9b6e550e8edaf0a9ce4310f30716513c9f5f61d6eee",
+      "response_hash": "4b301a6bc396c5cee5da854d75ea6ac2a068da793369d0c58c80b1c1c0e4983f",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "3a3ec7f3e496567f065f2698bc23625ab914afc774eb57df3b686bcd10f1e32b",
+      "response_hash": "e2d110851bfd5d7f022a13da4deb2ad37cf561ce6d92adb9f5fbe2b78366505a",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "529ef5b9266f6f6ba7a8c19c2f6fe73c3c12a60f29ca31fdc64a7de4491ddfd3",
+      "response_hash": "3f81355788f4c8fada97a16e154fbd795aaf422f9ccdd70298c0a1861e1e5e64",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "18ffff0df24fafd4016ce7ee7b6b97b5f5ac5259a1806b6f8880c66b72fbf664",
+      "response_hash": "c189bb122019a09593ecb0f51397bff15c41ebd6bf3ac761ec9ca770418a15b5",
+      "model": "Codex / modelo desta conversa"
+    },
+    {
+      "stage": "resolve",
+      "request": "b7d97a3b6fcdddf3da284919441092d9ee2eb01b69efce54c11418b50d94a996",
+      "response_hash": "726f44f7620f30938aa62e4e3467bc490eec86925b68755eb4ac66a2ff7f1342",
+      "model": "Codex / modelo desta conversa"
+    }
+  ]
+}

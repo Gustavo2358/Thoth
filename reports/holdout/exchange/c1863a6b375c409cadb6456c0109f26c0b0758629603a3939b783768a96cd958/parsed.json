@@ -1,0 +1,8 @@
+{
+  "decision": "new_pattern",
+  "candidate_id": null,
+  "reason": "The evidence concerns the verb-noun combination for admitting a mistake. The retrieved regret example concerns spontaneously choosing compact regret expressions, not the mistake collocation; temporal states and uncertainty are also different abilities. No retrieved group supports this collocational dimension.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

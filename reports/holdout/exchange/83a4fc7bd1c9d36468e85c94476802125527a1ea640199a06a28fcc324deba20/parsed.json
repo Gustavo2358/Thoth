@@ -1,0 +1,11 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-0878ab95308f72f8",
+  "reason": "Both observations explicitly concern ingesting prescribed medication, with make selected where take is conventional. Medicine and pills are compatible realizations of this specific medication-taking verb combination; other candidates concern different abilities.",
+  "pattern_label": "Conventional wording for taking medication",
+  "pattern_description": "The reports identify make with medicine or pills when the intended act is taking a prescribed dose, rather than producing medication. This is a recurring medication-specific verb selection pattern.",
+  "conversation_contexts": [
+    "Explain a daily medication routine",
+    "Discuss when someone took a prescribed dose"
+  ]
+}

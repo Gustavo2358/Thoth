@@ -1,0 +1,8 @@
+{
+  "decision": "new_pattern",
+  "candidate_id": null,
+  "reason": "This evidence concerns expressing a continuing situation from a past beginning. The candidate concerns conversational uncertainty, which has different form-selection constraints despite the high retrieval score.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

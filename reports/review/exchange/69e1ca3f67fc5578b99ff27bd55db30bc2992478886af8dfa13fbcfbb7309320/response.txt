@@ -1,0 +1,1 @@
+{"decision": "uncertain", "reason": "The quoted suggest construction is linguistically problematic, but attribution to the learner is unresolved. An intentionally incorrect teacher example must not become learner evidence."}

@@ -1,0 +1,12 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-ac5d26c52f0a05c2",
+  "reason": "The natural uncertainty expression is another spontaneous success in the ability represented by both unusual noun formulations and the earlier successful clause. Lexical collocation candidates have unrelated selection constraints.",
+  "pattern_label": "Natural expression of uncertainty",
+  "pattern_description": "Unusual noun-based uncertainty wording was compatible with Portuguese influence, without proving translation. Recent natural spontaneous expressions provide positive evidence of this same ability; continue testing new contexts.",
+  "conversation_contexts": [
+    "Discuss uncertain consequences of a proposal",
+    "Explain what is unresolved about a choice",
+    "Weigh options when information is incomplete"
+  ]
+}

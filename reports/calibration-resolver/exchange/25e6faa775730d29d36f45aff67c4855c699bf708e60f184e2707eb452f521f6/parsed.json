@@ -1,0 +1,8 @@
+{
+  "decision": "new_pattern",
+  "candidate_id": null,
+  "reason": "Expressing regret about a preferable past action differs from uncertainty, informal requests and ongoing duration. The paraphrase is legitimate opportunity evidence, not an error or established retrieval problem.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

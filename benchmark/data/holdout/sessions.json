@@ -1,0 +1,646 @@
+[
+  {
+    "raw": "# Synthetic speaking report — holdout — day 0\n\nEvent 1. In spontaneous speaking, the learner said: \"I am with doubt about that route.\" Context: Explain not being certain about a possible route. Reported behavior: Used an unusual noun-based uncertainty expression.\n\nEvent 2. In spontaneous speaking, the learner said: \"I made my medicine after breakfast.\" Context: Report ingesting prescribed medication, not manufacturing it. Reported behavior: Used make for taking a dose of medication.\n\nEvent 3. In spontaneous speaking, the learner said: \"We are married since 2018.\" Context: Describe a marriage that began earlier and remains in effect. Reported behavior: Selected simple present for a situation spanning past through now.\n\nEvent 4. In spontaneous speaking, the learner said: \"Give me your notes now.\" Context: Ask an unfamiliar colleague for a favor without imposing. Reported behavior: Used an abrupt command for a nonurgent discretionary favor.\n\nEvent 5. In spontaneous speaking, the learner said: \"That was a bad choice. I wish I had done something else.\" Context: Reflect on a past action that would have been better. Reported behavior: Used a valid paraphrase during an opportunity for a previously practiced compact regret expression.\n\nEvent 6. In spontaneous speaking, the learner said: \"I did a mistake in that calculation.\" Context: Acknowledge making an error. Reported behavior: Used do a mistake rather than a conventional mistake collocation.\n\nEvent 7. In spontaneous speaking, the learner said: \"I am agree with that.\" Context: State agreement with another person's view. Reported behavior: Added be before the lexical verb agree.\n\nEvent 8. In spontaneous speaking, the learner said: \"That ticket costs the eyes from the face.\" Context: Emphasize that a price is unusually high. Reported behavior: Used an unusual literal body-part formulation to convey high cost.\n\n",
+    "occurred_on": "2026-02-01",
+    "observations": [
+      {
+        "source_excerpt": "Event 1. In spontaneous speaking, the learner said: \"I am with doubt about that route.\" Context: Explain not being certain about a possible route. Reported behavior: Used an unusual noun-based uncertainty expression.",
+        "learner_quote": "I am with doubt about that route.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Explain not being certain about a possible route",
+        "learning_dimension": "Natural first-person expressions of uncertainty",
+        "observed_behavior": "Used an unusual noun-based uncertainty expression",
+        "suggested_forms": [],
+        "hypothesis": "The phrasing is consistent with Portuguese-like noun constructions.",
+        "id": "OBS-978494d19600caa0",
+        "session_id": "SES-62959b5c1e3ce8ba",
+        "source_start": 47,
+        "source_end": 263,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 2. In spontaneous speaking, the learner said: \"I made my medicine after breakfast.\" Context: Report ingesting prescribed medication, not manufacturing it. Reported behavior: Used make for taking a dose of medication.",
+        "learner_quote": "I made my medicine after breakfast.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Report ingesting prescribed medication, not manufacturing it",
+        "learning_dimension": "Conventional verb-noun wording for taking medication",
+        "observed_behavior": "Used make for taking a dose of medication",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-0878ab95308f72f8",
+        "session_id": "SES-62959b5c1e3ce8ba",
+        "source_start": 265,
+        "source_end": 487,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 3. In spontaneous speaking, the learner said: \"We are married since 2018.\" Context: Describe a marriage that began earlier and remains in effect. Reported behavior: Selected simple present for a situation spanning past through now.",
+        "learner_quote": "We are married since 2018.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Describe a marriage that began earlier and remains in effect",
+        "learning_dimension": "Expressing a continuing state with its past starting point",
+        "observed_behavior": "Selected simple present for a situation spanning past through now",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-63c6ed514d749c55",
+        "session_id": "SES-62959b5c1e3ce8ba",
+        "source_start": 489,
+        "source_end": 726,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 4. In spontaneous speaking, the learner said: \"Give me your notes now.\" Context: Ask an unfamiliar colleague for a favor without imposing. Reported behavior: Used an abrupt command for a nonurgent discretionary favor.",
+        "learner_quote": "Give me your notes now.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Ask an unfamiliar colleague for a favor without imposing",
+        "learning_dimension": "Politeness calibrated to requests between unfamiliar peers",
+        "observed_behavior": "Used an abrupt command for a nonurgent discretionary favor",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-599fca286bdee34a",
+        "session_id": "SES-62959b5c1e3ce8ba",
+        "source_start": 728,
+        "source_end": 951,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 5. In spontaneous speaking, the learner said: \"That was a bad choice. I wish I had done something else.\" Context: Reflect on a past action that would have been better. Reported behavior: Used a valid paraphrase during an opportunity for a previously practiced compact regret expression.",
+        "learner_quote": "That was a bad choice. I wish I had done something else.",
+        "production_mode": "spontaneous",
+        "performance": "uncertain",
+        "evidence_type": "opportunity",
+        "communicative_intent": "Reflect on a past action that would have been better",
+        "learning_dimension": "Spontaneous availability of compact expressions of past regret",
+        "observed_behavior": "Used a valid paraphrase during an opportunity for a previously practiced compact regret expression",
+        "suggested_forms": [],
+        "hypothesis": "Repeated non-use could be compatible with limited spontaneous availability; its cause is unobserved.",
+        "id": "OBS-b2ff8bdfd9de15aa",
+        "session_id": "SES-62959b5c1e3ce8ba",
+        "source_start": 953,
+        "source_end": 1245,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 6. In spontaneous speaking, the learner said: \"I did a mistake in that calculation.\" Context: Acknowledge making an error. Reported behavior: Used do a mistake rather than a conventional mistake collocation.",
+        "learner_quote": "I did a mistake in that calculation.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Acknowledge making an error",
+        "learning_dimension": "Conventional verb combinations when admitting mistakes",
+        "observed_behavior": "Used do a mistake rather than a conventional mistake collocation",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-99a09f69e93ecb05",
+        "session_id": "SES-62959b5c1e3ce8ba",
+        "source_start": 1247,
+        "source_end": 1460,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 7. In spontaneous speaking, the learner said: \"I am agree with that.\" Context: State agreement with another person's view. Reported behavior: Added be before the lexical verb agree.",
+        "learner_quote": "I am agree with that.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "State agreement with another person's view",
+        "learning_dimension": "Expressing agreement with an interlocutor",
+        "observed_behavior": "Added be before the lexical verb agree",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-b89921319b66e39a",
+        "session_id": "SES-62959b5c1e3ce8ba",
+        "source_start": 1462,
+        "source_end": 1649,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 8. In spontaneous speaking, the learner said: \"That ticket costs the eyes from the face.\" Context: Emphasize that a price is unusually high. Reported behavior: Used an unusual literal body-part formulation to convey high cost.",
+        "learner_quote": "That ticket costs the eyes from the face.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Emphasize that a price is unusually high",
+        "learning_dimension": "Natural emphatic expressions of a very high price",
+        "observed_behavior": "Used an unusual literal body-part formulation to convey high cost",
+        "suggested_forms": [],
+        "hypothesis": "Literal body-part wording could be consistent with Portuguese influence; the cause is unobserved.",
+        "id": "OBS-d11cbbe7f8d5832f",
+        "session_id": "SES-62959b5c1e3ce8ba",
+        "source_start": 1651,
+        "source_end": 1883,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      }
+    ]
+  },
+  {
+    "raw": "# Synthetic speaking report — holdout — day 7\n\nEvent 1. In spontaneous speaking, the learner said: \"I remained with a doubt about that route.\" Context: Describe continuing uncertainty about a proposed route. Reported behavior: Used with a doubt to describe remaining unsure.\n\nEvent 2. In spontaneous speaking, the learner said: \"She made her pills before lunch.\" Context: Explain that someone swallowed a dose of prescribed pills, not manufactured them. Reported behavior: Used make with pills for ingesting medication.\n\nEvent 3. In spontaneous speaking, the learner said: \"She owns this shop since 2016.\" Context: Explain an ownership situation that began earlier and still holds. Reported behavior: Used simple present with since and a past starting year.\n\nEvent 4. In spontaneous speaking, the learner said: \"You must send me the slides immediately.\" Context: Request help from an unfamiliar peer who has no obligation to comply. Reported behavior: Used demanding wording that imposes an obligation not present in context.\n\nEvent 5. In spontaneous speaking, the learner said: \"It would have been better to call earlier.\" Context: Express regret about a past action. Reported behavior: Produced a legitimate alternative instead of a previously practiced compact regret form.\n\nEvent 6. In spontaneous speaking, the learner said: \"She did another mistake in the form.\" Context: Report somebody making an error. Reported behavior: Used do with mistake for committing an error.\n\nEvent 7. In spontaneous speaking, the learner said: \"The hotel was the eyes of the face.\" Context: Emphasize that a price is unusually high. Reported behavior: Repeated a literal body-part price expression rather than a conventional English formulation.\n\n",
+    "occurred_on": "2026-02-08",
+    "observations": [
+      {
+        "source_excerpt": "Event 1. In spontaneous speaking, the learner said: \"I remained with a doubt about that route.\" Context: Describe continuing uncertainty about a proposed route. Reported behavior: Used with a doubt to describe remaining unsure.",
+        "learner_quote": "I remained with a doubt about that route.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Describe continuing uncertainty about a proposed route",
+        "learning_dimension": "Conversationally natural wording for remaining unsure",
+        "observed_behavior": "Used with a doubt to describe remaining unsure",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-236999341b288c68",
+        "session_id": "SES-7e33347c366d87ba",
+        "source_start": 47,
+        "source_end": 274,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 2. In spontaneous speaking, the learner said: \"She made her pills before lunch.\" Context: Explain that someone swallowed a dose of prescribed pills, not manufactured them. Reported behavior: Used make with pills for ingesting medication.",
+        "learner_quote": "She made her pills before lunch.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Explain that someone swallowed a dose of prescribed pills, not manufactured them",
+        "learning_dimension": "Idiomatic verb choices when medication is taken",
+        "observed_behavior": "Used make with pills for ingesting medication",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-9c0c6df6a11fe6bf",
+        "session_id": "SES-7e33347c366d87ba",
+        "source_start": 276,
+        "source_end": 519,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 3. In spontaneous speaking, the learner said: \"She owns this shop since 2016.\" Context: Explain an ownership situation that began earlier and still holds. Reported behavior: Used simple present with since and a past starting year.",
+        "learner_quote": "She owns this shop since 2016.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Explain an ownership situation that began earlier and still holds",
+        "learning_dimension": "Connecting a current state to an earlier beginning",
+        "observed_behavior": "Used simple present with since and a past starting year",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-8769d1e94276876e",
+        "session_id": "SES-7e33347c366d87ba",
+        "source_start": 521,
+        "source_end": 757,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 4. In spontaneous speaking, the learner said: \"You must send me the slides immediately.\" Context: Request help from an unfamiliar peer who has no obligation to comply. Reported behavior: Used demanding wording that imposes an obligation not present in context.",
+        "learner_quote": "You must send me the slides immediately.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Request help from an unfamiliar peer who has no obligation to comply",
+        "learning_dimension": "Interpersonal tone in nonurgent favor requests",
+        "observed_behavior": "Used demanding wording that imposes an obligation not present in context",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-5e6f442f2be357da",
+        "session_id": "SES-7e33347c366d87ba",
+        "source_start": 759,
+        "source_end": 1025,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 5. In spontaneous speaking, the learner said: \"It would have been better to call earlier.\" Context: Express regret about a past action. Reported behavior: Produced a legitimate alternative instead of a previously practiced compact regret form.",
+        "learner_quote": "It would have been better to call earlier.",
+        "production_mode": "spontaneous",
+        "performance": "uncertain",
+        "evidence_type": "opportunity",
+        "communicative_intent": "Express regret about a past action",
+        "learning_dimension": "Availability of concise past-regret phrasing during unprompted speech",
+        "observed_behavior": "Produced a legitimate alternative instead of a previously practiced compact regret form",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-2f1f241b6c3f5100",
+        "session_id": "SES-7e33347c366d87ba",
+        "source_start": 1027,
+        "source_end": 1276,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 6. In spontaneous speaking, the learner said: \"She did another mistake in the form.\" Context: Report somebody making an error. Reported behavior: Used do with mistake for committing an error.",
+        "learner_quote": "She did another mistake in the form.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Report somebody making an error",
+        "learning_dimension": "Idiomatic verb-noun combinations for making errors",
+        "observed_behavior": "Used do with mistake for committing an error",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-733cc0a424548ec7",
+        "session_id": "SES-7e33347c366d87ba",
+        "source_start": 1278,
+        "source_end": 1475,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 7. In spontaneous speaking, the learner said: \"The hotel was the eyes of the face.\" Context: Emphasize that a price is unusually high. Reported behavior: Repeated a literal body-part price expression rather than a conventional English formulation.",
+        "learner_quote": "The hotel was the eyes of the face.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Emphasize that a price is unusually high",
+        "learning_dimension": "Idiomatic conversational wording for something very expensive",
+        "observed_behavior": "Repeated a literal body-part price expression rather than a conventional English formulation",
+        "suggested_forms": [],
+        "hypothesis": "Literal body-part wording could be consistent with Portuguese influence; the cause is unobserved.",
+        "id": "OBS-084854271c029861",
+        "session_id": "SES-7e33347c366d87ba",
+        "source_start": 1477,
+        "source_end": 1730,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      }
+    ]
+  },
+  {
+    "raw": "# Synthetic speaking report — holdout — day 14\n\nEvent 1. In spontaneous speaking, the learner said: \"I'm unsure which route is best.\" Context: State that the best route is not clear. Reported behavior: Used a natural uncertainty clause spontaneously.\n\nEvent 2. In spontaneous speaking, the learner said: \"I'll make my tablets after dinner.\" Context: Say when a dose of medication will be taken. Reported behavior: Used make with tablets to mean taking medication.\n\nEvent 3. In spontaneous speaking, the learner said: \"We've been married since 2018.\" Context: State how long a continuing marriage has lasted. Reported behavior: Used an appropriate spontaneous past-to-present form.\n\nEvent 4. In spontaneous speaking, the learner said: \"I demand that you explain this to me.\" Context: Ask an unfamiliar colleague for optional assistance. Reported behavior: Used a demand in a nonurgent voluntary-help context.\n\nEvent 5. In controlled speaking, the learner said: \"I should have called earlier.\" Context: Express that a different past action would have been preferable. Reported behavior: Produced a grammatical compact regret expression in a teacher-directed exercise.\n\nEvent 6. In spontaneous speaking, the learner said: \"I have doubts about this.\" Context: Meaning unclear: skepticism, uncertainty or a request for clarification. Reported behavior: The report lacks enough context to identify the production ability.\n\nEvent 7. In spontaneous speaking, the learner said: \"We met at the weekend.\" Context: Report when an event occurred in a British English conversation. Reported behavior: Used a legitimate regional expression; no correction is pedagogically required.\n\nEvent 8. In spontaneous speaking, the learner said: \"The hotel was extremely expensive.\" Context: Emphasize that a price is unusually high. Reported behavior: Used a natural emphatic high-price description without needing a particular idiom.\n\n",
+    "occurred_on": "2026-02-15",
+    "observations": [
+      {
+        "source_excerpt": "Event 1. In spontaneous speaking, the learner said: \"I'm unsure which route is best.\" Context: State that the best route is not clear. Reported behavior: Used a natural uncertainty clause spontaneously.",
+        "learner_quote": "I'm unsure which route is best.",
+        "production_mode": "spontaneous",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "State that the best route is not clear",
+        "learning_dimension": "Expressing personal uncertainty idiomatically",
+        "observed_behavior": "Used a natural uncertainty clause spontaneously",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-f13a57f93a813e69",
+        "session_id": "SES-898ccf012fb30bfe",
+        "source_start": 48,
+        "source_end": 250,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 2. In spontaneous speaking, the learner said: \"I'll make my tablets after dinner.\" Context: Say when a dose of medication will be taken. Reported behavior: Used make with tablets to mean taking medication.",
+        "learner_quote": "I'll make my tablets after dinner.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Say when a dose of medication will be taken",
+        "learning_dimension": "Choosing conventional verbs for consuming prescribed medicine",
+        "observed_behavior": "Used make with tablets to mean taking medication",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-adcb29237f58c0ee",
+        "session_id": "SES-898ccf012fb30bfe",
+        "source_start": 252,
+        "source_end": 463,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 3. In spontaneous speaking, the learner said: \"We've been married since 2018.\" Context: State how long a continuing marriage has lasted. Reported behavior: Used an appropriate spontaneous past-to-present form.",
+        "learner_quote": "We've been married since 2018.",
+        "production_mode": "spontaneous",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "State how long a continuing marriage has lasted",
+        "learning_dimension": "Describing an ongoing state from its initial past point",
+        "observed_behavior": "Used an appropriate spontaneous past-to-present form",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-bb673ca5ed1bd29a",
+        "session_id": "SES-898ccf012fb30bfe",
+        "source_start": 465,
+        "source_end": 680,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 4. In spontaneous speaking, the learner said: \"I demand that you explain this to me.\" Context: Ask an unfamiliar colleague for optional assistance. Reported behavior: Used a demand in a nonurgent voluntary-help context.",
+        "learner_quote": "I demand that you explain this to me.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Ask an unfamiliar colleague for optional assistance",
+        "learning_dimension": "Appropriate request tone for voluntary help from a peer",
+        "observed_behavior": "Used a demand in a nonurgent voluntary-help context",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-f2fcaf5d1cabec94",
+        "session_id": "SES-898ccf012fb30bfe",
+        "source_start": 682,
+        "source_end": 907,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 5. In controlled speaking, the learner said: \"I should have called earlier.\" Context: Express that a different past action would have been preferable. Reported behavior: Produced a grammatical compact regret expression in a teacher-directed exercise.",
+        "learner_quote": "I should have called earlier.",
+        "production_mode": "controlled",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Express that a different past action would have been preferable",
+        "learning_dimension": "Compact expression of retrospective regret",
+        "observed_behavior": "Produced a grammatical compact regret expression in a teacher-directed exercise",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-fa04e5abe38a6009",
+        "session_id": "SES-898ccf012fb30bfe",
+        "source_start": 909,
+        "source_end": 1165,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 6. In spontaneous speaking, the learner said: \"I have doubts about this.\" Context: Meaning unclear: skepticism, uncertainty or a request for clarification. Reported behavior: The report lacks enough context to identify the production ability.",
+        "learner_quote": "I have doubts about this.",
+        "production_mode": "spontaneous",
+        "performance": "uncertain",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Meaning unclear: skepticism, uncertainty or a request for clarification",
+        "learning_dimension": "Unresolved interpretation of doubt wording",
+        "observed_behavior": "The report lacks enough context to identify the production ability",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-a945568b5f8f9de5",
+        "session_id": "SES-898ccf012fb30bfe",
+        "source_start": 1167,
+        "source_end": 1415,
+        "review": {
+          "decision": "uncertain",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 7. In spontaneous speaking, the learner said: \"We met at the weekend.\" Context: Report when an event occurred in a British English conversation. Reported behavior: Used a legitimate regional expression; no correction is pedagogically required.",
+        "learner_quote": "We met at the weekend.",
+        "production_mode": "spontaneous",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Report when an event occurred in a British English conversation",
+        "learning_dimension": "Time reference appropriate to the speaker's English variety",
+        "observed_behavior": "Used a legitimate regional expression; no correction is pedagogically required",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-1f83d184766ef340",
+        "session_id": "SES-898ccf012fb30bfe",
+        "source_start": 1417,
+        "source_end": 1666,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 8. In spontaneous speaking, the learner said: \"The hotel was extremely expensive.\" Context: Emphasize that a price is unusually high. Reported behavior: Used a natural emphatic high-price description without needing a particular idiom.",
+        "learner_quote": "The hotel was extremely expensive.",
+        "production_mode": "spontaneous",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Emphasize that a price is unusually high",
+        "learning_dimension": "Expressing high cost emphatically in conversational English",
+        "observed_behavior": "Used a natural emphatic high-price description without needing a particular idiom",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-f7e56bcc32665a51",
+        "session_id": "SES-898ccf012fb30bfe",
+        "source_start": 1668,
+        "source_end": 1909,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      }
+    ]
+  },
+  {
+    "raw": "# Synthetic speaking report — holdout — day 21\n\nEvent 1. In spontaneous speaking, the learner said: \"I'm not certain which route to choose.\" Context: Say that a choice remains unresolved. Reported behavior: Produced a conventional uncertainty statement.\n\nEvent 2. In spontaneous speaking, the learner said: \"She's owned that shop for years.\" Context: Explain duration of ownership that continues today. Reported behavior: Used an appropriate present-perfect duration expression.\n\nEvent 3. In spontaneous speaking, the learner said: \"He suggested me to wait.\" Context: Report somebody suggesting an action. Reported behavior: Used suggest with an unsuitable direct-object infinitive complement.\n\nEvent 4. In spontaneous speaking, the learner said: \"She suggested me to leave.\" Context: Report somebody suggesting an action. Reported behavior: Used suggest with an unsuitable direct-object infinitive complement.\n\nEvent 5. In spontaneous speaking, the learner said: \"They suggested me to stay.\" Context: Report somebody suggesting an action. Reported behavior: Used suggest with an unsuitable direct-object infinitive complement.\n\nEvent 6. In spontaneous speaking, the learner said: \"Take that chair to the conference room.\" Context: Ask someone to carry furniture to a different place. Reported behavior: Used take legitimately for physical transport.\n\nEvent 7. In spontaneous speaking, the learner said: \"I'm sorry, I mean I'm not sure yet.\" Context: Clarify one's uncertainty. Reported behavior: Self-repaired an unfinished expression without a teacher cue.\n\nEvent 8. In spontaneous speaking, the learner said: \"Since I work here, I know the procedures.\" Context: Give a reason for familiarity with procedures, not describe duration. Reported behavior: Used since legitimately to introduce a reason rather than a past starting point.\n\n",
+    "occurred_on": "2026-02-22",
+    "observations": [
+      {
+        "source_excerpt": "Event 1. In spontaneous speaking, the learner said: \"I'm not certain which route to choose.\" Context: Say that a choice remains unresolved. Reported behavior: Produced a conventional uncertainty statement.",
+        "learner_quote": "I'm not certain which route to choose.",
+        "production_mode": "spontaneous",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Say that a choice remains unresolved",
+        "learning_dimension": "Natural spoken statements of uncertainty about a choice",
+        "observed_behavior": "Produced a conventional uncertainty statement",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-3bbed089bf58d5f8",
+        "session_id": "SES-57fbb93ed94fc9ca",
+        "source_start": 48,
+        "source_end": 253,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 2. In spontaneous speaking, the learner said: \"She's owned that shop for years.\" Context: Explain duration of ownership that continues today. Reported behavior: Used an appropriate present-perfect duration expression.",
+        "learner_quote": "She's owned that shop for years.",
+        "production_mode": "spontaneous",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Explain duration of ownership that continues today",
+        "learning_dimension": "Natural duration expressions for states still true now",
+        "observed_behavior": "Used an appropriate present-perfect duration expression",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-617ca44d80be7fc1",
+        "session_id": "SES-57fbb93ed94fc9ca",
+        "source_start": 255,
+        "source_end": 478,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 3. In spontaneous speaking, the learner said: \"He suggested me to wait.\" Context: Report somebody suggesting an action. Reported behavior: Used suggest with an unsuitable direct-object infinitive complement.",
+        "learner_quote": "He suggested me to wait.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Report somebody suggesting an action",
+        "learning_dimension": "Expressing advice with the verb suggest",
+        "observed_behavior": "Used suggest with an unsuitable direct-object infinitive complement",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-fc629e8363628bd6",
+        "session_id": "SES-57fbb93ed94fc9ca",
+        "source_start": 480,
+        "source_end": 693,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 4. In spontaneous speaking, the learner said: \"She suggested me to leave.\" Context: Report somebody suggesting an action. Reported behavior: Used suggest with an unsuitable direct-object infinitive complement.",
+        "learner_quote": "She suggested me to leave.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Report somebody suggesting an action",
+        "learning_dimension": "Expressing advice with the verb suggest",
+        "observed_behavior": "Used suggest with an unsuitable direct-object infinitive complement",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-ca07af95727013f3",
+        "session_id": "SES-57fbb93ed94fc9ca",
+        "source_start": 695,
+        "source_end": 910,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 5. In spontaneous speaking, the learner said: \"They suggested me to stay.\" Context: Report somebody suggesting an action. Reported behavior: Used suggest with an unsuitable direct-object infinitive complement.",
+        "learner_quote": "They suggested me to stay.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Report somebody suggesting an action",
+        "learning_dimension": "Expressing advice with the verb suggest",
+        "observed_behavior": "Used suggest with an unsuitable direct-object infinitive complement",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-19668befcaa362d1",
+        "session_id": "SES-57fbb93ed94fc9ca",
+        "source_start": 912,
+        "source_end": 1127,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 6. In spontaneous speaking, the learner said: \"Take that chair to the conference room.\" Context: Ask someone to carry furniture to a different place. Reported behavior: Used take legitimately for physical transport.",
+        "learner_quote": "Take that chair to the conference room.",
+        "production_mode": "spontaneous",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Ask someone to carry furniture to a different place",
+        "learning_dimension": "Describing transport of a physical object",
+        "observed_behavior": "Used take legitimately for physical transport",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-48610ca5b3e53523",
+        "session_id": "SES-57fbb93ed94fc9ca",
+        "source_start": 1129,
+        "source_end": 1350,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 7. In spontaneous speaking, the learner said: \"I'm sorry, I mean I'm not sure yet.\" Context: Clarify one's uncertainty. Reported behavior: Self-repaired an unfinished expression without a teacher cue.",
+        "learner_quote": "I'm sorry, I mean I'm not sure yet.",
+        "production_mode": "spontaneous",
+        "performance": "uncertain",
+        "evidence_type": "self_correction",
+        "communicative_intent": "Clarify one's uncertainty",
+        "learning_dimension": "Unprompted repair while expressing uncertainty",
+        "observed_behavior": "Self-repaired an unfinished expression without a teacher cue",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-3cee5403a9e82fab",
+        "session_id": "SES-57fbb93ed94fc9ca",
+        "source_start": 1352,
+        "source_end": 1558,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      },
+      {
+        "source_excerpt": "Event 8. In spontaneous speaking, the learner said: \"Since I work here, I know the procedures.\" Context: Give a reason for familiarity with procedures, not describe duration. Reported behavior: Used since legitimately to introduce a reason rather than a past starting point.",
+        "learner_quote": "Since I work here, I know the procedures.",
+        "production_mode": "spontaneous",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Give a reason for familiarity with procedures, not describe duration",
+        "learning_dimension": "Explaining causal reasons with a subordinating connector",
+        "observed_behavior": "Used since legitimately to introduce a reason rather than a past starting point",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "id": "OBS-a74025a2e7054dbd",
+        "session_id": "SES-57fbb93ed94fc9ca",
+        "source_start": 1560,
+        "source_end": 1834,
+        "review": {
+          "decision": "keep",
+          "reason": "Author-defined reviewed IR for a controlled grouping experiment"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+{"decision": "new_pattern", "candidate_id": null, "reason": "Requesting a favor with an appropriate interpersonal register is distinct from expressing personal uncertainty. Here the reported mismatch is ceremonial wording with a close friend, not an uncertainty formulation.", "pattern_label": null, "pattern_description": null, "conversation_contexts": []}

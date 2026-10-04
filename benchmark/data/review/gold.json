@@ -1,0 +1,14 @@
+{
+  "case-01": "keep",
+  "case-02": "keep",
+  "case-03": "keep",
+  "case-04": "reject",
+  "case-05": "reject",
+  "case-06": "reject",
+  "case-07": "reject",
+  "case-08": "reject",
+  "case-09": "uncertain",
+  "case-10": "keep",
+  "case-11": "uncertain",
+  "case-12": "reject"
+}

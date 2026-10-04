@@ -1,0 +1,34 @@
+{
+  "observations": [
+    {
+      "source_excerpt": "In an unprompted conversation about an instruction that was unclear, the learner said: \"I stayed in doubt about which button to press.\" They explained that they were unsure which option to choose. No wording had been supplied.",
+      "learner_quote": "I stayed in doubt about which button to press.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Explain uncertainty about which option to choose",
+      "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+      "observed_behavior": "Used stayed in doubt for remaining unsure about a choice. The meaning is understandable, but stayed in doubt is not the conventional conversational formulation for this personal uncertainty.",
+      "suggested_forms": [
+        "I was still unsure which button to press.",
+        "I still wasn't sure which button to press."
+      ],
+      "hypothesis": "This formulation is compatible with Portuguese-like noun-based expression; the production process itself is unobserved."
+    },
+    {
+      "source_excerpt": "When spontaneously explaining how colleagues organized a project discussion, the learner said: \"They made a meeting yesterday.\" They meant the colleagues arranged a meeting. The report does not imply that the learner translated mentally from Portuguese.",
+      "learner_quote": "They made a meeting yesterday.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Report that colleagues arranged a discussion",
+      "learning_dimension": "Selecting conventional verb combinations when arranging meetings",
+      "observed_behavior": "Used made a meeting to express arranging a discussion rather than attending one. Arranged or scheduled would conventionally express this meaning.",
+      "suggested_forms": [
+        "They arranged a meeting yesterday.",
+        "They scheduled a meeting yesterday."
+      ],
+      "hypothesis": null
+    }
+  ]
+}

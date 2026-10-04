@@ -1,0 +1,12 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-50237a876258fbc1",
+  "reason": "The recurring make a meeting proposal serves the same arranging/holding purpose as both matching candidate members. Register of requests and uncertainty are separate abilities and should not contaminate this lexical pattern.",
+  "pattern_label": "Conventional meeting collocations",
+  "pattern_description": "Meeting proposals and descriptions repeatedly select make a meeting when organizing or holding a discussion is intended. Observe natural conventional meeting verbs in spontaneous new contexts.",
+  "conversation_contexts": [
+    "Organize a discussion with several people",
+    "Describe how a group arranged its last meeting",
+    "Negotiate why and when a team should meet"
+  ]
+}

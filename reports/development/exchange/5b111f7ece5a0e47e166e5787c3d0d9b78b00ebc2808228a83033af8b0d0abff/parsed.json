@@ -1,0 +1,12 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-dafaf78029148226",
+  "reason": "This natural spontaneous statement of uncertainty matches the communicative ability represented by all candidate members, including the earlier successful clause. It supplies additional positive evidence rather than a separate category.",
+  "pattern_label": "Natural expression of personal uncertainty",
+  "pattern_description": "Earlier noun-based uncertainty phrasing is compatible with Portuguese influence, not proof of translation. Recent natural spontaneous expressions provide evidence of improvement in the same conversational ability; continue testing unobserved situations.",
+  "conversation_contexts": [
+    "Discuss a proposal with uncertain consequences",
+    "Explain what remains unclear about a choice",
+    "Weigh options when information is incomplete"
+  ]
+}

@@ -1,0 +1,1 @@
+{"decision": "new_pattern", "candidate_id": null, "reason": "Using agree without an added be informs agreement expression and its lexical-verb selection. Uncertainty, register of favors and past regret do not supply the same or a specifically related target.", "pattern_label": null, "pattern_description": null, "conversation_contexts": []}

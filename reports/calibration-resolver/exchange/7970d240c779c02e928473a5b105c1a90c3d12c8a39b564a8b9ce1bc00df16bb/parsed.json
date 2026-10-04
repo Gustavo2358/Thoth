@@ -1,0 +1,12 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-5a05eb254137931e",
+  "reason": "Both events connect an unchanged present state to an earlier beginning but select simple present. Regret evaluates a different past action; request register is unrelated to this temporal production ability.",
+  "pattern_label": "Ongoing states and duration",
+  "pattern_description": "Present-simple selections appear for states that began earlier and continue now. Observe suitable past-to-present forms across living, work and other continuing situations without assuming a retrieval cause.",
+  "conversation_contexts": [
+    "Describe the duration of a current situation",
+    "Compare routines that began at different times",
+    "Discuss what has continued despite recent changes"
+  ]
+}

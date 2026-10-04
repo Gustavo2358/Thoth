@@ -1,0 +1,52 @@
+{
+  "files": {
+    "/workspace/Thoth/src/thoth/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/workspace/Thoth/src/thoth/artifacts.py": "10f7aa06ccdd5cbc839a3397e0fdd5dc941102da273bcd485d3135abe635e08f",
+    "/workspace/Thoth/src/thoth/benchmark.py": "2fe60a3efa57e698df2aaee930e1aef50a4482116e80a51af488fe0fdd79f957",
+    "/workspace/Thoth/src/thoth/cli.py": "e5b263cce1f292daab0cb7ffb719ce07d35a737bb89a175e3861a8e8e1e8cce6",
+    "/workspace/Thoth/src/thoth/contracts.py": "0e7c2879c56b35f87934f72c5923668ee756bce3eb1c51f112efd1e54832d22c",
+    "/workspace/Thoth/src/thoth/embeddings.py": "7d4c7b489f3626245a4b60debe72c04b976abcebcfbc479ffe9115379f7f3f09",
+    "/workspace/Thoth/src/thoth/engine.py": "2b8e63d303ca025e6bd500995adc860ab6203338131cd536f1840f7f9955b079",
+    "/workspace/Thoth/src/thoth/llm.py": "a3b2091a656b37b24c14a788d29ca87989a1b86dfbf39a352c8e7eeb44b70089",
+    "/workspace/Thoth/src/thoth/pipeline.py": "23ac8c1feadf9a462eb7595aae6500fed038d18f8f6a8af6eb03b85a78fa09c6",
+    "/workspace/Thoth/src/thoth/prompts.py": "32387c204a8d3b2f5d0ed71e9b35b82ce44bbf594ee9b5b67f221bc9c9b85148",
+    "/workspace/Thoth/src/thoth/provenance.py": "17c2882b72d216cda441d7a664f3ca6d578fa2d5a6f0cff0ddfc677b379913bf",
+    "/workspace/Thoth/src/thoth/storage.py": "803f20a5aaf52e95fe7bca59a741f6db66959016e3eb6c0302eec0d8ec999d36",
+    "/workspace/Thoth/src/thoth/policy.json": "48dc810b2d83af8c82bc777eba73d93727a79ea42422b1be204ffda2ba52b5f2",
+    "requirements.lock": "7495d65b8ab3a53a17c1431065170f39efb55b1c19969469ed72e4003d610051",
+    "reports/calibration.json": "bda20cbc6ef4347f90d4f2f068263dd3bdf0b11f549793d32ddeda6fa63a5c31",
+    "benchmark/data/calibration/gold.json": "5713b9f49ad81ea5bf9e18ef20afb9f2c3033bcf8fdfe1b488cacec3e6bda674",
+    "benchmark/data/calibration/sessions.json": "c0e0201cfa0143f2d37c4f1f247d1b7ad7915af0ace7b999874351eb8be2fedb",
+    "benchmark/data/development/gold.json": "fca8dddbbfc6f706f9968bbfcca78d54ac6593f390b2e26b77b1776aaf884c91",
+    "benchmark/data/development/sessions.json": "e5c20434e322e655b6aed03745d2f6090ab09188cfabdf91379bc087d514e242",
+    "benchmark/data/holdout/gold.json": "3b789c15d856dcfc9a472717389fd29dabc433b03aa7e42f76cd90fa42506d29",
+    "benchmark/data/holdout/sessions.json": "76ea4ddf6d9b7737905e496dc5b2a265a24e47aebb4f9a75a649934175eed4c3",
+    "benchmark/data/review/gold.json": "dabeff088b2e254ca8e6aff62cacf81225036f938f796f0b60a1538f2cbd7887",
+    "benchmark/data/review/proposals.json": "745c93c6dedc53a27e30c4d7a3bcd7ff048c6b878213a573782349d905d78b87"
+  },
+  "embedding": {
+    "model": "spaCy/en_core_web_md",
+    "package": "3.8.0",
+    "weights_sha256": "1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5",
+    "dimensions": 300,
+    "pooling": "mean of nonzero token vectors; L2 normalized"
+  },
+  "policy": {
+    "neighbors": 3,
+    "pattern_dates": 2,
+    "practice_dates": 3
+  },
+  "resolver": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / modelo desta conversa",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "gates": {
+    "false_merge_pairs": 0,
+    "premature_patterns": 0,
+    "missed_recurrences": 0,
+    "retrieval_recall_min": 0.95,
+    "pairwise_recall_min": 0.9
+  },
+  "design": "Same-author synthetic reviewed IR + manual semantic adjudication; no independent blindness"
+}
