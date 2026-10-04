@@ -1,0 +1,153 @@
+{
+  "engine_version": "engine-2",
+  "sessions": 4,
+  "observations": 12,
+  "assumptions": [
+    "Only supported grammatical attempts enter accuracy counts.",
+    "Reports may be selective and attempts correlated: credible intervals are conditional on the independence model, not full real-world certainty.",
+    "Opportunities and self-corrections are recorded separately; no inference of avoidance from a single event."
+  ],
+  "constructions": {
+    "question.do_support": {
+      "label": "Question formation — do support",
+      "modes": {
+        "spontaneous": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 3,
+          "attempts": 3,
+          "alpha": 1,
+          "beta": 4,
+          "posterior_mean": 0.2,
+          "credible_interval_95": [
+            0.006309463209709866,
+            0.6023646356164746
+          ]
+        },
+        "prompted": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 0,
+          "attempts": 0,
+          "alpha": 1,
+          "beta": 1,
+          "posterior_mean": 0.5,
+          "credible_interval_95": [
+            0.025,
+            0.975
+          ]
+        },
+        "controlled": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 9,
+          "failures": 0,
+          "attempts": 9,
+          "alpha": 10,
+          "beta": 1,
+          "posterior_mean": 0.9090909090909091,
+          "credible_interval_95": [
+            0.6915028921812392,
+            0.9974714214555382
+          ]
+        },
+        "unknown": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 0,
+          "attempts": 0,
+          "alpha": 1,
+          "beta": 1,
+          "posterior_mean": 0.5,
+          "credible_interval_95": [
+            0.025,
+            0.975
+          ]
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 0,
+      "uncertain_observations": 0,
+      "sessions_observed": 4,
+      "last_seen": "2026-01-22",
+      "support_score_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 9,
+        "4": 3
+      },
+      "pipeline_ids": [
+        "gold-ir-profiles-1"
+      ],
+      "features": {
+        "affirmative": 0,
+        "negative": 0,
+        "question": 12,
+        "unknown": 0
+      },
+      "spontaneous_features": {
+        "affirmative": 0,
+        "negative": 0,
+        "question": 3,
+        "unknown": 0
+      },
+      "spontaneous_attempt_dates": [
+        "2026-01-01"
+      ],
+      "recent_failure_dates": [
+        "2026-01-01"
+      ],
+      "practice_evidence_ids": [
+        "OBS-cb554cec9a7d785cb5e8",
+        "OBS-53adb02b41d5ddb62646",
+        "OBS-cca9cbd14fb9c290c656"
+      ],
+      "mode_gap": {
+        "observed": true,
+        "spontaneous_accuracy": 0.0,
+        "guided_accuracy": 1.0,
+        "guided_attempts": 9,
+        "interpretation": "Prompted/controlled successes exceed spontaneous accuracy in the observed contexts. Task and context differences may explain this; no retrieval diagnosis.",
+        "rule": ">=3 spontaneous and >=5 guided attempts; observed accuracy gap >=0.30. Descriptive, not causal."
+      },
+      "trend": {
+        "label": "insufficient_data",
+        "rule": "At least 4 distinct dates, 2 sessions and 5 spontaneous attempts in each half; delta >= 0.20 improving, <= -0.20 declining; otherwise stable. Descriptive, not a significance test.",
+        "session_series": [
+          {
+            "session_id": "SES-7b0ac8a69af07c0aa313",
+            "date": "2026-01-01",
+            "successes": 0,
+            "attempts": 3
+          }
+        ]
+      },
+      "recent_spontaneous_failures": 3,
+      "interpretation": "Errors concentrated on one recent date; collect more independent spontaneous evidence.",
+      "unknowns": [
+        "Insufficient evidence for spontaneous negative forms (fewer than 3 attempts).",
+        "Fewer than 5 spontaneous attempts; estimate is dominated by sparse evidence."
+      ],
+      "evidence_ids": [
+        "OBS-cb554cec9a7d785cb5e8",
+        "OBS-53adb02b41d5ddb62646",
+        "OBS-cca9cbd14fb9c290c656",
+        "OBS-de46c3eae4e0ffe7c074",
+        "OBS-d83fc4b36b3231e306fc",
+        "OBS-abe4540ea0e147c797a9",
+        "OBS-91e5cc50de4665b97c91",
+        "OBS-a18b241ab9854f28591c",
+        "OBS-bf8cc99809e5d73dcbac",
+        "OBS-07c4177779e212310e8f",
+        "OBS-6be757a5bd71a0bda935",
+        "OBS-aa5f2d97f9ba942da42a"
+      ],
+      "recent_evidence_ids": [
+        "OBS-a18b241ab9854f28591c",
+        "OBS-bf8cc99809e5d73dcbac",
+        "OBS-07c4177779e212310e8f",
+        "OBS-6be757a5bd71a0bda935",
+        "OBS-aa5f2d97f9ba942da42a"
+      ]
+    }
+  }
+}

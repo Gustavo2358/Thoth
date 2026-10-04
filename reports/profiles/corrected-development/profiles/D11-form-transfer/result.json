@@ -1,0 +1,205 @@
+{
+  "id": "D11-form-transfer",
+  "description": "Perguntas corretas em exercício não cobrem perguntas espontâneas.",
+  "expected": {
+    "primary": [],
+    "strengths": [
+      "modal_perfect.should_have"
+    ],
+    "collect": [
+      "modal_perfect.should_have"
+    ],
+    "families": {
+      "modal_perfect.should_have": {
+        "counts": {
+          "spontaneous": [
+            10,
+            0
+          ],
+          "prompted": [
+            0,
+            0
+          ],
+          "controlled": [
+            6,
+            0
+          ],
+          "unknown": [
+            0,
+            0
+          ]
+        },
+        "missing_forms": [
+          "negative",
+          "question"
+        ]
+      }
+    }
+  },
+  "selected": {
+    "primary": [],
+    "observation": [
+      "modal_perfect.should_have"
+    ],
+    "strengths": [
+      "modal_perfect.should_have"
+    ],
+    "selection_rule": "Practice: >=3 spontaneous attempts and failures on >=2 distinct dates among the last 3 spontaneous-attempt dates; rank by recent failures. Controlled practice and opportunities do not erase this window. Collect: <5 attempts, 95% interval width >0.5, fewer than 2 spontaneous dates, or missing spontaneous negative/question coverage (<3 per form). Strength: >=5 attempts, >=2 spontaneous dates, lower credible bound >=0.6, and no failures in that recent window. Recency is relative to observed attempts, not a calendar expiry; confirm old evidence in a new conversation."
+  },
+  "sessions": 2,
+  "observations": 16,
+  "passed": true,
+  "checks": [
+    {
+      "name": "primary targets and rank",
+      "category": "primary",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "observed strengths",
+      "category": "strength",
+      "expected": [
+        "modal_perfect.should_have"
+      ],
+      "actual": [
+        "modal_perfect.should_have"
+      ],
+      "passed": true
+    },
+    {
+      "name": "collect modal_perfect.should_have",
+      "category": "collection",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "construction coverage",
+      "category": "facts",
+      "expected": [
+        "modal_perfect.should_have"
+      ],
+      "actual": [
+        "modal_perfect.should_have"
+      ],
+      "passed": true
+    },
+    {
+      "name": "modal_perfect.should_have/spontaneous successes, failures",
+      "category": "facts",
+      "expected": [
+        10,
+        0
+      ],
+      "actual": [
+        10,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "modal_perfect.should_have/spontaneous Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "modal_perfect.should_have/prompted successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "modal_perfect.should_have/prompted Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "modal_perfect.should_have/controlled successes, failures",
+      "category": "facts",
+      "expected": [
+        6,
+        0
+      ],
+      "actual": [
+        6,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "modal_perfect.should_have/controlled Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "modal_perfect.should_have/unknown successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "modal_perfect.should_have/unknown Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "modal_perfect.should_have/negative spontaneous coverage remains unknown",
+      "category": "coverage",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "modal_perfect.should_have/question spontaneous coverage remains unknown",
+      "category": "coverage",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "modal_perfect.should_have/all provenance and IDs rendered",
+      "category": "provenance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "order invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "reprocessing invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ]
+}

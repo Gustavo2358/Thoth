@@ -1,0 +1,50 @@
+{
+  "decision_status": "PASSED_SYNTHETIC_PROFILES",
+  "real_student_readiness": "NOT_ESTABLISHED",
+  "learning_gain": "NOT_MEASURED",
+  "profiles": 22,
+  "sessions": 70,
+  "gold_observations": 314,
+  "profiles_passed": 22,
+  "checks_passed": 368,
+  "held_out": {
+    "profiles": 8,
+    "profiles_passed": 8,
+    "checks": 133,
+    "checks_passed": 133,
+    "primary": {
+      "true_positives": 3,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "manual_sample": {
+    "profiles": 1,
+    "sessions": 2,
+    "observations": 22,
+    "distinct_extractor_requests": 2,
+    "distinct_verifier_requests": 11,
+    "evaluation_design": "same-author exposed smoke test; not independent qualification",
+    "grammar": {
+      "tp": 22,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "offline_grammar": {
+    "tp": 50,
+    "false_positives": 32,
+    "false_negatives": 92,
+    "precision": 0.6097560975609756,
+    "recall": 0.352112676056338,
+    "f1": 0.44642857142857145
+  },
+  "tests_passed": 54,
+  "report": "reports/adaptive-validation.md",
+  "freeze_consistent": true
+}

@@ -1,0 +1,187 @@
+{
+  "id": "D04-controlled-only",
+  "description": "Exercício controlado não comprova transferência para conversa.",
+  "expected": {
+    "primary": [],
+    "strengths": [],
+    "collect": [
+      "article.indefinite"
+    ],
+    "families": {
+      "article.indefinite": {
+        "counts": {
+          "spontaneous": [
+            0,
+            0
+          ],
+          "prompted": [
+            0,
+            0
+          ],
+          "controlled": [
+            10,
+            0
+          ],
+          "unknown": [
+            0,
+            0
+          ]
+        },
+        "trend": "insufficient_data"
+      }
+    }
+  },
+  "selected": {
+    "primary": [],
+    "observation": [
+      "article.indefinite"
+    ],
+    "strengths": [],
+    "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+  },
+  "sessions": 2,
+  "observations": 10,
+  "passed": true,
+  "checks": [
+    {
+      "name": "primary targets and rank",
+      "category": "primary",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "observed strengths",
+      "category": "strength",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "collect article.indefinite",
+      "category": "collection",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "construction coverage",
+      "category": "facts",
+      "expected": [
+        "article.indefinite"
+      ],
+      "actual": [
+        "article.indefinite"
+      ],
+      "passed": true
+    },
+    {
+      "name": "article.indefinite/spontaneous successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "article.indefinite/spontaneous Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "article.indefinite/prompted successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "article.indefinite/prompted Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "article.indefinite/controlled successes, failures",
+      "category": "facts",
+      "expected": [
+        10,
+        0
+      ],
+      "actual": [
+        10,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "article.indefinite/controlled Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "article.indefinite/unknown successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "article.indefinite/unknown Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "article.indefinite/trend",
+      "category": "trend",
+      "expected": "insufficient_data",
+      "actual": "insufficient_data",
+      "passed": true
+    },
+    {
+      "name": "article.indefinite/all provenance and IDs rendered",
+      "category": "provenance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "order invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "reprocessing invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ]
+}

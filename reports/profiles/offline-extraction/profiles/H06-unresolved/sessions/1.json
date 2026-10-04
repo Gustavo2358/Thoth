@@ -1,0 +1,82 @@
+{
+  "raw": "# Synthetic profile H06-unresolved, session 1\n\nBlock 1. During spontaneous conversation, the learner said: \"I've been studying all morning.\" Context is missing; grammatical interpretation remains unresolved.\n\nBlock 2. During spontaneous conversation, the learner said: \"That happened earlier.\" This was an opportunity for present_perfect.continuous; target was not selected.\n\n",
+  "result": {
+    "observations": [
+      {
+        "source_span": "Block 2. During spontaneous conversation, the learner said: \"That happened earlier.\" This was an opportunity for present_perfect.continuous; target was not selected.",
+        "learner_utterance": "That happened earlier.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "feature": "affirmative",
+        "outcome": "uncertain",
+        "production_mode": "spontaneous",
+        "evidence_type": "opportunity",
+        "issue_kind": "unclear",
+        "id": "OBS-a64ca2cb74be36e56279",
+        "session_id": "SES-31c3ec10597cc21765eb",
+        "source_start": 209,
+        "source_end": 374,
+        "learner_start": 270,
+        "learner_end": 292,
+        "schema_version": "observation-1",
+        "extractor_version": "extractor-1",
+        "verifier_version": "verifier-1",
+        "pipeline_id": "6ed6b2e8bbec5ddf33c96acb75b84bdc30ddd0c724838a4eb939b1fa6555649a",
+        "verifier_decision": "supported",
+        "verifier_reason": "Non-independent attempt; retain separately without accuracy counting",
+        "provenance_valid": true,
+        "support_signals": {
+          "provenance_valid": true,
+          "classification_known": true,
+          "independent_verifier_supported": true,
+          "explicit_correction_present": false
+        },
+        "raw_support_score": 3
+      }
+    ],
+    "rejected": [],
+    "trace": [
+      {
+        "stage": "Extraction",
+        "response": {
+          "observations": [
+            {
+              "source_span": "Block 2. During spontaneous conversation, the learner said: \"That happened earlier.\" This was an opportunity for present_perfect.continuous; target was not selected.",
+              "learner_utterance": "That happened earlier.",
+              "corrected_form": null,
+              "teacher_comment": null,
+              "construction": "present_perfect.duration",
+              "feature": "affirmative",
+              "outcome": "uncertain",
+              "production_mode": "spontaneous",
+              "evidence_type": "opportunity",
+              "issue_kind": "unclear"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "Verdict",
+        "response": {
+          "decision": "supported",
+          "reason": "Non-independent attempt; retain separately without accuracy counting"
+        }
+      }
+    ],
+    "pipeline": {
+      "provider": "offline-rules",
+      "model": "narrative-baseline-1",
+      "verifier_model": "independent-grammar-checks-1",
+      "adapter_version": "offline-1",
+      "schema_version": "observation-1",
+      "taxonomy_version": "taxonomy-1",
+      "extractor_prompt_version": "extractor-1",
+      "verifier_prompt_version": "verifier-1",
+      "extractor_prompt_hash": "3822190b5557813a4fbcb2fcc938586b67ed3109fb6e24a9b5eedcf5f9afaa26",
+      "verifier_prompt_hash": "ebd347ca4e69aea1cc198c1bbc254abd50ebf6da99213a66fd39434b396d53f3",
+      "implementation_hash": "277d4ce914de475eab2a45d2cb526d42e99acd9b4e160389a05e5e237ad680d2",
+      "pipeline_id": "6ed6b2e8bbec5ddf33c96acb75b84bdc30ddd0c724838a4eb939b1fa6555649a"
+    }
+  }
+}

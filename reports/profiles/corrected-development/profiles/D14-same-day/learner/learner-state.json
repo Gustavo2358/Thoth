@@ -1,0 +1,168 @@
+{
+  "engine_version": "engine-2",
+  "sessions": 3,
+  "observations": 9,
+  "assumptions": [
+    "Only supported grammatical attempts enter accuracy counts.",
+    "Reports may be selective and attempts correlated: credible intervals are conditional on the independence model, not full real-world certainty.",
+    "Opportunities and self-corrections are recorded separately; no inference of avoidance from a single event."
+  ],
+  "constructions": {
+    "question.do_support": {
+      "label": "Question formation — do support",
+      "modes": {
+        "spontaneous": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 9,
+          "attempts": 9,
+          "alpha": 1,
+          "beta": 10,
+          "posterior_mean": 0.09090909090909091,
+          "credible_interval_95": [
+            0.0025285785444617848,
+            0.3084971078187607
+          ]
+        },
+        "prompted": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 0,
+          "attempts": 0,
+          "alpha": 1,
+          "beta": 1,
+          "posterior_mean": 0.5,
+          "credible_interval_95": [
+            0.025,
+            0.975
+          ]
+        },
+        "controlled": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 0,
+          "attempts": 0,
+          "alpha": 1,
+          "beta": 1,
+          "posterior_mean": 0.5,
+          "credible_interval_95": [
+            0.025,
+            0.975
+          ]
+        },
+        "unknown": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 0,
+          "attempts": 0,
+          "alpha": 1,
+          "beta": 1,
+          "posterior_mean": 0.5,
+          "credible_interval_95": [
+            0.025,
+            0.975
+          ]
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 0,
+      "uncertain_observations": 0,
+      "sessions_observed": 3,
+      "last_seen": "2026-01-01",
+      "support_score_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 9
+      },
+      "pipeline_ids": [
+        "gold-ir-profiles-1"
+      ],
+      "features": {
+        "affirmative": 9,
+        "negative": 0,
+        "question": 0,
+        "unknown": 0
+      },
+      "spontaneous_features": {
+        "affirmative": 9,
+        "negative": 0,
+        "question": 0,
+        "unknown": 0
+      },
+      "spontaneous_attempt_dates": [
+        "2026-01-01"
+      ],
+      "recent_failure_dates": [
+        "2026-01-01"
+      ],
+      "practice_evidence_ids": [
+        "OBS-034eaaf9822d6cbe8f06",
+        "OBS-a9e98074d73e6f7d966e",
+        "OBS-58139bc2b554dc654f67",
+        "OBS-cf79092ce36efbd483e2",
+        "OBS-dda6ae4d5b5cb55d5ad7",
+        "OBS-2dc58d59664a75b6de8b",
+        "OBS-78520207681272b462f4",
+        "OBS-4a513184d4f75f95f644",
+        "OBS-2aa643ea6b3131f4435d"
+      ],
+      "mode_gap": {
+        "observed": false,
+        "spontaneous_accuracy": 0.0,
+        "guided_accuracy": null,
+        "guided_attempts": 0,
+        "interpretation": "Insufficient evidence of a prompted/controlled versus spontaneous gap.",
+        "rule": ">=3 spontaneous and >=5 guided attempts; observed accuracy gap >=0.30. Descriptive, not causal."
+      },
+      "trend": {
+        "label": "insufficient_data",
+        "rule": "At least 4 distinct dates, 2 sessions and 5 spontaneous attempts in each half; delta >= 0.20 improving, <= -0.20 declining; otherwise stable. Descriptive, not a significance test.",
+        "session_series": [
+          {
+            "session_id": "SES-017e3bb394557e86a256",
+            "date": "2026-01-01",
+            "successes": 0,
+            "attempts": 3
+          },
+          {
+            "session_id": "SES-44028328ee639c0d60c8",
+            "date": "2026-01-01",
+            "successes": 0,
+            "attempts": 3
+          },
+          {
+            "session_id": "SES-695e3ca5028928919c07",
+            "date": "2026-01-01",
+            "successes": 0,
+            "attempts": 3
+          }
+        ]
+      },
+      "recent_spontaneous_failures": 9,
+      "interpretation": "Errors concentrated on one recent date; collect more independent spontaneous evidence.",
+      "unknowns": [
+        "Insufficient evidence for spontaneous negative forms (fewer than 3 attempts).",
+        "Insufficient evidence for spontaneous question forms (fewer than 3 attempts)."
+      ],
+      "evidence_ids": [
+        "OBS-034eaaf9822d6cbe8f06",
+        "OBS-a9e98074d73e6f7d966e",
+        "OBS-58139bc2b554dc654f67",
+        "OBS-cf79092ce36efbd483e2",
+        "OBS-dda6ae4d5b5cb55d5ad7",
+        "OBS-2dc58d59664a75b6de8b",
+        "OBS-78520207681272b462f4",
+        "OBS-4a513184d4f75f95f644",
+        "OBS-2aa643ea6b3131f4435d"
+      ],
+      "recent_evidence_ids": [
+        "OBS-dda6ae4d5b5cb55d5ad7",
+        "OBS-2dc58d59664a75b6de8b",
+        "OBS-78520207681272b462f4",
+        "OBS-4a513184d4f75f95f644",
+        "OBS-2aa643ea6b3131f4435d"
+      ]
+    }
+  }
+}

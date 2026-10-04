@@ -1,0 +1,119 @@
+[
+  {
+    "id": "SES-9aa5fdb6abe9e341b94b",
+    "raw": "# Synthetic profile D08-opportunities, session 1\n\nBlock 1. During spontaneous conversation, the learner said: \"That happened earlier.\" This was an opportunity for duration.since_for; target was not selected.\n\n",
+    "occurred_on": "2026-01-01",
+    "observations": [
+      {
+        "source_span": "Block 1. During spontaneous conversation, the learner said: \"That happened earlier.\" This was an opportunity for duration.since_for; target was not selected.",
+        "learner_utterance": "That happened earlier.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "duration.since_for",
+        "feature": "affirmative",
+        "outcome": "uncertain",
+        "production_mode": "spontaneous",
+        "evidence_type": "opportunity",
+        "issue_kind": "none",
+        "id": "OBS-3cad12d69de173c4037f",
+        "session_id": "SES-9aa5fdb6abe9e341b94b",
+        "source_start": 50,
+        "source_end": 207,
+        "learner_start": 111,
+        "learner_end": 133,
+        "schema_version": "observation-1",
+        "extractor_version": "extractor-1",
+        "verifier_version": "verifier-1",
+        "pipeline_id": "gold-ir-profiles-1",
+        "verifier_decision": "supported",
+        "verifier_reason": "Author-defined gold fixture; no model verdict executed.",
+        "provenance_valid": true,
+        "support_signals": {
+          "provenance": true,
+          "canonical": true,
+          "verifier": true,
+          "explicit_correction": false
+        },
+        "raw_support_score": 3
+      }
+    ]
+  },
+  {
+    "id": "SES-5710a7d8db39b9d7990d",
+    "raw": "# Synthetic profile D08-opportunities, session 2\n\nBlock 1. During spontaneous conversation, the learner said: \"That happened earlier.\" This was an opportunity for duration.since_for; target was not selected.\n\n",
+    "occurred_on": "2026-01-08",
+    "observations": [
+      {
+        "source_span": "Block 1. During spontaneous conversation, the learner said: \"That happened earlier.\" This was an opportunity for duration.since_for; target was not selected.",
+        "learner_utterance": "That happened earlier.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "duration.since_for",
+        "feature": "affirmative",
+        "outcome": "uncertain",
+        "production_mode": "spontaneous",
+        "evidence_type": "opportunity",
+        "issue_kind": "none",
+        "id": "OBS-06ba0bb3ee171e9c24ab",
+        "session_id": "SES-5710a7d8db39b9d7990d",
+        "source_start": 50,
+        "source_end": 207,
+        "learner_start": 111,
+        "learner_end": 133,
+        "schema_version": "observation-1",
+        "extractor_version": "extractor-1",
+        "verifier_version": "verifier-1",
+        "pipeline_id": "gold-ir-profiles-1",
+        "verifier_decision": "supported",
+        "verifier_reason": "Author-defined gold fixture; no model verdict executed.",
+        "provenance_valid": true,
+        "support_signals": {
+          "provenance": true,
+          "canonical": true,
+          "verifier": true,
+          "explicit_correction": false
+        },
+        "raw_support_score": 3
+      }
+    ]
+  },
+  {
+    "id": "SES-76119a4ad438af4a9dd3",
+    "raw": "# Synthetic profile D08-opportunities, session 3\n\nBlock 1. During spontaneous conversation, the learner said: \"That happened earlier.\" This was an opportunity for duration.since_for; target was not selected.\n\n",
+    "occurred_on": "2026-01-15",
+    "observations": [
+      {
+        "source_span": "Block 1. During spontaneous conversation, the learner said: \"That happened earlier.\" This was an opportunity for duration.since_for; target was not selected.",
+        "learner_utterance": "That happened earlier.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "duration.since_for",
+        "feature": "affirmative",
+        "outcome": "uncertain",
+        "production_mode": "spontaneous",
+        "evidence_type": "opportunity",
+        "issue_kind": "none",
+        "id": "OBS-3c0acb9097e98e0ad64d",
+        "session_id": "SES-76119a4ad438af4a9dd3",
+        "source_start": 50,
+        "source_end": 207,
+        "learner_start": 111,
+        "learner_end": 133,
+        "schema_version": "observation-1",
+        "extractor_version": "extractor-1",
+        "verifier_version": "verifier-1",
+        "pipeline_id": "gold-ir-profiles-1",
+        "verifier_decision": "supported",
+        "verifier_reason": "Author-defined gold fixture; no model verdict executed.",
+        "provenance_valid": true,
+        "support_signals": {
+          "provenance": true,
+          "canonical": true,
+          "verifier": true,
+          "explicit_correction": false
+        },
+        "raw_support_score": 3
+      }
+    ]
+  }
+]

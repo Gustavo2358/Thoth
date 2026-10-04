@@ -1,0 +1,11 @@
+{
+  "engine_version": "engine-2",
+  "sessions": 1,
+  "observations": 0,
+  "assumptions": [
+    "Only supported grammatical attempts enter accuracy counts.",
+    "Reports may be selective and attempts correlated: credible intervals are conditional on the independence model, not full real-world certainty.",
+    "Opportunities and self-corrections are recorded separately; no inference of avoidance from a single event."
+  ],
+  "constructions": {}
+}

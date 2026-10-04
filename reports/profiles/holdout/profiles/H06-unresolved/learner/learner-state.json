@@ -1,0 +1,130 @@
+{
+  "engine_version": "engine-2",
+  "sessions": 2,
+  "observations": 4,
+  "assumptions": [
+    "Only supported grammatical attempts enter accuracy counts.",
+    "Reports may be selective and attempts correlated: credible intervals are conditional on the independence model, not full real-world certainty.",
+    "Opportunities and self-corrections are recorded separately; no inference of avoidance from a single event."
+  ],
+  "constructions": {
+    "present_perfect.continuous": {
+      "label": "Present perfect continuous",
+      "modes": {
+        "spontaneous": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 0,
+          "attempts": 0,
+          "alpha": 1,
+          "beta": 1,
+          "posterior_mean": 0.5,
+          "credible_interval_95": [
+            0.025,
+            0.975
+          ]
+        },
+        "prompted": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 0,
+          "attempts": 0,
+          "alpha": 1,
+          "beta": 1,
+          "posterior_mean": 0.5,
+          "credible_interval_95": [
+            0.025,
+            0.975
+          ]
+        },
+        "controlled": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 0,
+          "attempts": 0,
+          "alpha": 1,
+          "beta": 1,
+          "posterior_mean": 0.5,
+          "credible_interval_95": [
+            0.025,
+            0.975
+          ]
+        },
+        "unknown": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 0,
+          "attempts": 0,
+          "alpha": 1,
+          "beta": 1,
+          "posterior_mean": 0.5,
+          "credible_interval_95": [
+            0.025,
+            0.975
+          ]
+        }
+      },
+      "opportunities": 2,
+      "self_corrections": 1,
+      "uncertain_observations": 4,
+      "sessions_observed": 2,
+      "last_seen": "2026-01-08",
+      "support_score_counts": {
+        "1": 0,
+        "2": 1,
+        "3": 3,
+        "4": 0
+      },
+      "pipeline_ids": [
+        "gold-ir-profiles-1"
+      ],
+      "features": {
+        "affirmative": 0,
+        "negative": 0,
+        "question": 0,
+        "unknown": 0
+      },
+      "spontaneous_features": {
+        "affirmative": 0,
+        "negative": 0,
+        "question": 0,
+        "unknown": 0
+      },
+      "spontaneous_attempt_dates": [],
+      "recent_failure_dates": [],
+      "practice_evidence_ids": [],
+      "mode_gap": {
+        "observed": false,
+        "spontaneous_accuracy": null,
+        "guided_accuracy": null,
+        "guided_attempts": 0,
+        "interpretation": "Insufficient evidence of a prompted/controlled versus spontaneous gap.",
+        "rule": ">=3 spontaneous and >=5 guided attempts; observed accuracy gap >=0.30. Descriptive, not causal."
+      },
+      "trend": {
+        "label": "insufficient_data",
+        "rule": "At least 4 distinct dates, 2 sessions and 5 spontaneous attempts in each half; delta >= 0.20 improving, <= -0.20 declining; otherwise stable. Descriptive, not a significance test.",
+        "session_series": []
+      },
+      "recent_spontaneous_failures": 0,
+      "interpretation": "Insufficient spontaneous attempt evidence.",
+      "unknowns": [
+        "Insufficient evidence for spontaneous negative forms (fewer than 3 attempts).",
+        "Insufficient evidence for spontaneous question forms (fewer than 3 attempts).",
+        "Fewer than 5 spontaneous attempts; estimate is dominated by sparse evidence."
+      ],
+      "evidence_ids": [
+        "OBS-5c21a5badf553964da4f",
+        "OBS-aad7f0c900f528ba7c91",
+        "OBS-cef3eb0ae88f9a098652",
+        "OBS-2c6464bab21c84cd1b8a"
+      ],
+      "recent_evidence_ids": [
+        "OBS-5c21a5badf553964da4f",
+        "OBS-aad7f0c900f528ba7c91",
+        "OBS-cef3eb0ae88f9a098652",
+        "OBS-2c6464bab21c84cd1b8a"
+      ]
+    }
+  }
+}

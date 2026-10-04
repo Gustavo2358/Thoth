@@ -1,0 +1,29 @@
+{
+  "raw": "# Synthetic profile H08-negative-transfer, session 3\n\nBlock 1. During spontaneous conversation, the learner said: \"I bought an umbrella.\" The sentence was correct in the reported context.\n\nBlock 2. During spontaneous conversation, the learner said: \"I bought an umbrella.\" The sentence was correct in the reported context.\n\nBlock 3. During spontaneous conversation, the learner said: \"I bought an umbrella.\" The sentence was correct in the reported context.\n\nBlock 4. During spontaneous conversation, the learner said: \"I bought an umbrella.\" The sentence was correct in the reported context.\n\n",
+  "result": {
+    "observations": [],
+    "rejected": [],
+    "trace": [
+      {
+        "stage": "Extraction",
+        "response": {
+          "observations": []
+        }
+      }
+    ],
+    "pipeline": {
+      "provider": "offline-rules",
+      "model": "narrative-baseline-1",
+      "verifier_model": "independent-grammar-checks-1",
+      "adapter_version": "offline-1",
+      "schema_version": "observation-1",
+      "taxonomy_version": "taxonomy-1",
+      "extractor_prompt_version": "extractor-1",
+      "verifier_prompt_version": "verifier-1",
+      "extractor_prompt_hash": "3822190b5557813a4fbcb2fcc938586b67ed3109fb6e24a9b5eedcf5f9afaa26",
+      "verifier_prompt_hash": "ebd347ca4e69aea1cc198c1bbc254abd50ebf6da99213a66fd39434b396d53f3",
+      "implementation_hash": "277d4ce914de475eab2a45d2cb526d42e99acd9b4e160389a05e5e237ad680d2",
+      "pipeline_id": "6ed6b2e8bbec5ddf33c96acb75b84bdc30ddd0c724838a4eb939b1fa6555649a"
+    }
+  }
+}

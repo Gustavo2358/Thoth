@@ -1,0 +1,213 @@
+{
+  "id": "H02-observed-strength",
+  "description": "Acertos distribuídos: força observada, mantendo lacunas de perguntas e negações.",
+  "expected": {
+    "primary": [],
+    "strengths": [
+      "present_perfect.vs_simple_past"
+    ],
+    "collect": [
+      "present_perfect.vs_simple_past"
+    ],
+    "families": {
+      "present_perfect.vs_simple_past": {
+        "counts": {
+          "spontaneous": [
+            12,
+            0
+          ],
+          "prompted": [
+            0,
+            0
+          ],
+          "controlled": [
+            0,
+            0
+          ],
+          "unknown": [
+            0,
+            0
+          ]
+        },
+        "trend": "stable",
+        "missing_forms": [
+          "negative",
+          "question"
+        ]
+      }
+    }
+  },
+  "selected": {
+    "primary": [],
+    "observation": [
+      "present_perfect.vs_simple_past"
+    ],
+    "strengths": [
+      "present_perfect.vs_simple_past"
+    ],
+    "selection_rule": "Practice: >=3 spontaneous attempts and failures on >=2 distinct dates among the last 3 spontaneous-attempt dates; rank by recent failures. Controlled practice and opportunities do not erase this window. Collect: <5 attempts, 95% interval width >0.5, fewer than 2 spontaneous dates, or missing spontaneous negative/question coverage (<3 per form). Strength: >=5 attempts, >=2 spontaneous dates, lower credible bound >=0.6, and no failures in that recent window. Recency is relative to observed attempts, not a calendar expiry; confirm old evidence in a new conversation."
+  },
+  "sessions": 4,
+  "observations": 12,
+  "passed": true,
+  "checks": [
+    {
+      "name": "primary targets and rank",
+      "category": "primary",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "observed strengths",
+      "category": "strength",
+      "expected": [
+        "present_perfect.vs_simple_past"
+      ],
+      "actual": [
+        "present_perfect.vs_simple_past"
+      ],
+      "passed": true
+    },
+    {
+      "name": "collect present_perfect.vs_simple_past",
+      "category": "collection",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "construction coverage",
+      "category": "facts",
+      "expected": [
+        "present_perfect.vs_simple_past"
+      ],
+      "actual": [
+        "present_perfect.vs_simple_past"
+      ],
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/spontaneous successes, failures",
+      "category": "facts",
+      "expected": [
+        12,
+        0
+      ],
+      "actual": [
+        12,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/spontaneous Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/prompted successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/prompted Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/controlled successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/controlled Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/unknown successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/unknown Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/trend",
+      "category": "trend",
+      "expected": "stable",
+      "actual": "stable",
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/negative spontaneous coverage remains unknown",
+      "category": "coverage",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/question spontaneous coverage remains unknown",
+      "category": "coverage",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "present_perfect.vs_simple_past/all provenance and IDs rendered",
+      "category": "provenance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "order invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "reprocessing invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ]
+}

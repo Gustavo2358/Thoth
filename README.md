@@ -4,6 +4,8 @@ MVP local para transformar relatórios de speaking em evidências rastreáveis, 
 
 **Status: `NOT_READY_FOR_PERSONAL_PILOT`.** O software funciona, mas a avaliação assistida por esta conversa compartilha autor com os dados sintéticos. Os resultados não demonstram generalização para relatórios reais. Consulte [o relatório final](reports/benchmark-final.md) e [a análise do experimento](reports/experiment.md).
 
+A [validação adicional de adaptação por perfis](reports/adaptive-validation.md) encontrou e corrigiu falhas nas decisões. Após as correções, 22/22 perfis sintéticos passaram, incluindo 8 reservados após freeze. Uma amostra de duas sessões também percorreu o adapter manual com respostas desta conversa. Esses resultados aprovam as regras nesses casos; ainda não demonstram precisão em relatórios reais nem ganho de aprendizado.
+
 ## Instalação e quickstart
 
 Requer Python 3.11+; instalação e testes verificados com Python 3.12 em Linux. Execute na raiz deste checkout:
@@ -151,7 +153,7 @@ Somente tentativas gramaticais apoiadas pelo verifier contam em acertos/erros. O
 
 Trend é descritivo: exige pelo menos 4 datas distintas e 5 tentativas espontâneas em cada metade temporal. Delta de accuracy >=0,20 indica improving; <=-0,20 declining; caso contrário stable. Dados insuficientes dão insufficient_data. Isso não é teste de significância.
 
-Targets para a próxima aula exigem >=3 tentativas espontâneas, >=2 sessões observadas e >=2 falhas espontâneas nas últimas 3 sessões da construção. A ordenação considera falhas recentes. Construções com menos de 5 tentativas ou intervalo de largura >0,5 viram alvos de coleta, separados dos alvos de prática. Regras completas constam nos artifacts, junto aos IDs que sustentam as hipóteses.
+Targets para a próxima aula exigem >=3 tentativas espontâneas e falhas espontâneas em >=2 datas distintas entre as últimas 3 datas com tentativas espontâneas da construção. Exercícios controlados e oportunidades não apagam essa janela. A ordenação considera falhas recentes e cita as falhas que justificam a prática. Construções com menos de 5 tentativas, intervalo de largura >0,5, menos de duas datas espontâneas ou cobertura incompleta de perguntas/negações espontâneas viram alvos de coleta. Forças exigem evidência em duas datas e ausência de falhas na janela recente. As regras são conservadoras e não equivalem a diagnóstico ou eficácia pedagógica comprovada.
 
 ## Dados e artifacts
 

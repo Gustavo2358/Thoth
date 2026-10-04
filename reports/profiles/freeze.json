@@ -1,0 +1,17 @@
+{
+  "dataset_sha256": "e03ed946cf9dd8d5cc7c5a748f9dc2634223c6a28a2ed267335a49458bfe95d9",
+  "implementation": {
+    "contracts.py": "8b59d71ebac05f032dbfefcabe261bc387e1798f39807b179af2c708a40e3b44",
+    "engine.py": "020cf9e3ab7877114a4e8d9a22d8c9e3ffc310069c2bede61be788c5a58f89e8",
+    "artifacts.py": "354800c102980354481dd296ee60daf4e0bb69e0bdfc8a11fe9a5efa1aaae00a",
+    "storage.py": "3e04d3e3c45c51972f395f7883e1e2d7b9f9c675ba1e6c4ce3d68ae73ad307a6",
+    "provenance.py": "c9c9af04a0d730a1c6e8c397829b69b244557965d12c1b4cbb2a199fbd87bc83",
+    "profile_benchmark.py": "a5c887d632c8e9734b69c7246ea954591ac68438471eef95b606cca53d0b9b45"
+  },
+  "gates": {
+    "all_preregistered_checks_pass": true,
+    "unsafe_primary_decisions": 0,
+    "invalid_evidence_citations": 0,
+    "scope": "Synthetic downstream decision validation only; no LLM qualification or learning-gain claim"
+  }
+}

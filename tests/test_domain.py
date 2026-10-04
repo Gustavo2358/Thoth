@@ -143,7 +143,9 @@ def test_trend_explicit_halves(late_successes, expected):
                                                         "outcome": type(base.outcome)("correct" if good else "incorrect")}))
     state = aggregate(observations, sessions)
     assert state["constructions"]["present_perfect.duration"]["trend"]["label"] == expected
-    assert lesson_targets(state)["primary"] == ["present_perfect.duration"]
+    # Improvement leaves errors on only one of the last three attempt dates;
+    # historical errors alone must not keep a construction in primary practice.
+    assert lesson_targets(state)["primary"] == ([] if late_successes else ["present_perfect.duration"])
 
 
 def test_opportunities_and_self_repairs_not_failures():

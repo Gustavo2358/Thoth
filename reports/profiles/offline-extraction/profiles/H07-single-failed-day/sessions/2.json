@@ -1,0 +1,184 @@
+{
+  "raw": "# Synthetic profile H07-single-failed-day, session 2\n\nBlock 1. During controlled conversation, the learner said: \"Where do you work?\" The sentence was correct in the reported context.\n\nBlock 2. During controlled conversation, the learner said: \"Where do you work?\" The sentence was correct in the reported context.\n\nBlock 3. During controlled conversation, the learner said: \"Where do you work?\" The sentence was correct in the reported context.\n\n",
+  "result": {
+    "observations": [
+      {
+        "source_span": "Block 1. During controlled conversation, the learner said: \"Where do you work?\" The sentence was correct in the reported context.",
+        "learner_utterance": "Where do you work?",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "question.do_support",
+        "feature": "question",
+        "outcome": "correct",
+        "production_mode": "controlled",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "id": "OBS-0992b6751de504509ae2",
+        "session_id": "SES-ac202a796e39647486d3",
+        "source_start": 54,
+        "source_end": 183,
+        "learner_start": 114,
+        "learner_end": 132,
+        "schema_version": "observation-1",
+        "extractor_version": "extractor-1",
+        "verifier_version": "verifier-1",
+        "pipeline_id": "6ed6b2e8bbec5ddf33c96acb75b84bdc30ddd0c724838a4eb939b1fa6555649a",
+        "verifier_decision": "supported",
+        "verifier_reason": "Independent grammatical predicate and source agree",
+        "provenance_valid": true,
+        "support_signals": {
+          "provenance_valid": true,
+          "classification_known": true,
+          "independent_verifier_supported": true,
+          "explicit_correction_present": false
+        },
+        "raw_support_score": 3
+      },
+      {
+        "source_span": "Block 2. During controlled conversation, the learner said: \"Where do you work?\" The sentence was correct in the reported context.",
+        "learner_utterance": "Where do you work?",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "question.do_support",
+        "feature": "question",
+        "outcome": "correct",
+        "production_mode": "controlled",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "id": "OBS-b18b42ece6a1c83ee2dd",
+        "session_id": "SES-ac202a796e39647486d3",
+        "source_start": 185,
+        "source_end": 314,
+        "learner_start": 245,
+        "learner_end": 263,
+        "schema_version": "observation-1",
+        "extractor_version": "extractor-1",
+        "verifier_version": "verifier-1",
+        "pipeline_id": "6ed6b2e8bbec5ddf33c96acb75b84bdc30ddd0c724838a4eb939b1fa6555649a",
+        "verifier_decision": "supported",
+        "verifier_reason": "Independent grammatical predicate and source agree",
+        "provenance_valid": true,
+        "support_signals": {
+          "provenance_valid": true,
+          "classification_known": true,
+          "independent_verifier_supported": true,
+          "explicit_correction_present": false
+        },
+        "raw_support_score": 3
+      },
+      {
+        "source_span": "Block 3. During controlled conversation, the learner said: \"Where do you work?\" The sentence was correct in the reported context.",
+        "learner_utterance": "Where do you work?",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "question.do_support",
+        "feature": "question",
+        "outcome": "correct",
+        "production_mode": "controlled",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "id": "OBS-22dfc8cb421e42a3dc46",
+        "session_id": "SES-ac202a796e39647486d3",
+        "source_start": 316,
+        "source_end": 445,
+        "learner_start": 376,
+        "learner_end": 394,
+        "schema_version": "observation-1",
+        "extractor_version": "extractor-1",
+        "verifier_version": "verifier-1",
+        "pipeline_id": "6ed6b2e8bbec5ddf33c96acb75b84bdc30ddd0c724838a4eb939b1fa6555649a",
+        "verifier_decision": "supported",
+        "verifier_reason": "Independent grammatical predicate and source agree",
+        "provenance_valid": true,
+        "support_signals": {
+          "provenance_valid": true,
+          "classification_known": true,
+          "independent_verifier_supported": true,
+          "explicit_correction_present": false
+        },
+        "raw_support_score": 3
+      }
+    ],
+    "rejected": [],
+    "trace": [
+      {
+        "stage": "Extraction",
+        "response": {
+          "observations": [
+            {
+              "source_span": "Block 1. During controlled conversation, the learner said: \"Where do you work?\" The sentence was correct in the reported context.",
+              "learner_utterance": "Where do you work?",
+              "corrected_form": null,
+              "teacher_comment": null,
+              "construction": "question.do_support",
+              "feature": "question",
+              "outcome": "correct",
+              "production_mode": "controlled",
+              "evidence_type": "successful_use",
+              "issue_kind": "none"
+            },
+            {
+              "source_span": "Block 2. During controlled conversation, the learner said: \"Where do you work?\" The sentence was correct in the reported context.",
+              "learner_utterance": "Where do you work?",
+              "corrected_form": null,
+              "teacher_comment": null,
+              "construction": "question.do_support",
+              "feature": "question",
+              "outcome": "correct",
+              "production_mode": "controlled",
+              "evidence_type": "successful_use",
+              "issue_kind": "none"
+            },
+            {
+              "source_span": "Block 3. During controlled conversation, the learner said: \"Where do you work?\" The sentence was correct in the reported context.",
+              "learner_utterance": "Where do you work?",
+              "corrected_form": null,
+              "teacher_comment": null,
+              "construction": "question.do_support",
+              "feature": "question",
+              "outcome": "correct",
+              "production_mode": "controlled",
+              "evidence_type": "successful_use",
+              "issue_kind": "none"
+            }
+          ]
+        }
+      },
+      {
+        "stage": "Verdict",
+        "response": {
+          "decision": "supported",
+          "reason": "Independent grammatical predicate and source agree"
+        }
+      },
+      {
+        "stage": "Verdict",
+        "response": {
+          "decision": "supported",
+          "reason": "Independent grammatical predicate and source agree"
+        }
+      },
+      {
+        "stage": "Verdict",
+        "response": {
+          "decision": "supported",
+          "reason": "Independent grammatical predicate and source agree"
+        }
+      }
+    ],
+    "pipeline": {
+      "provider": "offline-rules",
+      "model": "narrative-baseline-1",
+      "verifier_model": "independent-grammar-checks-1",
+      "adapter_version": "offline-1",
+      "schema_version": "observation-1",
+      "taxonomy_version": "taxonomy-1",
+      "extractor_prompt_version": "extractor-1",
+      "verifier_prompt_version": "verifier-1",
+      "extractor_prompt_hash": "3822190b5557813a4fbcb2fcc938586b67ed3109fb6e24a9b5eedcf5f9afaa26",
+      "verifier_prompt_hash": "ebd347ca4e69aea1cc198c1bbc254abd50ebf6da99213a66fd39434b396d53f3",
+      "implementation_hash": "277d4ce914de475eab2a45d2cb526d42e99acd9b4e160389a05e5e237ad680d2",
+      "pipeline_id": "6ed6b2e8bbec5ddf33c96acb75b84bdc30ddd0c724838a4eb939b1fa6555649a"
+    }
+  }
+}

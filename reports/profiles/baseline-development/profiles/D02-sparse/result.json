@@ -1,0 +1,187 @@
+{
+  "id": "D02-sparse",
+  "description": "Um acerto isolado pede coleta, sem declarar domínio.",
+  "expected": {
+    "primary": [],
+    "strengths": [],
+    "collect": [
+      "present_perfect.duration"
+    ],
+    "families": {
+      "present_perfect.duration": {
+        "counts": {
+          "spontaneous": [
+            1,
+            0
+          ],
+          "prompted": [
+            0,
+            0
+          ],
+          "controlled": [
+            0,
+            0
+          ],
+          "unknown": [
+            0,
+            0
+          ]
+        },
+        "trend": "insufficient_data"
+      }
+    }
+  },
+  "selected": {
+    "primary": [],
+    "observation": [
+      "present_perfect.duration"
+    ],
+    "strengths": [],
+    "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+  },
+  "sessions": 1,
+  "observations": 1,
+  "passed": true,
+  "checks": [
+    {
+      "name": "primary targets and rank",
+      "category": "primary",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "observed strengths",
+      "category": "strength",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "collect present_perfect.duration",
+      "category": "collection",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "construction coverage",
+      "category": "facts",
+      "expected": [
+        "present_perfect.duration"
+      ],
+      "actual": [
+        "present_perfect.duration"
+      ],
+      "passed": true
+    },
+    {
+      "name": "present_perfect.duration/spontaneous successes, failures",
+      "category": "facts",
+      "expected": [
+        1,
+        0
+      ],
+      "actual": [
+        1,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "present_perfect.duration/spontaneous Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "present_perfect.duration/prompted successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "present_perfect.duration/prompted Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "present_perfect.duration/controlled successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "present_perfect.duration/controlled Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "present_perfect.duration/unknown successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "present_perfect.duration/unknown Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "present_perfect.duration/trend",
+      "category": "trend",
+      "expected": "insufficient_data",
+      "actual": "insufficient_data",
+      "passed": true
+    },
+    {
+      "name": "present_perfect.duration/all provenance and IDs rendered",
+      "category": "provenance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "order invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "reprocessing invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ]
+}

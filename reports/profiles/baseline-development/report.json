@@ -1,0 +1,2865 @@
+{
+  "metadata": {
+    "dataset_sha256": "5fbb9b9c498eae8add6d7fd8759fa5f205b34ccc2829898e0c6fb06e950178ca",
+    "implementation": {
+      "contracts.py": "8b59d71ebac05f032dbfefcabe261bc387e1798f39807b179af2c708a40e3b44",
+      "engine.py": "a6a824e58fe3061b0fd42ca8911bb9f7e125355eb0d9322df583fbd6dee6f621",
+      "artifacts.py": "6cf941b04285b9e648de6cfb1b60aa4aae62943f5ef39be953585a836479a0e6",
+      "storage.py": "3e04d3e3c45c51972f395f7883e1e2d7b9f9c675ba1e6c4ce3d68ae73ad307a6",
+      "provenance.py": "c9c9af04a0d730a1c6e8c397829b69b244557965d12c1b4cbb2a199fbd87bc83",
+      "profile_benchmark.py": "a5c887d632c8e9734b69c7246ea954591ac68438471eef95b606cca53d0b9b45"
+    },
+    "gates": {
+      "all_preregistered_checks_pass": true,
+      "unsafe_primary_decisions": 0,
+      "invalid_evidence_citations": 0,
+      "scope": "Synthetic downstream decision validation only; no LLM qualification or learning-gain claim"
+    }
+  },
+  "split": "development",
+  "scope": "Synthetic downstream decision validation only; no LLM qualification or learning-gain claim",
+  "profiles": 14,
+  "profiles_passed": 7,
+  "sessions": 42,
+  "observations": 168,
+  "checks": 236,
+  "checks_passed": 221,
+  "categories": {
+    "citations": {
+      "total": 6,
+      "passed": 3
+    },
+    "collection": {
+      "total": 9,
+      "passed": 5
+    },
+    "coverage": {
+      "total": 2,
+      "passed": 0
+    },
+    "exclusions": {
+      "total": 7,
+      "passed": 7
+    },
+    "facts": {
+      "total": 134,
+      "passed": 134
+    },
+    "interpretation": {
+      "total": 2,
+      "passed": 0
+    },
+    "invariance": {
+      "total": 28,
+      "passed": 28
+    },
+    "primary": {
+      "total": 14,
+      "passed": 11
+    },
+    "provenance": {
+      "total": 15,
+      "passed": 15
+    },
+    "strength": {
+      "total": 14,
+      "passed": 13
+    },
+    "trend": {
+      "total": 5,
+      "passed": 5
+    }
+  },
+  "primary": {
+    "true_positives": 4,
+    "false_positives": 2,
+    "false_negatives": 1,
+    "precision": 0.6666666666666666,
+    "recall": 0.8
+  },
+  "decision_suite_passed": false,
+  "real_student_readiness": "NOT_ESTABLISHED",
+  "learning_gain": "NOT_MEASURED",
+  "limitations": [
+    "Gold IR bypasses the LLM extractor and verifier.",
+    "Dataset and expectations share an author; holdout is reserved execution, not independent blinded review.",
+    "Synthetic outcomes do not measure generalization, retention or causal learning gain."
+  ],
+  "results": [
+    {
+      "id": "D01-empty",
+      "description": "Uma aula sem evidências não demonstra competência nem dificuldade.",
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [],
+        "families": {}
+      },
+      "selected": {
+        "primary": [],
+        "observation": [],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 1,
+      "observations": 0,
+      "passed": true,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D02-sparse",
+      "description": "Um acerto isolado pede coleta, sem declarar domínio.",
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "present_perfect.duration"
+        ],
+        "families": {
+          "present_perfect.duration": {
+            "counts": {
+              "spontaneous": [
+                1,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "insufficient_data"
+          }
+        }
+      },
+      "selected": {
+        "primary": [],
+        "observation": [
+          "present_perfect.duration"
+        ],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 1,
+      "observations": 1,
+      "passed": true,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "collect present_perfect.duration",
+          "category": "collection",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "present_perfect.duration"
+          ],
+          "actual": [
+            "present_perfect.duration"
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            1,
+            0
+          ],
+          "actual": [
+            1,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/trend",
+          "category": "trend",
+          "expected": "insufficient_data",
+          "actual": "insufficient_data",
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D03-prompt-gap",
+      "description": "Acerta quando guiado, mas erra espontaneamente em dias distintos.",
+      "expected": {
+        "primary": [
+          "question.do_support"
+        ],
+        "strengths": [],
+        "collect": [],
+        "families": {
+          "question.do_support": {
+            "counts": {
+              "spontaneous": [
+                1,
+                3
+              ],
+              "prompted": [
+                12,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "mode_gap": true
+          }
+        }
+      },
+      "selected": {
+        "primary": [
+          "question.do_support"
+        ],
+        "observation": [],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 3,
+      "observations": 16,
+      "passed": false,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [
+            "question.do_support"
+          ],
+          "actual": [
+            "question.do_support"
+          ],
+          "passed": true
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "question.do_support"
+          ],
+          "actual": [
+            "question.do_support"
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            1,
+            3
+          ],
+          "actual": [
+            1,
+            3
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            12,
+            0
+          ],
+          "actual": [
+            12,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/prompted or controlled gap described",
+          "category": "interpretation",
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        {
+          "name": "question.do_support/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/practice justified by failed quotes on distinct dates",
+          "category": "citations",
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D04-controlled-only",
+      "description": "Exercício controlado não comprova transferência para conversa.",
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "article.indefinite"
+        ],
+        "families": {
+          "article.indefinite": {
+            "counts": {
+              "spontaneous": [
+                0,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                10,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "insufficient_data"
+          }
+        }
+      },
+      "selected": {
+        "primary": [],
+        "observation": [
+          "article.indefinite"
+        ],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 2,
+      "observations": 10,
+      "passed": true,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "collect article.indefinite",
+          "category": "collection",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "article.indefinite"
+          ],
+          "actual": [
+            "article.indefinite"
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            10,
+            0
+          ],
+          "actual": [
+            10,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/trend",
+          "category": "trend",
+          "expected": "insufficient_data",
+          "actual": "insufficient_data",
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D05-clustered-errors",
+      "description": "Três erros na mesma aula mais exercício em outra não provam recorrência.",
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "present_perfect.duration"
+        ],
+        "families": {
+          "present_perfect.duration": {
+            "counts": {
+              "spontaneous": [
+                0,
+                3
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                1,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            }
+          }
+        }
+      },
+      "selected": {
+        "primary": [
+          "present_perfect.duration"
+        ],
+        "observation": [],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 2,
+      "observations": 4,
+      "passed": false,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [],
+          "actual": [
+            "present_perfect.duration"
+          ],
+          "passed": false
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "collect present_perfect.duration",
+          "category": "collection",
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "present_perfect.duration"
+          ],
+          "actual": [
+            "present_perfect.duration"
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            3
+          ],
+          "actual": [
+            0,
+            3
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            1,
+            0
+          ],
+          "actual": [
+            1,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/practice justified by failed quotes on distinct dates",
+          "category": "citations",
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D06-recovery",
+      "description": "Erros antigos seguidos de três aulas corretas: melhora, sem dificuldade atual afirmada.",
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "present_perfect.duration"
+        ],
+        "families": {
+          "present_perfect.duration": {
+            "counts": {
+              "spontaneous": [
+                9,
+                6
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "improving",
+            "historical_only": true
+          }
+        }
+      },
+      "selected": {
+        "primary": [],
+        "observation": [],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 5,
+      "observations": 15,
+      "passed": false,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "collect present_perfect.duration",
+          "category": "collection",
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "present_perfect.duration"
+          ],
+          "actual": [
+            "present_perfect.duration"
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            9,
+            6
+          ],
+          "actual": [
+            9,
+            6
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/trend",
+          "category": "trend",
+          "expected": "improving",
+          "actual": "improving",
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/historical errors distinguished",
+          "category": "interpretation",
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        {
+          "name": "present_perfect.duration/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D07-relapse",
+      "description": "Muitos acertos históricos não anulam recaída recente nem autorizam força estável.",
+      "expected": {
+        "primary": [
+          "question.do_support"
+        ],
+        "strengths": [],
+        "collect": [],
+        "families": {
+          "question.do_support": {
+            "counts": {
+              "spontaneous": [
+                40,
+                6
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "declining"
+          }
+        }
+      },
+      "selected": {
+        "primary": [
+          "question.do_support"
+        ],
+        "observation": [],
+        "strengths": [
+          "question.do_support"
+        ],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 6,
+      "observations": 46,
+      "passed": false,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [
+            "question.do_support"
+          ],
+          "actual": [
+            "question.do_support"
+          ],
+          "passed": true
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [
+            "question.do_support"
+          ],
+          "passed": false
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "question.do_support"
+          ],
+          "actual": [
+            "question.do_support"
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            40,
+            6
+          ],
+          "actual": [
+            40,
+            6
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/trend",
+          "category": "trend",
+          "expected": "declining",
+          "actual": "declining",
+          "passed": true
+        },
+        {
+          "name": "question.do_support/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/practice justified by failed quotes on distinct dates",
+          "category": "citations",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D08-opportunities",
+      "description": "Escolhas alternativas são oportunidades, sem erro nem diagnóstico de evitação.",
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "duration.since_for"
+        ],
+        "families": {
+          "duration.since_for": {
+            "counts": {
+              "spontaneous": [
+                0,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "opportunities": 3,
+            "uncertain_observations": 3
+          }
+        }
+      },
+      "selected": {
+        "primary": [],
+        "observation": [
+          "duration.since_for"
+        ],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 3,
+      "observations": 3,
+      "passed": true,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "collect duration.since_for",
+          "category": "collection",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "duration.since_for"
+          ],
+          "actual": [
+            "duration.since_for"
+          ],
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/opportunities",
+          "category": "exclusions",
+          "expected": 3,
+          "actual": 3,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/uncertain_observations",
+          "category": "exclusions",
+          "expected": 3,
+          "actual": 3,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D09-self-repair",
+      "description": "Autocorreções são evidência distinta de acerto ou erro independente.",
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "duration.since_for"
+        ],
+        "families": {
+          "duration.since_for": {
+            "counts": {
+              "spontaneous": [
+                0,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "self_corrections": 3,
+            "uncertain_observations": 3
+          }
+        }
+      },
+      "selected": {
+        "primary": [],
+        "observation": [
+          "duration.since_for"
+        ],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 3,
+      "observations": 3,
+      "passed": true,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "collect duration.since_for",
+          "category": "collection",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "duration.since_for"
+          ],
+          "actual": [
+            "duration.since_for"
+          ],
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/self_corrections",
+          "category": "exclusions",
+          "expected": 3,
+          "actual": 3,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/uncertain_observations",
+          "category": "exclusions",
+          "expected": 3,
+          "actual": 3,
+          "passed": true
+        },
+        {
+          "name": "duration.since_for/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D10-style-ambiguity",
+      "description": "Preferência de estilo e contexto incerto não contaminam accuracy.",
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "article.indefinite"
+        ],
+        "families": {
+          "article.indefinite": {
+            "counts": {
+              "spontaneous": [
+                0,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "uncertain_observations": 6
+          }
+        }
+      },
+      "selected": {
+        "primary": [],
+        "observation": [
+          "article.indefinite"
+        ],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 2,
+      "observations": 6,
+      "passed": true,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "collect article.indefinite",
+          "category": "collection",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "article.indefinite"
+          ],
+          "actual": [
+            "article.indefinite"
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/uncertain_observations",
+          "category": "exclusions",
+          "expected": 6,
+          "actual": 6,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D11-form-transfer",
+      "description": "Perguntas corretas em exercício não cobrem perguntas espontâneas.",
+      "expected": {
+        "primary": [],
+        "strengths": [
+          "modal_perfect.should_have"
+        ],
+        "collect": [
+          "modal_perfect.should_have"
+        ],
+        "families": {
+          "modal_perfect.should_have": {
+            "counts": {
+              "spontaneous": [
+                10,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                6,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "missing_forms": [
+              "negative",
+              "question"
+            ]
+          }
+        }
+      },
+      "selected": {
+        "primary": [],
+        "observation": [],
+        "strengths": [
+          "modal_perfect.should_have"
+        ],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 2,
+      "observations": 16,
+      "passed": false,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [
+            "modal_perfect.should_have"
+          ],
+          "actual": [
+            "modal_perfect.should_have"
+          ],
+          "passed": true
+        },
+        {
+          "name": "collect modal_perfect.should_have",
+          "category": "collection",
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "modal_perfect.should_have"
+          ],
+          "actual": [
+            "modal_perfect.should_have"
+          ],
+          "passed": true
+        },
+        {
+          "name": "modal_perfect.should_have/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            10,
+            0
+          ],
+          "actual": [
+            10,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "modal_perfect.should_have/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "modal_perfect.should_have/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "modal_perfect.should_have/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "modal_perfect.should_have/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            6,
+            0
+          ],
+          "actual": [
+            6,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "modal_perfect.should_have/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "modal_perfect.should_have/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "modal_perfect.should_have/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "modal_perfect.should_have/negative spontaneous coverage remains unknown",
+          "category": "coverage",
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        {
+          "name": "modal_perfect.should_have/question spontaneous coverage remains unknown",
+          "category": "coverage",
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        {
+          "name": "modal_perfect.should_have/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D12-opportunities-after-errors",
+      "description": "Oportunidades posteriores não apagam tentativas falhas ou suas citações.",
+      "expected": {
+        "primary": [
+          "present_perfect.duration"
+        ],
+        "strengths": [],
+        "collect": [],
+        "families": {
+          "present_perfect.duration": {
+            "counts": {
+              "spontaneous": [
+                4,
+                5
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "opportunities": 3,
+            "uncertain_observations": 3
+          }
+        }
+      },
+      "selected": {
+        "primary": [],
+        "observation": [
+          "present_perfect.duration"
+        ],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 6,
+      "observations": 12,
+      "passed": false,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [
+            "present_perfect.duration"
+          ],
+          "actual": [],
+          "passed": false
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "present_perfect.duration"
+          ],
+          "actual": [
+            "present_perfect.duration"
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            4,
+            5
+          ],
+          "actual": [
+            4,
+            5
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/opportunities",
+          "category": "exclusions",
+          "expected": 3,
+          "actual": 3,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/uncertain_observations",
+          "category": "exclusions",
+          "expected": 3,
+          "actual": 3,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D13-competing-targets",
+      "description": "Priorizar duas dificuldades recorrentes mais frequentes e citar falhas reais.",
+      "expected": {
+        "primary": [
+          "question.do_support",
+          "article.indefinite"
+        ],
+        "strengths": [],
+        "collect": [],
+        "families": {
+          "question.do_support": {
+            "counts": {
+              "spontaneous": [
+                0,
+                9
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            }
+          },
+          "article.indefinite": {
+            "counts": {
+              "spontaneous": [
+                3,
+                6
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            }
+          },
+          "present_perfect.duration": {
+            "counts": {
+              "spontaneous": [
+                6,
+                3
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            }
+          }
+        }
+      },
+      "selected": {
+        "primary": [
+          "question.do_support",
+          "article.indefinite"
+        ],
+        "observation": [],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 3,
+      "observations": 27,
+      "passed": true,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [
+            "question.do_support",
+            "article.indefinite"
+          ],
+          "actual": [
+            "question.do_support",
+            "article.indefinite"
+          ],
+          "passed": true
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "article.indefinite",
+            "present_perfect.duration",
+            "question.do_support"
+          ],
+          "actual": [
+            "article.indefinite",
+            "present_perfect.duration",
+            "question.do_support"
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            9
+          ],
+          "actual": [
+            0,
+            9
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            3,
+            6
+          ],
+          "actual": [
+            3,
+            6
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            6,
+            3
+          ],
+          "actual": [
+            6,
+            3
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "present_perfect.duration/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/practice justified by failed quotes on distinct dates",
+          "category": "citations",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "article.indefinite/practice justified by failed quotes on distinct dates",
+          "category": "citations",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "D14-same-day",
+      "description": "Três relatos no mesmo dia não demonstram dificuldade longitudinal independente.",
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "question.do_support"
+        ],
+        "families": {
+          "question.do_support": {
+            "counts": {
+              "spontaneous": [
+                0,
+                9
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "insufficient_data"
+          }
+        }
+      },
+      "selected": {
+        "primary": [
+          "question.do_support"
+        ],
+        "observation": [],
+        "strengths": [],
+        "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+      },
+      "sessions": 3,
+      "observations": 9,
+      "passed": false,
+      "checks": [
+        {
+          "name": "primary targets and rank",
+          "category": "primary",
+          "expected": [],
+          "actual": [
+            "question.do_support"
+          ],
+          "passed": false
+        },
+        {
+          "name": "observed strengths",
+          "category": "strength",
+          "expected": [],
+          "actual": [],
+          "passed": true
+        },
+        {
+          "name": "collect question.do_support",
+          "category": "collection",
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        {
+          "name": "construction coverage",
+          "category": "facts",
+          "expected": [
+            "question.do_support"
+          ],
+          "actual": [
+            "question.do_support"
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/spontaneous successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            9
+          ],
+          "actual": [
+            0,
+            9
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/spontaneous Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/prompted successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/prompted Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/controlled successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/controlled Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/unknown successes, failures",
+          "category": "facts",
+          "expected": [
+            0,
+            0
+          ],
+          "actual": [
+            0,
+            0
+          ],
+          "passed": true
+        },
+        {
+          "name": "question.do_support/unknown Beta mean",
+          "category": "facts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/trend",
+          "category": "trend",
+          "expected": "insufficient_data",
+          "actual": "insufficient_data",
+          "passed": true
+        },
+        {
+          "name": "question.do_support/all provenance and IDs rendered",
+          "category": "provenance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "question.do_support/practice justified by failed quotes on distinct dates",
+          "category": "citations",
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        {
+          "name": "order invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "name": "reprocessing invariance",
+          "category": "invariance",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

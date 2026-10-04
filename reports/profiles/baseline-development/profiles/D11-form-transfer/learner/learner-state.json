@@ -1,0 +1,137 @@
+{
+  "engine_version": "engine-1",
+  "sessions": 2,
+  "observations": 16,
+  "assumptions": [
+    "Only supported grammatical attempts enter accuracy counts.",
+    "Reports may be selective and attempts correlated: credible intervals are conditional on the independence model, not full real-world certainty.",
+    "Opportunities and self-corrections are recorded separately; no inference of avoidance from a single event."
+  ],
+  "constructions": {
+    "modal_perfect.should_have": {
+      "label": "Modal perfect — should have",
+      "modes": {
+        "spontaneous": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 10,
+          "failures": 0,
+          "attempts": 10,
+          "alpha": 11,
+          "beta": 1,
+          "posterior_mean": 0.9166666666666666,
+          "credible_interval_95": [
+            0.7150858470818455,
+            0.9977010277861857
+          ]
+        },
+        "prompted": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 0,
+          "attempts": 0,
+          "alpha": 1,
+          "beta": 1,
+          "posterior_mean": 0.5,
+          "credible_interval_95": [
+            0.025,
+            0.975
+          ]
+        },
+        "controlled": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 6,
+          "failures": 0,
+          "attempts": 6,
+          "alpha": 7,
+          "beta": 1,
+          "posterior_mean": 0.875,
+          "credible_interval_95": [
+            0.5903836027749966,
+            0.9963897031380994
+          ]
+        },
+        "unknown": {
+          "model": "Beta(1,1) prior + independent Bernoulli attempts",
+          "successes": 0,
+          "failures": 0,
+          "attempts": 0,
+          "alpha": 1,
+          "beta": 1,
+          "posterior_mean": 0.5,
+          "credible_interval_95": [
+            0.025,
+            0.975
+          ]
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 0,
+      "uncertain_observations": 0,
+      "sessions_observed": 2,
+      "last_seen": "2026-01-08",
+      "support_score_counts": {
+        "1": 0,
+        "2": 0,
+        "3": 16,
+        "4": 0
+      },
+      "pipeline_ids": [
+        "gold-ir-profiles-1"
+      ],
+      "features": {
+        "affirmative": 10,
+        "negative": 0,
+        "question": 6,
+        "unknown": 0
+      },
+      "trend": {
+        "label": "insufficient_data",
+        "rule": "At least 4 distinct dates, 2 sessions and 5 spontaneous attempts in each half; delta >= 0.20 improving, <= -0.20 declining; otherwise stable. Descriptive, not a significance test.",
+        "session_series": [
+          {
+            "session_id": "SES-bdcc6b5b379a3e807f8c",
+            "date": "2026-01-01",
+            "successes": 5,
+            "attempts": 5
+          },
+          {
+            "session_id": "SES-78db9fbe1d02fd7586ae",
+            "date": "2026-01-08",
+            "successes": 5,
+            "attempts": 5
+          }
+        ]
+      },
+      "recent_spontaneous_failures": 0,
+      "interpretation": "Observed successes in these contexts; transfer remains untested.",
+      "unknowns": [
+        "Insufficient evidence for negative forms (fewer than 3 attempts)."
+      ],
+      "evidence_ids": [
+        "OBS-b3241ac52f182edeb845",
+        "OBS-856cb5b19b416e100113",
+        "OBS-bffde8b9c2d84ae8a875",
+        "OBS-12970c8712fc457b2b06",
+        "OBS-c380deb569510b965669",
+        "OBS-a58d94d3aa13d8fb3567",
+        "OBS-eff9dc3a2c21f60ab1cf",
+        "OBS-7c2d32ff951b99fde69b",
+        "OBS-5168ef1494a7fc2e9d74",
+        "OBS-1690a84e4767804f0880",
+        "OBS-dff49804ae787615ba24",
+        "OBS-de51cb5d08f862de7404",
+        "OBS-3503eb54ea0c128d48bc",
+        "OBS-2abdb8b16f9c156f236c",
+        "OBS-25d481661dba420707c0",
+        "OBS-5fd136d1f45594f6a7e4"
+      ],
+      "recent_evidence_ids": [
+        "OBS-de51cb5d08f862de7404",
+        "OBS-3503eb54ea0c128d48bc",
+        "OBS-2abdb8b16f9c156f236c",
+        "OBS-25d481661dba420707c0",
+        "OBS-5fd136d1f45594f6a7e4"
+      ]
+    }
+  }
+}

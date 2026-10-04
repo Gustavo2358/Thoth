@@ -1,0 +1,56 @@
+{
+  "id": "D01-empty",
+  "description": "Uma aula sem evidências não demonstra competência nem dificuldade.",
+  "expected": {
+    "primary": [],
+    "strengths": [],
+    "collect": [],
+    "families": {}
+  },
+  "selected": {
+    "primary": [],
+    "observation": [],
+    "strengths": [],
+    "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+  },
+  "sessions": 1,
+  "observations": 0,
+  "passed": true,
+  "checks": [
+    {
+      "name": "primary targets and rank",
+      "category": "primary",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "observed strengths",
+      "category": "strength",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "construction coverage",
+      "category": "facts",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "order invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "reprocessing invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ]
+}

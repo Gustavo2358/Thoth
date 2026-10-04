@@ -1,0 +1,1722 @@
+{
+  "version": "profiles-1",
+  "design": "same-author synthetic gold IR; not blinded",
+  "profiles": [
+    {
+      "id": "D01-empty",
+      "split": "development",
+      "description": "Uma aula sem evidências não demonstra competência nem dificuldade.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": []
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [],
+        "families": {}
+      }
+    },
+    {
+      "id": "D02-sparse",
+      "split": "development",
+      "description": "Um acerto isolado pede coleta, sem declarar domínio.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "S",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "present_perfect.duration"
+        ],
+        "families": {
+          "present_perfect.duration": {
+            "counts": {
+              "spontaneous": [
+                1,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "insufficient_data"
+          }
+        }
+      }
+    },
+    {
+      "id": "D03-prompt-gap",
+      "split": "development",
+      "description": "Acerta quando guiado, mas erra espontaneamente em dias distintos.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "FS",
+              "mode": "spontaneous",
+              "feature": "question"
+            },
+            {
+              "family": "question.do_support",
+              "outcomes": "SSSS",
+              "mode": "prompted",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "F",
+              "mode": "spontaneous",
+              "feature": "question"
+            },
+            {
+              "family": "question.do_support",
+              "outcomes": "SSSS",
+              "mode": "prompted",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "F",
+              "mode": "spontaneous",
+              "feature": "question"
+            },
+            {
+              "family": "question.do_support",
+              "outcomes": "SSSS",
+              "mode": "prompted",
+              "feature": "question"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [
+          "question.do_support"
+        ],
+        "strengths": [],
+        "collect": [],
+        "families": {
+          "question.do_support": {
+            "counts": {
+              "spontaneous": [
+                1,
+                3
+              ],
+              "prompted": [
+                12,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "mode_gap": true
+          }
+        }
+      }
+    },
+    {
+      "id": "D04-controlled-only",
+      "split": "development",
+      "description": "Exercício controlado não comprova transferência para conversa.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "article.indefinite",
+              "outcomes": "SSSSS",
+              "mode": "controlled",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "article.indefinite",
+              "outcomes": "SSSSS",
+              "mode": "controlled",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "article.indefinite"
+        ],
+        "families": {
+          "article.indefinite": {
+            "counts": {
+              "spontaneous": [
+                0,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                10,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "insufficient_data"
+          }
+        }
+      }
+    },
+    {
+      "id": "D05-clustered-errors",
+      "split": "development",
+      "description": "Três erros na mesma aula mais exercício em outra não provam recorrência.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "S",
+              "mode": "controlled",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "present_perfect.duration"
+        ],
+        "families": {
+          "present_perfect.duration": {
+            "counts": {
+              "spontaneous": [
+                0,
+                3
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                1,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "D06-recovery",
+      "split": "development",
+      "description": "Erros antigos seguidos de três aulas corretas: melhora, sem dificuldade atual afirmada.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "SSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 21,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "SSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 28,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "SSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "present_perfect.duration"
+        ],
+        "families": {
+          "present_perfect.duration": {
+            "counts": {
+              "spontaneous": [
+                9,
+                6
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "improving",
+            "historical_only": true
+          }
+        }
+      }
+    },
+    {
+      "id": "D07-relapse",
+      "split": "development",
+      "description": "Muitos acertos históricos não anulam recaída recente nem autorizam força estável.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "SSSSSSSSSS",
+              "mode": "spontaneous",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "SSSSSSSSSS",
+              "mode": "spontaneous",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "SSSSSSSSSS",
+              "mode": "spontaneous",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 21,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "SSSSSSSSSS",
+              "mode": "spontaneous",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 28,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 35,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "question"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [
+          "question.do_support"
+        ],
+        "strengths": [],
+        "collect": [],
+        "families": {
+          "question.do_support": {
+            "counts": {
+              "spontaneous": [
+                40,
+                6
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "declining"
+          }
+        }
+      }
+    },
+    {
+      "id": "D08-opportunities",
+      "split": "development",
+      "description": "Escolhas alternativas são oportunidades, sem erro nem diagnóstico de evitação.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "O",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "O",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "O",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "duration.since_for"
+        ],
+        "families": {
+          "duration.since_for": {
+            "counts": {
+              "spontaneous": [
+                0,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "opportunities": 3,
+            "uncertain_observations": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "D09-self-repair",
+      "split": "development",
+      "description": "Autocorreções são evidência distinta de acerto ou erro independente.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "R",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "R",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "R",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "duration.since_for"
+        ],
+        "families": {
+          "duration.since_for": {
+            "counts": {
+              "spontaneous": [
+                0,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "self_corrections": 3,
+            "uncertain_observations": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "D10-style-ambiguity",
+      "split": "development",
+      "description": "Preferência de estilo e contexto incerto não contaminam accuracy.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "article.indefinite",
+              "outcomes": "TUU",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "article.indefinite",
+              "outcomes": "TUU",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "article.indefinite"
+        ],
+        "families": {
+          "article.indefinite": {
+            "counts": {
+              "spontaneous": [
+                0,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "uncertain_observations": 6
+          }
+        }
+      }
+    },
+    {
+      "id": "D11-form-transfer",
+      "split": "development",
+      "description": "Perguntas corretas em exercício não cobrem perguntas espontâneas.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "modal_perfect.should_have",
+              "outcomes": "SSSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            },
+            {
+              "family": "modal_perfect.should_have",
+              "outcomes": "SSS",
+              "mode": "controlled",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "modal_perfect.should_have",
+              "outcomes": "SSSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            },
+            {
+              "family": "modal_perfect.should_have",
+              "outcomes": "SSS",
+              "mode": "controlled",
+              "feature": "question"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [
+          "modal_perfect.should_have"
+        ],
+        "collect": [
+          "modal_perfect.should_have"
+        ],
+        "families": {
+          "modal_perfect.should_have": {
+            "counts": {
+              "spontaneous": [
+                10,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                6,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "missing_forms": [
+              "negative",
+              "question"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "D12-opportunities-after-errors",
+      "split": "development",
+      "description": "Oportunidades posteriores não apagam tentativas falhas ou suas citações.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "FSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "SSF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 21,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "O",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 28,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "O",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 35,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "O",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [
+          "present_perfect.duration"
+        ],
+        "strengths": [],
+        "collect": [],
+        "families": {
+          "present_perfect.duration": {
+            "counts": {
+              "spontaneous": [
+                4,
+                5
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "opportunities": 3,
+            "uncertain_observations": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "D13-competing-targets",
+      "split": "development",
+      "description": "Priorizar duas dificuldades recorrentes mais frequentes e citar falhas reais.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "question"
+            },
+            {
+              "family": "article.indefinite",
+              "outcomes": "FFS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            },
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "FSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "question"
+            },
+            {
+              "family": "article.indefinite",
+              "outcomes": "FFS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            },
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "FSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "question"
+            },
+            {
+              "family": "article.indefinite",
+              "outcomes": "FFS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            },
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "FSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [
+          "question.do_support",
+          "article.indefinite"
+        ],
+        "strengths": [],
+        "collect": [],
+        "families": {
+          "question.do_support": {
+            "counts": {
+              "spontaneous": [
+                0,
+                9
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            }
+          },
+          "article.indefinite": {
+            "counts": {
+              "spontaneous": [
+                3,
+                6
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            }
+          },
+          "present_perfect.duration": {
+            "counts": {
+              "spontaneous": [
+                6,
+                3
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "D14-same-day",
+      "split": "development",
+      "description": "Três relatos no mesmo dia não demonstram dificuldade longitudinal independente.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "question"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "question.do_support"
+        ],
+        "families": {
+          "question.do_support": {
+            "counts": {
+              "spontaneous": [
+                0,
+                9
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "insufficient_data"
+          }
+        }
+      }
+    },
+    {
+      "id": "H01-repeated-mixed",
+      "split": "holdout",
+      "description": "Erros em duas datas com algum sucesso: prática, apesar de exercícios perfeitos.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "FS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            },
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "SSSSSSS",
+              "mode": "controlled",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "SF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            },
+            {
+              "family": "present_perfect.duration",
+              "outcomes": "SSSSSSS",
+              "mode": "controlled",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [
+          "present_perfect.duration"
+        ],
+        "strengths": [],
+        "collect": [],
+        "families": {
+          "present_perfect.duration": {
+            "counts": {
+              "spontaneous": [
+                2,
+                2
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                14,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "mode_gap": true
+          }
+        }
+      }
+    },
+    {
+      "id": "H02-observed-strength",
+      "split": "holdout",
+      "description": "Acertos distribuídos: força observada, mantendo lacunas de perguntas e negações.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "present_perfect.vs_simple_past",
+              "outcomes": "SSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "present_perfect.vs_simple_past",
+              "outcomes": "SSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "present_perfect.vs_simple_past",
+              "outcomes": "SSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 21,
+          "runs": [
+            {
+              "family": "present_perfect.vs_simple_past",
+              "outcomes": "SSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [
+          "present_perfect.vs_simple_past"
+        ],
+        "collect": [
+          "present_perfect.vs_simple_past"
+        ],
+        "families": {
+          "present_perfect.vs_simple_past": {
+            "counts": {
+              "spontaneous": [
+                12,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "stable",
+            "missing_forms": [
+              "negative",
+              "question"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "H03-recovered-modal",
+      "split": "holdout",
+      "description": "Recuperação em outra construção: reconhecer histórico sem insistir no erro antigo.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "modal_perfect.should_have",
+              "outcomes": "FFFF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "modal_perfect.should_have",
+              "outcomes": "FFFF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "modal_perfect.should_have",
+              "outcomes": "SSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 21,
+          "runs": [
+            {
+              "family": "modal_perfect.should_have",
+              "outcomes": "SSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 28,
+          "runs": [
+            {
+              "family": "modal_perfect.should_have",
+              "outcomes": "SSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "modal_perfect.should_have"
+        ],
+        "families": {
+          "modal_perfect.should_have": {
+            "counts": {
+              "spontaneous": [
+                12,
+                8
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "improving",
+            "historical_only": true
+          }
+        }
+      }
+    },
+    {
+      "id": "H04-declining-duration",
+      "split": "holdout",
+      "description": "Recaída em since/for deve sobrepor força histórica.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "SSSSSSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "SSSSSSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "SSSSSSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 21,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "SSSSSSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 28,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "FFFF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 35,
+          "runs": [
+            {
+              "family": "duration.since_for",
+              "outcomes": "FFFF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [
+          "duration.since_for"
+        ],
+        "strengths": [],
+        "collect": [],
+        "families": {
+          "duration.since_for": {
+            "counts": {
+              "spontaneous": [
+                32,
+                8
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "trend": "declining"
+          }
+        }
+      }
+    },
+    {
+      "id": "H05-controlled-gap",
+      "split": "holdout",
+      "description": "Bom desempenho controlado com falhas espontâneas não prova causa cognitiva.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "auxiliary.chain",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            },
+            {
+              "family": "auxiliary.chain",
+              "outcomes": "SSSSSSSS",
+              "mode": "controlled",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "auxiliary.chain",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            },
+            {
+              "family": "auxiliary.chain",
+              "outcomes": "SSSSSSSS",
+              "mode": "controlled",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [
+          "auxiliary.chain"
+        ],
+        "strengths": [],
+        "collect": [],
+        "families": {
+          "auxiliary.chain": {
+            "counts": {
+              "spontaneous": [
+                0,
+                6
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                16,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "mode_gap": true
+          }
+        }
+      }
+    },
+    {
+      "id": "H06-unresolved",
+      "split": "holdout",
+      "description": "Contexto ambíguo, paráfrases e autocorreção: coletar, sem inventar falhas.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "present_perfect.continuous",
+              "outcomes": "UO",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "present_perfect.continuous",
+              "outcomes": "OR",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "present_perfect.continuous"
+        ],
+        "families": {
+          "present_perfect.continuous": {
+            "counts": {
+              "spontaneous": [
+                0,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                0,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "opportunities": 2,
+            "self_corrections": 1,
+            "uncertain_observations": 4
+          }
+        }
+      }
+    },
+    {
+      "id": "H07-single-failed-day",
+      "split": "holdout",
+      "description": "Uma aula ruim mais três aulas controladas não prova repetição espontânea.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "FFF",
+              "mode": "spontaneous",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "SSS",
+              "mode": "controlled",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "SSS",
+              "mode": "controlled",
+              "feature": "question"
+            }
+          ]
+        },
+        {
+          "day": 21,
+          "runs": [
+            {
+              "family": "question.do_support",
+              "outcomes": "SSS",
+              "mode": "controlled",
+              "feature": "question"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [],
+        "collect": [
+          "question.do_support"
+        ],
+        "families": {
+          "question.do_support": {
+            "counts": {
+              "spontaneous": [
+                0,
+                3
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                9,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "H08-negative-transfer",
+      "split": "holdout",
+      "description": "Negação controlada não elimina lacuna de negação em conversa.",
+      "sessions": [
+        {
+          "day": 0,
+          "runs": [
+            {
+              "family": "article.indefinite",
+              "outcomes": "SSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            },
+            {
+              "family": "article.indefinite",
+              "outcomes": "SSS",
+              "mode": "controlled",
+              "feature": "negative"
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "runs": [
+            {
+              "family": "article.indefinite",
+              "outcomes": "SSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            },
+            {
+              "family": "article.indefinite",
+              "outcomes": "SSS",
+              "mode": "controlled",
+              "feature": "negative"
+            }
+          ]
+        },
+        {
+          "day": 14,
+          "runs": [
+            {
+              "family": "article.indefinite",
+              "outcomes": "SSSS",
+              "mode": "spontaneous",
+              "feature": "affirmative"
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "primary": [],
+        "strengths": [
+          "article.indefinite"
+        ],
+        "collect": [
+          "article.indefinite"
+        ],
+        "families": {
+          "article.indefinite": {
+            "counts": {
+              "spontaneous": [
+                12,
+                0
+              ],
+              "prompted": [
+                0,
+                0
+              ],
+              "controlled": [
+                6,
+                0
+              ],
+              "unknown": [
+                0,
+                0
+              ]
+            },
+            "missing_forms": [
+              "negative",
+              "question"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

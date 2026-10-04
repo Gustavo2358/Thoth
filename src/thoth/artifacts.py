@@ -60,7 +60,10 @@ def state_markdown(state: dict) -> str:
             lines.append(f"| {mode} | {stats['successes']} | {stats['failures']} | {estimate} | [{lo:.3f}, {hi:.3f}] |")
         lines += ["", "Model: Beta(1,1) prior; posterior Beta(1+successes, 1+failures).",
                   f"Opportunities: {entry['opportunities']}; self-corrections: {entry['self_corrections']}; uncertain: {entry['uncertain_observations']}",
-                  f"Trend: {entry['trend']['label']}", "", "Hypothesis: " + entry["interpretation"], "", "Unknowns:", ""]
+                  f"Trend: {entry['trend']['label']}", "", "Hypothesis: " + entry["interpretation"],
+                  "Mode comparison: " + entry["mode_gap"]["interpretation"],
+                  "Recent failed spontaneous evidence IDs: " + ", ".join(entry["practice_evidence_ids"]),
+                  "", "Unknowns:", ""]
         lines += ["- " + x for x in entry["unknowns"]] or ["- Transfer to unobserved contexts remains untested."]
         lines += ["", "Recent evidence IDs: " + ", ".join(entry["recent_evidence_ids"]), ""]
     return "\n".join(lines)
@@ -70,7 +73,7 @@ def lesson_markdown(state: dict) -> str:
     selected = lesson_targets(state)
     lines = ["# Next Lesson Brief", "", "Focus on accurate spontaneous English production in natural conversation.", "",
              "## Primary practice targets", ""]
-    lines += ["- " + TAXONOMY[f] + " (`" + f + "`): " + str(state["constructions"][f]["recent_spontaneous_failures"]) + " recent spontaneous failures; evidence: " + ", ".join(state["constructions"][f]["recent_evidence_ids"])
+    lines += ["- " + TAXONOMY[f] + " (`" + f + "`): " + str(state["constructions"][f]["recent_spontaneous_failures"]) + " recent spontaneous failures; evidence: " + ", ".join(state["constructions"][f]["practice_evidence_ids"])
               for f in selected["primary"]] or ["- Insufficient repeated evidence for a primary difficulty. Collect evidence first."]
     lines += ["", "## Observation targets", ""]
     lines += ["- " + TAXONOMY[f] + ": collect spontaneous attempts, especially questions and negatives."
@@ -83,6 +86,8 @@ def lesson_markdown(state: dict) -> str:
               "- Test transfer to new topics; distinguish spontaneous speech from prompted and controlled practice.",
               "- Verify negative and question forms; avoid treating legitimate alternatives as failures.",
               "- Record non-selected targets as opportunities, separately from grammatical attempts.",
+              "- Compare guided and spontaneous performance without diagnosing a retrieval cause.",
+              "- Recheck dated evidence in today's conversation before choosing a practice task.",
               "", "## Selection rationale", "", selected["selection_rule"], ""]
     return "\n".join(lines)
 

@@ -1,0 +1,191 @@
+{
+  "id": "D03-prompt-gap",
+  "description": "Acerta quando guiado, mas erra espontaneamente em dias distintos.",
+  "expected": {
+    "primary": [
+      "question.do_support"
+    ],
+    "strengths": [],
+    "collect": [],
+    "families": {
+      "question.do_support": {
+        "counts": {
+          "spontaneous": [
+            1,
+            3
+          ],
+          "prompted": [
+            12,
+            0
+          ],
+          "controlled": [
+            0,
+            0
+          ],
+          "unknown": [
+            0,
+            0
+          ]
+        },
+        "mode_gap": true
+      }
+    }
+  },
+  "selected": {
+    "primary": [
+      "question.do_support"
+    ],
+    "observation": [],
+    "strengths": [],
+    "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+  },
+  "sessions": 3,
+  "observations": 16,
+  "passed": false,
+  "checks": [
+    {
+      "name": "primary targets and rank",
+      "category": "primary",
+      "expected": [
+        "question.do_support"
+      ],
+      "actual": [
+        "question.do_support"
+      ],
+      "passed": true
+    },
+    {
+      "name": "observed strengths",
+      "category": "strength",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "construction coverage",
+      "category": "facts",
+      "expected": [
+        "question.do_support"
+      ],
+      "actual": [
+        "question.do_support"
+      ],
+      "passed": true
+    },
+    {
+      "name": "question.do_support/spontaneous successes, failures",
+      "category": "facts",
+      "expected": [
+        1,
+        3
+      ],
+      "actual": [
+        1,
+        3
+      ],
+      "passed": true
+    },
+    {
+      "name": "question.do_support/spontaneous Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "question.do_support/prompted successes, failures",
+      "category": "facts",
+      "expected": [
+        12,
+        0
+      ],
+      "actual": [
+        12,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "question.do_support/prompted Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "question.do_support/controlled successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "question.do_support/controlled Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "question.do_support/unknown successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "question.do_support/unknown Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "question.do_support/prompted or controlled gap described",
+      "category": "interpretation",
+      "expected": true,
+      "actual": false,
+      "passed": false
+    },
+    {
+      "name": "question.do_support/all provenance and IDs rendered",
+      "category": "provenance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "question.do_support/practice justified by failed quotes on distinct dates",
+      "category": "citations",
+      "expected": true,
+      "actual": false,
+      "passed": false
+    },
+    {
+      "name": "order invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "reprocessing invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ]
+}

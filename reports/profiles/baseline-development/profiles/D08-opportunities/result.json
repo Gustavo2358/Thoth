@@ -1,0 +1,195 @@
+{
+  "id": "D08-opportunities",
+  "description": "Escolhas alternativas são oportunidades, sem erro nem diagnóstico de evitação.",
+  "expected": {
+    "primary": [],
+    "strengths": [],
+    "collect": [
+      "duration.since_for"
+    ],
+    "families": {
+      "duration.since_for": {
+        "counts": {
+          "spontaneous": [
+            0,
+            0
+          ],
+          "prompted": [
+            0,
+            0
+          ],
+          "controlled": [
+            0,
+            0
+          ],
+          "unknown": [
+            0,
+            0
+          ]
+        },
+        "opportunities": 3,
+        "uncertain_observations": 3
+      }
+    }
+  },
+  "selected": {
+    "primary": [],
+    "observation": [
+      "duration.since_for"
+    ],
+    "strengths": [],
+    "selection_rule": "Practice: >=3 spontaneous attempts across >=2 sessions and >=2 spontaneous failures in the last 3 observed sessions; rank by recent failures. Collect: <5 attempts or 95% interval width >0.5. Strength: >=5 attempts and lower credible bound >=0.6."
+  },
+  "sessions": 3,
+  "observations": 3,
+  "passed": true,
+  "checks": [
+    {
+      "name": "primary targets and rank",
+      "category": "primary",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "observed strengths",
+      "category": "strength",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "collect duration.since_for",
+      "category": "collection",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "construction coverage",
+      "category": "facts",
+      "expected": [
+        "duration.since_for"
+      ],
+      "actual": [
+        "duration.since_for"
+      ],
+      "passed": true
+    },
+    {
+      "name": "duration.since_for/spontaneous successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "duration.since_for/spontaneous Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "duration.since_for/prompted successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "duration.since_for/prompted Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "duration.since_for/controlled successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "duration.since_for/controlled Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "duration.since_for/unknown successes, failures",
+      "category": "facts",
+      "expected": [
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "duration.since_for/unknown Beta mean",
+      "category": "facts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "duration.since_for/opportunities",
+      "category": "exclusions",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "name": "duration.since_for/uncertain_observations",
+      "category": "exclusions",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "name": "duration.since_for/all provenance and IDs rendered",
+      "category": "provenance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "order invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "reprocessing invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ]
+}

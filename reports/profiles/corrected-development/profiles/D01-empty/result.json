@@ -1,0 +1,56 @@
+{
+  "id": "D01-empty",
+  "description": "Uma aula sem evidências não demonstra competência nem dificuldade.",
+  "expected": {
+    "primary": [],
+    "strengths": [],
+    "collect": [],
+    "families": {}
+  },
+  "selected": {
+    "primary": [],
+    "observation": [],
+    "strengths": [],
+    "selection_rule": "Practice: >=3 spontaneous attempts and failures on >=2 distinct dates among the last 3 spontaneous-attempt dates; rank by recent failures. Controlled practice and opportunities do not erase this window. Collect: <5 attempts, 95% interval width >0.5, fewer than 2 spontaneous dates, or missing spontaneous negative/question coverage (<3 per form). Strength: >=5 attempts, >=2 spontaneous dates, lower credible bound >=0.6, and no failures in that recent window. Recency is relative to observed attempts, not a calendar expiry; confirm old evidence in a new conversation."
+  },
+  "sessions": 1,
+  "observations": 0,
+  "passed": true,
+  "checks": [
+    {
+      "name": "primary targets and rank",
+      "category": "primary",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "observed strengths",
+      "category": "strength",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "construction coverage",
+      "category": "facts",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "name": "order invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "name": "reprocessing invariance",
+      "category": "invariance",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ]
+}
