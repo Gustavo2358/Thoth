@@ -1,0 +1,29 @@
+{
+  "frozen_at": "2026-10-04T19:25:51.803489+00:00",
+  "pipeline": {
+    "provider": "offline-rules",
+    "model": "narrative-baseline-1",
+    "verifier_model": "independent-grammar-checks-1",
+    "adapter_version": "offline-1",
+    "schema_version": "observation-1",
+    "taxonomy_version": "taxonomy-1",
+    "extractor_prompt_version": "extractor-1",
+    "verifier_prompt_version": "verifier-1",
+    "extractor_prompt_hash": "3822190b5557813a4fbcb2fcc938586b67ed3109fb6e24a9b5eedcf5f9afaa26",
+    "verifier_prompt_hash": "ebd347ca4e69aea1cc198c1bbc254abd50ebf6da99213a66fd39434b396d53f3",
+    "implementation_hash": "777c9d5430d0ef1c4304427187621a92ab3ea7287e9d06404a5863236cd47b51",
+    "pipeline_id": "a3d0d7229140bafff56838b22ca39ba29c7e8d28dafc0809899659575338cfee"
+  },
+  "dataset": {
+    "version": "synthetic-1",
+    "manifest_sha256": "800b225a7def48a7fce06bc73060091af28dbead28211f548807aec4ad21df10"
+  },
+  "qualification_rules": {
+    "minimum_grammar_precision": 0.95,
+    "maximum_negative_error_rate": 0.02,
+    "maximum_accepted_hallucinated_provenance": 0,
+    "minimum_ambiguous_uncertain_or_absent_rate": 0.9,
+    "real_model_required": true
+  },
+  "note": "Pipeline and dataset frozen before first holdout evaluation; qualification outputs are archived. Never tune this version against holdout errors."
+}

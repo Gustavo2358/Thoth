@@ -1,0 +1,10 @@
+{
+  "request_sha256": "51f37e768ce47692de0109142a1df6984d2f0d1aacc0d8a69a1f0beff90a27ff",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "supported",
+    "reason": "Visited with last year is a valid completed-time selection."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

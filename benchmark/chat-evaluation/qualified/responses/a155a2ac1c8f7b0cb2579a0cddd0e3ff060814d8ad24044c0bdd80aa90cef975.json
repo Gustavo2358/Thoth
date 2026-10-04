@@ -1,0 +1,10 @@
+{
+  "request_sha256": "a155a2ac1c8f7b0cb2579a0cddd0e3ff060814d8ad24044c0bdd80aa90cef975",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "supported",
+    "reason": "Yesterday anchors a completed time. Have visited is inappropriate for that reading and visited repairs it."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

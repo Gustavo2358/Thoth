@@ -1,0 +1,10 @@
+{
+  "request_sha256": "4576e8ab5bf134471463ac20724e18e234fada595cad05d144a0543afe8f9f0e",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "supported",
+    "reason": "Have been working is explicitly present in the learner's continuing-activity quote."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

@@ -1,0 +1,484 @@
+{
+  "tp": 116,
+  "false_positives": 0,
+  "false_negatives": 12,
+  "precision": 1.0,
+  "recall": 0.90625,
+  "f1": 0.9508196721311475,
+  "predictions": 116,
+  "gold_observations": 128,
+  "grammar_attempt_metrics": {
+    "tp": 92,
+    "false_positives": 0,
+    "false_negatives": 12,
+    "precision": 1.0,
+    "recall": 0.8846153846153846,
+    "f1": 0.9387755102040817
+  },
+  "accepted_hallucinated_provenance": 0,
+  "rejected_provenance": 0,
+  "uncertain_observations": 24,
+  "abstention_rate": 0.20689655172413793,
+  "sessions_with_no_predictions": 0,
+  "negative_error_control_blocks": 72,
+  "negative_blocks_with_false_error": 0,
+  "negative_error_false_positive_rate": 0.0,
+  "by_construction": {
+    "article.indefinite": {
+      "tp": 12,
+      "false_positives": 0,
+      "false_negatives": 4,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571
+    },
+    "auxiliary.chain": {
+      "tp": 12,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "duration.since_for": {
+      "tp": 8,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "modal_perfect.should_have": {
+      "tp": 16,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "present_perfect.continuous": {
+      "tp": 8,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "present_perfect.duration": {
+      "tp": 32,
+      "false_positives": 0,
+      "false_negatives": 8,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.8888888888888888
+    },
+    "present_perfect.vs_simple_past": {
+      "tp": 8,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "question.do_support": {
+      "tp": 12,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "unclassified": {
+      "tp": 8,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "by_evidence_type": {
+    "explicit_correction": {
+      "tp": 44,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "opportunity": {
+      "tp": 4,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "other": {
+      "tp": 16,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "self_correction": {
+      "tp": 4,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "successful_use": {
+      "tp": 48,
+      "false_positives": 0,
+      "false_negatives": 12,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.8888888888888888
+    }
+  },
+  "by_category": {
+    "ambiguous": {
+      "tp": 8,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "correct_control": {
+      "tp": 4,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "ended_context": {
+      "tp": 4,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "irrelevant": {
+      "tp": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "multiple": {
+      "tp": 20,
+      "false_positives": 0,
+      "false_negatives": 4,
+      "precision": 1.0,
+      "recall": 0.8333333333333334,
+      "f1": 0.9090909090909091
+    },
+    "negative_form": {
+      "tp": 12,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "opportunity": {
+      "tp": 4,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "paraphrase": {
+      "tp": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "positive": {
+      "tp": 20,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "question": {
+      "tp": 16,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "self_correction": {
+      "tp": 4,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "style": {
+      "tp": 4,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "successful": {
+      "tp": 16,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "teacher_only": {
+      "tp": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "teacher_wrong": {
+      "tp": 0,
+      "false_positives": 0,
+      "false_negatives": 8,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "vocabulary": {
+      "tp": 4,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "outcome_confusion_matrix": {
+    "correct->correct": 48,
+    "correct->missed": 12,
+    "incorrect->incorrect": 44,
+    "uncertain->uncertain": 24
+  },
+  "failures": [
+    {
+      "session_id": "development-00-0",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During the lesson about testing, we discussed item 8. The learner said: \"I've worked here for 2020.\" The teacher corrected this to: \"I've worked here since 2020.\" The situation still continues. The tense is valid; the time preposition needs repair.",
+        "learner_utterance": "I've worked here for 2020.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "outcome": "correct",
+        "production_mode": "unknown",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 1701
+      }
+    },
+    {
+      "session_id": "development-00-1",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During the lesson about testing, we discussed item 24. The learner said: \"I've lived here since 2020.\" The teacher corrected this to: \"I live here since 2020.\" The situation still continues. The teacher claimed that present tense was required, incorrectly.",
+        "learner_utterance": "I've lived here since 2020.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "outcome": "correct",
+        "production_mode": "unknown",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 1741
+      }
+    },
+    {
+      "session_id": "development-00-1",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During a prompted speaking turn about testing, we discussed item 30. The learner said: \"She is an engineer in London.\" The teacher corrected this to: \"She is a engineer in London.\" The teacher suggested a wrong article. The original was grammatical.",
+        "learner_utterance": "She is an engineer in London.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "article.indefinite",
+        "outcome": "correct",
+        "production_mode": "prompted",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 2987
+      }
+    },
+    {
+      "session_id": "development-01-0",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During spontaneous conversation about storage, we discussed item 8. The learner said: \"I've worked here for 2021.\" The teacher corrected this to: \"I've worked here since 2021.\" The situation still continues. The tense is valid; the time preposition needs repair.",
+        "learner_utterance": "I've worked here for 2021.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "outcome": "correct",
+        "production_mode": "spontaneous",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 1713
+      }
+    },
+    {
+      "session_id": "development-01-1",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During spontaneous conversation about storage, we discussed item 24. The learner said: \"I've lived here since 2021.\" The teacher corrected this to: \"I live here since 2021.\" The situation still continues. The teacher claimed that present tense was required, incorrectly.",
+        "learner_utterance": "I've lived here since 2021.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "outcome": "correct",
+        "production_mode": "spontaneous",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 1745
+      }
+    },
+    {
+      "session_id": "development-01-1",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During a controlled drill about storage, we discussed item 30. The learner said: \"She is an engineer in Dublin.\" The teacher corrected this to: \"She is a engineer in Dublin.\" The teacher suggested a wrong article. The original was grammatical.",
+        "learner_utterance": "She is an engineer in Dublin.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "article.indefinite",
+        "outcome": "correct",
+        "production_mode": "controlled",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 2987
+      }
+    },
+    {
+      "session_id": "development-02-0",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During a prompted speaking turn about deployment, we discussed item 8. The learner said: \"I've worked here for 2022.\" The teacher corrected this to: \"I've worked here since 2022.\" The situation still continues. The tense is valid; the time preposition needs repair.",
+        "learner_utterance": "I've worked here for 2022.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "outcome": "correct",
+        "production_mode": "prompted",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 1728
+      }
+    },
+    {
+      "session_id": "development-02-1",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During a prompted speaking turn about deployment, we discussed item 24. The learner said: \"I've lived here since 2022.\" The teacher corrected this to: \"I live here since 2022.\" The situation still continues. The teacher claimed that present tense was required, incorrectly.",
+        "learner_utterance": "I've lived here since 2022.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "outcome": "correct",
+        "production_mode": "prompted",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 1784
+      }
+    },
+    {
+      "session_id": "development-02-1",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During the lesson about deployment, we discussed item 30. The learner said: \"She is an engineer in Paris.\" The teacher corrected this to: \"She is a engineer in Paris.\" The teacher suggested a wrong article. The original was grammatical.",
+        "learner_utterance": "She is an engineer in Paris.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "article.indefinite",
+        "outcome": "correct",
+        "production_mode": "unknown",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 3032
+      }
+    },
+    {
+      "session_id": "development-03-0",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During a controlled drill about metrics, we discussed item 8. The learner said: \"I've worked here for 2023.\" The teacher corrected this to: \"I've worked here since 2023.\" The situation still continues. The tense is valid; the time preposition needs repair.",
+        "learner_utterance": "I've worked here for 2023.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "outcome": "correct",
+        "production_mode": "controlled",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 1701
+      }
+    },
+    {
+      "session_id": "development-03-1",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During a controlled drill about metrics, we discussed item 24. The learner said: \"I've lived here since 2023.\" The teacher corrected this to: \"I live here since 2023.\" The situation still continues. The teacher claimed that present tense was required, incorrectly.",
+        "learner_utterance": "I've lived here since 2023.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "outcome": "correct",
+        "production_mode": "controlled",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 1741
+      }
+    },
+    {
+      "session_id": "development-03-1",
+      "kind": "missing_observation",
+      "gold": {
+        "source_span": "During spontaneous conversation about metrics, we discussed item 30. The learner said: \"She is an engineer in Rome.\" The teacher corrected this to: \"She is a engineer in Rome.\" The teacher suggested a wrong article. The original was grammatical.",
+        "learner_utterance": "She is an engineer in Rome.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "article.indefinite",
+        "outcome": "correct",
+        "production_mode": "spontaneous",
+        "evidence_type": "successful_use",
+        "issue_kind": "none",
+        "feature": "affirmative",
+        "learner_start": 2974
+      }
+    }
+  ]
+}

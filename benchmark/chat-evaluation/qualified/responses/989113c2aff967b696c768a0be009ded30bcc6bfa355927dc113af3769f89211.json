@@ -1,0 +1,10 @@
+{
+  "request_sha256": "989113c2aff967b696c768a0be009ded30bcc6bfa355927dc113af3769f89211",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "supported",
+    "reason": "The learner uses simple present with a continuing since-period; the quoted perfect-duration repair is valid."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

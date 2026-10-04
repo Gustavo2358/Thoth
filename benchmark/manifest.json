@@ -1,0 +1,99 @@
+{
+  "dataset_version": "synthetic-1",
+  "gold_source": "manually specified cases in build_dataset.py, never model output",
+  "splits": {
+    "development": {
+      "sessions": 8,
+      "narrative_blocks": 128,
+      "gold_observations": 128,
+      "negative_error_control_blocks": 72,
+      "adversarial_blocks": 56,
+      "blocks_with_gold_errors": 40,
+      "gold_outcomes": {
+        "correct": 60,
+        "incorrect": 44,
+        "uncertain": 24
+      },
+      "sha256": {
+        "development-00-0.md": "301105f4805b8078b0ec65594db5a9cad447fa5a4f92c831bc66eb32619d8ee6",
+        "development-00-0.gold.json": "45c9c1b8a0261418fbafa411f32207270784961a63eae9561d3009d7f62bf2ff",
+        "development-00-1.md": "28d3bac0e1a0232da55b4b5282e3326db9c5c4166b31a70540e67f479bbec9e1",
+        "development-00-1.gold.json": "5b80919f7dcb851a31c5a9a31692597c158cc7780da3deb3978d73d48892111b",
+        "development-01-0.md": "da6fd3754c8a842be4f21efa720e834a9c5a133cc4ae77216ce483eb54dae6ad",
+        "development-01-0.gold.json": "85a554de0899e60e1beee8042b5e222fdd3ab481e2492d0649211ac763171746",
+        "development-01-1.md": "ef1480482f8bd40b363db7d369d91137570a059d26f04f3b6e3d6183be61af36",
+        "development-01-1.gold.json": "1789ae000c243a71809b5799b98e27cf08c83f94f1b669ae9f0be185eecf2b5f",
+        "development-02-0.md": "125b3cb64fe3adec2a7bc415f8ca6dee7549442a23e91b222c0afed2fece3100",
+        "development-02-0.gold.json": "b8ae070b859decaaaaa34cc40afa20e3f4c24a96d3a7dbb68491ec9e973bf584",
+        "development-02-1.md": "f8144fb620d0344a76484f68b1a29ed9d598cfa1796543a5ae234852083fd7d2",
+        "development-02-1.gold.json": "db95dfb8454142d956ea0569a4f2ae3da3612543f2947c3a2d190e369788a82b",
+        "development-03-0.md": "aa5226ba392517498d572c962f6015822cfa3e6008318ee4e09e8d77b4d00453",
+        "development-03-0.gold.json": "8dd7e10e74f0c60615d5a701214149199fcb49ae05ce6178f718bab5549b0163",
+        "development-03-1.md": "0fff421ff515132e2fcbe0a494b017d0ac4675b36e02b2065a333db625d74f9d",
+        "development-03-1.gold.json": "b0b80877f520f4349ade98be03296295a50b37a951eb5eeb95d866b0ed66284d"
+      }
+    },
+    "calibration": {
+      "sessions": 8,
+      "narrative_blocks": 128,
+      "gold_observations": 128,
+      "negative_error_control_blocks": 72,
+      "adversarial_blocks": 56,
+      "blocks_with_gold_errors": 40,
+      "gold_outcomes": {
+        "correct": 60,
+        "incorrect": 44,
+        "uncertain": 24
+      },
+      "sha256": {
+        "calibration-00-0.md": "edd1b88df5c36ff5cf3e88b3ac15dc79410faeb505eb6d90daa60446d1c86224",
+        "calibration-00-0.gold.json": "7f5663cba5b1eb15042f67eb9363f0dcda1cf99c0426113a7d093f64cc764b87",
+        "calibration-00-1.md": "243f1052f281aefe22fb3225f20257e260e85a6bd9878fb8a8df9ca7b84222b7",
+        "calibration-00-1.gold.json": "22fed39e5c47c8ce566173d0db778ec173a4eb13765c446cecce04b591fa9b5c",
+        "calibration-01-0.md": "d3a9aec7f3ff52e01053287a4adda06cbc8e11de8663068070d3831c9be4e4cc",
+        "calibration-01-0.gold.json": "8cf659904d3527751b3f4b294a85d93fa8478ace036da80ea3f3fc99fbf20358",
+        "calibration-01-1.md": "32d00aa1d3d5b53d082760b9c148dd65339110114e0bbadc49f4de316837c763",
+        "calibration-01-1.gold.json": "d91c4fa4e40e8d3433ccf6f4bfb2dfff043d06249f4e6e0d09791e1ef69465a1",
+        "calibration-02-0.md": "167f880e4fde6b33f224639581d14801b91964876d825b38a284a082957f1c65",
+        "calibration-02-0.gold.json": "03060672b360a7424cf6bc8039e228755059fac7add95d8efc3eaa2a1f930c63",
+        "calibration-02-1.md": "1db26c405a805c2c496a55036397c3e5ec00d18084345045e1e5d4f7a02feb88",
+        "calibration-02-1.gold.json": "7f04244ea520179a14802ad24a0bcd82be18e81fc23d4ed668faa0cbdac80d56",
+        "calibration-03-0.md": "bdc7d70b417559eb6ecf268dbee2ab81604291d6e014063a36f265fbc38142c5",
+        "calibration-03-0.gold.json": "20912a803ba73f22f48a73105b556e1b04c1b87704f8d50ef98ae8800062f2de",
+        "calibration-03-1.md": "04cf569c233a170d6ad23f5a4b6b32db80d017f8952fb7a74d335ccd3d5ed91d",
+        "calibration-03-1.gold.json": "1b71d1c7aadba2f60ceb71a07c743e2247afcd3a5965a1893e9b683bc43c49e2"
+      }
+    },
+    "holdout_test": {
+      "sessions": 8,
+      "narrative_blocks": 128,
+      "gold_observations": 128,
+      "negative_error_control_blocks": 72,
+      "adversarial_blocks": 56,
+      "blocks_with_gold_errors": 40,
+      "gold_outcomes": {
+        "correct": 60,
+        "incorrect": 44,
+        "uncertain": 24
+      },
+      "sha256": {
+        "holdout_test-00-0.md": "ba745f09f5971e0b11b6d35de6869f6a5d701c8bf1ce871b867a6e23bd4f2907",
+        "holdout_test-00-0.gold.json": "5c1918a5aca0202b56816a883aa61bc77f0451a4199573dbe2d24e352ccb9c9b",
+        "holdout_test-00-1.md": "a95900c74430626016807690bdb96e400ee9629e3d694a81bb23a063e821331e",
+        "holdout_test-00-1.gold.json": "ce9180a08fe922bc1df6c2dcc289b8956f538eed6dcafcbecdbc08a676fc9028",
+        "holdout_test-01-0.md": "c06eb1f8a5c9b3b3a9a582143d876f9bcc139bf21b81a2944a43b4ea50bf9d21",
+        "holdout_test-01-0.gold.json": "3a24f3bffa93468aabebb449dc856d37bdebb931e892eeb99adea658b72e6749",
+        "holdout_test-01-1.md": "154df9fb3e6ecf2e3f150176329a6ab79cc414b5f717ff5ba8d17cf537a255f8",
+        "holdout_test-01-1.gold.json": "f15bc9321183733a219db139b649566c7054351cf20f007aaca0a943c37cc818",
+        "holdout_test-02-0.md": "ab68f3acc307f2be7441230823b8fa058eb13b6a0b14a3679d7aa4be621c0fcc",
+        "holdout_test-02-0.gold.json": "9b3ef0f521cd6fe2d0516b2950a206ebb3fa87620e2a838299ff6c78611337de",
+        "holdout_test-02-1.md": "2c63b9e492bb26be0cc5396a4b1de1f4893d10049c9d8a13c9d48fb7e18828d2",
+        "holdout_test-02-1.gold.json": "1d3ba604f504350365413d8146792b2fb707113d6b18bef3c557abd93f7a3d3c",
+        "holdout_test-03-0.md": "40599a7d8078a2128ae9ed1d3b053ec5168e7e1d26183ec4456408daa9e5ed91",
+        "holdout_test-03-0.gold.json": "751e26f351ece2eec92d7ee8ca07360d5c9410ea1ea0ef2c13755fd46891b7e5",
+        "holdout_test-03-1.md": "f90abbd127db885c2890b9118d684b4dd83059fcd39cac27600e7b9db6efbac1",
+        "holdout_test-03-1.gold.json": "ecc1a4aa2c571f153f7e40f11c1546f43674869fba9f62865eedb05835a18cb7"
+      }
+    }
+  }
+}

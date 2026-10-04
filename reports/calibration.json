@@ -1,0 +1,68 @@
+{
+  "version": "support-calibration-1",
+  "created_at": "2026-10-04T19:26:18.494542+00:00",
+  "pipeline": {
+    "provider": "text-input",
+    "model": "codex-session",
+    "verifier_model": "codex-session",
+    "adapter_version": "text-1",
+    "evaluation_kind": "operator-mediated, not independent blind API evaluation",
+    "schema_version": "observation-1",
+    "taxonomy_version": "taxonomy-1",
+    "extractor_prompt_version": "extractor-1",
+    "verifier_prompt_version": "verifier-1",
+    "extractor_prompt_hash": "3822190b5557813a4fbcb2fcc938586b67ed3109fb6e24a9b5eedcf5f9afaa26",
+    "verifier_prompt_hash": "ebd347ca4e69aea1cc198c1bbc254abd50ebf6da99213a66fd39434b396d53f3",
+    "implementation_hash": "777c9d5430d0ef1c4304427187621a92ab3ea7287e9d06404a5863236cd47b51",
+    "pipeline_id": "98148675ec2bb27b6df2c0407e0a30c98e1b103c73d5648df5f504119f682aa3"
+  },
+  "dataset": {
+    "version": "synthetic-1",
+    "manifest_sha256": "800b225a7def48a7fce06bc73060091af28dbead28211f548807aec4ad21df10"
+  },
+  "split": "calibration",
+  "method": "Exact-match accepted observation precision per deterministic support score; Wilson 95% descriptive intervals. No continuous probabilities exposed to learner state.",
+  "limitations": "Synthetic templates and correlated observations make Wilson intervals optimistic; no real-world or cross-provider transfer is established.",
+  "buckets": {
+    "1": {
+      "observations": 8,
+      "correct": 8,
+      "empirical_precision": 1.0,
+      "wilson_interval_95": [
+        0.6755924351161198,
+        1.0
+      ],
+      "support_tier": "observed-high"
+    },
+    "2": {
+      "observations": 8,
+      "correct": 8,
+      "empirical_precision": 1.0,
+      "wilson_interval_95": [
+        0.6755924351161198,
+        1.0
+      ],
+      "support_tier": "observed-high"
+    },
+    "3": {
+      "observations": 68,
+      "correct": 68,
+      "empirical_precision": 1.0,
+      "wilson_interval_95": [
+        0.9465286634799296,
+        1.0
+      ],
+      "support_tier": "observed-high"
+    },
+    "4": {
+      "observations": 44,
+      "correct": 44,
+      "empirical_precision": 1.0,
+      "wilson_interval_95": [
+        0.9197043962415192,
+        1.0
+      ],
+      "support_tier": "observed-high"
+    }
+  }
+}

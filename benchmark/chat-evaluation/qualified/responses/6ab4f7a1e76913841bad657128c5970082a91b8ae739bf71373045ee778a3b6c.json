@@ -1,0 +1,10 @@
+{
+  "request_sha256": "6ab4f7a1e76913841bad657128c5970082a91b8ae739bf71373045ee778a3b6c",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "uncertain",
+    "reason": "The report lacks whether employment continues; a definite tense error would be unsupported."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

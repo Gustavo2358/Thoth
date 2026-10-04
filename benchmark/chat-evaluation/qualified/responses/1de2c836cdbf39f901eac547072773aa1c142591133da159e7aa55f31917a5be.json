@@ -1,0 +1,10 @@
+{
+  "request_sha256": "1de2c836cdbf39f901eac547072773aa1c142591133da159e7aa55f31917a5be",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "supported",
+    "reason": "The tense component have lived is valid independently of the malformed preposition."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

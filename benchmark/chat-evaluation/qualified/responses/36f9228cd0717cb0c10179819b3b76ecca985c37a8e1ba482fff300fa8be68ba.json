@@ -1,0 +1,10 @@
+{
+  "request_sha256": "36f9228cd0717cb0c10179819b3b76ecca985c37a8e1ba482fff300fa8be68ba",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "supported",
+    "reason": "The explicit neutral direct-question context rules out a colloquial echo reading; do is missing."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

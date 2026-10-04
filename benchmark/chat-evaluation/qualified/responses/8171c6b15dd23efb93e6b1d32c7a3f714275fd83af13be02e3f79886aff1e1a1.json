@@ -1,0 +1,10 @@
+{
+  "request_sha256": "8171c6b15dd23efb93e6b1d32c7a3f714275fd83af13be02e3f79886aff1e1a1",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "supported",
+    "reason": "Information is uncountable here; a information is invalid. The corrected definite phrase avoids the countability mismatch."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

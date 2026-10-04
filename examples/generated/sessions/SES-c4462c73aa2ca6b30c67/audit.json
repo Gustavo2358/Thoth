@@ -1,0 +1,283 @@
+{
+  "observations": [
+    {
+      "source_span": "During spontaneous conversation about my current home, the learner said: \"I live here since 2021.\" The teacher corrected this to: \"I've lived here since 2021.\" The situation still continues.",
+      "learner_utterance": "I live here since 2021.",
+      "corrected_form": "I've lived here since 2021.",
+      "teacher_comment": null,
+      "construction": "present_perfect.duration",
+      "feature": "affirmative",
+      "outcome": "incorrect",
+      "production_mode": "spontaneous",
+      "evidence_type": "explicit_correction",
+      "issue_kind": "grammar",
+      "id": "OBS-337d0a646c6a5bfa2e6c",
+      "session_id": "SES-c4462c73aa2ca6b30c67",
+      "source_start": 38,
+      "source_end": 228,
+      "learner_start": 112,
+      "learner_end": 135,
+      "schema_version": "observation-1",
+      "extractor_version": "extractor-1",
+      "verifier_version": "verifier-1",
+      "pipeline_id": "a3d0d7229140bafff56838b22ca39ba29c7e8d28dafc0809899659575338cfee",
+      "verifier_decision": "supported",
+      "verifier_reason": "Independent grammatical predicate and source agree",
+      "provenance_valid": true,
+      "support_signals": {
+        "provenance_valid": true,
+        "classification_known": true,
+        "independent_verifier_supported": true,
+        "explicit_correction_present": true
+      },
+      "raw_support_score": 4
+    },
+    {
+      "source_span": "During spontaneous conversation about a release incident, the learner said: \"I should told my team before.\" The teacher corrected this to: \"I should have told my team before.\" We discussed regret about a past action.",
+      "learner_utterance": "I should told my team before.",
+      "corrected_form": "I should have told my team before.",
+      "teacher_comment": null,
+      "construction": "modal_perfect.should_have",
+      "feature": "affirmative",
+      "outcome": "incorrect",
+      "production_mode": "spontaneous",
+      "evidence_type": "explicit_correction",
+      "issue_kind": "grammar",
+      "id": "OBS-aa7b26cb11520adc5ce2",
+      "session_id": "SES-c4462c73aa2ca6b30c67",
+      "source_start": 230,
+      "source_end": 446,
+      "learner_start": 307,
+      "learner_end": 336,
+      "schema_version": "observation-1",
+      "extractor_version": "extractor-1",
+      "verifier_version": "verifier-1",
+      "pipeline_id": "a3d0d7229140bafff56838b22ca39ba29c7e8d28dafc0809899659575338cfee",
+      "verifier_decision": "supported",
+      "verifier_reason": "Independent grammatical predicate and source agree",
+      "provenance_valid": true,
+      "support_signals": {
+        "provenance_valid": true,
+        "classification_known": true,
+        "independent_verifier_supported": true,
+        "explicit_correction_present": true
+      },
+      "raw_support_score": 4
+    },
+    {
+      "source_span": "During a prompted speaking turn, the learner said: \"I've been working on this project for three months.\" The sentence was grammatically correct. The work still continues.",
+      "learner_utterance": "I've been working on this project for three months.",
+      "corrected_form": null,
+      "teacher_comment": null,
+      "construction": "present_perfect.continuous",
+      "feature": "affirmative",
+      "outcome": "correct",
+      "production_mode": "prompted",
+      "evidence_type": "successful_use",
+      "issue_kind": "none",
+      "id": "OBS-e2f988d5ad06872c803b",
+      "session_id": "SES-c4462c73aa2ca6b30c67",
+      "source_start": 448,
+      "source_end": 618,
+      "learner_start": 500,
+      "learner_end": 551,
+      "schema_version": "observation-1",
+      "extractor_version": "extractor-1",
+      "verifier_version": "verifier-1",
+      "pipeline_id": "a3d0d7229140bafff56838b22ca39ba29c7e8d28dafc0809899659575338cfee",
+      "verifier_decision": "supported",
+      "verifier_reason": "Independent grammatical predicate and source agree",
+      "provenance_valid": true,
+      "support_signals": {
+        "provenance_valid": true,
+        "classification_known": true,
+        "independent_verifier_supported": true,
+        "explicit_correction_present": false
+      },
+      "raw_support_score": 3
+    },
+    {
+      "source_span": "During spontaneous conversation, the learner said: \"I think this implementation is good.\" The teacher suggested instead: \"I think this is a solid implementation.\" This was a stylistic suggestion, a more natural phrasing, not a grammatical correction.",
+      "learner_utterance": "I think this implementation is good.",
+      "corrected_form": null,
+      "teacher_comment": null,
+      "construction": "unclassified",
+      "feature": "affirmative",
+      "outcome": "uncertain",
+      "production_mode": "spontaneous",
+      "evidence_type": "other",
+      "issue_kind": "style",
+      "id": "OBS-ce51723584936f749cba",
+      "session_id": "SES-c4462c73aa2ca6b30c67",
+      "source_start": 620,
+      "source_end": 870,
+      "learner_start": 672,
+      "learner_end": 708,
+      "schema_version": "observation-1",
+      "extractor_version": "extractor-1",
+      "verifier_version": "verifier-1",
+      "pipeline_id": "a3d0d7229140bafff56838b22ca39ba29c7e8d28dafc0809899659575338cfee",
+      "verifier_decision": "uncertain",
+      "verifier_reason": "No supported grammatical outcome",
+      "provenance_valid": true,
+      "support_signals": {
+        "provenance_valid": true,
+        "classification_known": false,
+        "independent_verifier_supported": false,
+        "explicit_correction_present": false
+      },
+      "raw_support_score": 1
+    },
+    {
+      "source_span": "During a prompted turn, the teacher asked: \"How long have you worked there?\" The learner answered: \"I started three years ago.\" This was an opportunity; the target was not selected. The answer was grammatically valid.",
+      "learner_utterance": "I started three years ago.",
+      "corrected_form": null,
+      "teacher_comment": null,
+      "construction": "present_perfect.duration",
+      "feature": "affirmative",
+      "outcome": "uncertain",
+      "production_mode": "prompted",
+      "evidence_type": "opportunity",
+      "issue_kind": "unclear",
+      "id": "OBS-1098f3d4b36cf7d470be",
+      "session_id": "SES-c4462c73aa2ca6b30c67",
+      "source_start": 872,
+      "source_end": 1089,
+      "learner_start": 972,
+      "learner_end": 998,
+      "schema_version": "observation-1",
+      "extractor_version": "extractor-1",
+      "verifier_version": "verifier-1",
+      "pipeline_id": "a3d0d7229140bafff56838b22ca39ba29c7e8d28dafc0809899659575338cfee",
+      "verifier_decision": "supported",
+      "verifier_reason": "Non-independent attempt; retain separately without accuracy counting",
+      "provenance_valid": true,
+      "support_signals": {
+        "provenance_valid": true,
+        "classification_known": true,
+        "independent_verifier_supported": true,
+        "explicit_correction_present": false
+      },
+      "raw_support_score": 3
+    }
+  ],
+  "rejected": [],
+  "trace": [
+    {
+      "stage": "Extraction",
+      "response": {
+        "observations": [
+          {
+            "source_span": "During spontaneous conversation about my current home, the learner said: \"I live here since 2021.\" The teacher corrected this to: \"I've lived here since 2021.\" The situation still continues.",
+            "learner_utterance": "I live here since 2021.",
+            "corrected_form": "I've lived here since 2021.",
+            "teacher_comment": null,
+            "construction": "present_perfect.duration",
+            "feature": "affirmative",
+            "outcome": "incorrect",
+            "production_mode": "spontaneous",
+            "evidence_type": "explicit_correction",
+            "issue_kind": "grammar"
+          },
+          {
+            "source_span": "During spontaneous conversation about a release incident, the learner said: \"I should told my team before.\" The teacher corrected this to: \"I should have told my team before.\" We discussed regret about a past action.",
+            "learner_utterance": "I should told my team before.",
+            "corrected_form": "I should have told my team before.",
+            "teacher_comment": null,
+            "construction": "modal_perfect.should_have",
+            "feature": "affirmative",
+            "outcome": "incorrect",
+            "production_mode": "spontaneous",
+            "evidence_type": "explicit_correction",
+            "issue_kind": "grammar"
+          },
+          {
+            "source_span": "During a prompted speaking turn, the learner said: \"I've been working on this project for three months.\" The sentence was grammatically correct. The work still continues.",
+            "learner_utterance": "I've been working on this project for three months.",
+            "corrected_form": null,
+            "teacher_comment": null,
+            "construction": "present_perfect.continuous",
+            "feature": "affirmative",
+            "outcome": "correct",
+            "production_mode": "prompted",
+            "evidence_type": "successful_use",
+            "issue_kind": "none"
+          },
+          {
+            "source_span": "During spontaneous conversation, the learner said: \"I think this implementation is good.\" The teacher suggested instead: \"I think this is a solid implementation.\" This was a stylistic suggestion, a more natural phrasing, not a grammatical correction.",
+            "learner_utterance": "I think this implementation is good.",
+            "corrected_form": null,
+            "teacher_comment": null,
+            "construction": "unclassified",
+            "feature": "affirmative",
+            "outcome": "uncertain",
+            "production_mode": "spontaneous",
+            "evidence_type": "other",
+            "issue_kind": "style"
+          },
+          {
+            "source_span": "During a prompted turn, the teacher asked: \"How long have you worked there?\" The learner answered: \"I started three years ago.\" This was an opportunity; the target was not selected. The answer was grammatically valid.",
+            "learner_utterance": "I started three years ago.",
+            "corrected_form": null,
+            "teacher_comment": null,
+            "construction": "present_perfect.duration",
+            "feature": "affirmative",
+            "outcome": "uncertain",
+            "production_mode": "prompted",
+            "evidence_type": "opportunity",
+            "issue_kind": "unclear"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "Verdict",
+      "response": {
+        "decision": "supported",
+        "reason": "Independent grammatical predicate and source agree"
+      }
+    },
+    {
+      "stage": "Verdict",
+      "response": {
+        "decision": "supported",
+        "reason": "Independent grammatical predicate and source agree"
+      }
+    },
+    {
+      "stage": "Verdict",
+      "response": {
+        "decision": "supported",
+        "reason": "Independent grammatical predicate and source agree"
+      }
+    },
+    {
+      "stage": "Verdict",
+      "response": {
+        "decision": "uncertain",
+        "reason": "No supported grammatical outcome"
+      }
+    },
+    {
+      "stage": "Verdict",
+      "response": {
+        "decision": "supported",
+        "reason": "Non-independent attempt; retain separately without accuracy counting"
+      }
+    }
+  ],
+  "pipeline": {
+    "provider": "offline-rules",
+    "model": "narrative-baseline-1",
+    "verifier_model": "independent-grammar-checks-1",
+    "adapter_version": "offline-1",
+    "schema_version": "observation-1",
+    "taxonomy_version": "taxonomy-1",
+    "extractor_prompt_version": "extractor-1",
+    "verifier_prompt_version": "verifier-1",
+    "extractor_prompt_hash": "3822190b5557813a4fbcb2fcc938586b67ed3109fb6e24a9b5eedcf5f9afaa26",
+    "verifier_prompt_hash": "ebd347ca4e69aea1cc198c1bbc254abd50ebf6da99213a66fd39434b396d53f3",
+    "implementation_hash": "777c9d5430d0ef1c4304427187621a92ab3ea7287e9d06404a5863236cd47b51",
+    "pipeline_id": "a3d0d7229140bafff56838b22ca39ba29c7e8d28dafc0809899659575338cfee"
+  }
+}

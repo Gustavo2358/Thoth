@@ -1,0 +1,10 @@
+{
+  "request_sha256": "b57a3eb99c999683da65868ca0735ed4a897f3e60d8caf464fc41f091beeae28",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "supported",
+    "reason": "Go remains bare following did."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

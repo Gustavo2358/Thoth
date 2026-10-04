@@ -1,0 +1,10 @@
+{
+  "request_sha256": "dbdde07c1bbcd535f0bb91a6385bb6d08c873535d76f2c5fb8eb632b64cfe82d",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "uncertain",
+    "reason": "Fast to efficient changes vocabulary; it does not establish a grammar error."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

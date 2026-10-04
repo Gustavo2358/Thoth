@@ -1,0 +1,178 @@
+{
+  "request_sha256": "181ba5faf3bc952f54a9f14db7704d214c9b663d96a83006109f239ae56f1601",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "5f54f8913a55072dd2933f26d6548a3b7a3b0f7c0401c8422812148dc11413de",
+  "response": {
+    "observations": [
+      {
+        "source_span": "During the lesson about indexing, we discussed item 17. The learner said: \"I think this implementation of indexing is good.\" The teacher corrected this to: \"I think this is a solid implementation of indexing.\" This is only a stylistic suggestion, a more natural phrasing. Original grammar is valid.",
+        "learner_utterance": "I think this implementation of indexing is good.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "unclassified",
+        "feature": "affirmative",
+        "outcome": "uncertain",
+        "production_mode": "unknown",
+        "evidence_type": "other",
+        "issue_kind": "style"
+      },
+      {
+        "source_span": "During spontaneous conversation about indexing, we discussed item 18. The learner said: \"I worked there for thirteen years.\" Insufficient context: we do not know if the employment ended.",
+        "learner_utterance": "I worked there for thirteen years.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "feature": "affirmative",
+        "outcome": "uncertain",
+        "production_mode": "spontaneous",
+        "evidence_type": "other",
+        "issue_kind": "unclear"
+      },
+      {
+        "source_span": "During a prompted speaking turn about indexing, we discussed item 19. The learner said: \"I work... sorry, I've worked here since 2015.\" The learner repaired the sentence without teacher help.",
+        "learner_utterance": "I work... sorry, I've worked here since 2015.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "feature": "affirmative",
+        "outcome": "uncertain",
+        "production_mode": "prompted",
+        "evidence_type": "self_correction",
+        "issue_kind": "unclear"
+      },
+      {
+        "source_span": "During a controlled drill about indexing, we discussed item 20. The learner said: \"I should told a information about indexing.\" The teacher corrected this to: \"I should have told the information about indexing.\" Two errors occurred: the modal form and the article on an uncountable noun.",
+        "learner_utterance": "I should told a information about indexing.",
+        "corrected_form": "I should have told the information about indexing.",
+        "teacher_comment": null,
+        "construction": "modal_perfect.should_have",
+        "feature": "affirmative",
+        "outcome": "incorrect",
+        "production_mode": "controlled",
+        "evidence_type": "explicit_correction",
+        "issue_kind": "grammar"
+      },
+      {
+        "source_span": "During a controlled drill about indexing, we discussed item 20. The learner said: \"I should told a information about indexing.\" The teacher corrected this to: \"I should have told the information about indexing.\" Two errors occurred: the modal form and the article on an uncountable noun.",
+        "learner_utterance": "I should told a information about indexing.",
+        "corrected_form": "I should have told the information about indexing.",
+        "teacher_comment": null,
+        "construction": "article.indefinite",
+        "feature": "affirmative",
+        "outcome": "incorrect",
+        "production_mode": "controlled",
+        "evidence_type": "explicit_correction",
+        "issue_kind": "grammar"
+      },
+      {
+        "source_span": "During a prompted speaking turn about indexing, we discussed item 23. The learner said: \"I started there thirteen years ago.\" The teacher asked: \"How long have you worked there?\" This was an opportunity; target was not selected. The answer was grammatically valid.",
+        "learner_utterance": "I started there thirteen years ago.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "feature": "affirmative",
+        "outcome": "uncertain",
+        "production_mode": "prompted",
+        "evidence_type": "opportunity",
+        "issue_kind": "unclear"
+      },
+      {
+        "source_span": "During a controlled drill about indexing, we discussed item 24. The learner said: \"I've lived here since 2015.\" The teacher corrected this to: \"I live here since 2015.\" The situation still continues. The teacher claimed that present tense was required, incorrectly.",
+        "learner_utterance": "I've lived here since 2015.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "feature": "affirmative",
+        "outcome": "correct",
+        "production_mode": "controlled",
+        "evidence_type": "successful_use",
+        "issue_kind": "none"
+      },
+      {
+        "source_span": "During the lesson about indexing, we discussed item 25. The learner said: \"I worked there for thirteen years.\" This is an ended job: I no longer work there. The sentence was grammatically correct.",
+        "learner_utterance": "I worked there for thirteen years.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.vs_simple_past",
+        "feature": "affirmative",
+        "outcome": "correct",
+        "production_mode": "unknown",
+        "evidence_type": "successful_use",
+        "issue_kind": "none"
+      },
+      {
+        "source_span": "During a prompted speaking turn about indexing, we discussed item 27. The learner said: \"I have not lived here since 2015.\" The speaker moved away in that year. The sentence was grammatically correct.",
+        "learner_utterance": "I have not lived here since 2015.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "present_perfect.duration",
+        "feature": "negative",
+        "outcome": "correct",
+        "production_mode": "prompted",
+        "evidence_type": "successful_use",
+        "issue_kind": "none"
+      },
+      {
+        "source_span": "During a controlled drill about indexing, we discussed item 28. The learner said: \"Why did you go?\" This is a direct question. The sentence was grammatically correct.",
+        "learner_utterance": "Why did you go?",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "question.do_support",
+        "feature": "question",
+        "outcome": "correct",
+        "production_mode": "controlled",
+        "evidence_type": "successful_use",
+        "issue_kind": "none"
+      },
+      {
+        "source_span": "During a controlled drill about indexing, we discussed item 28. The learner said: \"Why did you go?\" This is a direct question. The sentence was grammatically correct.",
+        "learner_utterance": "Why did you go?",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "auxiliary.chain",
+        "feature": "question",
+        "outcome": "correct",
+        "production_mode": "controlled",
+        "evidence_type": "successful_use",
+        "issue_kind": "none"
+      },
+      {
+        "source_span": "During the lesson about indexing, we discussed item 29. The learner said: \"I should tell my team about indexing.\" Insufficient context: no evidence of a past unrealized action.",
+        "learner_utterance": "I should tell my team about indexing.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "modal_perfect.should_have",
+        "feature": "affirmative",
+        "outcome": "uncertain",
+        "production_mode": "unknown",
+        "evidence_type": "other",
+        "issue_kind": "unclear"
+      },
+      {
+        "source_span": "During spontaneous conversation about indexing, we discussed item 30. The learner said: \"She is an engineer in Lisbon.\" The teacher corrected this to: \"She is a engineer in Lisbon.\" The teacher suggested a wrong article. The original was grammatical.",
+        "learner_utterance": "She is an engineer in Lisbon.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "article.indefinite",
+        "feature": "affirmative",
+        "outcome": "correct",
+        "production_mode": "spontaneous",
+        "evidence_type": "successful_use",
+        "issue_kind": "none"
+      },
+      {
+        "source_span": "During a controlled drill about indexing, we discussed item 32. The learner said: \"This algorithm for indexing is fast.\" The teacher corrected this to: \"This algorithm for indexing is efficient.\" A vocabulary suggestion, not a grammatical error. A more natural word was discussed.",
+        "learner_utterance": "This algorithm for indexing is fast.",
+        "corrected_form": null,
+        "teacher_comment": null,
+        "construction": "unclassified",
+        "feature": "affirmative",
+        "outcome": "uncertain",
+        "production_mode": "controlled",
+        "evidence_type": "other",
+        "issue_kind": "vocabulary"
+      }
+    ]
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

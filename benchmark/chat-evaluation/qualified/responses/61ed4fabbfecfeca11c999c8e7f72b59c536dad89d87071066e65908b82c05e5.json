@@ -1,0 +1,10 @@
+{
+  "request_sha256": "61ed4fabbfecfeca11c999c8e7f72b59c536dad89d87071066e65908b82c05e5",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "supported",
+    "reason": "Not lived since the departure year describes absence over the interval and fits the context."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

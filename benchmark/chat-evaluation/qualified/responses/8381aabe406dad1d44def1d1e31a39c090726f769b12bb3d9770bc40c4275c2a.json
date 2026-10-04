@@ -1,0 +1,10 @@
+{
+  "request_sha256": "8381aabe406dad1d44def1d1e31a39c090726f769b12bb3d9770bc40c4275c2a",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "supported",
+    "reason": "Does agrees with he and selects bare work."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}

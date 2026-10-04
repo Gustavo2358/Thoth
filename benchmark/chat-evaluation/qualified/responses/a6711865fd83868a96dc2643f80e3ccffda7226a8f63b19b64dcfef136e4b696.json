@@ -1,0 +1,10 @@
+{
+  "request_sha256": "a6711865fd83868a96dc2643f80e3ccffda7226a8f63b19b64dcfef136e4b696",
+  "submitted_by": "codex-chat/template-assisted",
+  "decision_document_sha256": "b8d71e2a15432d3a92b92821b2cb85364bd7a4391e8c375c65ef93e92b8f21c4",
+  "response": {
+    "decision": "supported",
+    "reason": "Since plus a numeric elapsed duration should be for plus that duration."
+  },
+  "limitations": "Same conversation authored synthetic cases and annotations. Repeated variants mechanically formatted. Not an independent blinded API evaluation."
+}
