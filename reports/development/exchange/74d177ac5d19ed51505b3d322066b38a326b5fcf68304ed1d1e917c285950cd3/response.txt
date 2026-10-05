@@ -1,1 +1,0 @@
-{"decision": "new_pattern", "candidate_id": null, "reason": "Retrospective regret or preference for a different past action is not the ability to express an ongoing state's duration. This legitimate paraphrase is an opportunity, not a grammatical failure or proof of avoidance.", "pattern_label": null, "pattern_description": null, "conversation_contexts": []}

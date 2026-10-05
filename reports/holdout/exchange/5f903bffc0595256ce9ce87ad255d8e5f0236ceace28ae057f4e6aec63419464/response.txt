@@ -1,1 +1,0 @@
-{"decision": "new_pattern", "candidate_id": null, "reason": "The new evidence concerns selecting a conventional verb for ingesting medication. Personal uncertainty has a different communicative purpose and production ability; the general fact of unusual wording does not unite them.", "pattern_label": null, "pattern_description": null, "conversation_contexts": []}

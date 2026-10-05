@@ -1,0 +1,522 @@
+{
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / model of this conversation (operator declaration)",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "embedding": {
+    "model": "spaCy/en_core_web_md",
+    "package": "3.8.0",
+    "weights_sha256": "1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5",
+    "dimensions": 300,
+    "pooling": "mean of nonzero token vectors; L2 normalized"
+  },
+  "interactions": [
+    {
+      "stage": "extract",
+      "request": "d18ea10fcdbc209dbab71a36ae8524599513de7dbc448e787f7b298802d01455",
+      "response_hash": "4ce21ea74ba9e60f9d6d2939fe60d6f3690664d8a61101292faf7851f705ed65",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "399ddd71558485c85a708679cad73f5636bf75cb28f123bf7be18fbba95889ff",
+      "response_hash": "e3a60e4b29fa8841c8131cb5bc231189137460b1bc5dad3f64a1951c4e20f800",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "1576b39f1dafb83cb7591bfe5bb142c3764d0613165cb32192a307f5d1551723",
+      "response_hash": "29389da9cfcdfdf1fe4544cc17471a929807584de2b241ac7603ac5af9847bcd",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "789ec69b435c33d812f1e6ed77d4c3862dcedf5079e20c70185d6eb6482e8d58",
+      "response_hash": "22bc93929d3953d8e318cc3efde7ddf2df3b896c65cce0278eee75ac348a7b03",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "0160f56ab06de2083ec43f6351be77072c34d772795fdced77ffe12d87145008",
+      "response_hash": "2c431d6b5171bdcf5f1bb0b07843cfeaa242ca00fe7cead69f9bff1b8b020a42",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "564fdf6e423f72bb3efd084a7ebe3718e82ea211092227622067bbb7d09d05cf",
+      "response_hash": "8935e2cf6c3e201487ac68270681b053b497e3c0938f837c5e8b97bc3ff198f7",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "teaching",
+      "request": "869f17630e121b832eee1c1e0ceb934d9ac35626c00c391c680bf400d3089c2d",
+      "response_hash": "1c6d917531f44bf7f1386f3b6ab6f70eaa814019a11de4e2a06dc77ad6c4a9f8",
+      "model": "Codex / model of this conversation (operator declaration)"
+    }
+  ],
+  "extraction": {
+    "observations": [
+      {
+        "turn": 3,
+        "source_excerpt": "The price was very expensive. I mean, the laptop was extremely expensive.",
+        "learner_quote": "The price was very expensive. I mean, the laptop was extremely expensive.",
+        "production_mode": "spontaneous",
+        "performance": "uncertain",
+        "evidence_type": "self_correction",
+        "communicative_intent": "Emphasize the high cost of a purchase",
+        "learning_dimension": "Describing high cost with appropriate noun and adjective combinations",
+        "observed_behavior": "Self-repairs expensive price to expensive laptop; one repair event, not independent failure and success",
+        "suggested_forms": [],
+        "hypothesis": "The initial noun-adjective combination is consistent with Portuguese transfer, but the mental process is unobserved.",
+        "support": "no_support",
+        "support_turns": []
+      },
+      {
+        "turn": 5,
+        "source_excerpt": "The laptop was extremely expensive, but it saves me several hours a week.",
+        "learner_quote": "The laptop was extremely expensive, but it saves me several hours a week.",
+        "production_mode": "controlled",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Emphasize the high cost of a purchase",
+        "learning_dimension": "Describing high cost with appropriate noun and adjective combinations",
+        "observed_behavior": "Repeats the wording from the learner own immediately preceding repair, not independent spontaneous recovery",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "support": "immediate_repetition",
+        "support_turns": [
+          3
+        ]
+      },
+      {
+        "turn": 7,
+        "source_excerpt": "I have a doubt...",
+        "learner_quote": "I have a doubt...",
+        "production_mode": "unknown",
+        "performance": "uncertain",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Express an unspecified doubt",
+        "learning_dimension": "Expressing doubt in an unresolved conversational context",
+        "observed_behavior": "Intended uncertainty versus suspicion remains unresolved because the learner declines clarification",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "support": "unknown",
+        "support_turns": []
+      }
+    ],
+    "teaching": [
+      {
+        "refs": [
+          {
+            "turn": 1,
+            "quote": "Please always let me try before you tell me the answer."
+          }
+        ],
+        "kind": "explicit_preference",
+        "interpretation": "The learner explicitly states a lasting request for retrieval before a model.",
+        "instruction": "Let the learner attempt before supplying the answer.",
+        "durable": true
+      }
+    ],
+    "goals": []
+  },
+  "rejected": [],
+  "grouping": [
+    {
+      "observation_id": "OBS-8498add8537912b9",
+      "candidates": [
+        {
+          "candidate_id": "OBS-09d99be4b1162d6b",
+          "root_id": "OBS-09d99be4b1162d6b",
+          "similarity": 0.859434,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-09d99be4b1162d6b",
+              "date": "2026-04-01",
+              "turn": 10,
+              "source_excerpt": "I have doubts about whether the measurements are reliable.",
+              "learner_quote": "I have doubts about whether the measurements are reliable.",
+              "production_mode": "prompted",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express suspicion about the reliability of measurements",
+              "learning_dimension": "Expressing reservations about reliability",
+              "observed_behavior": "Uses doubts legitimately for reservations rather than a practical question",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "contextual_prompt",
+              "support_turns": [
+                9
+              ],
+              "source_line_start": 31,
+              "source_line_end": 31
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-2d285ac6f57b7e04",
+          "root_id": "OBS-2d285ac6f57b7e04",
+          "similarity": 0.823156,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-2d285ac6f57b7e04",
+              "date": "2026-04-01",
+              "turn": 4,
+              "source_excerpt": "The queue was delayed since the worker had crashed.",
+              "learner_quote": "The queue was delayed since the worker had crashed.",
+              "production_mode": "spontaneous",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain a cause in a technical incident",
+              "learning_dimension": "Expressing causal relationships appropriately",
+              "observed_behavior": "Uses causal since correctly; teacher stylistic preference does not make it a difficulty",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 13,
+              "source_line_end": 13
+            },
+            {
+              "id": "OBS-57ceae2bbce63c16",
+              "date": "2026-04-01",
+              "turn": 6,
+              "source_excerpt": "The queue was delayed because the worker had crashed.",
+              "learner_quote": "The queue was delayed because the worker had crashed.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain a cause in a technical incident",
+              "learning_dimension": "Expressing causal relationships appropriately",
+              "observed_behavior": "Repeats a valid alternative supplied by the teacher after an optional stylistic reformulation",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "immediate_repetition",
+              "support_turns": [
+                5
+              ],
+              "source_line_start": 19,
+              "source_line_end": 19
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-d4a4650cb8bd7c51",
+          "root_id": "OBS-d4a4650cb8bd7c51",
+          "similarity": 0.791446,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-d4a4650cb8bd7c51",
+              "date": "2026-04-01",
+              "turn": 8,
+              "source_excerpt": "I wish I'd warned them sooner.",
+              "learner_quote": "I wish I'd warned them sooner.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express regret about an earlier omission",
+              "learning_dimension": "Expressing past regret with an appropriate alternative construction",
+              "observed_behavior": "Produces a valid wish construction after a different model for regret, not an error for failing to copy the target phrase",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "model_phrase_available",
+              "support_turns": [
+                7
+              ],
+              "source_line_start": 25,
+              "source_line_end": 25
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "new_pattern",
+        "candidate_id": null,
+        "reason": "The noun-adjective combination for high cost differs from reservations, causes, and regret. Self-repair is an uncertain event, not proof of recurrent difficulty.",
+        "pattern_label": null,
+        "pattern_description": null,
+        "conversation_contexts": []
+      }
+    },
+    {
+      "observation_id": "OBS-6813f6012a12396d",
+      "candidates": [
+        {
+          "candidate_id": "OBS-8498add8537912b9",
+          "root_id": "OBS-8498add8537912b9",
+          "similarity": 1.0,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-8498add8537912b9",
+              "date": "2026-04-08",
+              "turn": 3,
+              "source_excerpt": "The price was very expensive. I mean, the laptop was extremely expensive.",
+              "learner_quote": "The price was very expensive. I mean, the laptop was extremely expensive.",
+              "production_mode": "spontaneous",
+              "performance": "uncertain",
+              "evidence_type": "self_correction",
+              "communicative_intent": "Emphasize the high cost of a purchase",
+              "learning_dimension": "Describing high cost with appropriate noun and adjective combinations",
+              "observed_behavior": "Self-repairs expensive price to expensive laptop; one repair event, not independent failure and success",
+              "suggested_forms": [],
+              "hypothesis": "The initial noun-adjective combination is consistent with Portuguese transfer, but the mental process is unobserved.",
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 10,
+              "source_line_end": 10
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-09d99be4b1162d6b",
+          "root_id": "OBS-09d99be4b1162d6b",
+          "similarity": 0.859434,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-09d99be4b1162d6b",
+              "date": "2026-04-01",
+              "turn": 10,
+              "source_excerpt": "I have doubts about whether the measurements are reliable.",
+              "learner_quote": "I have doubts about whether the measurements are reliable.",
+              "production_mode": "prompted",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express suspicion about the reliability of measurements",
+              "learning_dimension": "Expressing reservations about reliability",
+              "observed_behavior": "Uses doubts legitimately for reservations rather than a practical question",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "contextual_prompt",
+              "support_turns": [
+                9
+              ],
+              "source_line_start": 31,
+              "source_line_end": 31
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-2d285ac6f57b7e04",
+          "root_id": "OBS-2d285ac6f57b7e04",
+          "similarity": 0.823156,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-2d285ac6f57b7e04",
+              "date": "2026-04-01",
+              "turn": 4,
+              "source_excerpt": "The queue was delayed since the worker had crashed.",
+              "learner_quote": "The queue was delayed since the worker had crashed.",
+              "production_mode": "spontaneous",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain a cause in a technical incident",
+              "learning_dimension": "Expressing causal relationships appropriately",
+              "observed_behavior": "Uses causal since correctly; teacher stylistic preference does not make it a difficulty",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 13,
+              "source_line_end": 13
+            },
+            {
+              "id": "OBS-57ceae2bbce63c16",
+              "date": "2026-04-01",
+              "turn": 6,
+              "source_excerpt": "The queue was delayed because the worker had crashed.",
+              "learner_quote": "The queue was delayed because the worker had crashed.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain a cause in a technical incident",
+              "learning_dimension": "Expressing causal relationships appropriately",
+              "observed_behavior": "Repeats a valid alternative supplied by the teacher after an optional stylistic reformulation",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "immediate_repetition",
+              "support_turns": [
+                5
+              ],
+              "source_line_start": 19,
+              "source_line_end": 19
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "same_pattern",
+        "candidate_id": "OBS-8498add8537912b9",
+        "reason": "This controlled self-echo realizes the same high-cost noun-adjective capability as the preceding self-repair. It must not be grouped with reliability doubts merely through purchase context.",
+        "pattern_label": "Appropriate combinations for describing high cost",
+        "pattern_description": "An uncertain self-repair is followed by controlled reuse of appropriate wording; recurrent unassisted difficulty is not established.",
+        "conversation_contexts": [
+          "Discuss the cost and value of a purchase"
+        ]
+      }
+    },
+    {
+      "observation_id": "OBS-7e2093d3693ccda8",
+      "candidates": [
+        {
+          "candidate_id": "OBS-2d285ac6f57b7e04",
+          "root_id": "OBS-2d285ac6f57b7e04",
+          "similarity": 0.903697,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-2d285ac6f57b7e04",
+              "date": "2026-04-01",
+              "turn": 4,
+              "source_excerpt": "The queue was delayed since the worker had crashed.",
+              "learner_quote": "The queue was delayed since the worker had crashed.",
+              "production_mode": "spontaneous",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain a cause in a technical incident",
+              "learning_dimension": "Expressing causal relationships appropriately",
+              "observed_behavior": "Uses causal since correctly; teacher stylistic preference does not make it a difficulty",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 13,
+              "source_line_end": 13
+            },
+            {
+              "id": "OBS-57ceae2bbce63c16",
+              "date": "2026-04-01",
+              "turn": 6,
+              "source_excerpt": "The queue was delayed because the worker had crashed.",
+              "learner_quote": "The queue was delayed because the worker had crashed.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain a cause in a technical incident",
+              "learning_dimension": "Expressing causal relationships appropriately",
+              "observed_behavior": "Repeats a valid alternative supplied by the teacher after an optional stylistic reformulation",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "immediate_repetition",
+              "support_turns": [
+                5
+              ],
+              "source_line_start": 19,
+              "source_line_end": 19
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-d4a4650cb8bd7c51",
+          "root_id": "OBS-d4a4650cb8bd7c51",
+          "similarity": 0.895504,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-d4a4650cb8bd7c51",
+              "date": "2026-04-01",
+              "turn": 8,
+              "source_excerpt": "I wish I'd warned them sooner.",
+              "learner_quote": "I wish I'd warned them sooner.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express regret about an earlier omission",
+              "learning_dimension": "Expressing past regret with an appropriate alternative construction",
+              "observed_behavior": "Produces a valid wish construction after a different model for regret, not an error for failing to copy the target phrase",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "model_phrase_available",
+              "support_turns": [
+                7
+              ],
+              "source_line_start": 25,
+              "source_line_end": 25
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-09d99be4b1162d6b",
+          "root_id": "OBS-09d99be4b1162d6b",
+          "similarity": 0.808467,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-09d99be4b1162d6b",
+              "date": "2026-04-01",
+              "turn": 10,
+              "source_excerpt": "I have doubts about whether the measurements are reliable.",
+              "learner_quote": "I have doubts about whether the measurements are reliable.",
+              "production_mode": "prompted",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express suspicion about the reliability of measurements",
+              "learning_dimension": "Expressing reservations about reliability",
+              "observed_behavior": "Uses doubts legitimately for reservations rather than a practical question",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "contextual_prompt",
+              "support_turns": [
+                9
+              ],
+              "source_line_start": 31,
+              "source_line_end": 31
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "insufficient_evidence",
+        "candidate_id": null,
+        "reason": "Observation review is unresolved; retain isolated evidence.",
+        "pattern_label": null,
+        "pattern_description": null,
+        "conversation_contexts": []
+      }
+    }
+  ],
+  "teaching": [
+    {
+      "id": "TE-8278f37a65faa9e1",
+      "session_id": "SES-eea299e3db46afa7",
+      "occurred_on": "2026-04-08",
+      "data": {
+        "refs": [
+          {
+            "turn": 1,
+            "quote": "Please always let me try before you tell me the answer."
+          }
+        ],
+        "kind": "explicit_preference",
+        "interpretation": "The learner explicitly states a lasting request for retrieval before a model.",
+        "instruction": "Let the learner attempt before supplying the answer.",
+        "durable": true
+      },
+      "refs": [
+        {
+          "turn": 1,
+          "speaker": "learner",
+          "quote": "Please always let me try before you tell me the answer.",
+          "source_start": 45,
+          "source_end": 100,
+          "source_line_start": 4,
+          "source_line_end": 4
+        }
+      ],
+      "directive_id": "TD-8278f37a65fa",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The learner explicitly requests always attempting before the answer. It differs from finishing a thought before correction and from a situational exception for immediate messages; do not merge those scopes."
+      }
+    }
+  ],
+  "teaching_rejected": [],
+  "goals": []
+}

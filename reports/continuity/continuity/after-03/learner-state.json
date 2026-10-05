@@ -1,0 +1,126 @@
+{
+  "sessions": 3,
+  "observations": 9,
+  "patterns": [
+    {
+      "id": "PAT-69fdacc230c0",
+      "root_id": "OBS-69fdacc230c0eb3f",
+      "label": "Describing continuing situations from an earlier starting point",
+      "description": "Earlier spontaneous duration difficulties coexist with successful controlled reconstructions; recent unassisted use for residence suggests improvement, without establishing mastery.",
+      "conversation_contexts": [
+        "Discuss the history of an ongoing situation in a different area of life"
+      ],
+      "observations": 5,
+      "sessions": 3,
+      "dates": 3,
+      "modes": {
+        "spontaneous": {
+          "successful": 1,
+          "difficulty": 2,
+          "uncertain": 0
+        },
+        "prompted": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "controlled": {
+          "successful": 2,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "unknown": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 0,
+      "status": "recovery",
+      "interpretation": "Previously difficult; recent spontaneous successes suggest recovery. Transfer remains untested.",
+      "mode_note": "Guided successes coexist with spontaneous difficulties; availability may differ by task, but retrieval cause is unproven.",
+      "last_seen": "2026-03-15",
+      "stale": false,
+      "recent_successes": 1,
+      "recent_difficulties": 2,
+      "evidence_ids": [
+        "OBS-69fdacc230c0eb3f",
+        "OBS-3ff1ae8686a4e639",
+        "OBS-23ca9a31a64697ac",
+        "OBS-59383bce12524abc",
+        "OBS-2208922f4b10d36d"
+      ],
+      "practice_evidence_ids": [
+        "OBS-69fdacc230c0eb3f",
+        "OBS-23ca9a31a64697ac"
+      ],
+      "unknowns": [
+        "Transfer to new topics and registers is untested.",
+        "Opportunities do not prove avoidance; L1 transfer and retrieval causes remain hypotheses."
+      ]
+    },
+    {
+      "id": "PAT-46e9b09e6311",
+      "root_id": "OBS-46e9b09e631191e5",
+      "label": "Natural personal uncertainty in conversation",
+      "description": "After an earlier unnatural formulation and controlled imitation, unassisted appropriate uncertainty appears on two later dates in different topics. Continue testing transfer without reminding the learner of wording.",
+      "conversation_contexts": [
+        "Discuss a new plan whose details remain unresolved"
+      ],
+      "observations": 4,
+      "sessions": 3,
+      "dates": 3,
+      "modes": {
+        "spontaneous": {
+          "successful": 2,
+          "difficulty": 1,
+          "uncertain": 0
+        },
+        "prompted": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "controlled": {
+          "successful": 1,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "unknown": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 0,
+      "status": "recovery",
+      "interpretation": "Previously difficult; recent spontaneous successes suggest recovery. Transfer remains untested.",
+      "mode_note": "Guided successes coexist with spontaneous difficulties; availability may differ by task, but retrieval cause is unproven.",
+      "last_seen": "2026-03-15",
+      "stale": false,
+      "recent_successes": 2,
+      "recent_difficulties": 1,
+      "evidence_ids": [
+        "OBS-46e9b09e631191e5",
+        "OBS-b3c70044b61be4b5",
+        "OBS-b1559690522703e1",
+        "OBS-21db391272729484"
+      ],
+      "practice_evidence_ids": [
+        "OBS-46e9b09e631191e5"
+      ],
+      "unknowns": [
+        "Transfer to new topics and registers is untested.",
+        "Opportunities do not prove avoidance; L1 transfer and retrieval causes remain hypotheses."
+      ]
+    }
+  ],
+  "isolated": [],
+  "assumptions": [
+    "Counts describe selected conversation evidence, not mastery or a representative proficiency score.",
+    "Repeated conversations on one date do not establish longitudinal recurrence.",
+    "Pattern descriptions and causal interpretations are model hypotheses; quotes and memberships are auditable."
+  ]
+}

@@ -6,7 +6,10 @@ import numpy as np
 
 from thoth.contracts import Extraction, Observation, Policy, Resolution, Review, digest
 from thoth.embeddings import pedagogical_text
-from thoth.provenance import locate
+from thoth.conversation import parse, context, reference
+from thoth.teaching import analyze
+from thoth.storage import Store
+from datetime import date
 from thoth import prompts
 
 
@@ -63,23 +66,27 @@ def resolve(observation, vector, records, patterns, policy, llm):
 
 def ingest(raw, occurred_on, store, embedder, llm, policy):
     # A pending/invalid interaction never commits a partial session.
+    turns = parse(raw)
+    date.fromisoformat(occurred_on)
     if store.existing(raw, occurred_on):
         return {"already_ingested": True}
+    if store.sources() and occurred_on < store.sources()[-1]['occurred_on']:
+        raise ValueError('Ingest conversations chronologically')
     previous = store.records()
     if any(r["embedding_model"] != embedder.model for r in previous):
         raise ValueError("Embedding model differs from the stored vectors")
-    extraction = llm.call("extract", prompts.EXTRACT, {"report": raw}, Extraction)
+    extraction = llm.call("extract", prompts.EXTRACT, {"conversation": context(turns)}, Extraction)
     sid = "SES-" + digest(raw)[:16]
     observations, rejected = [], []
     seen = set()
     for proposal in extraction.observations:
-        start, end = locate(raw, proposal.source_excerpt, proposal.learner_quote)
-        identity = (start, proposal.learner_quote, proposal.learning_dimension)
+        ref = reference(raw, turns, proposal.turn, proposal.source_excerpt, proposal.learner_quote, 'learner')
+        identity = (ref['source_start'], proposal.learner_quote, proposal.learning_dimension)
         if identity in seen:
             raise ValueError("Duplicate evidence for the same occurrence and ability")
         seen.add(identity)
         review = llm.call("review", prompts.REVIEW,
-                          {"excerpt": proposal.source_excerpt, "observation": proposal.model_dump()}, Review)
+                          {"conversation": context(turns), "observation": proposal.model_dump()}, Review)
         if review.decision == "reject":
             rejected.append({"proposal": proposal.model_dump(), "review": review.model_dump()})
             continue
@@ -87,7 +94,7 @@ def ingest(raw, occurred_on, store, embedder, llm, policy):
         if review.decision == "uncertain":
             values["performance"] = "uncertain"
         observations.append(Observation(**values, id="OBS-" + digest([sid, identity])[:16], session_id=sid,
-                                        source_start=start, source_end=end, review=review))
+                                        **{k: ref[k] for k in ('source_start', 'source_end', 'source_line_start', 'source_line_end')}, review=review))
     vectors = embedder.embed([pedagogical_text(o) for o in observations])
     records, summaries, retrieval_audit = [], {}, []
     patterns = store.patterns()
@@ -98,7 +105,24 @@ def ingest(raw, occurred_on, store, embedder, llm, policy):
         records.append(dict(id=o.id, observation=o, root_id=root, vector=vector,
                             occurred_on=occurred_on, embedding_model=embedder.model, resolution=decision))
         retrieval_audit.append({"observation_id": o.id, "candidates": retrieved, "decision": decision.model_dump()})
+    teaching, goals, teaching_rejected = analyze(raw, turns, extraction, store, llm, sid, occurred_on)
     audit = {"model": llm.metadata(), "embedding": embedder.metadata, "interactions": llm.trace,
-             "rejected": rejected, "grouping": retrieval_audit}
-    store.commit_session(raw, occurred_on, records, summaries, audit, policy)
-    return {"session_id": sid, "observations": len(records), "rejected": len(rejected)}
+             "extraction": extraction.model_dump(), "rejected": rejected, "grouping": retrieval_audit,
+             "teaching": teaching, "teaching_rejected": teaching_rejected, "goals": goals}
+    store.commit_session(raw, occurred_on, records, summaries, audit, policy, teaching, goals)
+    return {"session_id": sid, "observations": len(records), "rejected": len(rejected),
+            "teaching_evidence": len(teaching), "goals": len(goals)}
+
+
+def reprocess(store, embedder, llm, policy):
+    # All later semantic decisions depend on earlier evidence: replay the entire small history.
+    # A pending manual response leaves the current materialized model completely intact.
+    with Store(':memory:') as rebuilt:
+        for g in store.goals():
+            if g['session_id'] is None:
+                rebuilt.add_goal(g['text'])
+        rebuilt.db.commit()
+        for source in store.sources():
+            ingest(source['raw'], source['occurred_on'], rebuilt, embedder, llm, policy)
+        store.replace_analyses(rebuilt)
+    return {'reprocessed_sessions': len(store.sources())}

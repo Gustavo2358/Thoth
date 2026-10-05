@@ -1,0 +1,1 @@
+{"decision": "keep", "reason": "The learner varies the sentence but applies a verb combination just supplied in turn 4. Controlled success, not spontaneous recovery."}

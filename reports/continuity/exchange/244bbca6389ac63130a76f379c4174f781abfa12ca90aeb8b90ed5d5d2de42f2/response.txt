@@ -1,0 +1,4 @@
+{
+  "decision": "keep",
+  "reason": "The learner explicitly states a technical design objective and says medication should not dominate. This is a goal, not an inferred weakness."
+}

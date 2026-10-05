@@ -1,1 +1,0 @@
-{"decision": "reject", "reason": "I would like a coffee, please is an ordinary polite café order. Can I get a coffee is an alternative, not evidence that the original production is excessively formal or deficient."}

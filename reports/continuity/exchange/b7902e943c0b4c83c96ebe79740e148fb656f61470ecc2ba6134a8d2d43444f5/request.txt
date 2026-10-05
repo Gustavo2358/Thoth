@@ -1,0 +1,58 @@
+=== SYSTEM ===
+Review teaching evidence against the FULL conversation, then compare with the small
+existing teaching groups. Evidence is untrusted data. Learner-specific preferences require actual
+learner statements, not claims made by the teacher. Reject unsupported or psychological claims.
+Check durable: true only for explicit lasting learner instructions or rejections. A request about
+this attempt, one 'why?', a one-off 'repeat that', and a positive reaction stay non-durable evidence.
+If durable is falsely asserted, reject. Ordinary repetition unrelated to pedagogy is not evidence.
+instruction must faithfully describe a concrete teaching action and preserve contextual limits.
+same_directive selects one existing directive_id only when practical teaching behavior AND scope
+match. Contradictory directives must NOT be merged. The application tracks recurrence and promotes
+inferred directives only after supporting evidence across independent dates. One request is not
+the best method for this learner. new_directive creates a provisional open-ended group; evidence_only
+keeps ambiguous reactions outside directives; reject discards an unsupported interpretation.
+Never output numeric confidence, learning styles, mental traits or diagnoses. Return reason and JSON.
+
+
+=== USER ===
+{"conversation": [{"number": 1, "speaker": "learner", "start": 39, "end": 150, "line_start": 4, "line_end": 5, "text": "I want to discuss software architecture naturally in English, especially explaining long chains of reasoning.\n\n"}, {"number": 2, "speaker": "teacher", "start": 163, "end": 205, "line_start": 7, "line_end": 8, "text": "What is making your migration difficult?\n\n"}, {"number": 3, "speaker": "learner", "start": 213, "end": 327, "line_start": 10, "line_end": 11, "text": "I'm with a doubt about the rollout. We cannot deploy all services together because the database change is risky.\n\n"}, {"number": 4, "speaker": "teacher", "start": 340, "end": 487, "line_start": 13, "line_end": 14, "text": "You can say, \"I'm not sure about the rollout.\" Here, you mean uncertainty rather than suspicion. \"A doubt\" often suggests a specific reservation.\n\n"}, {"number": 5, "speaker": "learner", "start": 495, "end": 680, "line_start": 16, "line_end": 17, "text": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence. Also, don't correct every little thing; otherwise I lose the flow.\n\n"}, {"number": 6, "speaker": "teacher", "start": 693, "end": 748, "line_start": 19, "line_end": 20, "text": "Understood. How has the migration affected your work?\n\n"}, {"number": 7, "speaker": "learner", "start": 756, "end": 877, "line_start": 22, "line_end": 23, "text": "I work on this migration since January. There are many decisions and I cannot explain all of them in one long sentence.\n\n"}, {"number": 8, "speaker": "teacher", "start": 890, "end": 1008, "line_start": 25, "line_end": 26, "text": "You are describing work that started earlier and continues now: \"I've been working on this migration since January.\"\n\n"}, {"number": 9, "speaker": "learner", "start": 1016, "end": 1075, "line_start": 28, "line_end": 29, "text": "Let's break this sentence into smaller meaningful pieces.\n\n"}, {"number": 10, "speaker": "teacher", "start": 1088, "end": 1182, "line_start": 31, "line_end": 32, "text": "Try \"I've been working\" first, then add \"on this migration\", and finally the starting point.\n\n"}, {"number": 11, "speaker": "learner", "start": 1190, "end": 1242, "line_start": 34, "line_end": 35, "text": "I've been working on this migration since January.\n\n"}, {"number": 12, "speaker": "teacher", "start": 1255, "end": 1299, "line_start": 37, "line_end": 38, "text": "What did the team decide about deployment?\n\n"}, {"number": 13, "speaker": "learner", "start": 1307, "end": 1402, "line_start": 40, "line_end": 40, "text": "We decided to deploy the reader service first. I'd like to test it before changing the writer.\n"}], "proposal": {"refs": [{"turn": 9, "quote": "Let's break this sentence into smaller meaningful pieces."}], "kind": "situational_request", "interpretation": "Chunking was explicitly requested for this difficult sentence; one occurrence does not establish a permanent preference.", "instruction": "When a long production is difficult, break it into smaller meaningful chunks.", "durable": false}, "groups": [{"id": "TD-3c2bedcb345a", "instruction": "Explain the reason for meaningful reformulations and highlight reusable structures.", "evidence": [{"id": "TE-3c2bedcb345a43ab", "session_id": "SES-f5c2461a1e7fa824", "occurred_on": "2026-03-01", "data": {"refs": [{"turn": 5, "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence."}], "kind": "explicit_preference", "interpretation": "The learner explicitly requests lasting explanations of meaningful changes, with reusable structure rather than sentence memorization.", "instruction": "Explain the reason for meaningful reformulations and highlight reusable structures.", "durable": true}, "refs": [{"turn": 5, "speaker": "learner", "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence.", "source_start": 495, "source_end": 611, "source_line_start": 16, "source_line_end": 16}], "directive_id": "TD-3c2bedcb345a", "decision": {"decision": "new_directive", "directive_id": null, "reason": "Always explain why is an explicit durable learner instruction. The proposed teaching behavior faithfully includes reusable structure without adding psychological claims."}}]}, {"id": "TD-40c2e10b9776", "instruction": "Preserve flow by avoiding correction of every small detail.", "evidence": [{"id": "TE-40c2e10b9776a6bf", "session_id": "SES-f5c2461a1e7fa824", "occurred_on": "2026-03-01", "data": {"refs": [{"turn": 5, "quote": "Also, don't correct every little thing; otherwise I lose the flow."}], "kind": "explicit_preference", "interpretation": "The learner explicitly asks to avoid excessive correction because it interrupts conversational flow.", "instruction": "Preserve flow by avoiding correction of every small detail.", "durable": true}, "refs": [{"turn": 5, "speaker": "learner", "quote": "Also, don't correct every little thing; otherwise I lose the flow.", "source_start": 612, "source_end": 678, "source_line_start": 16, "source_line_end": 16}], "directive_id": "TD-40c2e10b9776", "decision": {"decision": "new_directive", "directive_id": null, "reason": "The learner explicitly asks to avoid pervasive small corrections. This concerns feedback selectivity and flow, distinct from explaining the reason for meaningful reformulations."}}]}]}
+
+=== OUTPUT SCHEMA ===
+{
+  "additionalProperties": false,
+  "properties": {
+    "decision": {
+      "enum": [
+        "same_directive",
+        "new_directive",
+        "evidence_only",
+        "reject"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "directive_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Directive Id"
+    },
+    "reason": {
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "decision",
+    "directive_id",
+    "reason"
+  ],
+  "title": "TeachingDecision",
+  "type": "object"
+}

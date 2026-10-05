@@ -1,0 +1,132 @@
+{
+  "directives": [
+    {
+      "id": "TD-559d44e6c882",
+      "instruction": "Let the learner finish a thought before correction; avoid requests to memorize lists.",
+      "status": "explicit",
+      "rationale": "This is a durable learner request. The teacher statements about grammar preference and visual learning are not evidence.",
+      "evidence_ids": [
+        "TE-559d44e6c8824d5d"
+      ],
+      "dates": [
+        "2026-04-01"
+      ]
+    },
+    {
+      "id": "TD-ed3113e598b9",
+      "instruction": "For an immediate message, provide wording directly when asked.",
+      "status": "tentative",
+      "rationale": "The request is restricted to this message, not a permanent preference.",
+      "evidence_ids": [
+        "TE-ed3113e598b95148"
+      ],
+      "dates": [
+        "2026-04-01"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "TE-559d44e6c8824d5d",
+      "session_id": "SES-dac0fc4b5aaae1b7",
+      "data": {
+        "refs": [
+          {
+            "turn": 2,
+            "quote": "Please always let me finish my thought before correcting me, and don't ask me to memorize lists."
+          }
+        ],
+        "kind": "explicit_preference",
+        "interpretation": "This is a durable learner request. The teacher statements about grammar preference and visual learning are not evidence.",
+        "instruction": "Let the learner finish a thought before correction; avoid requests to memorize lists.",
+        "durable": true
+      },
+      "refs": [
+        {
+          "turn": 2,
+          "speaker": "learner",
+          "quote": "Please always let me finish my thought before correcting me, and don't ask me to memorize lists.",
+          "source_start": 179,
+          "source_end": 275,
+          "source_line_start": 7,
+          "source_line_end": 7
+        }
+      ],
+      "directive_id": "TD-559d44e6c882",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "This durable instruction is directly stated by the learner and rejects the teacher assumptions. It does not imply a visual learning style or grammar-explanation preference."
+      },
+      "occurred_on": "2026-04-01"
+    },
+    {
+      "id": "TE-986e6db9c4bc86d3",
+      "session_id": "SES-dac0fc4b5aaae1b7",
+      "data": {
+        "refs": [
+          {
+            "turn": 12,
+            "quote": "That one short explanation helped with this example. It doesn't mean I always want an explanation."
+          }
+        ],
+        "kind": "intervention_response",
+        "interpretation": "The learner reports a successful intervention but explicitly denies an always-explain preference.",
+        "instruction": "A short explanation may help with this particular example.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 12,
+          "speaker": "learner",
+          "quote": "That one short explanation helped with this example. It doesn't mean I always want an explanation.",
+          "source_start": 983,
+          "source_end": 1081,
+          "source_line_start": 37,
+          "source_line_end": 37
+        }
+      ],
+      "directive_id": null,
+      "decision": {
+        "decision": "evidence_only",
+        "directive_id": null,
+        "reason": "The learner limits praise to one example and explicitly denies always wanting explanations. Persist the event without a lasting directive."
+      },
+      "occurred_on": "2026-04-01"
+    },
+    {
+      "id": "TE-ed3113e598b95148",
+      "session_id": "SES-dac0fc4b5aaae1b7",
+      "data": {
+        "refs": [
+          {
+            "turn": 12,
+            "quote": "For this message, just give me the phrase."
+          }
+        ],
+        "kind": "situational_request",
+        "interpretation": "The request is restricted to this message, not a permanent preference.",
+        "instruction": "For an immediate message, provide wording directly when asked.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 12,
+          "speaker": "learner",
+          "quote": "For this message, just give me the phrase.",
+          "source_start": 1082,
+          "source_end": 1124,
+          "source_line_start": 37,
+          "source_line_end": 37
+        }
+      ],
+      "directive_id": "TD-ed3113e598b9",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The request concerns one immediate message. A contextual provisional group is appropriate, but it must remain tentative until repeated across dates; do not convert it into always providing answers."
+      },
+      "occurred_on": "2026-04-01"
+    }
+  ]
+}

@@ -1,0 +1,736 @@
+{
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / model of this conversation (operator declaration)",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "embedding": {
+    "model": "spaCy/en_core_web_md",
+    "package": "3.8.0",
+    "weights_sha256": "1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5",
+    "dimensions": 300,
+    "pooling": "mean of nonzero token vectors; L2 normalized"
+  },
+  "interactions": [
+    {
+      "stage": "extract",
+      "request": "00e37d7620ee6a247c3620c36750a81a1b03c1f5081fc582d708a4c21d7a187b",
+      "response_hash": "68b90cce2bd336164c2442c70ca6de9288fe4dd8d818906c37ceff89b977bbe6",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "10d7f695ace47d3c6cc9b49c84ada0c30c0faf20cd453ce9a1b8001dc8badaa7",
+      "response_hash": "75a07584f26aeaff070e0f26e201a8e61180d56f2117b9475bc4c2878772e7e8",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "6468ad3cde8d3752f738b2e602d21845dfaa854a398762073783f117387adaba",
+      "response_hash": "e998016d8e0ef96013806445ec91b7c137aa60a01a68ba69fff47a9f981aa789",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "b01da90ec3b80c18694f31c8d8e34408c31c3013bb99668f80ec9fb9086e40d7",
+      "response_hash": "dba4e8c4d16b7effd13a837deac441a514a2b18832f7e75b6eaa5d9ab676b847",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "f008391a3e5f1cb33b4aac688de071aa826c04b23866771b95c485da3ed6f6bd",
+      "response_hash": "8da842e42ba492c537e65d03ef78f1fe383f6d27bcd210cf4d62837889394443",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "c9686cc221f82c9b4637b0fb9a95f45ba6865cbc73d0cd600a9669297d85a301",
+      "response_hash": "8b566326d39e286652fa3c59e42835d6461017ef529d15f288810fbe73d2af48",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "53ddbedd10f54cd3c4c8b764c7424f0655ede48e5d4857e5e13b1cfd8254d651",
+      "response_hash": "1aacae6e6d0ee2001d458dc699dc24afb93364fc702e080de89dc8693d4365fc",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "7ef65a7353b295f227346e63dccfa7d10afcc4aa2491a2140778563ac34f9d35",
+      "response_hash": "3ba0eceebf8b0271baa12f7d42e85038e51a2daf761fcbf8a88849808383506c",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "d5283d11613e4b4867cde68584dc24aba70b535bf7e1e701f2465be14478d381",
+      "response_hash": "deeeb05c269a368c6d545e5c5bb7104ca523e276710d59862a3c8cd60495a461",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "teaching",
+      "request": "4b722c88576cbb037750bc13840d7981b955dea6e6691d2449f585cc02b80ce3",
+      "response_hash": "34bb35dbbe8bb30c32693d2a6a39f543269b41a0bb3bd2a838e0f781df33f922",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "teaching",
+      "request": "ebe0d633db1b8b500e3e3d7b6d68a740682a8febc6edccdcdbedc7e9cfd1d1e3",
+      "response_hash": "2d6b4725fb4a951438f887fc6d6a05a7559c8426854141bc503e5c89095b6822",
+      "model": "Codex / model of this conversation (operator declaration)"
+    }
+  ],
+  "extraction": {
+    "observations": [
+      {
+        "turn": 1,
+        "source_excerpt": "If I know earlier, I would change the plan.",
+        "learner_quote": "If I know earlier, I would change the plan.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Consider an alternative past outcome",
+        "learning_dimension": "Expressing an unreal past condition and its possible result",
+        "observed_behavior": "Uses present condition and conditional result for an explicitly unreal past situation",
+        "suggested_forms": [
+          "If I'd known earlier, I would have changed the plan."
+        ],
+        "hypothesis": null,
+        "support": "no_support",
+        "support_turns": []
+      },
+      {
+        "turn": 7,
+        "source_excerpt": "Even though the deadline was close, we delayed the release because the checks failed.",
+        "learner_quote": "Even though the deadline was close, we delayed the release because the checks failed.",
+        "production_mode": "prompted",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Explain a decision despite a conflicting constraint",
+        "learning_dimension": "Expressing a concessive contrast between a constraint and a decision",
+        "observed_behavior": "Completes a contrast coherently after the teacher supplied only the beginning",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "support": "partial_scaffold",
+        "support_turns": [
+          6
+        ]
+      },
+      {
+        "turn": 9,
+        "source_excerpt": "My new chair was incredibly expensive, but it made long meetings more comfortable.",
+        "learner_quote": "My new chair was incredibly expensive, but it made long meetings more comfortable.",
+        "production_mode": "prompted",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Emphasize the high cost of a purchase",
+        "learning_dimension": "Describing high cost with appropriate noun and adjective combinations",
+        "observed_behavior": "Correctly assigns expensive to the item after a conceptual contrast without a complete model",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "support": "explanation_before_attempt",
+        "support_turns": [
+          8
+        ]
+      },
+      {
+        "turn": 11,
+        "source_excerpt": "We were too late. Anyway, the new rollout worked.",
+        "learner_quote": "We were too late. Anyway, the new rollout worked.",
+        "production_mode": "prompted",
+        "performance": "uncertain",
+        "evidence_type": "opportunity",
+        "communicative_intent": "Consider an alternative past outcome",
+        "learning_dimension": "Expressing an unreal past condition and its possible result",
+        "observed_behavior": "A targeted past-counterfactual opportunity occurred, but the learner chose an actual outcome and moved on; this is not a linguistic failure or evidence of avoidance",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "support": "contextual_prompt",
+        "support_turns": [
+          10
+        ]
+      }
+    ],
+    "teaching": [
+      {
+        "refs": [
+          {
+            "turn": 3,
+            "quote": "Why did you change it? Can you explain briefly?"
+          }
+        ],
+        "kind": "situational_request",
+        "interpretation": "This asks for reasoning about one recast, without a lasting always-explain preference.",
+        "instruction": "Give a brief reason for a meaningful reformulation when the learner asks.",
+        "durable": false
+      },
+      {
+        "refs": [
+          {
+            "turn": 13,
+            "quote": "Please don't give me long lists of synonyms; one useful contrast is enough for our conversations."
+          }
+        ],
+        "kind": "rejection",
+        "interpretation": "The learner explicitly rejects synonym lists as an ongoing approach.",
+        "instruction": "Avoid long synonym lists; prefer one useful contrast when explaining a reformulation.",
+        "durable": true
+      }
+    ],
+    "goals": []
+  },
+  "rejected": [],
+  "grouping": [
+    {
+      "observation_id": "OBS-8526642f2f0796ad",
+      "candidates": [
+        {
+          "candidate_id": "OBS-d4a4650cb8bd7c51",
+          "root_id": "OBS-d4a4650cb8bd7c51",
+          "similarity": 0.903374,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-d4a4650cb8bd7c51",
+              "date": "2026-04-01",
+              "turn": 8,
+              "source_excerpt": "I wish I'd warned them sooner.",
+              "learner_quote": "I wish I'd warned them sooner.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express regret about an earlier omission",
+              "learning_dimension": "Expressing past regret with an appropriate alternative construction",
+              "observed_behavior": "Produces a valid wish construction after a different model for regret, not an error for failing to copy the target phrase",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "model_phrase_available",
+              "support_turns": [
+                7
+              ],
+              "source_line_start": 25,
+              "source_line_end": 25
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-2d285ac6f57b7e04",
+          "root_id": "OBS-2d285ac6f57b7e04",
+          "similarity": 0.879923,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-2d285ac6f57b7e04",
+              "date": "2026-04-01",
+              "turn": 4,
+              "source_excerpt": "The queue was delayed since the worker had crashed.",
+              "learner_quote": "The queue was delayed since the worker had crashed.",
+              "production_mode": "spontaneous",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain a cause in a technical incident",
+              "learning_dimension": "Expressing causal relationships appropriately",
+              "observed_behavior": "Uses causal since correctly; teacher stylistic preference does not make it a difficulty",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 13,
+              "source_line_end": 13
+            },
+            {
+              "id": "OBS-57ceae2bbce63c16",
+              "date": "2026-04-01",
+              "turn": 6,
+              "source_excerpt": "The queue was delayed because the worker had crashed.",
+              "learner_quote": "The queue was delayed because the worker had crashed.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain a cause in a technical incident",
+              "learning_dimension": "Expressing causal relationships appropriately",
+              "observed_behavior": "Repeats a valid alternative supplied by the teacher after an optional stylistic reformulation",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "immediate_repetition",
+              "support_turns": [
+                5
+              ],
+              "source_line_start": 19,
+              "source_line_end": 19
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-8498add8537912b9",
+          "root_id": "OBS-8498add8537912b9",
+          "similarity": 0.845035,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-8498add8537912b9",
+              "date": "2026-04-08",
+              "turn": 3,
+              "source_excerpt": "The price was very expensive. I mean, the laptop was extremely expensive.",
+              "learner_quote": "The price was very expensive. I mean, the laptop was extremely expensive.",
+              "production_mode": "spontaneous",
+              "performance": "uncertain",
+              "evidence_type": "self_correction",
+              "communicative_intent": "Emphasize the high cost of a purchase",
+              "learning_dimension": "Describing high cost with appropriate noun and adjective combinations",
+              "observed_behavior": "Self-repairs expensive price to expensive laptop; one repair event, not independent failure and success",
+              "suggested_forms": [],
+              "hypothesis": "The initial noun-adjective combination is consistent with Portuguese transfer, but the mental process is unobserved.",
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 10,
+              "source_line_end": 10
+            },
+            {
+              "id": "OBS-6813f6012a12396d",
+              "date": "2026-04-08",
+              "turn": 5,
+              "source_excerpt": "The laptop was extremely expensive, but it saves me several hours a week.",
+              "learner_quote": "The laptop was extremely expensive, but it saves me several hours a week.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Emphasize the high cost of a purchase",
+              "learning_dimension": "Describing high cost with appropriate noun and adjective combinations",
+              "observed_behavior": "Repeats the wording from the learner own immediately preceding repair, not independent spontaneous recovery",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "immediate_repetition",
+              "support_turns": [
+                3
+              ],
+              "source_line_start": 16,
+              "source_line_end": 16
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "related_but_different",
+        "candidate_id": "OBS-d4a4650cb8bd7c51",
+        "reason": "Imagining a counterfactual condition and its result is related to regret about an omission, but requires expressing a condition-result relationship. Do not merge it into a broad past-regret capability merely because both concern an unreal past.",
+        "pattern_label": null,
+        "pattern_description": null,
+        "conversation_contexts": []
+      }
+    },
+    {
+      "observation_id": "OBS-612600cf97d21d92",
+      "candidates": [
+        {
+          "candidate_id": "OBS-2d285ac6f57b7e04",
+          "root_id": "OBS-2d285ac6f57b7e04",
+          "similarity": 0.91391,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-2d285ac6f57b7e04",
+              "date": "2026-04-01",
+              "turn": 4,
+              "source_excerpt": "The queue was delayed since the worker had crashed.",
+              "learner_quote": "The queue was delayed since the worker had crashed.",
+              "production_mode": "spontaneous",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain a cause in a technical incident",
+              "learning_dimension": "Expressing causal relationships appropriately",
+              "observed_behavior": "Uses causal since correctly; teacher stylistic preference does not make it a difficulty",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 13,
+              "source_line_end": 13
+            },
+            {
+              "id": "OBS-57ceae2bbce63c16",
+              "date": "2026-04-01",
+              "turn": 6,
+              "source_excerpt": "The queue was delayed because the worker had crashed.",
+              "learner_quote": "The queue was delayed because the worker had crashed.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain a cause in a technical incident",
+              "learning_dimension": "Expressing causal relationships appropriately",
+              "observed_behavior": "Repeats a valid alternative supplied by the teacher after an optional stylistic reformulation",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "immediate_repetition",
+              "support_turns": [
+                5
+              ],
+              "source_line_start": 19,
+              "source_line_end": 19
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-8526642f2f0796ad",
+          "root_id": "OBS-8526642f2f0796ad",
+          "similarity": 0.895962,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-8526642f2f0796ad",
+              "date": "2026-04-15",
+              "turn": 1,
+              "source_excerpt": "If I know earlier, I would change the plan.",
+              "learner_quote": "If I know earlier, I would change the plan.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Consider an alternative past outcome",
+              "learning_dimension": "Expressing an unreal past condition and its possible result",
+              "observed_behavior": "Uses present condition and conditional result for an explicitly unreal past situation",
+              "suggested_forms": [
+                "If I'd known earlier, I would have changed the plan."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 4,
+              "source_line_end": 4
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-d4a4650cb8bd7c51",
+          "root_id": "OBS-d4a4650cb8bd7c51",
+          "similarity": 0.891477,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-d4a4650cb8bd7c51",
+              "date": "2026-04-01",
+              "turn": 8,
+              "source_excerpt": "I wish I'd warned them sooner.",
+              "learner_quote": "I wish I'd warned them sooner.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express regret about an earlier omission",
+              "learning_dimension": "Expressing past regret with an appropriate alternative construction",
+              "observed_behavior": "Produces a valid wish construction after a different model for regret, not an error for failing to copy the target phrase",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "model_phrase_available",
+              "support_turns": [
+                7
+              ],
+              "source_line_start": 25,
+              "source_line_end": 25
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "related_but_different",
+        "candidate_id": "OBS-2d285ac6f57b7e04",
+        "reason": "Contrasting a constraint with a decision is related to explaining a causal reason, but the selected dimension is concession rather than causality. Partial scaffolding changes support and does not justify merging these distinct capabilities.",
+        "pattern_label": null,
+        "pattern_description": null,
+        "conversation_contexts": []
+      }
+    },
+    {
+      "observation_id": "OBS-57eaa18b79025f3b",
+      "candidates": [
+        {
+          "candidate_id": "OBS-8498add8537912b9",
+          "root_id": "OBS-8498add8537912b9",
+          "similarity": 1.0,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-8498add8537912b9",
+              "date": "2026-04-08",
+              "turn": 3,
+              "source_excerpt": "The price was very expensive. I mean, the laptop was extremely expensive.",
+              "learner_quote": "The price was very expensive. I mean, the laptop was extremely expensive.",
+              "production_mode": "spontaneous",
+              "performance": "uncertain",
+              "evidence_type": "self_correction",
+              "communicative_intent": "Emphasize the high cost of a purchase",
+              "learning_dimension": "Describing high cost with appropriate noun and adjective combinations",
+              "observed_behavior": "Self-repairs expensive price to expensive laptop; one repair event, not independent failure and success",
+              "suggested_forms": [],
+              "hypothesis": "The initial noun-adjective combination is consistent with Portuguese transfer, but the mental process is unobserved.",
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 10,
+              "source_line_end": 10
+            },
+            {
+              "id": "OBS-6813f6012a12396d",
+              "date": "2026-04-08",
+              "turn": 5,
+              "source_excerpt": "The laptop was extremely expensive, but it saves me several hours a week.",
+              "learner_quote": "The laptop was extremely expensive, but it saves me several hours a week.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Emphasize the high cost of a purchase",
+              "learning_dimension": "Describing high cost with appropriate noun and adjective combinations",
+              "observed_behavior": "Repeats the wording from the learner own immediately preceding repair, not independent spontaneous recovery",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "immediate_repetition",
+              "support_turns": [
+                3
+              ],
+              "source_line_start": 16,
+              "source_line_end": 16
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-09d99be4b1162d6b",
+          "root_id": "OBS-09d99be4b1162d6b",
+          "similarity": 0.859434,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-09d99be4b1162d6b",
+              "date": "2026-04-01",
+              "turn": 10,
+              "source_excerpt": "I have doubts about whether the measurements are reliable.",
+              "learner_quote": "I have doubts about whether the measurements are reliable.",
+              "production_mode": "prompted",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express suspicion about the reliability of measurements",
+              "learning_dimension": "Expressing reservations about reliability",
+              "observed_behavior": "Uses doubts legitimately for reservations rather than a practical question",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "contextual_prompt",
+              "support_turns": [
+                9
+              ],
+              "source_line_start": 31,
+              "source_line_end": 31
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-8526642f2f0796ad",
+          "root_id": "OBS-8526642f2f0796ad",
+          "similarity": 0.845035,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-8526642f2f0796ad",
+              "date": "2026-04-15",
+              "turn": 1,
+              "source_excerpt": "If I know earlier, I would change the plan.",
+              "learner_quote": "If I know earlier, I would change the plan.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Consider an alternative past outcome",
+              "learning_dimension": "Expressing an unreal past condition and its possible result",
+              "observed_behavior": "Uses present condition and conditional result for an explicitly unreal past situation",
+              "suggested_forms": [
+                "If I'd known earlier, I would have changed the plan."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 4,
+              "source_line_end": 4
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "same_pattern",
+        "candidate_id": "OBS-8498add8537912b9",
+        "reason": "The new successful description puts expensive on the item, matching the earlier price-to-laptop self-repair dimension. A conceptual explanation immediately preceded the attempt; this prompted success supports the group without proving spontaneous recovery.",
+        "pattern_label": "Appropriate combinations for describing high cost",
+        "pattern_description": "An uncertain self-repair and immediate self-echo are followed on another date by appropriate production after a conceptual explanation. Independent spontaneous difficulty or transfer is not established.",
+        "conversation_contexts": [
+          "Discuss the cost and value of a purchase"
+        ]
+      }
+    },
+    {
+      "observation_id": "OBS-fd176955b9438e55",
+      "candidates": [
+        {
+          "candidate_id": "OBS-8526642f2f0796ad",
+          "root_id": "OBS-8526642f2f0796ad",
+          "similarity": 1.0,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-8526642f2f0796ad",
+              "date": "2026-04-15",
+              "turn": 1,
+              "source_excerpt": "If I know earlier, I would change the plan.",
+              "learner_quote": "If I know earlier, I would change the plan.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Consider an alternative past outcome",
+              "learning_dimension": "Expressing an unreal past condition and its possible result",
+              "observed_behavior": "Uses present condition and conditional result for an explicitly unreal past situation",
+              "suggested_forms": [
+                "If I'd known earlier, I would have changed the plan."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 4,
+              "source_line_end": 4
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-d4a4650cb8bd7c51",
+          "root_id": "OBS-d4a4650cb8bd7c51",
+          "similarity": 0.903374,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-d4a4650cb8bd7c51",
+              "date": "2026-04-01",
+              "turn": 8,
+              "source_excerpt": "I wish I'd warned them sooner.",
+              "learner_quote": "I wish I'd warned them sooner.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express regret about an earlier omission",
+              "learning_dimension": "Expressing past regret with an appropriate alternative construction",
+              "observed_behavior": "Produces a valid wish construction after a different model for regret, not an error for failing to copy the target phrase",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "model_phrase_available",
+              "support_turns": [
+                7
+              ],
+              "source_line_start": 25,
+              "source_line_end": 25
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-612600cf97d21d92",
+          "root_id": "OBS-612600cf97d21d92",
+          "similarity": 0.895962,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-612600cf97d21d92",
+              "date": "2026-04-15",
+              "turn": 7,
+              "source_excerpt": "Even though the deadline was close, we delayed the release because the checks failed.",
+              "learner_quote": "Even though the deadline was close, we delayed the release because the checks failed.",
+              "production_mode": "prompted",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Explain a decision despite a conflicting constraint",
+              "learning_dimension": "Expressing a concessive contrast between a constraint and a decision",
+              "observed_behavior": "Completes a contrast coherently after the teacher supplied only the beginning",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "partial_scaffold",
+              "support_turns": [
+                6
+              ],
+              "source_line_start": 22,
+              "source_line_end": 22
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "same_pattern",
+        "candidate_id": "OBS-8526642f2f0796ad",
+        "reason": "The teacher prompt creates an opportunity for the same unreal-past condition/result capability as the initial difficulty. The learner chooses actual-outcome wording instead. Group the opportunity with that dimension without counting non-use as error or inferring avoidance.",
+        "pattern_label": "Expressing an unreal past condition and its possible result",
+        "pattern_description": "One unassisted difficulty in a counterfactual past account is followed by an elicited opportunity without a counterfactual production. The latter is uncertain evidence, not another failure or proof of avoidance.",
+        "conversation_contexts": [
+          "Discuss how an earlier decision might have led to a different outcome"
+        ]
+      }
+    }
+  ],
+  "teaching": [
+    {
+      "id": "TE-131e97c7b702cbb3",
+      "session_id": "SES-793c692559865df5",
+      "occurred_on": "2026-04-15",
+      "data": {
+        "refs": [
+          {
+            "turn": 3,
+            "quote": "Why did you change it? Can you explain briefly?"
+          }
+        ],
+        "kind": "situational_request",
+        "interpretation": "This asks for reasoning about one recast, without a lasting always-explain preference.",
+        "instruction": "Give a brief reason for a meaningful reformulation when the learner asks.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 3,
+          "speaker": "learner",
+          "quote": "Why did you change it? Can you explain briefly?",
+          "source_start": 271,
+          "source_end": 318,
+          "source_line_start": 10,
+          "source_line_end": 10
+        }
+      ],
+      "directive_id": "TD-131e97c7b702",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The learner asks why this recast was made and requests brevity. That is a local request for a reason, not an always-explain instruction; keep its contextual group tentative."
+      }
+    },
+    {
+      "id": "TE-2df8f45dba454fc5",
+      "session_id": "SES-793c692559865df5",
+      "occurred_on": "2026-04-15",
+      "data": {
+        "refs": [
+          {
+            "turn": 13,
+            "quote": "Please don't give me long lists of synonyms; one useful contrast is enough for our conversations."
+          }
+        ],
+        "kind": "rejection",
+        "interpretation": "The learner explicitly rejects synonym lists as an ongoing approach.",
+        "instruction": "Avoid long synonym lists; prefer one useful contrast when explaining a reformulation.",
+        "durable": true
+      },
+      "refs": [
+        {
+          "turn": 13,
+          "speaker": "learner",
+          "quote": "Please don't give me long lists of synonyms; one useful contrast is enough for our conversations.",
+          "source_start": 1353,
+          "source_end": 1450,
+          "source_line_start": 40,
+          "source_line_end": 40
+        }
+      ],
+      "directive_id": "TD-2df8f45dba45",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The learner explicitly rejects long synonym lists for ongoing conversations and asks for one useful contrast. This is more specific than avoiding memorization requests, and includes a distinct alternative teaching action, so retain an explicit separate directive rather than silently discard the refinement."
+      }
+    }
+  ],
+  "teaching_rejected": [],
+  "goals": []
+}

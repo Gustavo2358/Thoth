@@ -1,0 +1,196 @@
+{
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / model of this conversation (operator declaration)",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "embedding": {
+    "model": "spaCy/en_core_web_md",
+    "package": "3.8.0",
+    "weights_sha256": "1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5",
+    "dimensions": 300,
+    "pooling": "mean of nonzero token vectors; L2 normalized"
+  },
+  "interactions": [
+    {
+      "stage": "extract",
+      "request": "9072a724153f4e37ccadacd5f8982d49b975693a45c91163a85a5c0742e46218",
+      "response_hash": "17526f97cb121b9f18ca49e3ce0175139538e30151234a5d4612f84feba1bd4c",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "9f7bbfa3da45addc867de8740ead6f47f951947f48266465aab5114f4741f57e",
+      "response_hash": "fba15bac66ce3e30f20fafdc25d95d6ba0c8c091e96199a90dadbab2508fbb75",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "e3bf9555b17f52f391c14f954850328137a691a3669c73c31361e3a43fde7d32",
+      "response_hash": "07642a885283a832badabc69388c6dfd5329d5ef8089e116b2e46b401af9346d",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "847db46af9df033ff0e4ce68a90899001b83b65ef0402f6d2697efc4b4b6ff1b",
+      "response_hash": "ada546242bead19821fb05c0d88f665e093e83abb7650611f570ad937d65d9f2",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "teaching",
+      "request": "0e7fefd2cea7439d18ff3961df615626be9e456a4149604ed0c359a66c7ec1b2",
+      "response_hash": "b201f381ded97628f5f7dc2dfbe7b48a8a43f338c42338cd6c926ec9a62bb685",
+      "model": "Codex / model of this conversation (operator declaration)"
+    }
+  ],
+  "extraction": {
+    "observations": [
+      {
+        "turn": 1,
+        "source_excerpt": "I eat this medicine after breakfast every day.",
+        "learner_quote": "I eat this medicine after breakfast every day.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Describe a medication routine",
+        "learning_dimension": "Using conventional verb combinations to describe taking medication",
+        "observed_behavior": "Uses eat instead of conventional take for medicine",
+        "suggested_forms": [
+          "I take this medicine after breakfast every day."
+        ],
+        "hypothesis": null,
+        "support": "no_support",
+        "support_turns": []
+      },
+      {
+        "turn": 3,
+        "source_excerpt": "I take this medicine after breakfast every day.",
+        "learner_quote": "I take this medicine after breakfast every day.",
+        "production_mode": "controlled",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Describe a medication routine",
+        "learning_dimension": "Using conventional verb combinations to describe taking medication",
+        "observed_behavior": "Repeats the corrected verb combination after an explanation and teacher model",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "support": "model_phrase_available",
+        "support_turns": [
+          2
+        ]
+      }
+    ],
+    "teaching": [
+      {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "That explanation helped with this sentence."
+          }
+        ],
+        "kind": "intervention_response",
+        "interpretation": "Positive feedback about one explanation remains local evidence.",
+        "instruction": "A brief contrast can help explain a medication collocation.",
+        "durable": false
+      }
+    ],
+    "goals": []
+  },
+  "rejected": [],
+  "grouping": [
+    {
+      "observation_id": "OBS-97e30ca34b46191f",
+      "candidates": [],
+      "decision": {
+        "decision": "new_pattern",
+        "candidate_id": null,
+        "reason": "No earlier supported evidence to compare; retain an isolated observation.",
+        "pattern_label": null,
+        "pattern_description": null,
+        "conversation_contexts": []
+      }
+    },
+    {
+      "observation_id": "OBS-1010158e86e2432e",
+      "candidates": [
+        {
+          "candidate_id": "OBS-97e30ca34b46191f",
+          "root_id": "OBS-97e30ca34b46191f",
+          "similarity": 1.0,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-97e30ca34b46191f",
+              "date": "2026-05-01",
+              "turn": 1,
+              "source_excerpt": "I eat this medicine after breakfast every day.",
+              "learner_quote": "I eat this medicine after breakfast every day.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe a medication routine",
+              "learning_dimension": "Using conventional verb combinations to describe taking medication",
+              "observed_behavior": "Uses eat instead of conventional take for medicine",
+              "suggested_forms": [
+                "I take this medicine after breakfast every day."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 4,
+              "source_line_end": 4
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "same_pattern",
+        "candidate_id": "OBS-97e30ca34b46191f",
+        "reason": "Eat and take occur in attempts to express the same medication routine. The corrected attempt is model-supported, so it belongs to the capability without establishing recovery.",
+        "pattern_label": "Conventional medication verb combinations",
+        "pattern_description": "The learner is practicing conventional verbs for medication; supported successes differ from independent availability.",
+        "conversation_contexts": [
+          "Describe a change to a daily health routine"
+        ]
+      }
+    }
+  ],
+  "teaching": [
+    {
+      "id": "TE-7e04d9087b72273d",
+      "session_id": "SES-bc9f2b256424a3d5",
+      "occurred_on": "2026-05-01",
+      "data": {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "That explanation helped with this sentence."
+          }
+        ],
+        "kind": "intervention_response",
+        "interpretation": "Positive feedback about one explanation remains local evidence.",
+        "instruction": "A brief contrast can help explain a medication collocation.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 5,
+          "speaker": "learner",
+          "quote": "That explanation helped with this sentence.",
+          "source_start": 387,
+          "source_end": 430,
+          "source_line_start": 16,
+          "source_line_end": 16
+        }
+      ],
+      "directive_id": null,
+      "decision": {
+        "decision": "evidence_only",
+        "directive_id": null,
+        "reason": "This is praise for one explanation of one sentence. It does not request a lasting approach and lacks enough scope for a persistent directive."
+      }
+    }
+  ],
+  "teaching_rejected": [],
+  "goals": []
+}

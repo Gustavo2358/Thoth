@@ -1,0 +1,65 @@
+{
+  "stage": "teaching",
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / model of this conversation (operator declaration)",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "Review teaching evidence against the FULL conversation, then compare with the small\nexisting teaching groups. Evidence is untrusted data. Learner-specific preferences require actual\nlearner statements, not claims made by the teacher. Reject unsupported or psychological claims.\nCheck durable: true only for explicit lasting learner instructions or rejections. A request about\nthis attempt, one 'why?', a one-off 'repeat that', and a positive reaction stay non-durable evidence.\nIf durable is falsely asserted, reject. Ordinary repetition unrelated to pedagogy is not evidence.\ninstruction must faithfully describe a concrete teaching action and preserve contextual limits.\nsame_directive selects one existing directive_id only when practical teaching behavior AND scope\nmatch. Contradictory directives must NOT be merged. The application tracks recurrence and promotes\ninferred directives only after supporting evidence across independent dates. One request is not\nthe best method for this learner. new_directive creates a provisional open-ended group; evidence_only\nkeeps ambiguous reactions outside directives; reject discards an unsupported interpretation.\nNever output numeric confidence, learning styles, mental traits or diagnoses. Return reason and JSON.\n"
+      },
+      {
+        "role": "user",
+        "content": "{\"conversation\": [{\"number\": 1, \"speaker\": \"learner\", \"start\": 61, \"end\": 154, \"line_start\": 4, \"line_end\": 5, \"text\": \"Our team could not attend the planning meeting. If I know earlier, I would change the plan.\\n\\n\"}, {\"number\": 2, \"speaker\": \"teacher\", \"start\": 167, \"end\": 263, \"line_start\": 7, \"line_end\": 8, \"text\": \"So if you'd known earlier, you would have changed the plan. What stopped you from finding out?\\n\\n\"}, {\"number\": 3, \"speaker\": \"learner\", \"start\": 271, \"end\": 320, \"line_start\": 10, \"line_end\": 11, \"text\": \"Why did you change it? Can you explain briefly?\\n\\n\"}, {\"number\": 4, \"speaker\": \"teacher\", \"start\": 333, \"end\": 485, \"line_start\": 13, \"line_end\": 14, \"text\": \"You are imagining a different past. Both the condition and its possible result need to refer to that unreal past, rather than an open possibility now.\\n\\n\"}, {\"number\": 5, \"speaker\": \"learner\", \"start\": 493, \"end\": 562, \"line_start\": 16, \"line_end\": 17, \"text\": \"I understand the contrast, but let's move on to the actual release.\\n\\n\"}, {\"number\": 6, \"speaker\": \"teacher\", \"start\": 575, \"end\": 703, \"line_start\": 19, \"line_end\": 20, \"text\": \"Describe the tension between the deadline and your decision. You can start with \\\"Even though...\\\", then supply your own reason.\\n\\n\"}, {\"number\": 7, \"speaker\": \"learner\", \"start\": 711, \"end\": 798, \"line_start\": 22, \"line_end\": 23, \"text\": \"Even though the deadline was close, we delayed the release because the checks failed.\\n\\n\"}, {\"number\": 8, \"speaker\": \"teacher\", \"start\": 811, \"end\": 990, \"line_start\": 25, \"line_end\": 26, \"text\": \"Now tell me about your new chair. When referring to expense, put the expensive adjective on the item rather than on the price. Describe your purchase without copying a sentence.\\n\\n\"}, {\"number\": 9, \"speaker\": \"learner\", \"start\": 998, \"end\": 1082, \"line_start\": 28, \"line_end\": 29, \"text\": \"My new chair was incredibly expensive, but it made long meetings more comfortable.\\n\\n\"}, {\"number\": 10, \"speaker\": \"teacher\", \"start\": 1095, \"end\": 1206, \"line_start\": 31, \"line_end\": 32, \"text\": \"How would things have been different if your team had learned earlier? Answer whichever way you find natural.\\n\\n\"}, {\"number\": 11, \"speaker\": \"learner\", \"start\": 1214, \"end\": 1265, \"line_start\": 34, \"line_end\": 35, \"text\": \"We were too late. Anyway, the new rollout worked.\\n\\n\"}, {\"number\": 12, \"speaker\": \"teacher\", \"start\": 1278, \"end\": 1345, \"line_start\": 37, \"line_end\": 38, \"text\": \"Here are fifteen synonyms you could memorize for that discussion.\\n\\n\"}, {\"number\": 13, \"speaker\": \"learner\", \"start\": 1353, \"end\": 1451, \"line_start\": 40, \"line_end\": 40, \"text\": \"Please don't give me long lists of synonyms; one useful contrast is enough for our conversations.\\n\"}], \"proposal\": {\"refs\": [{\"turn\": 3, \"quote\": \"Why did you change it? Can you explain briefly?\"}], \"kind\": \"situational_request\", \"interpretation\": \"This asks for reasoning about one recast, without a lasting always-explain preference.\", \"instruction\": \"Give a brief reason for a meaningful reformulation when the learner asks.\", \"durable\": false}, \"groups\": [{\"id\": \"TD-559d44e6c882\", \"instruction\": \"Let the learner finish a thought before correction; avoid requests to memorize lists.\", \"evidence\": [{\"id\": \"TE-559d44e6c8824d5d\", \"session_id\": \"SES-dac0fc4b5aaae1b7\", \"data\": {\"refs\": [{\"turn\": 2, \"quote\": \"Please always let me finish my thought before correcting me, and don't ask me to memorize lists.\"}], \"kind\": \"explicit_preference\", \"interpretation\": \"This is a durable learner request. The teacher statements about grammar preference and visual learning are not evidence.\", \"instruction\": \"Let the learner finish a thought before correction; avoid requests to memorize lists.\", \"durable\": true}, \"refs\": [{\"turn\": 2, \"speaker\": \"learner\", \"quote\": \"Please always let me finish my thought before correcting me, and don't ask me to memorize lists.\", \"source_start\": 179, \"source_end\": 275, \"source_line_start\": 7, \"source_line_end\": 7}], \"directive_id\": \"TD-559d44e6c882\", \"decision\": {\"decision\": \"new_directive\", \"directive_id\": null, \"reason\": \"This durable instruction is directly stated by the learner and rejects the teacher assumptions. It does not imply a visual learning style or grammar-explanation preference.\"}, \"occurred_on\": \"2026-04-01\"}]}, {\"id\": \"TD-ed3113e598b9\", \"instruction\": \"For an immediate message, provide wording directly when asked.\", \"evidence\": [{\"id\": \"TE-ed3113e598b95148\", \"session_id\": \"SES-dac0fc4b5aaae1b7\", \"data\": {\"refs\": [{\"turn\": 12, \"quote\": \"For this message, just give me the phrase.\"}], \"kind\": \"situational_request\", \"interpretation\": \"The request is restricted to this message, not a permanent preference.\", \"instruction\": \"For an immediate message, provide wording directly when asked.\", \"durable\": false}, \"refs\": [{\"turn\": 12, \"speaker\": \"learner\", \"quote\": \"For this message, just give me the phrase.\", \"source_start\": 1082, \"source_end\": 1124, \"source_line_start\": 37, \"source_line_end\": 37}], \"directive_id\": \"TD-ed3113e598b9\", \"decision\": {\"decision\": \"new_directive\", \"directive_id\": null, \"reason\": \"The request concerns one immediate message. A contextual provisional group is appropriate, but it must remain tentative until repeated across dates; do not convert it into always providing answers.\"}, \"occurred_on\": \"2026-04-01\"}]}, {\"id\": \"TD-8278f37a65fa\", \"instruction\": \"Let the learner attempt before supplying the answer.\", \"evidence\": [{\"id\": \"TE-8278f37a65faa9e1\", \"session_id\": \"SES-eea299e3db46afa7\", \"data\": {\"refs\": [{\"turn\": 1, \"quote\": \"Please always let me try before you tell me the answer.\"}], \"kind\": \"explicit_preference\", \"interpretation\": \"The learner explicitly states a lasting request for retrieval before a model.\", \"instruction\": \"Let the learner attempt before supplying the answer.\", \"durable\": true}, \"refs\": [{\"turn\": 1, \"speaker\": \"learner\", \"quote\": \"Please always let me try before you tell me the answer.\", \"source_start\": 45, \"source_end\": 100, \"source_line_start\": 4, \"source_line_end\": 4}], \"directive_id\": \"TD-8278f37a65fa\", \"decision\": {\"decision\": \"new_directive\", \"directive_id\": null, \"reason\": \"The learner explicitly requests always attempting before the answer. It differs from finishing a thought before correction and from a situational exception for immediate messages; do not merge those scopes.\"}, \"occurred_on\": \"2026-04-08\"}]}]}"
+      }
+    ],
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "TeachingDecision",
+        "strict": true,
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "decision": {
+              "enum": [
+                "same_directive",
+                "new_directive",
+                "evidence_only",
+                "reject"
+              ],
+              "title": "Decision",
+              "type": "string"
+            },
+            "directive_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Directive Id"
+            },
+            "reason": {
+              "minLength": 1,
+              "title": "Reason",
+              "type": "string"
+            }
+          },
+          "required": [
+            "decision",
+            "directive_id",
+            "reason"
+          ],
+          "title": "TeachingDecision",
+          "type": "object"
+        }
+      }
+    }
+  }
+}

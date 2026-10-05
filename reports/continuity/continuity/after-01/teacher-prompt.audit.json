@@ -1,0 +1,244 @@
+{
+  "policy": {
+    "neighbors": 3,
+    "pattern_dates": 2,
+    "practice_dates": 2,
+    "recovery_dates": 1,
+    "stale_dates": 3,
+    "stale_days": 30,
+    "prompt_chars": 8000,
+    "practice_limit": 2,
+    "observe_limit": 2,
+    "transfer_limit": 2
+  },
+  "sources": {
+    "SES-f5c2461a1e7fa824": {
+      "sha256": "99e89977c0d1adc21559a05cfb817c9d869a58a98111fdd80c7b6c028361047b",
+      "date": "2026-03-01",
+      "path": "sessions/SES-f5c2461a1e7fa824/conversation.md"
+    }
+  },
+  "goals": [
+    {
+      "id": "GOAL-9ea18d568c82",
+      "text": "Discuss software architecture naturally in English, especially explaining long chains of reasoning.",
+      "session_id": "SES-f5c2461a1e7fa824",
+      "ref": {
+        "turn": 1,
+        "speaker": "learner",
+        "quote": "I want to discuss software architecture naturally in English, especially explaining long chains of reasoning.",
+        "source_start": 39,
+        "source_end": 148,
+        "source_line_start": 4,
+        "source_line_end": 4
+      }
+    }
+  ],
+  "directives": [
+    {
+      "id": "TD-3c2bedcb345a",
+      "instruction": "Explain the reason for meaningful reformulations and highlight reusable structures.",
+      "status": "explicit",
+      "rationale": "The learner explicitly requests lasting explanations of meaningful changes, with reusable structure rather than sentence memorization.",
+      "evidence_ids": [
+        "TE-3c2bedcb345a43ab"
+      ],
+      "dates": [
+        "2026-03-01"
+      ],
+      "evidence": [
+        {
+          "id": "TE-3c2bedcb345a43ab",
+          "session_id": "SES-f5c2461a1e7fa824",
+          "data": {
+            "refs": [
+              {
+                "turn": 5,
+                "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence."
+              }
+            ],
+            "kind": "explicit_preference",
+            "interpretation": "The learner explicitly requests lasting explanations of meaningful changes, with reusable structure rather than sentence memorization.",
+            "instruction": "Explain the reason for meaningful reformulations and highlight reusable structures.",
+            "durable": true
+          },
+          "refs": [
+            {
+              "turn": 5,
+              "speaker": "learner",
+              "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence.",
+              "source_start": 495,
+              "source_end": 611,
+              "source_line_start": 16,
+              "source_line_end": 16
+            }
+          ],
+          "directive_id": "TD-3c2bedcb345a",
+          "decision": {
+            "decision": "new_directive",
+            "directive_id": null,
+            "reason": "Always explain why is an explicit durable learner instruction. The proposed teaching behavior faithfully includes reusable structure without adding psychological claims."
+          },
+          "occurred_on": "2026-03-01"
+        }
+      ]
+    },
+    {
+      "id": "TD-40c2e10b9776",
+      "instruction": "Preserve flow by avoiding correction of every small detail.",
+      "status": "explicit",
+      "rationale": "The learner explicitly asks to avoid excessive correction because it interrupts conversational flow.",
+      "evidence_ids": [
+        "TE-40c2e10b9776a6bf"
+      ],
+      "dates": [
+        "2026-03-01"
+      ],
+      "evidence": [
+        {
+          "id": "TE-40c2e10b9776a6bf",
+          "session_id": "SES-f5c2461a1e7fa824",
+          "data": {
+            "refs": [
+              {
+                "turn": 5,
+                "quote": "Also, don't correct every little thing; otherwise I lose the flow."
+              }
+            ],
+            "kind": "explicit_preference",
+            "interpretation": "The learner explicitly asks to avoid excessive correction because it interrupts conversational flow.",
+            "instruction": "Preserve flow by avoiding correction of every small detail.",
+            "durable": true
+          },
+          "refs": [
+            {
+              "turn": 5,
+              "speaker": "learner",
+              "quote": "Also, don't correct every little thing; otherwise I lose the flow.",
+              "source_start": 612,
+              "source_end": 678,
+              "source_line_start": 16,
+              "source_line_end": 16
+            }
+          ],
+          "directive_id": "TD-40c2e10b9776",
+          "decision": {
+            "decision": "new_directive",
+            "directive_id": null,
+            "reason": "The learner explicitly asks to avoid pervasive small corrections. This concerns feedback selectivity and flow, distinct from explaining the reason for meaningful reformulations."
+          },
+          "occurred_on": "2026-03-01"
+        }
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "OBS-46e9b09e631191e5",
+      "status": "isolated",
+      "strategy": "observe",
+      "evidence": [
+        {
+          "observation_id": "OBS-46e9b09e631191e5",
+          "session_id": "SES-f5c2461a1e7fa824",
+          "date": "2026-03-01",
+          "performance": "difficulty",
+          "mode": "spontaneous",
+          "support": "no_support",
+          "production": {
+            "turn": 3,
+            "speaker": "learner",
+            "quote": "I'm with a doubt about the rollout.",
+            "source_start": 213,
+            "source_end": 248,
+            "source_line_start": 10,
+            "source_line_end": 10
+          },
+          "support_refs": []
+        }
+      ]
+    },
+    {
+      "id": "OBS-69fdacc230c0eb3f",
+      "status": "isolated",
+      "strategy": "observe",
+      "evidence": [
+        {
+          "observation_id": "OBS-69fdacc230c0eb3f",
+          "session_id": "SES-f5c2461a1e7fa824",
+          "date": "2026-03-01",
+          "performance": "difficulty",
+          "mode": "spontaneous",
+          "support": "no_support",
+          "production": {
+            "turn": 7,
+            "speaker": "learner",
+            "quote": "I work on this migration since January.",
+            "source_start": 756,
+            "source_end": 795,
+            "source_line_start": 22,
+            "source_line_end": 22
+          },
+          "support_refs": []
+        },
+        {
+          "observation_id": "OBS-3ff1ae8686a4e639",
+          "session_id": "SES-f5c2461a1e7fa824",
+          "date": "2026-03-01",
+          "performance": "successful",
+          "mode": "controlled",
+          "support": "model_phrase_available",
+          "production": {
+            "turn": 11,
+            "speaker": "learner",
+            "quote": "I've been working on this migration since January.",
+            "source_start": 1190,
+            "source_end": 1240,
+            "source_line_start": 34,
+            "source_line_end": 34
+          },
+          "support_refs": [
+            {
+              "turn": 8,
+              "speaker": "teacher",
+              "quote": "You are describing work that started earlier and continues now: \"I've been working on this migration since January.\"\n\n",
+              "source_start": 890,
+              "source_end": 1006,
+              "source_line_start": 25,
+              "source_line_end": 25
+            },
+            {
+              "turn": 10,
+              "speaker": "teacher",
+              "quote": "Try \"I've been working\" first, then add \"on this migration\", and finally the starting point.\n\n",
+              "source_start": 1088,
+              "source_end": 1180,
+              "source_line_start": 31,
+              "source_line_end": 31
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "omitted": [
+    {
+      "kind": "directive",
+      "id": "TD-bbd197f769b1",
+      "reason": "single-date tentative evidence; not a persistent instruction"
+    }
+  ],
+  "product_policy": "General oral-production defaults in compiler.BASE; not learner-specific evidence",
+  "section_budgets": {
+    "goals": 1400,
+    "directives": 1800,
+    "reserved_structure": 300
+  },
+  "characters": 2932,
+  "sha256": "e844a33c210327a80f2e3503bdb39e912e74d164e6afb95fe59f5ec771cf5d07",
+  "selection_counts": {
+    "practice": 0,
+    "observe": 2,
+    "transfer": 0
+  }
+}

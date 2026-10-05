@@ -1,0 +1,24 @@
+{
+  "sessions": 1,
+  "observations": 2,
+  "patterns": [],
+  "isolated": [
+    {
+      "id": "OBS-97e30ca34b46191f",
+      "dimension": "Using conventional verb combinations to describe taking medication",
+      "performance": "difficulty",
+      "reason": "No earlier supported evidence to compare; retain an isolated observation."
+    },
+    {
+      "id": "OBS-1010158e86e2432e",
+      "dimension": "Using conventional verb combinations to describe taking medication",
+      "performance": "successful",
+      "reason": "Eat and take occur in attempts to express the same medication routine. The corrected attempt is model-supported, so it belongs to the capability without establishing recovery."
+    }
+  ],
+  "assumptions": [
+    "Counts describe selected conversation evidence, not mastery or a representative proficiency score.",
+    "Repeated conversations on one date do not establish longitudinal recurrence.",
+    "Pattern descriptions and causal interpretations are model hypotheses; quotes and memberships are auditable."
+  ]
+}

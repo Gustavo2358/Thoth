@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-23ca9a31a64697ac",
+  "reason": "An ongoing residence from last summer is the same duration capability as ongoing project/work from January. This appropriate unassisted production occurs in a new family context and follows no wording model; it supplies recent positive evidence for transfer.",
+  "pattern_label": "Describing continuing situations from an earlier starting point",
+  "pattern_description": "Earlier spontaneous duration difficulties coexist with successful controlled reconstructions; recent unassisted use for residence suggests improvement, without establishing mastery.",
+  "conversation_contexts": [
+    "Discuss the history of an ongoing situation in a different area of life"
+  ]
+}

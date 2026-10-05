@@ -1,1 +1,0 @@
-{"decision": "new_pattern", "candidate_id": null, "reason": "Using agree as a lexical verb to state agreement is distinct from marking continuing duration, calibrating polite favors, and expressing past regret. A shared be form does not establish the same underlying production ability.", "pattern_label": null, "pattern_description": null, "conversation_contexts": []}

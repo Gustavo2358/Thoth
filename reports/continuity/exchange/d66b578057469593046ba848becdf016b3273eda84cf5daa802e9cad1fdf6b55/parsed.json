@@ -1,0 +1,5 @@
+{
+  "decision": "same_directive",
+  "directive_id": "TD-bbd197f769b1",
+  "reason": "Both learner requests ask to split a difficult long production into meaningful smaller pieces; the new request explicitly relates to last time. This supports recurrence of the same contextual behavior, not a durable or optimal-method claim."
+}

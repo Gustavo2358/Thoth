@@ -1,0 +1,8 @@
+{
+  "decision": "related_but_different",
+  "candidate_id": "OBS-2d285ac6f57b7e04",
+  "reason": "Contrasting a constraint with a decision is related to explaining a causal reason, but the selected dimension is concession rather than causality. Partial scaffolding changes support and does not justify merging these distinct capabilities.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

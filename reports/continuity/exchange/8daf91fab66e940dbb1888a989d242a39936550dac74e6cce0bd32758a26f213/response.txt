@@ -1,0 +1,8 @@
+{
+  "decision": "new_pattern",
+  "candidate_id": null,
+  "reason": "Describing duration of ongoing work is different from expressing practical uncertainty. Shared project vocabulary does not establish the same capability.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

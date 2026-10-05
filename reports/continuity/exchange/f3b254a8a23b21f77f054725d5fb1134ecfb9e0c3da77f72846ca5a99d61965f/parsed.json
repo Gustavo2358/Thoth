@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-69fdacc230c0eb3f",
+  "reason": "Ongoing project membership since January and continuing migration work since January require the same duration capability despite different predicates. The current attempt is not modelled and repeats an inappropriate simple-present pattern.",
+  "pattern_label": "Describing continuing situations from an earlier starting point",
+  "pattern_description": "Independent attempts to describe continuing situations use simple present with a past starting point; supplied models are reconstructed successfully.",
+  "conversation_contexts": [
+    "Discuss how a current activity or relationship developed over time"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "decision": "new_pattern",
+  "candidate_id": null,
+  "reason": "Past regret and causal explanation are different capabilities. This is a valid alternative for regret after support, not an error for missing a prescribed form.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

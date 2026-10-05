@@ -1,0 +1,5 @@
+{
+  "decision": "new_directive",
+  "directive_id": null,
+  "reason": "The learner explicitly asks to avoid pervasive small corrections. This concerns feedback selectivity and flow, distinct from explaining the reason for meaningful reformulations."
+}

@@ -1,0 +1,1 @@
+{"decision": "uncertain", "reason": "The learner refuses to clarify whether doubt means uncertainty or suspicion. The lexical intention cannot be resolved; retain uncertain isolated evidence without diagnosing a problem."}

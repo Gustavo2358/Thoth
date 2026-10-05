@@ -1,0 +1,144 @@
+{
+  "directives": [
+    {
+      "id": "TD-3c2bedcb345a",
+      "instruction": "Explain the reason for meaningful reformulations and highlight reusable structures.",
+      "status": "explicit",
+      "rationale": "The learner explicitly requests lasting explanations of meaningful changes, with reusable structure rather than sentence memorization.",
+      "evidence_ids": [
+        "TE-3c2bedcb345a43ab"
+      ],
+      "dates": [
+        "2026-03-01"
+      ]
+    },
+    {
+      "id": "TD-40c2e10b9776",
+      "instruction": "Preserve flow by avoiding correction of every small detail.",
+      "status": "explicit",
+      "rationale": "The learner explicitly asks to avoid excessive correction because it interrupts conversational flow.",
+      "evidence_ids": [
+        "TE-40c2e10b9776a6bf"
+      ],
+      "dates": [
+        "2026-03-01"
+      ]
+    },
+    {
+      "id": "TD-bbd197f769b1",
+      "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+      "status": "tentative",
+      "rationale": "Chunking was explicitly requested for this difficult sentence; one occurrence does not establish a permanent preference.",
+      "evidence_ids": [
+        "TE-bbd197f769b1e4a2"
+      ],
+      "dates": [
+        "2026-03-01"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "TE-3c2bedcb345a43ab",
+      "session_id": "SES-f5c2461a1e7fa824",
+      "data": {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence."
+          }
+        ],
+        "kind": "explicit_preference",
+        "interpretation": "The learner explicitly requests lasting explanations of meaningful changes, with reusable structure rather than sentence memorization.",
+        "instruction": "Explain the reason for meaningful reformulations and highlight reusable structures.",
+        "durable": true
+      },
+      "refs": [
+        {
+          "turn": 5,
+          "speaker": "learner",
+          "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence.",
+          "source_start": 495,
+          "source_end": 611,
+          "source_line_start": 16,
+          "source_line_end": 16
+        }
+      ],
+      "directive_id": "TD-3c2bedcb345a",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "Always explain why is an explicit durable learner instruction. The proposed teaching behavior faithfully includes reusable structure without adding psychological claims."
+      },
+      "occurred_on": "2026-03-01"
+    },
+    {
+      "id": "TE-40c2e10b9776a6bf",
+      "session_id": "SES-f5c2461a1e7fa824",
+      "data": {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "Also, don't correct every little thing; otherwise I lose the flow."
+          }
+        ],
+        "kind": "explicit_preference",
+        "interpretation": "The learner explicitly asks to avoid excessive correction because it interrupts conversational flow.",
+        "instruction": "Preserve flow by avoiding correction of every small detail.",
+        "durable": true
+      },
+      "refs": [
+        {
+          "turn": 5,
+          "speaker": "learner",
+          "quote": "Also, don't correct every little thing; otherwise I lose the flow.",
+          "source_start": 612,
+          "source_end": 678,
+          "source_line_start": 16,
+          "source_line_end": 16
+        }
+      ],
+      "directive_id": "TD-40c2e10b9776",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The learner explicitly asks to avoid pervasive small corrections. This concerns feedback selectivity and flow, distinct from explaining the reason for meaningful reformulations."
+      },
+      "occurred_on": "2026-03-01"
+    },
+    {
+      "id": "TE-bbd197f769b1e4a2",
+      "session_id": "SES-f5c2461a1e7fa824",
+      "data": {
+        "refs": [
+          {
+            "turn": 9,
+            "quote": "Let's break this sentence into smaller meaningful pieces."
+          }
+        ],
+        "kind": "situational_request",
+        "interpretation": "Chunking was explicitly requested for this difficult sentence; one occurrence does not establish a permanent preference.",
+        "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 9,
+          "speaker": "learner",
+          "quote": "Let's break this sentence into smaller meaningful pieces.",
+          "source_start": 1016,
+          "source_end": 1073,
+          "source_line_start": 28,
+          "source_line_end": 28
+        }
+      ],
+      "directive_id": "TD-bbd197f769b1",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The local chunking request supports a contextual provisional instruction for difficult long productions. It is not durable or proof of the best teaching method; recurrence must be counted in code."
+      },
+      "occurred_on": "2026-03-01"
+    }
+  ]
+}

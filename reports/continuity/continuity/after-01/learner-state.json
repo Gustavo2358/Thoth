@@ -1,0 +1,30 @@
+{
+  "sessions": 1,
+  "observations": 3,
+  "patterns": [],
+  "isolated": [
+    {
+      "id": "OBS-46e9b09e631191e5",
+      "dimension": "Expressing personal uncertainty naturally in conversation",
+      "performance": "difficulty",
+      "reason": "No earlier supported evidence to compare; retain an isolated observation."
+    },
+    {
+      "id": "OBS-69fdacc230c0eb3f",
+      "dimension": "Describing a situation that began earlier and continues now",
+      "performance": "difficulty",
+      "reason": "Describing duration of ongoing work is different from expressing practical uncertainty. Shared project vocabulary does not establish the same capability."
+    },
+    {
+      "id": "OBS-3ff1ae8686a4e639",
+      "dimension": "Describing a situation that began earlier and continues now",
+      "performance": "successful",
+      "reason": "Both concern duration from a starting point through the present. This successful reconstruction follows a complete teacher model and chunks; membership does not make it spontaneous."
+    }
+  ],
+  "assumptions": [
+    "Counts describe selected conversation evidence, not mastery or a representative proficiency score.",
+    "Repeated conversations on one date do not establish longitudinal recurrence.",
+    "Pattern descriptions and causal interpretations are model hypotheses; quotes and memberships are auditable."
+  ]
+}

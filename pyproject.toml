@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "thoth-learner"
 version = "0.1.0"
-description = "A local learner model that discovers patterns in English speaking evidence"
+description = "Compile learning conversations into a self-contained prompt for the next English teacher"
 requires-python = ">=3.12"
 dependencies = ["pydantic>=2.10,<3", "numpy>=1.26,<3", "httpx>=0.27,<1", "spacy>=3.8,<3.9", "en-core-web-md @ https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.8.0/en_core_web_md-3.8.0-py3-none-any.whl"]
 

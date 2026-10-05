@@ -1,0 +1,1 @@
+{"decision": "keep", "reason": "The learner repairs price to laptop within the same turn. Preserve a single self-repair event with uncertain outcome, not independent failure and success or an asserted mental process."}

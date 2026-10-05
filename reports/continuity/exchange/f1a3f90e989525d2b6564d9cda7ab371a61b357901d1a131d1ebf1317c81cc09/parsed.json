@@ -1,0 +1,109 @@
+{
+  "observations": [
+    {
+      "turn": 4,
+      "source_excerpt": "The queue was delayed since the worker had crashed.",
+      "learner_quote": "The queue was delayed since the worker had crashed.",
+      "production_mode": "spontaneous",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Explain a cause in a technical incident",
+      "learning_dimension": "Expressing causal relationships appropriately",
+      "observed_behavior": "Uses causal since correctly; teacher stylistic preference does not make it a difficulty",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "no_support",
+      "support_turns": []
+    },
+    {
+      "turn": 6,
+      "source_excerpt": "The queue was delayed because the worker had crashed.",
+      "learner_quote": "The queue was delayed because the worker had crashed.",
+      "production_mode": "controlled",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Explain a cause in a technical incident",
+      "learning_dimension": "Expressing causal relationships appropriately",
+      "observed_behavior": "Repeats a valid alternative supplied by the teacher after an optional stylistic reformulation",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "immediate_repetition",
+      "support_turns": [
+        5
+      ]
+    },
+    {
+      "turn": 8,
+      "source_excerpt": "I wish I'd warned them sooner.",
+      "learner_quote": "I wish I'd warned them sooner.",
+      "production_mode": "controlled",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Express regret about an earlier omission",
+      "learning_dimension": "Expressing past regret with an appropriate alternative construction",
+      "observed_behavior": "Produces a valid wish construction after a different model for regret, not an error for failing to copy the target phrase",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "model_phrase_available",
+      "support_turns": [
+        7
+      ]
+    },
+    {
+      "turn": 10,
+      "source_excerpt": "I have doubts about whether the measurements are reliable.",
+      "learner_quote": "I have doubts about whether the measurements are reliable.",
+      "production_mode": "prompted",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Express suspicion about the reliability of measurements",
+      "learning_dimension": "Expressing reservations about reliability",
+      "observed_behavior": "Uses doubts legitimately for reservations rather than a practical question",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "contextual_prompt",
+      "support_turns": [
+        9
+      ]
+    }
+  ],
+  "teaching": [
+    {
+      "refs": [
+        {
+          "turn": 2,
+          "quote": "Please always let me finish my thought before correcting me, and don't ask me to memorize lists."
+        }
+      ],
+      "kind": "explicit_preference",
+      "interpretation": "This is a durable learner request. The teacher statements about grammar preference and visual learning are not evidence.",
+      "instruction": "Let the learner finish a thought before correction; avoid requests to memorize lists.",
+      "durable": true
+    },
+    {
+      "refs": [
+        {
+          "turn": 12,
+          "quote": "That one short explanation helped with this example. It doesn't mean I always want an explanation."
+        }
+      ],
+      "kind": "intervention_response",
+      "interpretation": "The learner reports a successful intervention but explicitly denies an always-explain preference.",
+      "instruction": "A short explanation may help with this particular example.",
+      "durable": false
+    },
+    {
+      "refs": [
+        {
+          "turn": 12,
+          "quote": "For this message, just give me the phrase."
+        }
+      ],
+      "kind": "situational_request",
+      "interpretation": "The request is restricted to this message, not a permanent preference.",
+      "instruction": "For an immediate message, provide wording directly when asked.",
+      "durable": false
+    }
+  ],
+  "goals": []
+}

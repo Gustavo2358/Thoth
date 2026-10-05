@@ -1,0 +1,48 @@
+{
+  "observations": [
+    {
+      "turn": 3,
+      "source_excerpt": "Yesterday I ate my medicine later than usual because I was at work.",
+      "learner_quote": "Yesterday I ate my medicine later than usual because I was at work.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Describe a medication routine",
+      "learning_dimension": "Using conventional verb combinations to describe taking medication",
+      "observed_behavior": "Uses ate for medication in an unmodelled account of yesterday",
+      "suggested_forms": [
+        "Yesterday I took my medicine later than usual because I was at work."
+      ],
+      "hypothesis": null,
+      "support": "no_support",
+      "support_turns": []
+    },
+    {
+      "turn": 5,
+      "source_excerpt": "I took my medicine late, after dinner.",
+      "learner_quote": "I took my medicine late, after dinner.",
+      "production_mode": "controlled",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Describe a medication routine",
+      "learning_dimension": "Using conventional verb combinations to describe taking medication",
+      "observed_behavior": "Applies the supplied verb combination in a revised sentence",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "model_phrase_available",
+      "support_turns": [
+        4
+      ]
+    }
+  ],
+  "teaching": [],
+  "goals": [
+    {
+      "ref": {
+        "turn": 1,
+        "quote": "I want to explain technical design trade-offs naturally, not just talk about medication."
+      },
+      "text": "Explain technical design trade-offs naturally in spoken English."
+    }
+  ]
+}

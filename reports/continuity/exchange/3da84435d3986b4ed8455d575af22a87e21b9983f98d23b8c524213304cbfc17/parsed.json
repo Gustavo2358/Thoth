@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-46e9b09e631191e5",
+  "reason": "The hiking uncertainty is naturally expressed without a target cue, several turns after a controlled model and in a different communicative situation. It matches the earlier practical uncertainty capability and provides stronger positive evidence, not proven mastery.",
+  "pattern_label": "Natural personal uncertainty in conversation",
+  "pattern_description": "An earlier unnatural uncertainty expression is followed by both controlled imitation and later unassisted appropriate use in a new context. Recent improvement warrants transfer observation rather than automatic reteaching.",
+  "conversation_contexts": [
+    "Discuss an unresolved plan in a new topic"
+  ]
+}

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 import json
+from datetime import date
 
 
 def counted(o):
@@ -21,18 +22,24 @@ def learner_state(store, policy):
                                       and (outcome == "uncertain" or counted(r["observation"])) for r in members)
                           for outcome in ("successful", "difficulty", "uncertain")}
                    for mode in ("spontaneous", "prompted", "controlled", "unknown")}
-        sp = [r for r in members if counted(r["observation"]) and r["observation"].production_mode == "spontaneous"]
+        sp = [r for r in members if counted(r["observation"]) and r["observation"].production_mode == "spontaneous" and r["observation"].support == "no_support"]
         attempt_dates = sorted({r["occurred_on"] for r in sp})
         recent = [r for r in sp if r["occurred_on"] in attempt_dates[-3:]]
         failures = [r for r in recent if r["observation"].performance == "difficulty"]
         failure_dates = {r["occurred_on"] for r in failures}
-        last_two = [r for r in sp if r["occurred_on"] in attempt_dates[-2:]]
-        positive_dates = {r["occurred_on"] for r in last_two if r["observation"].performance == "successful"}
-        recent_positive = len(positive_dates) >= 2 and not any(r["observation"].performance == "difficulty" for r in last_two)
+        recent_attempts = [r for r in sp if r["occurred_on"] in attempt_dates[-policy.recovery_dates:]]
+        positive_dates = {r["occurred_on"] for r in recent_attempts if r["observation"].performance == "successful"}
+        recent_positive = len(positive_dates) >= policy.recovery_dates and not any(r["observation"].performance == "difficulty" for r in recent_attempts)
         all_dates = {r["occurred_on"] for r in members}
         practice = len(all_dates) >= policy.practice_dates and len(failure_dates) >= 2 and not recent_positive
         historical_difficulty = by_mode["spontaneous"]["difficulty"] > 0
         status = "recovery" if recent_positive and historical_difficulty else "recent_strength" if recent_positive else "practice" if practice else "collect"
+        sources = store.sources()
+        last_seen = max(r['occurred_on'] for r in members)
+        intervening = len({s['occurred_on'] for s in sources if s['occurred_on'] > last_seen})
+        stale = intervening >= policy.stale_dates or (date.fromisoformat(sources[-1]['occurred_on']) - date.fromisoformat(last_seen)).days >= policy.stale_days
+        if stale:
+            status = 'collect'
         interpretation = ("Previously difficult; recent spontaneous successes suggest recovery. Transfer remains untested."
                           if status == "recovery" else "Recent spontaneous successes in observed contexts; broader transfer remains untested."
                           if status == "recent_strength" else "Recurring spontaneous difficulties on independent dates; cause is not directly observed."
@@ -46,6 +53,7 @@ def learner_state(store, policy):
                            observations=len(members), sessions=len({r["session_id"] for r in members}),
                            dates=len(all_dates), modes=by_mode, opportunities=opportunities, self_corrections=repairs,
                            status=status, interpretation=interpretation, mode_note=mode_note,
+                           last_seen=last_seen, stale=stale,
                            recent_successes=sum(r["observation"].performance == "successful" for r in recent),
                            recent_difficulties=len(failures), evidence_ids=[r["id"] for r in members],
                            practice_evidence_ids=[r["id"] for r in failures],
@@ -57,6 +65,6 @@ def learner_state(store, policy):
             "isolated": [{"id": r["id"], "dimension": r["observation"].learning_dimension,
                           "performance": r["observation"].performance, "reason": r["resolution"].reason}
                          for root, members in groups.items() if root not in store.patterns() for r in members],
-            "assumptions": ["Counts describe selected report evidence, not mastery or a representative proficiency score.",
-                            "Repeated reports on one date do not establish longitudinal recurrence.",
+            "assumptions": ["Counts describe selected conversation evidence, not mastery or a representative proficiency score.",
+                            "Repeated conversations on one date do not establish longitudinal recurrence.",
                             "Pattern descriptions and causal interpretations are model hypotheses; quotes and memberships are auditable."]}

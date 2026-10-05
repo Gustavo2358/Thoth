@@ -1,0 +1,39 @@
+{
+  "directives": [],
+  "evidence": [
+    {
+      "id": "TE-7e04d9087b72273d",
+      "session_id": "SES-bc9f2b256424a3d5",
+      "data": {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "That explanation helped with this sentence."
+          }
+        ],
+        "kind": "intervention_response",
+        "interpretation": "Positive feedback about one explanation remains local evidence.",
+        "instruction": "A brief contrast can help explain a medication collocation.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 5,
+          "speaker": "learner",
+          "quote": "That explanation helped with this sentence.",
+          "source_start": 387,
+          "source_end": 430,
+          "source_line_start": 16,
+          "source_line_end": 16
+        }
+      ],
+      "directive_id": null,
+      "decision": {
+        "decision": "evidence_only",
+        "directive_id": null,
+        "reason": "This is praise for one explanation of one sentence. It does not request a lasting approach and lacks enough scope for a persistent directive."
+      },
+      "occurred_on": "2026-05-01"
+    }
+  ]
+}

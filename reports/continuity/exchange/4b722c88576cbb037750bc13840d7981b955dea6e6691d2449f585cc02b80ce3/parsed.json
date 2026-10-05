@@ -1,0 +1,5 @@
+{
+  "decision": "new_directive",
+  "directive_id": null,
+  "reason": "The learner asks why this recast was made and requests brevity. That is a local request for a reason, not an always-explain instruction; keep its contextual group tentative."
+}

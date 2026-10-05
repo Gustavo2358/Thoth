@@ -1,0 +1,187 @@
+{
+  "policy": {
+    "neighbors": 3,
+    "pattern_dates": 2,
+    "practice_dates": 2,
+    "recovery_dates": 1,
+    "stale_dates": 3,
+    "stale_days": 30,
+    "prompt_chars": 8000,
+    "practice_limit": 2,
+    "observe_limit": 2,
+    "transfer_limit": 2
+  },
+  "sources": {
+    "SES-dac0fc4b5aaae1b7": {
+      "sha256": "b615a509c27816140069ade2864e888bd7dbe01fb5a1ec3eb7c35f3c4f6812bb",
+      "date": "2026-04-01",
+      "path": "sessions/SES-dac0fc4b5aaae1b7/conversation.md"
+    }
+  },
+  "goals": [],
+  "directives": [
+    {
+      "id": "TD-559d44e6c882",
+      "instruction": "Let the learner finish a thought before correction; avoid requests to memorize lists.",
+      "status": "explicit",
+      "rationale": "This is a durable learner request. The teacher statements about grammar preference and visual learning are not evidence.",
+      "evidence_ids": [
+        "TE-559d44e6c8824d5d"
+      ],
+      "dates": [
+        "2026-04-01"
+      ],
+      "evidence": [
+        {
+          "id": "TE-559d44e6c8824d5d",
+          "session_id": "SES-dac0fc4b5aaae1b7",
+          "data": {
+            "refs": [
+              {
+                "turn": 2,
+                "quote": "Please always let me finish my thought before correcting me, and don't ask me to memorize lists."
+              }
+            ],
+            "kind": "explicit_preference",
+            "interpretation": "This is a durable learner request. The teacher statements about grammar preference and visual learning are not evidence.",
+            "instruction": "Let the learner finish a thought before correction; avoid requests to memorize lists.",
+            "durable": true
+          },
+          "refs": [
+            {
+              "turn": 2,
+              "speaker": "learner",
+              "quote": "Please always let me finish my thought before correcting me, and don't ask me to memorize lists.",
+              "source_start": 179,
+              "source_end": 275,
+              "source_line_start": 7,
+              "source_line_end": 7
+            }
+          ],
+          "directive_id": "TD-559d44e6c882",
+          "decision": {
+            "decision": "new_directive",
+            "directive_id": null,
+            "reason": "This durable instruction is directly stated by the learner and rejects the teacher assumptions. It does not imply a visual learning style or grammar-explanation preference."
+          },
+          "occurred_on": "2026-04-01"
+        }
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "OBS-2d285ac6f57b7e04",
+      "status": "isolated",
+      "strategy": "observe",
+      "evidence": [
+        {
+          "observation_id": "OBS-2d285ac6f57b7e04",
+          "session_id": "SES-dac0fc4b5aaae1b7",
+          "date": "2026-04-01",
+          "performance": "successful",
+          "mode": "spontaneous",
+          "support": "no_support",
+          "production": {
+            "turn": 4,
+            "speaker": "learner",
+            "quote": "The queue was delayed since the worker had crashed.",
+            "source_start": 330,
+            "source_end": 381,
+            "source_line_start": 13,
+            "source_line_end": 13
+          },
+          "support_refs": []
+        },
+        {
+          "observation_id": "OBS-57ceae2bbce63c16",
+          "session_id": "SES-dac0fc4b5aaae1b7",
+          "date": "2026-04-01",
+          "performance": "successful",
+          "mode": "controlled",
+          "support": "immediate_repetition",
+          "production": {
+            "turn": 6,
+            "speaker": "learner",
+            "quote": "The queue was delayed because the worker had crashed.",
+            "source_start": 551,
+            "source_end": 604,
+            "source_line_start": 19,
+            "source_line_end": 19
+          },
+          "support_refs": [
+            {
+              "turn": 5,
+              "speaker": "teacher",
+              "quote": "\"Because\" would sound nicer than \"since\". Say, \"The queue was delayed because the worker had crashed.\"\n\n",
+              "source_start": 439,
+              "source_end": 541,
+              "source_line_start": 16,
+              "source_line_end": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "OBS-d4a4650cb8bd7c51",
+      "status": "isolated",
+      "strategy": "observe",
+      "evidence": [
+        {
+          "observation_id": "OBS-d4a4650cb8bd7c51",
+          "session_id": "SES-dac0fc4b5aaae1b7",
+          "date": "2026-04-01",
+          "performance": "successful",
+          "mode": "controlled",
+          "support": "model_phrase_available",
+          "production": {
+            "turn": 8,
+            "speaker": "learner",
+            "quote": "I wish I'd warned them sooner.",
+            "source_start": 740,
+            "source_end": 770,
+            "source_line_start": 25,
+            "source_line_end": 25
+          },
+          "support_refs": [
+            {
+              "turn": 7,
+              "speaker": "teacher",
+              "quote": "You can express regret with \"I should have told them earlier.\"\n\n",
+              "source_start": 668,
+              "source_end": 730,
+              "source_line_start": 22,
+              "source_line_end": 22
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "omitted": [
+    {
+      "kind": "directive",
+      "id": "TD-ed3113e598b9",
+      "reason": "single-date tentative evidence; not a persistent instruction"
+    },
+    {
+      "kind": "observation",
+      "id": "OBS-09d99be4b1162d6b",
+      "reason": "uncertain evidence or observation limit"
+    }
+  ],
+  "product_policy": "General oral-production defaults in compiler.BASE; not learner-specific evidence",
+  "section_budgets": {
+    "goals": 1400,
+    "directives": 1800,
+    "reserved_structure": 300
+  },
+  "characters": 2814,
+  "sha256": "1d5943e7e5c9094f7f08e4f90f6719c64348791138d061ba7da09e56a8107d57",
+  "selection_counts": {
+    "practice": 0,
+    "observe": 2,
+    "transfer": 0
+  }
+}

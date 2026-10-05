@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-23ca9a31a64697ac",
+  "reason": "This is the teacher-model reconstruction of the same continuing-duration situation as turn 7. Support changes evidential strength, not membership.",
+  "pattern_label": "Describing continuing situations from an earlier starting point",
+  "pattern_description": "The learner repeatedly struggles with unassisted duration accounts and succeeds after complete models; no spontaneous recovery has yet occurred for duration.",
+  "conversation_contexts": [
+    "Discuss the history of an ongoing activity or relationship"
+  ]
+}

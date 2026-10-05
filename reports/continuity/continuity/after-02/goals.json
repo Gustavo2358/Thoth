@@ -1,0 +1,16 @@
+[
+  {
+    "id": "GOAL-9ea18d568c82",
+    "text": "Discuss software architecture naturally in English, especially explaining long chains of reasoning.",
+    "session_id": "SES-f5c2461a1e7fa824",
+    "ref": {
+      "turn": 1,
+      "speaker": "learner",
+      "quote": "I want to discuss software architecture naturally in English, especially explaining long chains of reasoning.",
+      "source_start": 39,
+      "source_end": 148,
+      "source_line_start": 4,
+      "source_line_end": 4
+    }
+  }
+]

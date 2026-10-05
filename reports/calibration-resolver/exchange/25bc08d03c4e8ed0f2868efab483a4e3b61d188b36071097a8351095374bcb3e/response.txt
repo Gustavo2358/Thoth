@@ -1,1 +1,0 @@
-{"decision": "new_pattern", "candidate_id": null, "reason": "The suggest complement concerns reporting advice with a specific verb and clause structure. Uncertainty, regret and meeting collocations do not demonstrate that production ability; a general relation to English phrasing is insufficient.", "pattern_label": null, "pattern_description": null, "conversation_contexts": []}

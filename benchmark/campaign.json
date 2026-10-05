@@ -1,0 +1,43 @@
+{
+  "model": "Codex / model of this conversation (operator declaration)",
+  "profiles": {
+    "continuity": [
+      {
+        "file": "continuity-01.md",
+        "date": "2026-03-01"
+      },
+      {
+        "file": "continuity-02.md",
+        "date": "2026-03-08"
+      },
+      {
+        "file": "continuity-03.md",
+        "date": "2026-03-15"
+      }
+    ],
+    "adversarial": [
+      {
+        "file": "adversarial-01.md",
+        "date": "2026-04-01"
+      },
+      {
+        "file": "adversarial-02.md",
+        "date": "2026-04-08"
+      },
+      {
+        "file": "scaffolding-01.md",
+        "date": "2026-04-15"
+      }
+    ],
+    "practice": [
+      {
+        "file": "practice-01.md",
+        "date": "2026-05-01"
+      },
+      {
+        "file": "practice-02.md",
+        "date": "2026-05-08"
+      }
+    ]
+  }
+}

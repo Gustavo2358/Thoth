@@ -1,0 +1,660 @@
+{
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / model of this conversation (operator declaration)",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "embedding": {
+    "model": "spaCy/en_core_web_md",
+    "package": "3.8.0",
+    "weights_sha256": "1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5",
+    "dimensions": 300,
+    "pooling": "mean of nonzero token vectors; L2 normalized"
+  },
+  "interactions": [
+    {
+      "stage": "extract",
+      "request": "02ef37820155b14ef3876ab8131716d12c633bab989b7b7e4b6dadae6d720680",
+      "response_hash": "1ac1442f0786b67696caf81fba733e2f19f2f9f0e5931e7ab34489d5038df4a7",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "5d1b978e5385509f14998503bed20735db5422e98510f693eb8a98396a354420",
+      "response_hash": "c09f70d7fb7f241304cd96469bae1a9628c625b0312e58201fae61980c6fb432",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "c136d6f94ad9ed13248bb3d90e455dff25d4531c7a822cd2f183d8bc61039126",
+      "response_hash": "2af67be9d2a162d31fca76f50881f78e4f329ed8cd897c5c7d87fe18265d0a78",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "a2e783e400753c433ecdc4035b15c1619bcadbdf18f1f92b9a0cdfe4132c83f6",
+      "response_hash": "39c8ea9eb8699e3dafdfe783dc2994a565ab7c6ae4d5907a7456ee1257d2d2d2",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "f72ef5869ac6183e422d6d96c818a9cb05e8447a83bc27505731595aaac69cb9",
+      "response_hash": "2c4f9305df4a1870f3262b04bb1bae7eae474185a3181743e1ff920da7b12c78",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "teaching",
+      "request": "d66b578057469593046ba848becdf016b3273eda84cf5daa802e9cad1fdf6b55",
+      "response_hash": "49a2dceca10e0e797d642c285757167e2ef55cbb258fcb1f38bc0647de2b747e",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "teaching",
+      "request": "5b9e549ac55c846db16d27f9d3ade09f3f72cef9e1d2ec0c07fc6cb219bd6790",
+      "response_hash": "d5678c8f214eb5cb7481fd21ddd7b6dab50d693725dea07fc2aadda2162d31a1",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "teaching",
+      "request": "eb47fc608166338dadac4989429cfd60ecdc8f1078d1871f3e05c7bbf346775d",
+      "response_hash": "8f018d521de250e3008b3e709d5d631dfe4dc27927a1d9b636ad4ed9d46b9477",
+      "model": "Codex / model of this conversation (operator declaration)"
+    }
+  ],
+  "extraction": {
+    "observations": [
+      {
+        "turn": 3,
+        "source_excerpt": "She's been living in Edinburgh since last summer.",
+        "learner_quote": "She's been living in Edinburgh since last summer.",
+        "production_mode": "spontaneous",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Describe how long a current situation has continued",
+        "learning_dimension": "Describing a situation that began earlier and continues now",
+        "observed_behavior": "Uses present perfect continuous appropriately for a current situation in a new family context",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "support": "no_support",
+        "support_turns": []
+      },
+      {
+        "turn": 3,
+        "source_excerpt": "I'm not sure whether she'll stay there another year.",
+        "learner_quote": "I'm not sure whether she'll stay there another year.",
+        "production_mode": "spontaneous",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Express uncertainty about a plan",
+        "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+        "observed_behavior": "Naturally expresses uncertainty without supplied wording",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "support": "no_support",
+        "support_turns": []
+      }
+    ],
+    "teaching": [
+      {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "If I put everything in one sentence I lose the thread. Could we break this explanation into smaller meaningful pieces, like last time?"
+          }
+        ],
+        "kind": "situational_request",
+        "interpretation": "The learner requests chunking again for a complex explanation, explicitly linking to earlier practice.",
+        "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+        "durable": false
+      },
+      {
+        "refs": [
+          {
+            "turn": 7,
+            "quote": "That helped a lot with this explanation."
+          },
+          {
+            "turn": 6,
+            "quote": "Let's handle the read path first, then the write path."
+          }
+        ],
+        "kind": "intervention_response",
+        "interpretation": "The learner reports that splitting this explanation helped after the teacher separated reads and writes. This supports a practical hypothesis, not an optimal-method diagnosis.",
+        "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+        "durable": false
+      },
+      {
+        "refs": [
+          {
+            "turn": 9,
+            "quote": "No, please don't turn our conversations into grammar lectures. I still want to finish my thought before feedback."
+          }
+        ],
+        "kind": "rejection",
+        "interpretation": "The learner explicitly rejects grammar lectures and asks to finish thoughts before feedback. The teacher claim of preferring detailed correction is contradicted.",
+        "instruction": "Avoid grammar lectures and let the learner finish a thought before giving feedback.",
+        "durable": true
+      }
+    ],
+    "goals": []
+  },
+  "rejected": [],
+  "grouping": [
+    {
+      "observation_id": "OBS-2208922f4b10d36d",
+      "candidates": [
+        {
+          "candidate_id": "OBS-23ca9a31a64697ac",
+          "root_id": "OBS-69fdacc230c0eb3f",
+          "similarity": 1.0,
+          "pattern": {
+            "id": "PAT-69fdacc230c0",
+            "root_id": "OBS-69fdacc230c0eb3f",
+            "label": "Describing continuing situations from an earlier starting point",
+            "description": "The learner repeatedly struggles with unassisted duration accounts and succeeds after complete models; no spontaneous recovery has yet occurred for duration.",
+            "contexts": "[\"Discuss the history of an ongoing activity or relationship\"]"
+          },
+          "evidence": [
+            {
+              "id": "OBS-69fdacc230c0eb3f",
+              "date": "2026-03-01",
+              "turn": 7,
+              "source_excerpt": "I work on this migration since January.",
+              "learner_quote": "I work on this migration since January.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe how long a current activity has continued",
+              "learning_dimension": "Describing a situation that began earlier and continues now",
+              "observed_behavior": "Uses simple present with a starting point for continuing work",
+              "suggested_forms": [
+                "I've been working on this migration since January."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 22,
+              "source_line_end": 22
+            },
+            {
+              "id": "OBS-3ff1ae8686a4e639",
+              "date": "2026-03-01",
+              "turn": 11,
+              "source_excerpt": "I've been working on this migration since January.",
+              "learner_quote": "I've been working on this migration since January.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe how long a current activity has continued",
+              "learning_dimension": "Describing a situation that began earlier and continues now",
+              "observed_behavior": "Reconstructs the teacher model after chunk scaffolding",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "model_phrase_available",
+              "support_turns": [
+                8,
+                10
+              ],
+              "source_line_start": 34,
+              "source_line_end": 34
+            },
+            {
+              "id": "OBS-23ca9a31a64697ac",
+              "date": "2026-03-08",
+              "turn": 7,
+              "source_excerpt": "I am on this project since January.",
+              "learner_quote": "I am on this project since January.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe how long a current situation has continued",
+              "learning_dimension": "Describing a situation that began earlier and continues now",
+              "observed_behavior": "Uses simple present with a starting point for a continuing project role",
+              "suggested_forms": [
+                "I've been on this project since January."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 22,
+              "source_line_end": 22
+            },
+            {
+              "id": "OBS-59383bce12524abc",
+              "date": "2026-03-08",
+              "turn": 9,
+              "source_excerpt": "I've been on this project since January.",
+              "learner_quote": "I've been on this project since January.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe how long a current situation has continued",
+              "learning_dimension": "Describing a situation that began earlier and continues now",
+              "observed_behavior": "Immediately echoes the supplied model",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "immediate_repetition",
+              "support_turns": [
+                8
+              ],
+              "source_line_start": 28,
+              "source_line_end": 28
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-46e9b09e631191e5",
+          "root_id": "OBS-46e9b09e631191e5",
+          "similarity": 0.830866,
+          "pattern": {
+            "id": "PAT-46e9b09e6311",
+            "root_id": "OBS-46e9b09e631191e5",
+            "label": "Natural personal uncertainty in conversation",
+            "description": "An earlier unnatural uncertainty expression is followed by both controlled imitation and later unassisted appropriate use in a new context. Recent improvement warrants transfer observation rather than automatic reteaching.",
+            "contexts": "[\"Discuss an unresolved plan in a new topic\"]"
+          },
+          "evidence": [
+            {
+              "id": "OBS-46e9b09e631191e5",
+              "date": "2026-03-01",
+              "turn": 3,
+              "source_excerpt": "I'm with a doubt about the rollout.",
+              "learner_quote": "I'm with a doubt about the rollout.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express uncertainty about a plan",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Uses an unnatural uncertainty formulation for a practical question",
+              "suggested_forms": [
+                "I'm not sure about the rollout."
+              ],
+              "hypothesis": "This formulation is consistent with Portuguese transfer; mental translation is not observable.",
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 10,
+              "source_line_end": 10
+            },
+            {
+              "id": "OBS-b3c70044b61be4b5",
+              "date": "2026-03-08",
+              "turn": 3,
+              "source_excerpt": "I'm not sure whether the fallback is safe.",
+              "learner_quote": "I'm not sure whether the fallback is safe.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express uncertainty about a plan",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Immediately repeats the exact teacher model",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "immediate_repetition",
+              "support_turns": [
+                2
+              ],
+              "source_line_start": 10,
+              "source_line_end": 10
+            },
+            {
+              "id": "OBS-b1559690522703e1",
+              "date": "2026-03-08",
+              "turn": 11,
+              "source_excerpt": "I'm not sure whether the trail will be open after the storm.",
+              "learner_quote": "I'm not sure whether the trail will be open after the storm.",
+              "production_mode": "spontaneous",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express uncertainty about a plan",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Uses a natural uncertainty construction later in a new hiking context without a targeted cue",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 34,
+              "source_line_end": 34
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "same_pattern",
+        "candidate_id": "OBS-23ca9a31a64697ac",
+        "reason": "An ongoing residence from last summer is the same duration capability as ongoing project/work from January. This appropriate unassisted production occurs in a new family context and follows no wording model; it supplies recent positive evidence for transfer.",
+        "pattern_label": "Describing continuing situations from an earlier starting point",
+        "pattern_description": "Earlier spontaneous duration difficulties coexist with successful controlled reconstructions; recent unassisted use for residence suggests improvement, without establishing mastery.",
+        "conversation_contexts": [
+          "Discuss the history of an ongoing situation in a different area of life"
+        ]
+      }
+    },
+    {
+      "observation_id": "OBS-21db391272729484",
+      "candidates": [
+        {
+          "candidate_id": "OBS-46e9b09e631191e5",
+          "root_id": "OBS-46e9b09e631191e5",
+          "similarity": 1.0,
+          "pattern": {
+            "id": "PAT-46e9b09e6311",
+            "root_id": "OBS-46e9b09e631191e5",
+            "label": "Natural personal uncertainty in conversation",
+            "description": "An earlier unnatural uncertainty expression is followed by both controlled imitation and later unassisted appropriate use in a new context. Recent improvement warrants transfer observation rather than automatic reteaching.",
+            "contexts": "[\"Discuss an unresolved plan in a new topic\"]"
+          },
+          "evidence": [
+            {
+              "id": "OBS-46e9b09e631191e5",
+              "date": "2026-03-01",
+              "turn": 3,
+              "source_excerpt": "I'm with a doubt about the rollout.",
+              "learner_quote": "I'm with a doubt about the rollout.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express uncertainty about a plan",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Uses an unnatural uncertainty formulation for a practical question",
+              "suggested_forms": [
+                "I'm not sure about the rollout."
+              ],
+              "hypothesis": "This formulation is consistent with Portuguese transfer; mental translation is not observable.",
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 10,
+              "source_line_end": 10
+            },
+            {
+              "id": "OBS-b3c70044b61be4b5",
+              "date": "2026-03-08",
+              "turn": 3,
+              "source_excerpt": "I'm not sure whether the fallback is safe.",
+              "learner_quote": "I'm not sure whether the fallback is safe.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express uncertainty about a plan",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Immediately repeats the exact teacher model",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "immediate_repetition",
+              "support_turns": [
+                2
+              ],
+              "source_line_start": 10,
+              "source_line_end": 10
+            },
+            {
+              "id": "OBS-b1559690522703e1",
+              "date": "2026-03-08",
+              "turn": 11,
+              "source_excerpt": "I'm not sure whether the trail will be open after the storm.",
+              "learner_quote": "I'm not sure whether the trail will be open after the storm.",
+              "production_mode": "spontaneous",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express uncertainty about a plan",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Uses a natural uncertainty construction later in a new hiking context without a targeted cue",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 34,
+              "source_line_end": 34
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-69fdacc230c0eb3f",
+          "root_id": "OBS-69fdacc230c0eb3f",
+          "similarity": 0.839293,
+          "pattern": {
+            "id": "PAT-69fdacc230c0",
+            "root_id": "OBS-69fdacc230c0eb3f",
+            "label": "Describing continuing situations from an earlier starting point",
+            "description": "The learner repeatedly struggles with unassisted duration accounts and succeeds after complete models; no spontaneous recovery has yet occurred for duration.",
+            "contexts": "[\"Discuss the history of an ongoing activity or relationship\"]"
+          },
+          "evidence": [
+            {
+              "id": "OBS-69fdacc230c0eb3f",
+              "date": "2026-03-01",
+              "turn": 7,
+              "source_excerpt": "I work on this migration since January.",
+              "learner_quote": "I work on this migration since January.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe how long a current activity has continued",
+              "learning_dimension": "Describing a situation that began earlier and continues now",
+              "observed_behavior": "Uses simple present with a starting point for continuing work",
+              "suggested_forms": [
+                "I've been working on this migration since January."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 22,
+              "source_line_end": 22
+            },
+            {
+              "id": "OBS-3ff1ae8686a4e639",
+              "date": "2026-03-01",
+              "turn": 11,
+              "source_excerpt": "I've been working on this migration since January.",
+              "learner_quote": "I've been working on this migration since January.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe how long a current activity has continued",
+              "learning_dimension": "Describing a situation that began earlier and continues now",
+              "observed_behavior": "Reconstructs the teacher model after chunk scaffolding",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "model_phrase_available",
+              "support_turns": [
+                8,
+                10
+              ],
+              "source_line_start": 34,
+              "source_line_end": 34
+            },
+            {
+              "id": "OBS-23ca9a31a64697ac",
+              "date": "2026-03-08",
+              "turn": 7,
+              "source_excerpt": "I am on this project since January.",
+              "learner_quote": "I am on this project since January.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe how long a current situation has continued",
+              "learning_dimension": "Describing a situation that began earlier and continues now",
+              "observed_behavior": "Uses simple present with a starting point for a continuing project role",
+              "suggested_forms": [
+                "I've been on this project since January."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 22,
+              "source_line_end": 22
+            },
+            {
+              "id": "OBS-59383bce12524abc",
+              "date": "2026-03-08",
+              "turn": 9,
+              "source_excerpt": "I've been on this project since January.",
+              "learner_quote": "I've been on this project since January.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe how long a current situation has continued",
+              "learning_dimension": "Describing a situation that began earlier and continues now",
+              "observed_behavior": "Immediately echoes the supplied model",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "immediate_repetition",
+              "support_turns": [
+                8
+              ],
+              "source_line_start": 28,
+              "source_line_end": 28
+            },
+            {
+              "id": "OBS-2208922f4b10d36d",
+              "date": "2026-03-15",
+              "turn": 3,
+              "source_excerpt": "She's been living in Edinburgh since last summer.",
+              "learner_quote": "She's been living in Edinburgh since last summer.",
+              "production_mode": "spontaneous",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe how long a current situation has continued",
+              "learning_dimension": "Describing a situation that began earlier and continues now",
+              "observed_behavior": "Uses present perfect continuous appropriately for a current situation in a new family context",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 10,
+              "source_line_end": 10
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "same_pattern",
+        "candidate_id": "OBS-46e9b09e631191e5",
+        "reason": "A new family situation elicits personal uncertainty without a model. It is the same practical-uncertainty capability seen in project and hiking contexts, adding another unassisted positive date rather than proving universal transfer.",
+        "pattern_label": "Natural personal uncertainty in conversation",
+        "pattern_description": "After an earlier unnatural formulation and controlled imitation, unassisted appropriate uncertainty appears on two later dates in different topics. Continue testing transfer without reminding the learner of wording.",
+        "conversation_contexts": [
+          "Discuss a new plan whose details remain unresolved"
+        ]
+      }
+    }
+  ],
+  "teaching": [
+    {
+      "id": "TE-5d718e5141d45948",
+      "session_id": "SES-c273b923e5eab631",
+      "occurred_on": "2026-03-15",
+      "data": {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "If I put everything in one sentence I lose the thread. Could we break this explanation into smaller meaningful pieces, like last time?"
+          }
+        ],
+        "kind": "situational_request",
+        "interpretation": "The learner requests chunking again for a complex explanation, explicitly linking to earlier practice.",
+        "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 5,
+          "speaker": "learner",
+          "quote": "If I put everything in one sentence I lose the thread. Could we break this explanation into smaller meaningful pieces, like last time?",
+          "source_start": 505,
+          "source_end": 639,
+          "source_line_start": 16,
+          "source_line_end": 16
+        }
+      ],
+      "directive_id": "TD-bbd197f769b1",
+      "decision": {
+        "decision": "same_directive",
+        "directive_id": "TD-bbd197f769b1",
+        "reason": "Both learner requests ask to split a difficult long production into meaningful smaller pieces; the new request explicitly relates to last time. This supports recurrence of the same contextual behavior, not a durable or optimal-method claim."
+      }
+    },
+    {
+      "id": "TE-42341429eac43aaf",
+      "session_id": "SES-c273b923e5eab631",
+      "occurred_on": "2026-03-15",
+      "data": {
+        "refs": [
+          {
+            "turn": 7,
+            "quote": "That helped a lot with this explanation."
+          },
+          {
+            "turn": 6,
+            "quote": "Let's handle the read path first, then the write path."
+          }
+        ],
+        "kind": "intervention_response",
+        "interpretation": "The learner reports that splitting this explanation helped after the teacher separated reads and writes. This supports a practical hypothesis, not an optimal-method diagnosis.",
+        "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 7,
+          "speaker": "learner",
+          "quote": "That helped a lot with this explanation.",
+          "source_start": 801,
+          "source_end": 841,
+          "source_line_start": 22,
+          "source_line_end": 22
+        },
+        {
+          "turn": 6,
+          "speaker": "teacher",
+          "quote": "Let's handle the read path first, then the write path.",
+          "source_start": 654,
+          "source_end": 708,
+          "source_line_start": 19,
+          "source_line_end": 19
+        }
+      ],
+      "directive_id": "TD-bbd197f769b1",
+      "decision": {
+        "decision": "same_directive",
+        "directive_id": "TD-bbd197f769b1",
+        "reason": "The teacher separated read and write paths; the learner explicitly reports that this helped the current explanation. This supports the existing contextual chunking hypothesis, but remains a reaction rather than a new durable best-method claim."
+      }
+    },
+    {
+      "id": "TE-7723fdf4534342b1",
+      "session_id": "SES-c273b923e5eab631",
+      "occurred_on": "2026-03-15",
+      "data": {
+        "refs": [
+          {
+            "turn": 9,
+            "quote": "No, please don't turn our conversations into grammar lectures. I still want to finish my thought before feedback."
+          }
+        ],
+        "kind": "rejection",
+        "interpretation": "The learner explicitly rejects grammar lectures and asks to finish thoughts before feedback. The teacher claim of preferring detailed correction is contradicted.",
+        "instruction": "Avoid grammar lectures and let the learner finish a thought before giving feedback.",
+        "durable": true
+      },
+      "refs": [
+        {
+          "turn": 9,
+          "speaker": "learner",
+          "quote": "No, please don't turn our conversations into grammar lectures. I still want to finish my thought before feedback.",
+          "source_start": 937,
+          "source_end": 1050,
+          "source_line_start": 28,
+          "source_line_end": 28
+        }
+      ],
+      "directive_id": "TD-7723fdf45343",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The learner directly rejects grammar lectures and asks to finish a thought before feedback. That durable instruction is distinct from selectivity of corrections and explanation of meaningful reformulations; the teacher preceding preference claim must not be persisted."
+      }
+    }
+  ],
+  "teaching_rejected": [],
+  "goals": []
+}

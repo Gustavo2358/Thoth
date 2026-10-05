@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-2d285ac6f57b7e04",
+  "reason": "Both correctly express a causal relationship. The second is an immediate teacher-model echo, which changes support but not the underlying communicative capability.",
+  "pattern_label": "Expressing causes appropriately",
+  "pattern_description": "The learner uses legitimate causal alternatives; no linguistic difficulty is established.",
+  "conversation_contexts": [
+    "Discuss why a technical incident happened"
+  ]
+}

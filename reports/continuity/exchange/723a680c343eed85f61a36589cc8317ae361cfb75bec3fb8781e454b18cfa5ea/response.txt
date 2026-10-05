@@ -1,0 +1,4 @@
+{
+  "decision": "keep",
+  "reason": "The learner explicitly states software architecture and long chains of reasoning as English practice goals. The proposed text preserves that scope."
+}

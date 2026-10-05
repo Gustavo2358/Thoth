@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-97e30ca34b46191f",
+  "reason": "The successful application uses the verb supplied immediately in turn 4. It matches the medication capability while remaining model-supported, so it does not erase recent spontaneous difficulties.",
+  "pattern_label": "Conventional medication verb combinations",
+  "pattern_description": "Unassisted attempts use eat for medication; successful take follows a model. The next teacher can selectively practice the conventional combination.",
+  "conversation_contexts": [
+    "Discuss changes to a daily health routine"
+  ]
+}

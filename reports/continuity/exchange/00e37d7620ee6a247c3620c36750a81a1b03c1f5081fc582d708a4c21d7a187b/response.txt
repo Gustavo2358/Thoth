@@ -1,0 +1,99 @@
+{
+  "observations": [
+    {
+      "turn": 1,
+      "source_excerpt": "If I know earlier, I would change the plan.",
+      "learner_quote": "If I know earlier, I would change the plan.",
+      "communicative_intent": "Consider an alternative past outcome",
+      "learning_dimension": "Expressing an unreal past condition and its possible result",
+      "observed_behavior": "Uses present condition and conditional result for an explicitly unreal past situation",
+      "performance": "difficulty",
+      "production_mode": "spontaneous",
+      "support": "no_support",
+      "support_turns": [],
+      "suggested_forms": [
+        "If I'd known earlier, I would have changed the plan."
+      ],
+      "hypothesis": null,
+      "evidence_type": "observed_use"
+    },
+    {
+      "turn": 7,
+      "source_excerpt": "Even though the deadline was close, we delayed the release because the checks failed.",
+      "learner_quote": "Even though the deadline was close, we delayed the release because the checks failed.",
+      "communicative_intent": "Explain a decision despite a conflicting constraint",
+      "learning_dimension": "Expressing a concessive contrast between a constraint and a decision",
+      "observed_behavior": "Completes a contrast coherently after the teacher supplied only the beginning",
+      "performance": "successful",
+      "production_mode": "prompted",
+      "support": "partial_scaffold",
+      "support_turns": [
+        6
+      ],
+      "suggested_forms": [],
+      "hypothesis": null,
+      "evidence_type": "observed_use"
+    },
+    {
+      "turn": 9,
+      "source_excerpt": "My new chair was incredibly expensive, but it made long meetings more comfortable.",
+      "learner_quote": "My new chair was incredibly expensive, but it made long meetings more comfortable.",
+      "communicative_intent": "Emphasize the high cost of a purchase",
+      "learning_dimension": "Describing high cost with appropriate noun and adjective combinations",
+      "observed_behavior": "Correctly assigns expensive to the item after a conceptual contrast without a complete model",
+      "performance": "successful",
+      "production_mode": "prompted",
+      "support": "explanation_before_attempt",
+      "support_turns": [
+        8
+      ],
+      "suggested_forms": [],
+      "hypothesis": null,
+      "evidence_type": "observed_use"
+    },
+    {
+      "turn": 11,
+      "source_excerpt": "We were too late. Anyway, the new rollout worked.",
+      "learner_quote": "We were too late. Anyway, the new rollout worked.",
+      "communicative_intent": "Consider an alternative past outcome",
+      "learning_dimension": "Expressing an unreal past condition and its possible result",
+      "observed_behavior": "A targeted past-counterfactual opportunity occurred, but the learner chose an actual outcome and moved on; this is not a linguistic failure or evidence of avoidance",
+      "performance": "uncertain",
+      "production_mode": "prompted",
+      "support": "contextual_prompt",
+      "support_turns": [
+        10
+      ],
+      "suggested_forms": [],
+      "hypothesis": null,
+      "evidence_type": "opportunity"
+    }
+  ],
+  "teaching": [
+    {
+      "refs": [
+        {
+          "turn": 3,
+          "quote": "Why did you change it? Can you explain briefly?"
+        }
+      ],
+      "kind": "situational_request",
+      "instruction": "Give a brief reason for a meaningful reformulation when the learner asks.",
+      "interpretation": "This asks for reasoning about one recast, without a lasting always-explain preference.",
+      "durable": false
+    },
+    {
+      "refs": [
+        {
+          "turn": 13,
+          "quote": "Please don't give me long lists of synonyms; one useful contrast is enough for our conversations."
+        }
+      ],
+      "kind": "rejection",
+      "instruction": "Avoid long synonym lists; prefer one useful contrast when explaining a reformulation.",
+      "interpretation": "The learner explicitly rejects synonym lists as an ongoing approach.",
+      "durable": true
+    }
+  ],
+  "goals": []
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "GOAL-c70997a993f2",
+    "text": "Explain technical design trade-offs naturally in spoken English.",
+    "session_id": "SES-7c02e650baba9832",
+    "ref": {
+      "turn": 1,
+      "speaker": "learner",
+      "quote": "I want to explain technical design trade-offs naturally, not just talk about medication.",
+      "source_start": 64,
+      "source_end": 152,
+      "source_line_start": 4,
+      "source_line_end": 4
+    }
+  }
+]

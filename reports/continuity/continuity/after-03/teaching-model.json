@@ -1,0 +1,320 @@
+{
+  "directives": [
+    {
+      "id": "TD-3c2bedcb345a",
+      "instruction": "Explain the reason for meaningful reformulations and highlight reusable structures.",
+      "status": "explicit",
+      "rationale": "The learner explicitly requests lasting explanations of meaningful changes, with reusable structure rather than sentence memorization.",
+      "evidence_ids": [
+        "TE-3c2bedcb345a43ab"
+      ],
+      "dates": [
+        "2026-03-01"
+      ]
+    },
+    {
+      "id": "TD-40c2e10b9776",
+      "instruction": "Preserve flow by avoiding correction of every small detail.",
+      "status": "explicit",
+      "rationale": "The learner explicitly asks to avoid excessive correction because it interrupts conversational flow.",
+      "evidence_ids": [
+        "TE-40c2e10b9776a6bf"
+      ],
+      "dates": [
+        "2026-03-01"
+      ]
+    },
+    {
+      "id": "TD-bbd197f769b1",
+      "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+      "status": "inferred",
+      "rationale": "The learner reports that splitting this explanation helped after the teacher separated reads and writes. This supports a practical hypothesis, not an optimal-method diagnosis.",
+      "evidence_ids": [
+        "TE-bbd197f769b1e4a2",
+        "TE-5d718e5141d45948",
+        "TE-42341429eac43aaf"
+      ],
+      "dates": [
+        "2026-03-01",
+        "2026-03-15"
+      ]
+    },
+    {
+      "id": "TD-fec9cc2fcc81",
+      "instruction": "For a time-sensitive message, provide wording directly if requested.",
+      "status": "tentative",
+      "rationale": "The learner requests direct wording for an immediate practical message, not a durable teaching rule.",
+      "evidence_ids": [
+        "TE-fec9cc2fcc81bed6"
+      ],
+      "dates": [
+        "2026-03-08"
+      ]
+    },
+    {
+      "id": "TD-7723fdf45343",
+      "instruction": "Avoid grammar lectures and let the learner finish a thought before giving feedback.",
+      "status": "explicit",
+      "rationale": "The learner explicitly rejects grammar lectures and asks to finish thoughts before feedback. The teacher claim of preferring detailed correction is contradicted.",
+      "evidence_ids": [
+        "TE-7723fdf4534342b1"
+      ],
+      "dates": [
+        "2026-03-15"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "TE-3c2bedcb345a43ab",
+      "session_id": "SES-f5c2461a1e7fa824",
+      "data": {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence."
+          }
+        ],
+        "kind": "explicit_preference",
+        "interpretation": "The learner explicitly requests lasting explanations of meaningful changes, with reusable structure rather than sentence memorization.",
+        "instruction": "Explain the reason for meaningful reformulations and highlight reusable structures.",
+        "durable": true
+      },
+      "refs": [
+        {
+          "turn": 5,
+          "speaker": "learner",
+          "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence.",
+          "source_start": 495,
+          "source_end": 611,
+          "source_line_start": 16,
+          "source_line_end": 16
+        }
+      ],
+      "directive_id": "TD-3c2bedcb345a",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "Always explain why is an explicit durable learner instruction. The proposed teaching behavior faithfully includes reusable structure without adding psychological claims."
+      },
+      "occurred_on": "2026-03-01"
+    },
+    {
+      "id": "TE-40c2e10b9776a6bf",
+      "session_id": "SES-f5c2461a1e7fa824",
+      "data": {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "Also, don't correct every little thing; otherwise I lose the flow."
+          }
+        ],
+        "kind": "explicit_preference",
+        "interpretation": "The learner explicitly asks to avoid excessive correction because it interrupts conversational flow.",
+        "instruction": "Preserve flow by avoiding correction of every small detail.",
+        "durable": true
+      },
+      "refs": [
+        {
+          "turn": 5,
+          "speaker": "learner",
+          "quote": "Also, don't correct every little thing; otherwise I lose the flow.",
+          "source_start": 612,
+          "source_end": 678,
+          "source_line_start": 16,
+          "source_line_end": 16
+        }
+      ],
+      "directive_id": "TD-40c2e10b9776",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The learner explicitly asks to avoid pervasive small corrections. This concerns feedback selectivity and flow, distinct from explaining the reason for meaningful reformulations."
+      },
+      "occurred_on": "2026-03-01"
+    },
+    {
+      "id": "TE-bbd197f769b1e4a2",
+      "session_id": "SES-f5c2461a1e7fa824",
+      "data": {
+        "refs": [
+          {
+            "turn": 9,
+            "quote": "Let's break this sentence into smaller meaningful pieces."
+          }
+        ],
+        "kind": "situational_request",
+        "interpretation": "Chunking was explicitly requested for this difficult sentence; one occurrence does not establish a permanent preference.",
+        "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 9,
+          "speaker": "learner",
+          "quote": "Let's break this sentence into smaller meaningful pieces.",
+          "source_start": 1016,
+          "source_end": 1073,
+          "source_line_start": 28,
+          "source_line_end": 28
+        }
+      ],
+      "directive_id": "TD-bbd197f769b1",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The local chunking request supports a contextual provisional instruction for difficult long productions. It is not durable or proof of the best teaching method; recurrence must be counted in code."
+      },
+      "occurred_on": "2026-03-01"
+    },
+    {
+      "id": "TE-fec9cc2fcc81bed6",
+      "session_id": "SES-e8a75043c7a1fce4",
+      "data": {
+        "refs": [
+          {
+            "turn": 13,
+            "quote": "Just give me the correct phrase for describing shoes with good grip right now; I need to message my friend quickly."
+          }
+        ],
+        "kind": "situational_request",
+        "interpretation": "The learner requests direct wording for an immediate practical message, not a durable teaching rule.",
+        "instruction": "For a time-sensitive message, provide wording directly if requested.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 13,
+          "speaker": "learner",
+          "quote": "Just give me the correct phrase for describing shoes with good grip right now; I need to message my friend quickly.",
+          "source_start": 995,
+          "source_end": 1110,
+          "source_line_start": 40,
+          "source_line_end": 40
+        }
+      ],
+      "directive_id": "TD-fec9cc2fcc81",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The learner needs wording for one quick message. The time-sensitive instruction is a tentative situational group, not a durable preference or a replacement for attempting first in normal teaching."
+      },
+      "occurred_on": "2026-03-08"
+    },
+    {
+      "id": "TE-5d718e5141d45948",
+      "session_id": "SES-c273b923e5eab631",
+      "data": {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "If I put everything in one sentence I lose the thread. Could we break this explanation into smaller meaningful pieces, like last time?"
+          }
+        ],
+        "kind": "situational_request",
+        "interpretation": "The learner requests chunking again for a complex explanation, explicitly linking to earlier practice.",
+        "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 5,
+          "speaker": "learner",
+          "quote": "If I put everything in one sentence I lose the thread. Could we break this explanation into smaller meaningful pieces, like last time?",
+          "source_start": 505,
+          "source_end": 639,
+          "source_line_start": 16,
+          "source_line_end": 16
+        }
+      ],
+      "directive_id": "TD-bbd197f769b1",
+      "decision": {
+        "decision": "same_directive",
+        "directive_id": "TD-bbd197f769b1",
+        "reason": "Both learner requests ask to split a difficult long production into meaningful smaller pieces; the new request explicitly relates to last time. This supports recurrence of the same contextual behavior, not a durable or optimal-method claim."
+      },
+      "occurred_on": "2026-03-15"
+    },
+    {
+      "id": "TE-42341429eac43aaf",
+      "session_id": "SES-c273b923e5eab631",
+      "data": {
+        "refs": [
+          {
+            "turn": 7,
+            "quote": "That helped a lot with this explanation."
+          },
+          {
+            "turn": 6,
+            "quote": "Let's handle the read path first, then the write path."
+          }
+        ],
+        "kind": "intervention_response",
+        "interpretation": "The learner reports that splitting this explanation helped after the teacher separated reads and writes. This supports a practical hypothesis, not an optimal-method diagnosis.",
+        "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 7,
+          "speaker": "learner",
+          "quote": "That helped a lot with this explanation.",
+          "source_start": 801,
+          "source_end": 841,
+          "source_line_start": 22,
+          "source_line_end": 22
+        },
+        {
+          "turn": 6,
+          "speaker": "teacher",
+          "quote": "Let's handle the read path first, then the write path.",
+          "source_start": 654,
+          "source_end": 708,
+          "source_line_start": 19,
+          "source_line_end": 19
+        }
+      ],
+      "directive_id": "TD-bbd197f769b1",
+      "decision": {
+        "decision": "same_directive",
+        "directive_id": "TD-bbd197f769b1",
+        "reason": "The teacher separated read and write paths; the learner explicitly reports that this helped the current explanation. This supports the existing contextual chunking hypothesis, but remains a reaction rather than a new durable best-method claim."
+      },
+      "occurred_on": "2026-03-15"
+    },
+    {
+      "id": "TE-7723fdf4534342b1",
+      "session_id": "SES-c273b923e5eab631",
+      "data": {
+        "refs": [
+          {
+            "turn": 9,
+            "quote": "No, please don't turn our conversations into grammar lectures. I still want to finish my thought before feedback."
+          }
+        ],
+        "kind": "rejection",
+        "interpretation": "The learner explicitly rejects grammar lectures and asks to finish thoughts before feedback. The teacher claim of preferring detailed correction is contradicted.",
+        "instruction": "Avoid grammar lectures and let the learner finish a thought before giving feedback.",
+        "durable": true
+      },
+      "refs": [
+        {
+          "turn": 9,
+          "speaker": "learner",
+          "quote": "No, please don't turn our conversations into grammar lectures. I still want to finish my thought before feedback.",
+          "source_start": 937,
+          "source_end": 1050,
+          "source_line_start": 28,
+          "source_line_end": 28
+        }
+      ],
+      "directive_id": "TD-7723fdf45343",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The learner directly rejects grammar lectures and asks to finish a thought before feedback. That durable instruction is distinct from selectivity of corrections and explanation of meaningful reformulations; the teacher preceding preference claim must not be persisted."
+      },
+      "occurred_on": "2026-03-15"
+    }
+  ]
+}

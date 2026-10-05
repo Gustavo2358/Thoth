@@ -1,0 +1,85 @@
+{
+  "observations": [
+    {
+      "turn": 3,
+      "source_excerpt": "I'm not sure whether the fallback is safe.",
+      "learner_quote": "I'm not sure whether the fallback is safe.",
+      "production_mode": "controlled",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Express uncertainty about a plan",
+      "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+      "observed_behavior": "Immediately repeats the exact teacher model",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "immediate_repetition",
+      "support_turns": [
+        2
+      ]
+    },
+    {
+      "turn": 7,
+      "source_excerpt": "I am on this project since January.",
+      "learner_quote": "I am on this project since January.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Describe how long a current situation has continued",
+      "learning_dimension": "Describing a situation that began earlier and continues now",
+      "observed_behavior": "Uses simple present with a starting point for a continuing project role",
+      "suggested_forms": [
+        "I've been on this project since January."
+      ],
+      "hypothesis": null,
+      "support": "no_support",
+      "support_turns": []
+    },
+    {
+      "turn": 9,
+      "source_excerpt": "I've been on this project since January.",
+      "learner_quote": "I've been on this project since January.",
+      "production_mode": "controlled",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Describe how long a current situation has continued",
+      "learning_dimension": "Describing a situation that began earlier and continues now",
+      "observed_behavior": "Immediately echoes the supplied model",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "immediate_repetition",
+      "support_turns": [
+        8
+      ]
+    },
+    {
+      "turn": 11,
+      "source_excerpt": "I'm not sure whether the trail will be open after the storm.",
+      "learner_quote": "I'm not sure whether the trail will be open after the storm.",
+      "production_mode": "spontaneous",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Express uncertainty about a plan",
+      "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+      "observed_behavior": "Uses a natural uncertainty construction later in a new hiking context without a targeted cue",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "no_support",
+      "support_turns": []
+    }
+  ],
+  "teaching": [
+    {
+      "refs": [
+        {
+          "turn": 13,
+          "quote": "Just give me the correct phrase for describing shoes with good grip right now; I need to message my friend quickly."
+        }
+      ],
+      "kind": "situational_request",
+      "interpretation": "The learner requests direct wording for an immediate practical message, not a durable teaching rule.",
+      "instruction": "For a time-sensitive message, provide wording directly if requested.",
+      "durable": false
+    }
+  ],
+  "goals": []
+}

@@ -1,5 +1,1 @@
-{
-  "neighbors": 3,
-  "pattern_dates": 2,
-  "practice_dates": 3
-}
+{"neighbors":3,"pattern_dates":2,"practice_dates":2,"recovery_dates":1,"stale_dates":3,"stale_days":30,"prompt_chars":8000,"practice_limit":2,"observe_limit":2,"transfer_limit":2}

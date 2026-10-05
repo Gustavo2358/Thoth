@@ -1,0 +1,1 @@
+{"decision": "keep", "reason": "The ordinary duration question does not supply the tense or target wording. The learner uses simple present with since for a continuing role; difficulty is supported."}

@@ -1,0 +1,77 @@
+{
+  "observations": [
+    {
+      "turn": 3,
+      "source_excerpt": "She's been living in Edinburgh since last summer.",
+      "learner_quote": "She's been living in Edinburgh since last summer.",
+      "production_mode": "spontaneous",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Describe how long a current situation has continued",
+      "learning_dimension": "Describing a situation that began earlier and continues now",
+      "observed_behavior": "Uses present perfect continuous appropriately for a current situation in a new family context",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "no_support",
+      "support_turns": []
+    },
+    {
+      "turn": 3,
+      "source_excerpt": "I'm not sure whether she'll stay there another year.",
+      "learner_quote": "I'm not sure whether she'll stay there another year.",
+      "production_mode": "spontaneous",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Express uncertainty about a plan",
+      "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+      "observed_behavior": "Naturally expresses uncertainty without supplied wording",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "no_support",
+      "support_turns": []
+    }
+  ],
+  "teaching": [
+    {
+      "refs": [
+        {
+          "turn": 5,
+          "quote": "If I put everything in one sentence I lose the thread. Could we break this explanation into smaller meaningful pieces, like last time?"
+        }
+      ],
+      "kind": "situational_request",
+      "interpretation": "The learner requests chunking again for a complex explanation, explicitly linking to earlier practice.",
+      "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+      "durable": false
+    },
+    {
+      "refs": [
+        {
+          "turn": 7,
+          "quote": "That helped a lot with this explanation."
+        },
+        {
+          "turn": 6,
+          "quote": "Let's handle the read path first, then the write path."
+        }
+      ],
+      "kind": "intervention_response",
+      "interpretation": "The learner reports that splitting this explanation helped after the teacher separated reads and writes. This supports a practical hypothesis, not an optimal-method diagnosis.",
+      "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+      "durable": false
+    },
+    {
+      "refs": [
+        {
+          "turn": 9,
+          "quote": "No, please don't turn our conversations into grammar lectures. I still want to finish my thought before feedback."
+        }
+      ],
+      "kind": "rejection",
+      "interpretation": "The learner explicitly rejects grammar lectures and asks to finish thoughts before feedback. The teacher claim of preferring detailed correction is contradicted.",
+      "instruction": "Avoid grammar lectures and let the learner finish a thought before giving feedback.",
+      "durable": true
+    }
+  ],
+  "goals": []
+}

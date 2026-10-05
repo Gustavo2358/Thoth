@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-46e9b09e631191e5",
+  "reason": "The earlier practical doubt and this natural uncertainty phrase address the same expressive capability. This exact echo is controlled and cannot prove recovery.",
+  "pattern_label": "Natural personal uncertainty in conversation",
+  "pattern_description": "Earlier uncertainty used an unnatural formulation; later correct wording after a teacher model is supported evidence. Portuguese influence is possible, not a fact about mental translation.",
+  "conversation_contexts": [
+    "Discuss unresolved details of a plan"
+  ]
+}

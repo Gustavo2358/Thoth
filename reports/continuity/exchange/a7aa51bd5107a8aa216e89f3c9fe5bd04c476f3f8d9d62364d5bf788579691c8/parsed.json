@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-97e30ca34b46191f",
+  "reason": "The unassisted past account uses ate where the earlier routine used eat, both for medication. It is the same conventional verb capability across dates, with earlier supported success distinct.",
+  "pattern_label": "Conventional medication verb combinations",
+  "pattern_description": "Repeated unassisted use of eat for medication contrasts with correct take after teacher support; spontaneous availability still warrants practice.",
+  "conversation_contexts": [
+    "Discuss a change in a health routine"
+  ]
+}

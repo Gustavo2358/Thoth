@@ -1,0 +1,69 @@
+{
+  "sessions": 2,
+  "observations": 4,
+  "patterns": [
+    {
+      "id": "PAT-97e30ca34b46",
+      "root_id": "OBS-97e30ca34b46191f",
+      "label": "Conventional medication verb combinations",
+      "description": "Unassisted attempts use eat for medication; successful take follows a model. The next teacher can selectively practice the conventional combination.",
+      "conversation_contexts": [
+        "Discuss changes to a daily health routine"
+      ],
+      "observations": 4,
+      "sessions": 2,
+      "dates": 2,
+      "modes": {
+        "spontaneous": {
+          "successful": 0,
+          "difficulty": 2,
+          "uncertain": 0
+        },
+        "prompted": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "controlled": {
+          "successful": 2,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "unknown": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 0,
+      "status": "practice",
+      "interpretation": "Recurring spontaneous difficulties on independent dates; cause is not directly observed.",
+      "mode_note": "Guided successes coexist with spontaneous difficulties; availability may differ by task, but retrieval cause is unproven.",
+      "last_seen": "2026-05-08",
+      "stale": false,
+      "recent_successes": 0,
+      "recent_difficulties": 2,
+      "evidence_ids": [
+        "OBS-97e30ca34b46191f",
+        "OBS-1010158e86e2432e",
+        "OBS-9abd54af927c2b46",
+        "OBS-ebe402d1ef8aa8e3"
+      ],
+      "practice_evidence_ids": [
+        "OBS-97e30ca34b46191f",
+        "OBS-9abd54af927c2b46"
+      ],
+      "unknowns": [
+        "Transfer to new topics and registers is untested.",
+        "Opportunities do not prove avoidance; L1 transfer and retrieval causes remain hypotheses."
+      ]
+    }
+  ],
+  "isolated": [],
+  "assumptions": [
+    "Counts describe selected conversation evidence, not mastery or a representative proficiency score.",
+    "Repeated conversations on one date do not establish longitudinal recurrence.",
+    "Pattern descriptions and causal interpretations are model hypotheses; quotes and memberships are auditable."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-97e30ca34b46191f",
+  "reason": "Eat and take occur in attempts to express the same medication routine. The corrected attempt is model-supported, so it belongs to the capability without establishing recovery.",
+  "pattern_label": "Conventional medication verb combinations",
+  "pattern_description": "The learner is practicing conventional verbs for medication; supported successes differ from independent availability.",
+  "conversation_contexts": [
+    "Describe a change to a daily health routine"
+  ]
+}

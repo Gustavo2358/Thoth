@@ -1,1 +1,0 @@
-{"decision": "new_pattern", "candidate_id": null, "reason": "The evidence concerns calibrating a favor request to friendship and informal register. Meeting collocations, temporal duration and uncertainty expressions do not provide the same or a specifically comparable register ability.", "pattern_label": null, "pattern_description": null, "conversation_contexts": []}

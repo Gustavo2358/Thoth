@@ -1,0 +1,54 @@
+{
+  "sessions": 2,
+  "observations": 7,
+  "patterns": [],
+  "isolated": [
+    {
+      "id": "OBS-2d285ac6f57b7e04",
+      "dimension": "Expressing causal relationships appropriately",
+      "performance": "successful",
+      "reason": "No earlier supported evidence to compare; retain an isolated observation."
+    },
+    {
+      "id": "OBS-57ceae2bbce63c16",
+      "dimension": "Expressing causal relationships appropriately",
+      "performance": "successful",
+      "reason": "Both correctly express a causal relationship. The second is an immediate teacher-model echo, which changes support but not the underlying communicative capability."
+    },
+    {
+      "id": "OBS-d4a4650cb8bd7c51",
+      "dimension": "Expressing past regret with an appropriate alternative construction",
+      "performance": "successful",
+      "reason": "Past regret and causal explanation are different capabilities. This is a valid alternative for regret after support, not an error for missing a prescribed form."
+    },
+    {
+      "id": "OBS-09d99be4b1162d6b",
+      "dimension": "Expressing reservations about reliability",
+      "performance": "successful",
+      "reason": "Reservations about data reliability differ from causal explanation and regret. Doubts is appropriate in this explicit suspicion context; no difficulty or relation is justified by those candidate meanings."
+    },
+    {
+      "id": "OBS-8498add8537912b9",
+      "dimension": "Describing high cost with appropriate noun and adjective combinations",
+      "performance": "uncertain",
+      "reason": "The noun-adjective combination for high cost differs from reservations, causes, and regret. Self-repair is an uncertain event, not proof of recurrent difficulty."
+    },
+    {
+      "id": "OBS-6813f6012a12396d",
+      "dimension": "Describing high cost with appropriate noun and adjective combinations",
+      "performance": "successful",
+      "reason": "This controlled self-echo realizes the same high-cost noun-adjective capability as the preceding self-repair. It must not be grouped with reliability doubts merely through purchase context."
+    },
+    {
+      "id": "OBS-7e2093d3693ccda8",
+      "dimension": "Expressing doubt in an unresolved conversational context",
+      "performance": "uncertain",
+      "reason": "Observation review is unresolved; retain isolated evidence."
+    }
+  ],
+  "assumptions": [
+    "Counts describe selected conversation evidence, not mastery or a representative proficiency score.",
+    "Repeated conversations on one date do not establish longitudinal recurrence.",
+    "Pattern descriptions and causal interpretations are model hypotheses; quotes and memberships are auditable."
+  ]
+}

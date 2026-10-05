@@ -1,0 +1,53 @@
+{
+  "observations": [
+    {
+      "turn": 1,
+      "source_excerpt": "I eat this medicine after breakfast every day.",
+      "learner_quote": "I eat this medicine after breakfast every day.",
+      "communicative_intent": "Describe a medication routine",
+      "learning_dimension": "Using conventional verb combinations to describe taking medication",
+      "observed_behavior": "Uses eat instead of conventional take for medicine",
+      "performance": "difficulty",
+      "production_mode": "spontaneous",
+      "support": "no_support",
+      "support_turns": [],
+      "suggested_forms": [
+        "I take this medicine after breakfast every day."
+      ],
+      "hypothesis": null,
+      "evidence_type": "observed_use"
+    },
+    {
+      "turn": 3,
+      "source_excerpt": "I take this medicine after breakfast every day.",
+      "learner_quote": "I take this medicine after breakfast every day.",
+      "communicative_intent": "Describe a medication routine",
+      "learning_dimension": "Using conventional verb combinations to describe taking medication",
+      "observed_behavior": "Repeats the corrected verb combination after an explanation and teacher model",
+      "performance": "successful",
+      "production_mode": "controlled",
+      "support": "model_phrase_available",
+      "support_turns": [
+        2
+      ],
+      "suggested_forms": [],
+      "hypothesis": null,
+      "evidence_type": "observed_use"
+    }
+  ],
+  "teaching": [
+    {
+      "refs": [
+        {
+          "turn": 5,
+          "quote": "That explanation helped with this sentence."
+        }
+      ],
+      "kind": "intervention_response",
+      "instruction": "A brief contrast can help explain a medication collocation.",
+      "interpretation": "Positive feedback about one explanation remains local evidence.",
+      "durable": false
+    }
+  ],
+  "goals": []
+}

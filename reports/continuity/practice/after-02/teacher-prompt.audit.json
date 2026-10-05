@@ -1,0 +1,159 @@
+{
+  "policy": {
+    "neighbors": 3,
+    "pattern_dates": 2,
+    "practice_dates": 2,
+    "recovery_dates": 1,
+    "stale_dates": 3,
+    "stale_days": 30,
+    "prompt_chars": 8000,
+    "practice_limit": 2,
+    "observe_limit": 2,
+    "transfer_limit": 2
+  },
+  "sources": {
+    "SES-bc9f2b256424a3d5": {
+      "sha256": "30872a01c912ec13ebb821fc8ea4bcaa25dfe9635720ab42407630cf770f53e6",
+      "date": "2026-05-01",
+      "path": "sessions/SES-bc9f2b256424a3d5/conversation.md"
+    },
+    "SES-7c02e650baba9832": {
+      "sha256": "5b796833bfe5fe0859cc9df1ff32b17a450d46075a853c69010a39a9ed647b00",
+      "date": "2026-05-08",
+      "path": "sessions/SES-7c02e650baba9832/conversation.md"
+    }
+  },
+  "goals": [
+    {
+      "id": "GOAL-c70997a993f2",
+      "text": "Explain technical design trade-offs naturally in spoken English.",
+      "session_id": "SES-7c02e650baba9832",
+      "ref": {
+        "turn": 1,
+        "speaker": "learner",
+        "quote": "I want to explain technical design trade-offs naturally, not just talk about medication.",
+        "source_start": 64,
+        "source_end": 152,
+        "source_line_start": 4,
+        "source_line_end": 4
+      }
+    }
+  ],
+  "directives": [],
+  "patterns": [
+    {
+      "id": "PAT-97e30ca34b46",
+      "status": "practice",
+      "strategy": "practice",
+      "goal_overlap_terms": [],
+      "evidence": [
+        {
+          "observation_id": "OBS-97e30ca34b46191f",
+          "session_id": "SES-bc9f2b256424a3d5",
+          "date": "2026-05-01",
+          "performance": "difficulty",
+          "mode": "spontaneous",
+          "support": "no_support",
+          "production": {
+            "turn": 1,
+            "speaker": "learner",
+            "quote": "I eat this medicine after breakfast every day.",
+            "source_start": 86,
+            "source_end": 132,
+            "source_line_start": 4,
+            "source_line_end": 4
+          },
+          "support_refs": []
+        },
+        {
+          "observation_id": "OBS-1010158e86e2432e",
+          "session_id": "SES-bc9f2b256424a3d5",
+          "date": "2026-05-01",
+          "performance": "successful",
+          "mode": "controlled",
+          "support": "model_phrase_available",
+          "production": {
+            "turn": 3,
+            "speaker": "learner",
+            "quote": "I take this medicine after breakfast every day.",
+            "source_start": 293,
+            "source_end": 340,
+            "source_line_start": 10,
+            "source_line_end": 10
+          },
+          "support_refs": [
+            {
+              "turn": 2,
+              "speaker": "teacher",
+              "quote": "In English, \"take medicine\" is the usual combination for medication. Eating something describes food. Try explaining your routine again.\n\n",
+              "source_start": 147,
+              "source_end": 283,
+              "source_line_start": 7,
+              "source_line_end": 7
+            }
+          ]
+        },
+        {
+          "observation_id": "OBS-9abd54af927c2b46",
+          "session_id": "SES-7c02e650baba9832",
+          "date": "2026-05-08",
+          "performance": "difficulty",
+          "mode": "spontaneous",
+          "support": "no_support",
+          "production": {
+            "turn": 3,
+            "speaker": "learner",
+            "quote": "Yesterday I ate my medicine later than usual because I was at work.",
+            "source_start": 236,
+            "source_end": 303,
+            "source_line_start": 10,
+            "source_line_end": 10
+          },
+          "support_refs": []
+        },
+        {
+          "observation_id": "OBS-ebe402d1ef8aa8e3",
+          "session_id": "SES-7c02e650baba9832",
+          "date": "2026-05-08",
+          "performance": "successful",
+          "mode": "controlled",
+          "support": "model_phrase_available",
+          "production": {
+            "turn": 5,
+            "speaker": "learner",
+            "quote": "I took my medicine late, after dinner.",
+            "source_start": 398,
+            "source_end": 436,
+            "source_line_start": 16,
+            "source_line_end": 16
+          },
+          "support_refs": [
+            {
+              "turn": 4,
+              "speaker": "teacher",
+              "quote": "Use \"took my medicine\" for that. Tell me what changed in your routine.\n\n",
+              "source_start": 318,
+              "source_end": 388,
+              "source_line_start": 13,
+              "source_line_end": 13
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "omitted": [],
+  "product_policy": "General oral-production defaults in compiler.BASE; not learner-specific evidence",
+  "section_budgets": {
+    "goals": 1400,
+    "directives": 1800,
+    "reserved_structure": 300
+  },
+  "characters": 3002,
+  "sha256": "a183de7166571fe7baba0f4b4e85a7d16bd41bfe77c5b5f38a9cf2e97225cbec",
+  "selection_counts": {
+    "practice": 1,
+    "observe": 0,
+    "transfer": 0
+  }
+}

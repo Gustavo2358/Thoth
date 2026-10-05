@@ -1,0 +1,514 @@
+{
+  "conversations": {
+    "continuity-01.md": {
+      "observations": [
+        [
+          3,
+          "difficulty",
+          "spontaneous",
+          "no_support"
+        ],
+        [
+          7,
+          "difficulty",
+          "spontaneous",
+          "no_support"
+        ],
+        [
+          11,
+          "successful",
+          "controlled",
+          "model_phrase_available"
+        ]
+      ],
+      "teaching": [
+        [
+          5,
+          "explicit_preference",
+          true
+        ],
+        [
+          5,
+          "explicit_preference",
+          true
+        ],
+        [
+          9,
+          "situational_request",
+          false
+        ]
+      ],
+      "non_evidence_turns": [
+        1,
+        5,
+        9,
+        13
+      ],
+      "groups": {
+        "I'm with a doubt about the rollout.": "uncertainty",
+        "I work on this migration since January.": "duration",
+        "I've been working on this migration since January.": "duration"
+      }
+    },
+    "continuity-02.md": {
+      "observations": [
+        [
+          3,
+          "successful",
+          "controlled",
+          "immediate_repetition"
+        ],
+        [
+          7,
+          "difficulty",
+          "spontaneous",
+          "no_support"
+        ],
+        [
+          9,
+          "successful",
+          "controlled",
+          "immediate_repetition"
+        ],
+        [
+          11,
+          "successful",
+          "spontaneous",
+          "no_support"
+        ]
+      ],
+      "teaching": [
+        [
+          13,
+          "situational_request",
+          false
+        ]
+      ],
+      "non_evidence_turns": [
+        1,
+        5,
+        13
+      ],
+      "groups": {
+        "I'm not sure whether the fallback is safe.": "uncertainty",
+        "I am on this project since January.": "duration",
+        "I've been on this project since January.": "duration",
+        "I'm not sure whether the trail will be open after the storm.": "uncertainty"
+      }
+    },
+    "continuity-03.md": {
+      "observations": [
+        [
+          3,
+          "successful",
+          "spontaneous",
+          "no_support"
+        ],
+        [
+          3,
+          "successful",
+          "spontaneous",
+          "no_support"
+        ]
+      ],
+      "teaching": [
+        [
+          5,
+          "situational_request",
+          false
+        ],
+        [
+          7,
+          "intervention_response",
+          false
+        ],
+        [
+          9,
+          "rejection",
+          true
+        ]
+      ],
+      "non_evidence_turns": [
+        1,
+        5,
+        7,
+        8,
+        9
+      ],
+      "groups": {
+        "She's been living in Edinburgh since last summer.": "duration",
+        "I'm not sure whether she'll stay there another year.": "uncertainty"
+      }
+    },
+    "adversarial-01.md": {
+      "observations": [
+        [
+          4,
+          "successful",
+          "spontaneous",
+          "no_support"
+        ],
+        [
+          6,
+          "successful",
+          "controlled",
+          "immediate_repetition"
+        ],
+        [
+          8,
+          "successful",
+          "controlled",
+          "model_phrase_available"
+        ],
+        [
+          10,
+          "successful",
+          "prompted",
+          "contextual_prompt"
+        ]
+      ],
+      "teaching": [
+        [
+          2,
+          "explicit_preference",
+          true
+        ],
+        [
+          12,
+          "intervention_response",
+          false
+        ],
+        [
+          12,
+          "situational_request",
+          false
+        ]
+      ],
+      "non_evidence_turns": [
+        1,
+        2,
+        12
+      ],
+      "groups": {
+        "The queue was delayed since the worker had crashed.": "cause",
+        "The queue was delayed because the worker had crashed.": "cause",
+        "I wish I'd warned them sooner.": "regret",
+        "I have doubts about whether the measurements are reliable.": "reservations"
+      }
+    },
+    "adversarial-02.md": {
+      "observations": [
+        [
+          3,
+          "uncertain",
+          "spontaneous",
+          "no_support"
+        ],
+        [
+          5,
+          "successful",
+          "controlled",
+          "immediate_repetition"
+        ],
+        [
+          7,
+          "uncertain",
+          "unknown",
+          "unknown"
+        ]
+      ],
+      "teaching": [
+        [
+          1,
+          "explicit_preference",
+          true
+        ]
+      ],
+      "non_evidence_turns": [
+        1,
+        9,
+        11
+      ],
+      "groups": {
+        "The price was very expensive. I mean, the laptop was extremely expensive.": "cost",
+        "The laptop was extremely expensive, but it saves me several hours a week.": "cost",
+        "I have a doubt...": null
+      }
+    },
+    "practice-01.md": {
+      "observations": [
+        [
+          1,
+          "difficulty",
+          "spontaneous",
+          "no_support"
+        ],
+        [
+          3,
+          "successful",
+          "controlled",
+          "model_phrase_available"
+        ]
+      ],
+      "teaching": [
+        [
+          5,
+          "intervention_response",
+          false
+        ]
+      ],
+      "non_evidence_turns": [
+        5
+      ],
+      "groups": {
+        "I eat this medicine after breakfast every day.": "medication",
+        "I take this medicine after breakfast every day.": "medication"
+      }
+    },
+    "practice-02.md": {
+      "observations": [
+        [
+          3,
+          "difficulty",
+          "spontaneous",
+          "no_support"
+        ],
+        [
+          5,
+          "successful",
+          "controlled",
+          "model_phrase_available"
+        ]
+      ],
+      "teaching": [],
+      "non_evidence_turns": [
+        1
+      ],
+      "groups": {
+        "Yesterday I ate my medicine later than usual because I was at work.": "medication",
+        "I took my medicine late, after dinner.": "medication"
+      }
+    },
+    "scaffolding-01.md": {
+      "observations": [
+        [
+          1,
+          "difficulty",
+          "spontaneous",
+          "no_support"
+        ],
+        [
+          7,
+          "successful",
+          "prompted",
+          "partial_scaffold"
+        ],
+        [
+          9,
+          "successful",
+          "prompted",
+          "explanation_before_attempt"
+        ],
+        [
+          11,
+          "uncertain",
+          "prompted",
+          "contextual_prompt"
+        ]
+      ],
+      "teaching": [
+        [
+          3,
+          "situational_request",
+          false
+        ],
+        [
+          13,
+          "rejection",
+          true
+        ]
+      ],
+      "non_evidence_turns": [
+        3,
+        5,
+        13
+      ],
+      "groups": {
+        "If I know earlier, I would change the plan.": "counterfactual",
+        "Even though the deadline was close, we delayed the release because the checks failed.": "concession",
+        "My new chair was incredibly expensive, but it made long meetings more comfortable.": "cost",
+        "We were too late. Anyway, the new rollout worked.": "counterfactual"
+      }
+    }
+  },
+  "prompts": {
+    "continuity-01.md": {
+      "include": [
+        "software architecture",
+        "Explain the reason for meaningful reformulations",
+        "Preserve flow by avoiding correction"
+      ],
+      "omit": [
+        "When a long production is difficult, break it into smaller meaningful chunks.",
+        "visual learner",
+        "You prefer grammar explanations"
+      ],
+      "strategies": [
+        "observe"
+      ],
+      "not_prime": [
+        "I'm not sure about the rollout.",
+        "I've been working on this migration since January."
+      ]
+    },
+    "continuity-02.md": {
+      "include": [
+        "software architecture",
+        "Explain the reason for meaningful reformulations",
+        "Create a different communicative situation",
+        "another attempt"
+      ],
+      "omit": [
+        "For a time-sensitive message, provide wording directly if requested.",
+        "When a long production is difficult, break it into smaller meaningful chunks."
+      ],
+      "strategies": [
+        "practice",
+        "transfer"
+      ],
+      "not_prime": [
+        "I'm not sure whether",
+        "I'm with a doubt"
+      ]
+    },
+    "continuity-03.md": {
+      "include": [
+        "software architecture",
+        "Tentative recurring hypothesis",
+        "When a long production is difficult, break it into smaller meaningful chunks.",
+        "Avoid grammar lectures",
+        "Do not automatically teach this again"
+      ],
+      "omit": [
+        "You prefer long grammar lectures",
+        "best way",
+        "visual learner",
+        "### Practice:"
+      ],
+      "strategies": [
+        "transfer"
+      ],
+      "not_prime": [
+        "I'm not sure whether",
+        "She's been living",
+        "I've been on this project",
+        "I work on this migration"
+      ]
+    },
+    "adversarial-01.md": {
+      "include": [
+        "Let the learner finish a thought before correction",
+        "Accept valid alternatives"
+      ],
+      "omit": [
+        "A short explanation may help with this particular example.",
+        "For an immediate message, provide wording directly when asked.",
+        "You prefer grammar explanations",
+        "visual learner",
+        "### Practice:"
+      ],
+      "strategies": [
+        "observe"
+      ],
+      "not_prime": [
+        "I should have told them earlier.",
+        "I wish I'd warned them sooner."
+      ]
+    },
+    "adversarial-02.md": {
+      "include": [
+        "Let the learner attempt before supplying the answer.",
+        "One provisional evidence group"
+      ],
+      "omit": [
+        "prefers repetition",
+        "You prefer grammar explanations",
+        "### Practice:"
+      ],
+      "strategies": [
+        "observe"
+      ],
+      "not_prime": [
+        "The laptop was extremely expensive",
+        "I have a doubt..."
+      ]
+    },
+    "practice-01.md": {
+      "include": [
+        "No persistent personal teaching instruction"
+      ],
+      "omit": [
+        "A brief contrast can help explain a medication collocation.",
+        "### Practice:"
+      ],
+      "strategies": [
+        "observe"
+      ],
+      "not_prime": [
+        "I take this medicine"
+      ]
+    },
+    "practice-02.md": {
+      "include": [
+        "technical design trade-offs",
+        "Goals lead the agenda",
+        "### Practice:",
+        "Let me attempt",
+        "another attempt",
+        "Later vary the"
+      ],
+      "omit": [
+        "### Test transfer:"
+      ],
+      "strategies": [
+        "practice"
+      ],
+      "not_prime": []
+    },
+    "scaffolding-01.md": {
+      "include": [
+        "Avoid long synonym lists",
+        "Evidence is emerging",
+        "Let the learner attempt before supplying the answer."
+      ],
+      "omit": [
+        "Give a brief reason for a meaningful reformulation when the learner asks.",
+        "### Practice:",
+        "### Test transfer:",
+        "visual learner"
+      ],
+      "strategies": [
+        "observe"
+      ],
+      "not_prime": [
+        "If I'd known earlier",
+        "Even though",
+        "incredibly expensive"
+      ]
+    }
+  },
+  "supported_directives": {
+    "continuity": [
+      "Explain the reason for meaningful reformulations and highlight reusable structures.",
+      "Preserve flow by avoiding correction of every small detail.",
+      "When a long production is difficult, break it into smaller meaningful chunks.",
+      "Avoid grammar lectures and let the learner finish a thought before giving feedback."
+    ],
+    "adversarial": [
+      "Let the learner finish a thought before correction; avoid requests to memorize lists.",
+      "Let the learner attempt before supplying the answer.",
+      "Avoid long synonym lists; prefer one useful contrast when explaining a reformulation."
+    ],
+    "practice": []
+  }
+}

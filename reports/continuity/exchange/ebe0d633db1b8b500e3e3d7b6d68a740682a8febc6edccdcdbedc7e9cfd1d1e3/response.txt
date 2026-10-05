@@ -1,0 +1,5 @@
+{
+  "decision": "new_directive",
+  "directive_id": null,
+  "reason": "The learner explicitly rejects long synonym lists for ongoing conversations and asks for one useful contrast. This is more specific than avoiding memorization requests, and includes a distinct alternative teaching action, so retain an explicit separate directive rather than silently discard the refinement."
+}

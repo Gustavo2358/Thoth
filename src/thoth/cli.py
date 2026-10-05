@@ -6,88 +6,85 @@ import sys
 from datetime import date
 from pathlib import Path
 
-from thoth.artifacts import export, write_json
+from thoth.artifacts import export
 from thoth.embeddings import LocalEmbedder
 from thoth.llm import ManualChatGPTAdapter, OpenAIAdapter, PendingResponse
-from thoth.pipeline import ingest, policy_from_file
+from thoth.pipeline import ingest, policy_from_file, reprocess
 from thoth.storage import Store
+from thoth.teaching import teaching_state
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(prog="thoth", description="Discover patterns in English speaking evidence")
-    parser.add_argument("--db", type=Path, default=Path("data/thoth.db"))
-    parser.add_argument("--artifacts", type=Path, default=Path("artifacts"))
-    parser.add_argument("--policy", type=Path)
-    sub = parser.add_subparsers(dest="command", required=True)
-    command = sub.add_parser("ingest")
-    command.add_argument("file", type=Path)
-    command.add_argument("--date", required=True)
-    for name in ["state", "patterns", "next-lesson"]:
+    parser = argparse.ArgumentParser(prog='thoth', description='Compile learning conversations into the next teacher prompt')
+    parser.add_argument('--db', type=Path, default=Path('data/thoth.db'))
+    parser.add_argument('--artifacts', type=Path, default=Path('artifacts'))
+    parser.add_argument('--policy', type=Path)
+    sub = parser.add_subparsers(dest='command', required=True)
+    command = sub.add_parser('ingest')
+    command.add_argument('file', type=Path)
+    command.add_argument('--date', default=date.today().isoformat(), help='Actual session date; default today')
+    command.add_argument('--reprocess', action='store_true', help='Replay ALL stored conversations atomically with this exchange')
+    command.add_argument('--provider', choices=['manual', 'openai'], default='manual')
+    command.add_argument('--model', default='ChatGPT / unspecified')
+    command.add_argument('--exchange', type=Path, default=Path('data/exchange'))
+    command.add_argument('--interactive', action='store_true')
+    for name in ['state', 'patterns', 'prepare', 'teaching']:
         sub.add_parser(name)
-    command = sub.add_parser("import", help="Import original model responses named <request-hash>.txt")
-    command.add_argument("directory", type=Path)
-    command.add_argument("--exchange", type=Path, default=Path("data/exchange"))
-    command.add_argument("--model", default="ChatGPT / unspecified")
-    command = sub.add_parser("benchmark")
-    command.add_argument("--split", choices=["development", "calibration", "holdout", "review", "calibrate", "freeze"], required=True)
-    command.add_argument("--output", type=Path, default=Path("reports/benchmark"))
-    command.add_argument("--freeze-file", type=Path, default=Path("benchmark/freeze.json"))
-    for name in ["ingest", "benchmark"]:
-        command = sub.choices[name]
-        command.add_argument("--provider", choices=["manual", "openai"], default="manual")
-        command.add_argument("--model", default="ChatGPT / unspecified")
-        command.add_argument("--exchange", type=Path, default=Path("data/exchange"))
-        command.add_argument("--interactive", action="store_true")
+    command = sub.add_parser('goals')
+    actions = command.add_subparsers(dest='goal_action')
+    actions.add_parser('add').add_argument('text')
+    actions.add_parser('remove').add_argument('id')
+    command = sub.add_parser('import', help='Import original internal LLM responses named <request-hash>.txt')
+    command.add_argument('directory', type=Path)
+    command.add_argument('--exchange', type=Path, default=Path('data/exchange'))
+    command.add_argument('--model', default='ChatGPT / unspecified')
     args = parser.parse_args(argv)
     try:
-        if args.command == "import":
+        if args.command == 'import':
             print(ManualChatGPTAdapter(args.exchange, args.model).import_responses(args.directory))
-            return 0
-        if args.command == "benchmark":
-            from thoth.benchmark import calibration, freeze_metadata, run, review_benchmark
-            if args.split == "review":
-                llm = ManualChatGPTAdapter(args.exchange, args.model, args.interactive) if args.provider == "manual" else OpenAIAdapter(args.model)
-                print(json.dumps(review_benchmark(llm, args.output), indent=2))
-                return 0
-            embedder = LocalEmbedder()
-            if args.split == "calibrate":
-                report = calibration(embedder, args.output)
-                print(json.dumps({k: report[k] for k in ("policy", "pedagogical_retrieval", "raw_quote_retrieval")}))
-                return 0
-            policy = policy_from_file(args.policy)
-            if args.split == "freeze":
-                if args.freeze_file.exists():
-                    raise ValueError("Freeze already exists; do not replace a qualified experiment")
-                llm = ManualChatGPTAdapter(args.exchange, args.model) if args.provider == "manual" else OpenAIAdapter(args.model)
-                write_json(args.freeze_file, freeze_metadata(embedder, policy, llm.metadata()))
-                print(str(args.freeze_file))
-                return 0
-            llm = ManualChatGPTAdapter(args.exchange, args.model, args.interactive) if args.provider == "manual" else OpenAIAdapter(args.model)
-            report = run(args.split, embedder, llm, policy, args.output, args.freeze_file)
-            print(json.dumps(report["metrics"], indent=2))
             return 0
         policy = policy_from_file(args.policy)
         with Store(args.db) as store:
-            if args.command == "ingest":
+            if args.command == 'ingest':
+                raw = args.file.read_bytes().decode('utf-8')
                 date.fromisoformat(args.date)
-                raw = args.file.read_bytes().decode("utf-8")
-                llm = ManualChatGPTAdapter(args.exchange, args.model, args.interactive) if args.provider == "manual" else OpenAIAdapter(args.model)
-                print(json.dumps(ingest(raw, args.date, store, LocalEmbedder(), llm, policy)))
+                llm = ManualChatGPTAdapter(args.exchange, args.model, args.interactive) if args.provider == 'manual' else OpenAIAdapter(args.model)
+                if args.reprocess:
+                    if not store.existing(raw, args.date):
+                        raise ValueError('Reprocessing requires an existing unchanged conversation and its original date')
+                    result = reprocess(store, LocalEmbedder(), llm, policy)
+                else:
+                    result = ingest(raw, args.date, store, LocalEmbedder(), llm, policy)
+                export(args.artifacts, store, policy)
+                print(json.dumps(result))
+                return 0
+            if args.command == 'goals':
+                with store.db:
+                    if args.goal_action == 'add':
+                        store.add_goal(args.text)
+                    elif args.goal_action == 'remove':
+                        if not store.db.execute('DELETE FROM goals WHERE id=?', (args.id,)).rowcount:
+                            raise ValueError('Unknown goal ID')
             state = export(args.artifacts, store, policy)
-            if args.command == "patterns":
-                print(json.dumps(state["patterns"], indent=2, ensure_ascii=False))
-            elif args.command == "next-lesson":
-                print((args.artifacts / "next-lesson.md").read_text())
+            if args.command == 'prepare':
+                # stdout is only the pasteable artifact, so redirecting works.
+                print((args.artifacts / 'teacher-prompt.md').read_text(), end='')
+            elif args.command == 'patterns':
+                print(json.dumps(state['patterns'], indent=2, ensure_ascii=False))
+            elif args.command == 'teaching':
+                print(json.dumps(teaching_state(store), indent=2, ensure_ascii=False))
+            elif args.command == 'goals':
+                print(json.dumps(store.goals(), indent=2, ensure_ascii=False))
             else:
-                print((args.artifacts / "learner-state.md").read_text())
+                print((args.artifacts / 'learner-state.md').read_text())
         return 0
     except PendingResponse as error:
-        print("Pending: " + str(error), file=sys.stderr)
+        print('Pending: ' + str(error), file=sys.stderr)
         return 2
     except (ValueError, OSError, RuntimeError) as error:
         print(str(error), file=sys.stderr)
         return 1
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     raise SystemExit(main())

@@ -1,0 +1,1 @@
+{"decision": "keep", "reason": "Doubts expresses explicit reservations about data reliability, so it is appropriate. The teacher question targets that meaning and supplies a lexical cue; prompted evidence is accurate."}

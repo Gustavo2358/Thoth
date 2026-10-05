@@ -1,1 +1,0 @@
-{"decision": "new_pattern", "candidate_id": null, "reason": "The production ability is naturally emphasizing high cost. Uncertainty, ongoing duration and regret are different abilities; a possible Portuguese influence on two formulations does not make them one pattern.", "pattern_label": null, "pattern_description": null, "conversation_contexts": []}

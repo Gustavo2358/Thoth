@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-8526642f2f0796ad",
+  "reason": "The teacher prompt creates an opportunity for the same unreal-past condition/result capability as the initial difficulty. The learner chooses actual-outcome wording instead. Group the opportunity with that dimension without counting non-use as error or inferring avoidance.",
+  "pattern_label": "Expressing an unreal past condition and its possible result",
+  "pattern_description": "One unassisted difficulty in a counterfactual past account is followed by an elicited opportunity without a counterfactual production. The latter is uncertain evidence, not another failure or proof of avoidance.",
+  "conversation_contexts": [
+    "Discuss how an earlier decision might have led to a different outcome"
+  ]
+}

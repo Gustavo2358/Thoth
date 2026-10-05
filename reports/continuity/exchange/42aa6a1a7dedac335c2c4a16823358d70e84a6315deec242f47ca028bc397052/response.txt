@@ -1,0 +1,1 @@
+{"decision": "keep", "reason": "The complete model is visible in turn 8 and chunk scaffolding in 10. This reconstruction is successful but controlled, not recovery."}

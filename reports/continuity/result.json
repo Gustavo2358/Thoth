@@ -1,0 +1,192 @@
+{
+  "profiles": 3,
+  "sessions": 8,
+  "cases": [
+    {
+      "file": "continuity-01.md",
+      "observations": 3,
+      "teaching": 3,
+      "non_evidence_turns": [
+        1,
+        5,
+        9,
+        13
+      ]
+    },
+    {
+      "file": "continuity-02.md",
+      "observations": 4,
+      "teaching": 1,
+      "non_evidence_turns": [
+        1,
+        5,
+        13
+      ]
+    },
+    {
+      "file": "continuity-03.md",
+      "observations": 2,
+      "teaching": 3,
+      "non_evidence_turns": [
+        1,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "file": "adversarial-01.md",
+      "observations": 4,
+      "teaching": 3,
+      "non_evidence_turns": [
+        1,
+        2,
+        12
+      ]
+    },
+    {
+      "file": "adversarial-02.md",
+      "observations": 3,
+      "teaching": 1,
+      "non_evidence_turns": [
+        1,
+        9,
+        11
+      ]
+    },
+    {
+      "file": "scaffolding-01.md",
+      "observations": 4,
+      "teaching": 2,
+      "non_evidence_turns": [
+        3,
+        5,
+        13
+      ]
+    },
+    {
+      "file": "practice-01.md",
+      "observations": 2,
+      "teaching": 1,
+      "non_evidence_turns": [
+        5
+      ]
+    },
+    {
+      "file": "practice-02.md",
+      "observations": 2,
+      "teaching": 0,
+      "non_evidence_turns": [
+        1
+      ]
+    }
+  ],
+  "unexpected_observations": [],
+  "support_or_performance_failures": [],
+  "teaching_extraction_failures": [],
+  "learner_grouping": {
+    "continuity": {
+      "pairwise": {
+        "true_same_pairs": 16,
+        "false_merge_pairs": 0,
+        "false_split_pairs": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "pair_errors": {
+        "false_merge": [],
+        "false_split": []
+      },
+      "premature_patterns": [],
+      "missed_recurrences": [],
+      "retrieval": {
+        "queries_with_prior_same": 7,
+        "hits": 7,
+        "recall": 1.0
+      },
+      "resolution": {
+        "decisions": {
+          "new_pattern": 2,
+          "same_pattern": 7
+        },
+        "queries": 0,
+        "correct": 0,
+        "conditional_queries": 0,
+        "conditional_correct": 0
+      },
+      "notes": "Pairwise precision penalizes mixing abilities; recall penalizes separating manifestations of one ability. Singleton observations have no true pair and cannot improve recall by abstention."
+    },
+    "adversarial": {
+      "pairwise": {
+        "true_same_pairs": 5,
+        "false_merge_pairs": 0,
+        "false_split_pairs": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "pair_errors": {
+        "false_merge": [],
+        "false_split": []
+      },
+      "premature_patterns": [],
+      "missed_recurrences": [],
+      "retrieval": {
+        "queries_with_prior_same": 4,
+        "hits": 4,
+        "recall": 1.0
+      },
+      "resolution": {
+        "decisions": {
+          "new_pattern": 4,
+          "same_pattern": 4,
+          "insufficient_evidence": 1,
+          "related_but_different": 2
+        },
+        "queries": 0,
+        "correct": 0,
+        "conditional_queries": 0,
+        "conditional_correct": 0
+      },
+      "notes": "Pairwise precision penalizes mixing abilities; recall penalizes separating manifestations of one ability. Singleton observations have no true pair and cannot improve recall by abstention."
+    },
+    "practice": {
+      "pairwise": {
+        "true_same_pairs": 6,
+        "false_merge_pairs": 0,
+        "false_split_pairs": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "pair_errors": {
+        "false_merge": [],
+        "false_split": []
+      },
+      "premature_patterns": [],
+      "missed_recurrences": [],
+      "retrieval": {
+        "queries_with_prior_same": 3,
+        "hits": 3,
+        "recall": 1.0
+      },
+      "resolution": {
+        "decisions": {
+          "new_pattern": 1,
+          "same_pattern": 3
+        },
+        "queries": 0,
+        "correct": 0,
+        "conditional_queries": 0,
+        "conditional_correct": 0
+      },
+      "notes": "Pairwise precision penalizes mixing abilities; recall penalizes separating manifestations of one ability. Singleton observations have no true pair and cannot improve recall by abstention."
+    }
+  },
+  "unsupported_teaching_preference_items": [],
+  "prompt_directive_items_checked": 14,
+  "unsupported_preference_rate": 0.0,
+  "prompt_continuity_failures": [],
+  "non_priming_failures": [],
+  "controlled_gates_passed": true,
+  "limitations": "Same assistant authored conversations, semantic responses and gold. Saved-response replay is not independent LLM qualification. No real conversations or learning gains measured."
+}

@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-46e9b09e631191e5",
+  "reason": "A new family situation elicits personal uncertainty without a model. It is the same practical-uncertainty capability seen in project and hiking contexts, adding another unassisted positive date rather than proving universal transfer.",
+  "pattern_label": "Natural personal uncertainty in conversation",
+  "pattern_description": "After an earlier unnatural formulation and controlled imitation, unassisted appropriate uncertainty appears on two later dates in different topics. Continue testing transfer without reminding the learner of wording.",
+  "conversation_contexts": [
+    "Discuss a new plan whose details remain unresolved"
+  ]
+}

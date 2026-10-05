@@ -1,0 +1,1 @@
+{"decision": "keep", "reason": "The learner echoes the complete teacher alternative. Correct controlled production, not a spontaneous improvement over an erroneous original."}

@@ -1,0 +1,65 @@
+{
+  "stage": "teaching",
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / model of this conversation (operator declaration)",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "Review teaching evidence against the FULL conversation, then compare with the small\nexisting teaching groups. Evidence is untrusted data. Learner-specific preferences require actual\nlearner statements, not claims made by the teacher. Reject unsupported or psychological claims.\nCheck durable: true only for explicit lasting learner instructions or rejections. A request about\nthis attempt, one 'why?', a one-off 'repeat that', and a positive reaction stay non-durable evidence.\nIf durable is falsely asserted, reject. Ordinary repetition unrelated to pedagogy is not evidence.\ninstruction must faithfully describe a concrete teaching action and preserve contextual limits.\nsame_directive selects one existing directive_id only when practical teaching behavior AND scope\nmatch. Contradictory directives must NOT be merged. The application tracks recurrence and promotes\ninferred directives only after supporting evidence across independent dates. One request is not\nthe best method for this learner. new_directive creates a provisional open-ended group; evidence_only\nkeeps ambiguous reactions outside directives; reject discards an unsupported interpretation.\nNever output numeric confidence, learning styles, mental traits or diagnoses. Return reason and JSON.\n"
+      },
+      {
+        "role": "user",
+        "content": "{\"conversation\": [{\"number\": 1, \"speaker\": \"learner\", \"start\": 39, \"end\": 90, \"line_start\": 4, \"line_end\": 5, \"text\": \"Our rollout is tomorrow, and the team is nervous.\\n\\n\"}, {\"number\": 2, \"speaker\": \"teacher\", \"start\": 103, \"end\": 183, \"line_start\": 7, \"line_end\": 8, \"text\": \"To express your uncertainty, say: \\\"I'm not sure whether the fallback is safe.\\\"\\n\\n\"}, {\"number\": 3, \"speaker\": \"learner\", \"start\": 191, \"end\": 235, \"line_start\": 10, \"line_end\": 11, \"text\": \"I'm not sure whether the fallback is safe.\\n\\n\"}, {\"number\": 4, \"speaker\": \"teacher\", \"start\": 248, \"end\": 298, \"line_start\": 13, \"line_end\": 14, \"text\": \"What would make the rollout safe enough for you?\\n\\n\"}, {\"number\": 5, \"speaker\": \"learner\", \"start\": 306, \"end\": 392, \"line_start\": 16, \"line_end\": 17, \"text\": \"A dry run. We should repeat the deployment job twice to check that it is idempotent.\\n\\n\"}, {\"number\": 6, \"speaker\": \"teacher\", \"start\": 405, \"end\": 455, \"line_start\": 19, \"line_end\": 20, \"text\": \"And how long have you been part of this project?\\n\\n\"}, {\"number\": 7, \"speaker\": \"learner\", \"start\": 463, \"end\": 500, \"line_start\": 22, \"line_end\": 23, \"text\": \"I am on this project since January.\\n\\n\"}, {\"number\": 8, \"speaker\": \"teacher\", \"start\": 513, \"end\": 617, \"line_start\": 25, \"line_end\": 26, \"text\": \"For a situation that started earlier and continues now, try \\\"I've been on this project since January.\\\"\\n\\n\"}, {\"number\": 9, \"speaker\": \"learner\", \"start\": 625, \"end\": 667, \"line_start\": 28, \"line_end\": 29, \"text\": \"I've been on this project since January.\\n\\n\"}, {\"number\": 10, \"speaker\": \"teacher\", \"start\": 680, \"end\": 717, \"line_start\": 31, \"line_end\": 32, \"text\": \"What will you do after the rollout?\\n\\n\"}, {\"number\": 11, \"speaker\": \"learner\", \"start\": 725, \"end\": 868, \"line_start\": 34, \"line_end\": 35, \"text\": \"Go hiking, if the weather is good. My friends want to take a mountain route, but I'm not sure whether the trail will be open after the storm.\\n\\n\"}, {\"number\": 12, \"speaker\": \"teacher\", \"start\": 881, \"end\": 958, \"line_start\": 37, \"line_end\": 38, \"text\": \"Checking the park's notices sounds sensible. What equipment will you bring?\\n\\n\"}, {\"number\": 13, \"speaker\": \"learner\", \"start\": 966, \"end\": 1111, \"line_start\": 40, \"line_end\": 40, \"text\": \"A rain jacket and some food. Just give me the correct phrase for describing shoes with good grip right now; I need to message my friend quickly.\\n\"}], \"proposal\": {\"refs\": [{\"turn\": 13, \"quote\": \"Just give me the correct phrase for describing shoes with good grip right now; I need to message my friend quickly.\"}], \"kind\": \"situational_request\", \"interpretation\": \"The learner requests direct wording for an immediate practical message, not a durable teaching rule.\", \"instruction\": \"For a time-sensitive message, provide wording directly if requested.\", \"durable\": false}, \"groups\": [{\"id\": \"TD-3c2bedcb345a\", \"instruction\": \"Explain the reason for meaningful reformulations and highlight reusable structures.\", \"evidence\": [{\"id\": \"TE-3c2bedcb345a43ab\", \"session_id\": \"SES-f5c2461a1e7fa824\", \"data\": {\"refs\": [{\"turn\": 5, \"quote\": \"Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence.\"}], \"kind\": \"explicit_preference\", \"interpretation\": \"The learner explicitly requests lasting explanations of meaningful changes, with reusable structure rather than sentence memorization.\", \"instruction\": \"Explain the reason for meaningful reformulations and highlight reusable structures.\", \"durable\": true}, \"refs\": [{\"turn\": 5, \"speaker\": \"learner\", \"quote\": \"Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence.\", \"source_start\": 495, \"source_end\": 611, \"source_line_start\": 16, \"source_line_end\": 16}], \"directive_id\": \"TD-3c2bedcb345a\", \"decision\": {\"decision\": \"new_directive\", \"directive_id\": null, \"reason\": \"Always explain why is an explicit durable learner instruction. The proposed teaching behavior faithfully includes reusable structure without adding psychological claims.\"}, \"occurred_on\": \"2026-03-01\"}]}, {\"id\": \"TD-40c2e10b9776\", \"instruction\": \"Preserve flow by avoiding correction of every small detail.\", \"evidence\": [{\"id\": \"TE-40c2e10b9776a6bf\", \"session_id\": \"SES-f5c2461a1e7fa824\", \"data\": {\"refs\": [{\"turn\": 5, \"quote\": \"Also, don't correct every little thing; otherwise I lose the flow.\"}], \"kind\": \"explicit_preference\", \"interpretation\": \"The learner explicitly asks to avoid excessive correction because it interrupts conversational flow.\", \"instruction\": \"Preserve flow by avoiding correction of every small detail.\", \"durable\": true}, \"refs\": [{\"turn\": 5, \"speaker\": \"learner\", \"quote\": \"Also, don't correct every little thing; otherwise I lose the flow.\", \"source_start\": 612, \"source_end\": 678, \"source_line_start\": 16, \"source_line_end\": 16}], \"directive_id\": \"TD-40c2e10b9776\", \"decision\": {\"decision\": \"new_directive\", \"directive_id\": null, \"reason\": \"The learner explicitly asks to avoid pervasive small corrections. This concerns feedback selectivity and flow, distinct from explaining the reason for meaningful reformulations.\"}, \"occurred_on\": \"2026-03-01\"}]}, {\"id\": \"TD-bbd197f769b1\", \"instruction\": \"When a long production is difficult, break it into smaller meaningful chunks.\", \"evidence\": [{\"id\": \"TE-bbd197f769b1e4a2\", \"session_id\": \"SES-f5c2461a1e7fa824\", \"data\": {\"refs\": [{\"turn\": 9, \"quote\": \"Let's break this sentence into smaller meaningful pieces.\"}], \"kind\": \"situational_request\", \"interpretation\": \"Chunking was explicitly requested for this difficult sentence; one occurrence does not establish a permanent preference.\", \"instruction\": \"When a long production is difficult, break it into smaller meaningful chunks.\", \"durable\": false}, \"refs\": [{\"turn\": 9, \"speaker\": \"learner\", \"quote\": \"Let's break this sentence into smaller meaningful pieces.\", \"source_start\": 1016, \"source_end\": 1073, \"source_line_start\": 28, \"source_line_end\": 28}], \"directive_id\": \"TD-bbd197f769b1\", \"decision\": {\"decision\": \"new_directive\", \"directive_id\": null, \"reason\": \"The local chunking request supports a contextual provisional instruction for difficult long productions. It is not durable or proof of the best teaching method; recurrence must be counted in code.\"}, \"occurred_on\": \"2026-03-01\"}]}]}"
+      }
+    ],
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "TeachingDecision",
+        "strict": true,
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "decision": {
+              "enum": [
+                "same_directive",
+                "new_directive",
+                "evidence_only",
+                "reject"
+              ],
+              "title": "Decision",
+              "type": "string"
+            },
+            "directive_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Directive Id"
+            },
+            "reason": {
+              "minLength": 1,
+              "title": "Reason",
+              "type": "string"
+            }
+          },
+          "required": [
+            "decision",
+            "directive_id",
+            "reason"
+          ],
+          "title": "TeachingDecision",
+          "type": "object"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "observations": [
+    {
+      "turn": 3,
+      "source_excerpt": "I'm with a doubt about the rollout.",
+      "learner_quote": "I'm with a doubt about the rollout.",
+      "communicative_intent": "Express uncertainty about a plan",
+      "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+      "observed_behavior": "Uses an unnatural uncertainty formulation for a practical question",
+      "performance": "difficulty",
+      "production_mode": "spontaneous",
+      "support": "no_support",
+      "support_turns": [],
+      "suggested_forms": [
+        "I'm not sure about the rollout."
+      ],
+      "hypothesis": "This formulation is consistent with Portuguese transfer; mental translation is not observable.",
+      "evidence_type": "observed_use"
+    },
+    {
+      "turn": 7,
+      "source_excerpt": "I work on this migration since January.",
+      "learner_quote": "I work on this migration since January.",
+      "communicative_intent": "Describe how long a current activity has continued",
+      "learning_dimension": "Describing a situation that began earlier and continues now",
+      "observed_behavior": "Uses simple present with a starting point for continuing work",
+      "performance": "difficulty",
+      "production_mode": "spontaneous",
+      "support": "no_support",
+      "support_turns": [],
+      "suggested_forms": [
+        "I've been working on this migration since January."
+      ],
+      "hypothesis": null,
+      "evidence_type": "observed_use"
+    },
+    {
+      "turn": 11,
+      "source_excerpt": "I've been working on this migration since January.",
+      "learner_quote": "I've been working on this migration since January.",
+      "communicative_intent": "Describe how long a current activity has continued",
+      "learning_dimension": "Describing a situation that began earlier and continues now",
+      "observed_behavior": "Reconstructs the teacher model after chunk scaffolding",
+      "performance": "successful",
+      "production_mode": "controlled",
+      "support": "model_phrase_available",
+      "support_turns": [
+        8,
+        10
+      ],
+      "suggested_forms": [],
+      "hypothesis": null,
+      "evidence_type": "observed_use"
+    }
+  ],
+  "teaching": [
+    {
+      "refs": [
+        {
+          "turn": 5,
+          "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence."
+        }
+      ],
+      "kind": "explicit_preference",
+      "instruction": "Explain the reason for meaningful reformulations and highlight reusable structures.",
+      "interpretation": "The learner explicitly requests lasting explanations of meaningful changes, with reusable structure rather than sentence memorization.",
+      "durable": true
+    },
+    {
+      "refs": [
+        {
+          "turn": 5,
+          "quote": "Also, don't correct every little thing; otherwise I lose the flow."
+        }
+      ],
+      "kind": "explicit_preference",
+      "instruction": "Preserve flow by avoiding correction of every small detail.",
+      "interpretation": "The learner explicitly asks to avoid excessive correction because it interrupts conversational flow.",
+      "durable": true
+    },
+    {
+      "refs": [
+        {
+          "turn": 9,
+          "quote": "Let's break this sentence into smaller meaningful pieces."
+        }
+      ],
+      "kind": "situational_request",
+      "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+      "interpretation": "Chunking was explicitly requested for this difficult sentence; one occurrence does not establish a permanent preference.",
+      "durable": false
+    }
+  ],
+  "goals": [
+    {
+      "ref": {
+        "turn": 1,
+        "quote": "I want to discuss software architecture naturally in English, especially explaining long chains of reasoning."
+      },
+      "text": "Discuss software architecture naturally in English, especially explaining long chains of reasoning."
+    }
+  ]
+}

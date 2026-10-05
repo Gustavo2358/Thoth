@@ -1,192 +1,118 @@
-# Thoth — entrega e avaliação do learner model aberto
+# Thoth — continuidade pedagógica entre conversas independentes
 
-**Recomendação: iniciar um piloto pessoal supervisionado e exploratório.** O loop funciona e passou pelos critérios previamente congelados do experimento sintético. Isso autoriza experimentar com revisão humana de observations e memberships; não demonstra precisão em conversas reais, domínio linguístico ou ganho de aprendizado. Não recomendo uso sem revisão.
+**Recomendação: piloto pessoal supervisionado.** O vertical slice está implementado: conversa Markdown completa → análise com provenance → Learner Model, Teaching Model e Goals → `teacher-prompt.md` limpo e autocontido, com audit separado. A campanha prova atualização longitudinal dos artifacts e invariantes técnicos em conversas sintéticas. Não prova eficácia educacional, precisão populacional de extração nem obediência de um professor externo real.
 
-## Mudança entregue
+## Leitura e mudança de direção
 
-A implementação atual foi substituída diretamente. Foram removidos a taxonomia de oito constructions, aliases/canonicalização, agregação por skills fechadas, adapters de texto/offline orientados à taxonomia, testes e benchmarks anteriores, mecanismos de qualificação/versionamento anteriores, documentação anterior e bancos/artifacts locais derivados. O Git guarda o código anterior. Não há migration, caminhos alternativos de comportamento, feature flags ou compatibilidade entre gerações.
+Antes de modificar, li README, relatório de qualificação anterior, exemplos, módulos runtime, testes e harness. O HEAD de partida é `2d2560b`. A evidência anterior qualifica principalmente retrieval/agrupamento sobre IR sintética revisada; a ingestão anterior exercitava relatórios narrativos, não conversas completas. Não reutilizei seus percentuais como qualificação das capacidades novas.
 
-O runtime tem 12 módulos Python pequenos: contratos, prompts, LLM, provenance, embeddings, SQLite, pipeline, estado, artifacts, CLI e avaliação. Não há ontologia de inglês nem IDs globais de habilidade. Os exemplos linguísticos específicos ficam exclusivamente em fixtures e relatórios experimentais. ManualChatGPT e OpenAI são providers para o mesmo loop e contrato, não caminhos conceituais distintos.
+Foram removidos o contrato de relatório como input, os exemplos narrativos, o comando `next-lesson`, o renderer de brief, `next-lesson.md`, o harness de campanhas orientadas a reports/IR com freeze e calibração automática, os datasets/exchanges/artifacts dessa definição e o gate de freeze daquele experimento. O relatório anterior foi substituído por este. Git preserva a história. Não há versões de produto paralelas, caminhos legacy, adapters de compatibilidade, migrations, feature flags ou pipelines duplicados.
 
-## Modelo conceitual e vertical slice
+Foram reutilizados o modelo aberto de observações, revisão independente de propostas, representação pedagógica em inglês, embeddings spaCy locais, retrieval por exemplares, resolução semântica, roots provisórios, promoção longitudinal, estado com evidência positiva, SQLite, adapter manual com respostas imutáveis, adapter API interno existente, evidence packs e métricas pairwise. Os testes relevantes foram adaptados ao contrato de conversa. A aplicação continua um monólito modular local.
 
-Uma `Observation` contém a produção atribuída ao aluno, trecho da fonte e localização nesse relatório, intenção comunicativa, descrição livre da dimensão de produção e comportamento naquela ocorrência. Também registra modo de produção, performance, tipo de evidência, sugestões e uma hipótese opcional. O tipo de evidência distingue uso, correção, self-correction e oportunidade. O schema rejeita campos adicionais e exige que oportunidades/self-repairs tenham performance incerta.
+## Conversa Markdown e provenance
 
-O extractor escolhe evidências úteis para speaking, incluindo sucessos. Ignora ortografia, pontuação, STT, fillers e preferências estilísticas sem valor pedagógico. Um reviewer separado confronta cada proposta com o contexto. Uma rejeição fica no audit da sessão; incerteza permanece evidência isolada. Sugestões da LLM são explicitamente distintas de correções feitas na aula.
+A boundary aceita `## User`/`## Assistant` ou `## Learner`/`## Teacher`, case-insensitive. Título de nível um é opcional; o corpo pode conter texto, Markdown e blocos cercados. Headings dentro de cercas não criam turnos. Heading de nível dois desconhecido, papel ausente, conteúdo anterior sem atribuição, turno vazio e cerca não fechada falham. Não existiam exports reais identificáveis no repositório; o formato canônico mínimo foi documentado, sem inventar um importador universal.
 
-Os trechos são localizáveis no relatório, tolerando diferenças de whitespace. Não há reconstrução de áudio. A fala precisa aparecer no trecho atribuído ao aluno; uma alternativa pedagógica sugerida não precisa ter sido pronunciada. O relatório é uma fonte já interpretada, com seus próprios limites.
+O arquivo UTF-8 é lido como bytes e decodificado sem normalizar newlines. SQLite preserva a string original e SHA-256 dos bytes; os artifacts reconstituem o arquivo byte-for-byte. Fontes/turnos não podem ser alterados ou apagados por SQL. A data é declarada pelo operador, não inventada pelo modelo. Fontes iguais não podem receber outra data. A ingestão deve ser cronológica.
 
-O pipeline só faz commit quando todas as interações da sessão terminam. Pendência/JSON inválido não grava meia sessão. Reingestão do mesmo relatório/data é idempotente; a ordem deve ser cronológica. Sources e observations são imutáveis. Requests, respostas consumidas, hashes SHA-256, parsed JSON, candidatos e justificativas ficam auditáveis.
+Cada evidência aponta para sessão, turno e speaker, com trecho, offsets em code points e linhas no source. O matching ocorre dentro do turno declarado: repetição da frase em outro turno não torna o locator ambíguo. Duas ocorrências indistinguíveis dentro do mesmo turno falham. Suporte aponta para turnos anteriores, geralmente do professor; um self-echo pode apontar para o próprio aluno. A evidência nunca tenta reconstruir o áudio.
 
-Além do benchmark de agrupamento, executei a **CLI de ingestão completa sobre três relatórios**, começando com SQLite vazio. Foram 3 extrações, 6 revisões e 5 decisões semânticas realmente respondidas por este agente. Depois da primeira aula: 2 observations e nenhum Pattern. Depois da segunda: 2 patterns emergentes. Depois da terceira: 6 observations em 2 patterns, incluindo um sucesso espontâneo no mesmo grupo das dificuldades. O brief foi gerado a partir desses memberships.
+## Evidências e estados conceituais
 
-Arquivos desse exercício: [sessões de entrada](../examples/), [learner state](ingest-demo/artifacts/learner-state.md), [lesson brief](ingest-demo/artifacts/next-lesson.md) e [intercâmbios](ingest-demo/exchange/). São relatórios sintéticos e artifacts realmente gerados pelo software, não dados de um aluno real.
+O **Learner Model** descreve produção: intenção, dimensão aberta, comportamento, performance, evento e suporte. O extractor vê a conversa inteira; o reviewer verifica atribuição, valor pedagógico, validade da formulação e contexto de suporte. Alternativas válidas e preferências estilísticas não viram dificuldades. Transferência do português permanece hipótese. Não existe score de mastery/confidence ou diagnóstico mental.
 
-## Embeddings e armazenamento
+`no_support`, `contextual_prompt`, `partial_scaffold`, `explanation_before_attempt`, `model_phrase_available`, `immediate_repetition` e `unknown` são suficientes para esta fatia. Modelo disponível e repetição imediata exigem produção controlada. Espontaneidade exige ausência de suporte. Uma pergunta natural não é automaticamente scaffolding. Produção depois de uma explicação ou início de construção fornecido é guiada; não equivale a disponibilidade espontânea. A classificação ainda depende de interpretação semântica e revisão.
 
-Escolha: **spaCy `en_core_web_md` 3.8.0**, vetores locais de palavras de 300 dimensões, média de tokens conhecidos não pontuados, normalização L2. Hash dos pesos: `1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5`.
+O embedding mantém dimensão + intenção, sem resultado ou frase bruta. Os pesos spaCy `en_core_web_md` 3.8.0 continuam locais, em 300 dimensões, com hash verificado pelos testes. Retrieval retorna até três grupos pelos exemplares. A LLM decide membership considerando seus membros; cosine não decide verdade. Não houve novo vector infrastructure.
 
-A representação embutida é `learning_dimension + communicative_intent`. A dimensão é normalizada, sem nomes, datas, diagnóstico ou assunto incidental. O comportamento e a performance ficam fora do embedding para que dificuldade e sucesso da mesma capacidade possam se recuperar mutuamente. A frase bruta só é usada na ablação experimental. Há um único vetor por observation.
+O **Teaching Model** descreve pedidos, reações e rejeições. Teaching evidence guarda citações e sequência relevante; não equivale a diretiva persistente. Pelo menos uma referência do aluno é necessária. O reviewer precisa confirmar que ela sustenta a instrução, em vez de apenas aparecer perto de uma afirmação do professor.
 
-Inicialmente tentei um pequeno encoder contextual BGE. Os hosts dos pesos estavam inacessíveis nesta rede; o modelo oficial spaCy pôde ser instalado pelo GitHub e reproduzido em um ambiente limpo. Escolhi essa implementação simples e mensurável, em vez de introduzir um serviço remoto. **Ela não tem a expressividade contextual de um sentence transformer.** Os resultados abaixo mostram que a separação das similaridades é imperfeita.
+Preferência durável explícita entra como `explicit`. Pedido sobre uma tentativa pode formar grupo `tentative`, omitido do prompt. O mesmo comportamento sustentado em duas datas pode entrar como `inferred`, sempre apresentado como hipótese recorrente a verificar. Praise ambíguo fica `evidence_only`. Chunking foi pedido em duas datas e apoiado por reação contextual, sem afirmar que é o melhor método para essa pessoa. Não foram criados enums de métodos ou perfil psicológico. Deduplicação usa comparação semântica direta entre poucos grupos, sem embeddings adicionais.
 
-SQLite contém apenas `sessions`, `observations` e `patterns`. A observation guarda seu vetor como BLOB float32 little-endian, texto pedagógico, modelo dos pesos, root de membership e resolução. Não há necessidade de tabelas separadas para embedding ou evidence: o membership está na própria linha da observation. Patterns guardam label, descrição e contextos conversacionais sintetizados.
+**Goals** expressam propósito: texto explícito cadastrado pela CLI ou declarado pelo aluno e revisado separadamente. Não são inferidos de erros. Normalização textual deduplica objetivos idênticos. Há inspeção, adição e remoção, sem produto de gestão de metas. Goals manuais sobrevivem ao replay; goals extraídos novamente podem ser registrados outra vez, uma limitação documentada.
 
-A busca usa NumPy para comparar exatamente os poucos vetores. Não usei sqlite-vec porque, nessa escala, ele adicionaria uma dependência/extensão sem mudar a hipótese testada. Banco e intercâmbios são copiáveis; artifacts são regeneráveis. Embeddings são calculados sem rede após a instalação. Os pesos e dependências são fixados na instalação.
+## Como o estado muda o próximo prompt
 
-## Retrieval e resolução
+A política promove padrões em duas datas independentes. O default pratica dificuldades espontâneas em duas das três datas recentes de tentativa, com pelo menos duas datas de evidência. Uma data mais recente com sucesso sem suporte e sem dificuldade espontânea na mesma data muda a intenção para testar recuperação/transferência. Isso impede reensinar automaticamente após melhora observável, sem declarar domínio. `recovery_dates` permite exigir mais datas. Sucesso apenas guiado não ativa recuperação.
 
-A busca considera grupos provisórios e Patterns já promovidos. Ordena cada grupo por seu exemplar mais próximo e recupera até **3 grupos**. O resolver recebe as evidências de todos os membros desses candidatos, não só a frase mais próxima.
+Um padrão sem evidência recente — três datas posteriores com sessões ou 30 dias em relação à sessão mais nova — volta a observação. Não é ensinado para sempre. Todos esses critérios são heurísticas transparentes de ação pedagógica; os parâmetros anteriores não eram verdades estatísticas a preservar. A mudança foi validada pela propriedade de produto pedida, não por promessa de learning gain.
 
-As decisões são:
+O compiler é determinístico. Usa goals, diretivas sustentadas e estado; ordena patterns por atualidade, sobreposição textual com goals, recência, dificuldades recentes e datas de evidência. Não pede a uma LLM que invente prioridades ou redija novos fatos. No máximo dois itens por estratégia entram, dentro do budget. O objetivo explícito orienta a agenda mesmo quando o pattern mais forte é de outro assunto; prática alheia ao objetivo não deve ser forçada.
 
-- `same_pattern`: mesma capacidade de produção; associa a exatamente um candidato;
-- `related_but_different`: relação relevante, mas capacidade distinta; mantém um root separado;
-- `new_pattern`: nenhuma associação adequada; mantém observation/root separado;
-- `insufficient_evidence`: informação insuficiente; mantém evidência isolada.
+Prática orienta tentativa → resposta ao significado → feedback seletivo → explicação/scaffold útil → nova produção → variação posterior. Observação orienta uma oportunidade natural sem revelar target ou diagnosticar fraqueza. Recuperação orienta novo contexto sem lembrar wording antigo. Os dois últimos blocos omitem exemplos, sugestões e labels com formas-alvo; um guard mecânico também impede cópia literal de wording pela intenção. Esse guard não detecta toda paráfrase de priming; a qualidade da intenção continua dependente da análise.
 
-`new_pattern` não materializa automaticamente um Pattern. O código valida que o ID escolhido veio dos candidatos e que a associação aponta para evidência existente. Não há merge automático de dois grupos, nem uso de cosine como probability. Não há corte de distância no runtime: o experimento mostrou sobreposição real, e cortar candidatos poderia esconder a associação correta.
+Defaults gerais do produto são identificados separadamente: retrieval antes do modelo, feedback seguido de produção, repetição com variação, revisitação distribuída, diferença entre imitação e transferência, aceitação de alternativas e liberdade conversacional. Não foram persistidos como preferências pessoais inventadas. O prompt não é script de perguntas nem exige relatório no final.
 
-Uma comparação pode agrupar várias ocorrências no mesmo dia sem gerar Pattern. A política materializa um Pattern com evidência revisada em **pelo menos duas datas independentes** e uma associação semântica que forneça sua síntese. Esse requisito reduz repetição artificial concentrada em uma aula. Datas são uma aproximação conservadora de independência; não garantem independência estatística.
+O budget é aproximado: 8.000 caracteres por default, sem token counting sofisticado. Uma fração simples do espaço flexível vai para goals/diretivas; o restante fica disponível às estratégias. Estrutura recebe pequena reserva. Instruções e evidências são omitidas inteiras, nunca truncadas no meio. Prática pode contrastar uma dificuldade anterior com um sucesso recente, sempre indicando suporte. O audit lista seleções, omissões, políticas, estratégias, evidências, locators e SHA-256 do prompt. O Markdown não exibe IDs internos.
 
-## Learner state e próxima aula
+## Replay, idempotência e artifacts
 
-O estado deriva das observations e memberships, por Pattern. O sistema calcula contagens por modo/performance, sessões, datas, oportunidades, self-repairs e IDs de evidência. O modelo escreve a descrição linguística; não inventa números nem prioridade.
+Uma sessão só é publicada depois de extração, revisão, agrupamento, teaching analysis e goal review concluírem. Pendência/JSON inválido não deixa meia sessão. Reingestão da mesma fonte/data não duplica evidência.
 
-Política escolhida na calibração:
+`ingest fonte-existente.md --date DATA_ORIGINAL --reprocess` recompõe o histórico inteiro em um Store temporário vazio. Somente após replay completo substitui os modelos/análises derivados em transação; fontes/turnos ficam intactos. Refazer apenas uma sessão deixaria decisões futuras desatualizadas. Uma pendência preserva o estado atual. Um novo exchange permite corrigir interpretações sem sobrescrever respostas antigas. Não há plataforma de event sourcing.
 
-- **Coletar:** padrão emergente ou pouco observado; inclui oportunidades e sucesso apenas guiado.
-- **Praticar:** ao menos 3 datas de evidência e dificuldade espontânea em ao menos 2 das 3 últimas datas com tentativas espontâneas, salvo recuperação recente.
-- **Recuperação/força recente:** sucessos espontâneos nas 2 últimas datas com tentativas, sem dificuldade nessas duas datas. Dificuldades históricas continuam no pack.
+Os artifacts incluem prompt, audit, learner state, teaching model, goals, evidence packs e raw conversations. A cadeia auditável é seção/intenção → Goal/Directive/Pattern → evidência → conversa → turnos e suporte. A fonte é reconstruível; o banco é interno.
 
-O horizonte recente é por datas de tentativas, não por dias do calendário. Não calculamos mastery, probabilidade de acerto ou score de proficiência. A política temporal foi escolhida contra uma rubrica conservadora autoral; não foi validada por um estudo de eficácia educacional. Duas datas bastam para um padrão emergente, mas não para uma prioridade automática.
+## Campanha e fluxo demonstrado
 
-O brief seleciona até duas prioridades por bloco e usa contextos conversacionais sintetizados para elicitar o propósito naturalmente. Por exemplo, pedir ajuda a um colega desconhecido, discutir detalhes ainda incertos de um plano ou explicar uma rotina. Não prescreve a expressão que o aluno deve produzir. Formas sugeridas ficam nos evidence packs para feedback posterior. Patterns fora desse limite continuam visíveis no estado completo.
+A campanha usa a **CLI de produção**, adapter manual, SQLite vazio e embeddings reais. Gold só é lido após ingestão. Cada execução começa com estado vazio e produz snapshots no ponto correto do histórico. Não utiliza respostas futuras para compilar prompts anteriores.
 
-## Composição e limites do benchmark
+Foram criadas oito conversas, em três históricos: continuidade de arquitetura e produção; casos adversariais e scaffolding; dificuldade recorrente de collocation com um goal técnico independente. Cobrem dificuldades, positivos, self-repair, oportunidade, recast, correção, repetição imediata, self-echo, reutilização posterior espontânea, suporte parcial, explicação antes da tentativa, preferências explícitas, praise local, pedidos de chunking, rejeições de estratégias, perguntas “why?”, teacher-only claims, “repeat” comum/não pedagógico, hipóteses de português e alternativas válidas.
 
-| Conjunto | Sessões | Observations | Papel |
-|---|---:|---:|---|
-| Development | 4 | 25 | Exercitar implementação e corrigir classes de falha |
-| Calibration | 4 | 27 | Parafrasear descrições, escolher retrieval e política temporal |
-| Holdout | 4 | 31 | Verificar implementação congelada, com realizações e capacidades adicionais |
-| Review adversarial | — | 12 propostas | Medir utilidade do verifier contra erros de interpretação |
-| Ingestão completa adicional | 3 | 6 aceitas | Exercitar o loop real da CLI desde relatório e banco vazio |
+A mesma assistência autorou conversas, gold e respostas semânticas. As respostas foram fornecidas ao adapter como JSON original, com hashes e contratos reais, e consumidas pela CLI. Não são saídas de um extractor heurístico no runtime nem chamadas pagas. Mas **não são uma amostra independente de extração no produto ChatGPT**: a assistência conhece os casos. Replay mede integração e propriedades desses outputs, não generalização de uma LLM.
 
-O gold de grupos fica em arquivos separados. Nenhum grupo gold, label gold ou resposta esperada é enviado ao resolver. O benchmark principal usa **IR pedagógica sintética já revisada**, para separar problemas de retrieval/resolução dos problemas de extração. Portanto, seus resultados não qualificam a precisão do extractor sobre texto real. O exercício de ingestão completa mostra funcionamento, com cobertura pequena e sem métrica independente de extração.
+A sequência principal está em:
 
-Development/calibration incluem incerteza, collocations de reuniões e decisões, duração de estados, registro, oportunidades de arrependimento, sucesso controlado, acordo isolado, contexto ambíguo e alternativas regionais legítimas. Há também criação física de um modelo, com palavras parecidas mas dimensão distinta, e self-repair relacionado à incerteza.
+| Entrada | Próximo artifact | Mudança |
+|---|---|---|
+| [Sessão 1](../examples/session-01.md) | [Prompt 2](continuity/continuity/after-01/teacher-prompt.md) | Explicação de reformulações e correção seletiva persistem; dimensões emergentes são observadas; chunking de uma ocorrência fica fora. |
+| [Sessão 2](../examples/session-02.md) | [Prompt 3](continuity/continuity/after-02/teacher-prompt.md) | Repetição imediata fica controlada; incerteza usada depois sem ajuda pede transferência; duração ainda difícil pede prática. |
+| [Sessão 3](../examples/session-03.md) | [Prompt 4](continuity/continuity/after-03/teacher-prompt.md) | Duração melhora sem ajuda e também pede transferência; chunking ganha status inferido; rejeição de aulas de gramática vira diretiva explícita. |
 
-O holdout inclui collocations de ingestão de medicamentos, collocations de erros, preço alto com possível influência portuguesa, tom de pedidos a pares desconhecidos, duração de casamento/posse, sucesso espontâneo, alternativas válidas de arrependimento, evidência controlada, um grupo concentrado em um dia, self-repair, transporte físico com `take` e uso causal legítimo de `since`. Não se limita à gramática. As descrições foram parafraseadas para reduzir matching de frases idênticas; o grupo concentrado em um dia conserva descrições iguais e é deliberadamente um caso fácil de grouping, mas um teste de não promoção.
+O [audit do prompt 3](continuity/continuity/after-02/teacher-prompt.audit.json) mostra as tentativas controladas e a evidência espontânea separadas. O prompt 3 não contém wording-alvo de incerteza. O [histórico de collocation](continuity/practice/after-02/teacher-prompt.md) preserva o goal de design técnico e pede que a prática de outro assunto só apareça se combinar naturalmente com a agenda.
 
-**A mesma pessoa/modelo autorou os casos, o gold e as respostas semânticas.** Eu respondi os prompts efetivamente produzidos pelo adapter, sem regra automatizada que substituísse a decisão linguística e sem chamadas pagas. Não houve cegamento independente: o autor conhece os casos. Os outputs foram JSON estruturado produzido por este agente, não uma amostra independente de conversas copy/paste no produto ChatGPT. A robustez contra JSON inválido está nos testes, não numa estimativa de taxa de erro de formatação do modelo.
+## Resultados e análise de falhas
 
-A identidade declarada é `Codex / modelo desta conversa`; o nome exato do modelo não foi identificado automaticamente. O código não assegura que outro modelo disponível na assinatura ou na API tenha o mesmo comportamento.
+Resultados executáveis: [result.json](continuity/result.json). Revisão de qualidade separada: [prompt-review.json](continuity/prompt-review.json), usando a [rubrica](../benchmark/prompt-rubric.md). O manifest de conteúdo executado está em [qualification.json](continuity/qualification.json).
 
-## Development, correções e calibração
-
-No development, a decisão semântica agrupou os 25 pares positivos esperados, sem false merge/split. Houve correções gerais de implementação: serialização de IDs, replay de benchmark a partir de estado limpo para evitar retrieval de evidência futura, validação de candidatos/membership, conservação de hashes das respostas e contagens separadas de oportunidades/modos. O holdout foi aberto apenas depois dessas mudanças, da calibração e do teste de ingestão completo.
-
-Uma calibração inicial com descrições muito semelhantes pareceu fácil demais. Antes do freeze, substituí as descrições principais da calibration por paráfrases e acrescentei capacidades/realizações novas ao conjunto reservado. Na calibração final:
-
-| Retrieval sequencial por exemplares | @1 | @2 | @3 | Primeiro k com todos os 15 acertos |
-|---|---:|---:|---:|---:|
-| Representação pedagógica | 12/15 | 14/15 | 15/15 | 3 |
-| Frase bruta | 13/15 | 14/15 | 14/15 | 6 |
-
-A representação pedagógica não ganhou em @1 na calibration. Ela encontrou todos os casos com menor conjunto de candidatos. Isso sustenta um uso limitado de k=3, não uma superioridade universal do fingerprint.
-
-Distribuições de cosine na calibration:
-
-| Pares | N | Mínimo | Mediana | Máximo |
-|---|---:|---:|---:|---:|
-| Mesmo grupo | 25 | 0,853 | 0,933 | 1,000 |
-| Grupos diferentes | 300 | 0,696 | 0,835 | 0,918 |
-
-Há sobreposição: alguns pares diferentes são mais próximos que pares iguais. Distribuições completas e percentis estão em [calibration.json](calibration.json). Nenhum threshold de similarity foi instalado no runtime.
-
-Nos ensaios temporais, exigir 2 datas para promoção cobriu a recorrência gold sem promoção prematura; exigir 3 perdeu o grupo com duas datas. A prioridade em 3 datas teve 0 discrepâncias contra a rubrica temporal autoral; 2 e 4 datas tiveram 8 cada. Isso justifica a política inicial como heurística conservadora; o gold não é evidência de ganho real de aprendizagem.
-
-O resolver da calibration, com k=3, acertou 27/27 decisões do pipeline, das quais 25 foram chamadas efetivas à LLM. Selecionou corretamente o grupo de todos os 18 candidatos escolhidos para associação/relação. Houve 25 pares corretamente unidos, zero merges/splits incorretos e 6 Patterns.
-
-## Holdout congelado
-
-O registro [freeze.json](../benchmark/freeze.json) guarda hashes de todos os módulos runtime, política, dependências, datasets e resultado de calibração, mais pesos e identidade declarada da LLM. Os critérios fixados antes da abertura foram zero false merges, zero promoção prematura, zero recorrência perdida, retrieval >=95% e pairwise recall >=90%. **Não alterei o runtime, parâmetros, casos ou respostas depois de abrir o holdout.** Os gates primários passaram.
-
-| Medida primária | Resultado do holdout |
+| Medida no conjunto controlado | Resultado |
 |---|---:|
-| Recorrência correta entre candidatos recuperados | 17/17 = 100% |
-| Pares do mesmo grupo corretamente unidos | 28 |
-| False merge pairs | 0 |
-| False split pairs | 0 |
-| Pairwise precision / recall | 100% / 100% |
-| Patterns prematuros | 0 |
-| Recorrências gold não promovidas | 0 |
-| Decisões de resolução corretas, pipeline completo | 29/31 = 93,5% |
-| Patterns materializados | 7 |
+| Conversas / turnos / históricos | 8 / 81 / 3 |
+| Learner observations | 24: 6 dificuldades, 15 sucessos, 3 incertas |
+| Sucessos por modo | 4 espontâneos, 3 guiados, 8 controlados |
+| Teaching evidence / goals extraídos | 14 / 2 |
+| Interações internas consumidas e auditadas | 68: 8 extrações, 24 reviews, 20 resoluções, 14 teaching reviews, 2 goal reviews |
+| Retrieval de recorrência conhecida | 14/14 |
+| Pares corretos unidos / false merges / false splits | 27 / 0 / 0 |
+| Patterns prematuros / recorrências não promovidas | 0 / 0 |
+| Prompts gerados | 8, de 2.509 a 3.540 caracteres; limite 8.000 |
+| Preferências sem apoio no prompt | 0/14 itens emitidos = 0% neste conjunto |
+| Falhas de continuidade / non-priming detectadas pelo gold | 0 / 0 |
+| Testes executados | 45 passaram |
 
-Pairwise precision pergunta se o agrupamento contaminou habilidades diferentes: `pares corretos unidos / todos os pares unidos`. Pairwise recall pergunta se manifestações da mesma habilidade foram separadas: `pares corretos unidos / todos os pares gold iguais`. Singletons não ajudam a elevar recall. Promover ruído é medido separadamente, porque um singleton não cria pares. Recorrência perdida significa um grupo gold presente em várias datas sem Pattern promovido correspondente.
+Os 14 itens de diretiva incluem repetições ao longo de prompts e não são amostras independentes. No estado final são sete instruções únicas: seis explícitas e uma hipótese inferida. As afirmações do professor sobre preferência por explicações/lectures não viraram preferências; os pedidos locais de repetição, wording e um único “why?” não viraram regras duráveis. A taxa 0/14 é uma checagem contra gold autoral, **não uma estimativa de hallucination rate de um modelo em conversas reais**.
 
-Os pares não são observações estatisticamente independentes; percentuais perfeitos nesse conjunto pequeno não permitem inferir uma taxa de erro populacional próxima de zero.
+Nenhum goal ou diretiva sustentada foi omitido por budget nos oito prompts; evidência tentativamente local e learning intentions adicionais foram omitidas por suporte insuficiente/limite de seleção, com audit. A campanha não marcou leak literal nos probes protegidos. A revisão qualitativa marcou relevância do último histórico adversarial como parcial: há várias dimensões e nenhum goal, e a escolha de duas observações ainda é heurística.
 
-As duas discrepâncias foram:
+A suíte inclui parsing/rejeição, Unicode/CRLF/turnos repetidos, contracts de suporte, teacher-only preference, explícito versus inferido, goals, evidência positiva, prática versus recuperação, obsolescência, seleção por goals, budget, guard literal, imutabilidade, transações, replay pendente, idempotência, embeddings reais, JSON inválido, adapter HTTP simulado, fluxo completo pela CLI e replay do harness duas vezes. `pip check` e `git diff --check` também passaram. Os 68 hashes de respostas consumidas e seus parsed artifacts foram conferidos.
 
-- `I did a mistake...`: o gold previa relação com outro grupo de collocation; ele não estava entre os três candidatos, e o resolver escolheu `new_pattern`.
-- `Take that chair...`: o gold previa relação com o uso de `take` em medicamentos; esse grupo também não foi recuperado, e o resolver escolheu `new_pattern`.
+A revisão de prose avalia continuidade, fidelidade, relevância, estratégia, non-priming, liberdade conversacional, compactação e alinhamento a goals. É uma avaliação autoral dos documentos e fontes, não probabilidade objetiva nem observação de aulas reais.
 
-Ambos permaneceram separados; nenhum contaminou memberships. **Retrieval de relações foi apenas 1/3**, embora retrieval de mesmo padrão tenha sido 17/17. A política atual é boa neste conjunto para reencontrar recorrências; não é um detector confiável de toda relação linguística. Não aumentei k em resposta ao holdout.
+Duas classes de RED foram encontradas durante desenvolvimento. Uma expectativa de teste apontava a linha 15 quando a fonte CRLF indicava a linha 13; corrigir o oracle preservou o locator real. Mais substantivamente, um replay do harness reutilizava o banco final e sobrescrevia snapshots iniciais com estado futuro. Isso causou duas falhas aparentes de continuidade e uma diretiva indevida no prompt anterior à sua evidência. Corrigi o harness para staging vazio em toda execução e acrescentei regressão que roda a campanha duas vezes e compara todos os prompts, além de verificar o primeiro prefixo vazio de patterns. Nenhuma resposta semântica foi reparada para mascarar essa falha.
 
-O [diagnóstico posterior](holdout/diagnostics.json) separa esses casos sem alterar a métrica primária: houve 29 chamadas efetivas ao resolver. Nas 27 com o candidato gold necessário disponível, as 27 categorias foram corretas; os 18 candidatos selecionados para associação/relação pertenciam ao grupo gold correspondente. Isso é análise condicional posterior, não um substituto para os 29/31 primários. O campo `conditional` do resultado original condiciona só a disponibilidade de mesmo grupo; o diagnóstico explicita também a disponibilidade das relações.
+O stress de budget também revelou que reservar espaço só para headings podia deixar goals longos ocupar o espaço da estratégia. A alocação simples foi ajustada para reservar parcelas para goals, diretivas e learning intentions. O teste mantém goal e prática, omite itens completos e verifica tamanho máximo. Isso mede coerência sob pressão, não otimização perfeita de relevância.
 
-A ablação posterior da representação no holdout, sem mudar k congelado, encontrou 17/17 com fingerprint pedagógico e 16/17 com frase bruta em @3. Em @1: 17/17 contra 13/17. São exemplares sequenciais; o runtime completo usa um candidato por grupo. A ablação não constitui uma avaliação com clusters formados por dois runtimes alternativos.
+## Validação reutilizada e limites
 
-## Embedding sozinho: ablação que falhou
+A evidência anterior de embeddings explica a escolha de representação e top-k; ela não foi relabelada como um novo PASS. Os pesos e o código de pooling/fingerprint foram reutilizados. Os testes locais reais de vetores e semântica foram executados novamente. A antiga campanha IR congelada não foi reexecutada: seu contrato de report e outputs foram removidos; a campanha atual invalida a qualificação de ingestão e compiler e a substitui por conversas completas. Não houve ensaio externo pago, corpus real nem medição de ganho de aprendizagem.
 
-Antes do freeze, escolhi para a baseline experimental o menor corte acima de todos os pares diferentes da calibration: cosine `0,9183867573738099`. Ele não é probability. Foi uma classificação independente de pares, sem transitividade, para testar se similaridade seria suficiente.
+Limitações: corpus pequeno e autoral; teacher behavior real não observado; forte dependência de interpretação e revisão pela LLM; embeddings estáticos; suporte em reutilização tardia pode ser ambíguo; formatos reais de exportação precisam corresponder ao contrato documentado; custo de várias interações manuais; resolução incremental sem merge/split retrospectivo automático; diretivas duráveis contraditórias não são reconciliadas automaticamente; goals extraídos podem reaparecer ao reprocessar; ranking de alinhamento lexical simples; budget pode omitir item relevante, com razão disponível no audit; guard de non-priming só cobre cópia literal, não todas as pistas possíveis; heurísticas temporais não foram calibradas em aprendizagem real.
 
-| Baseline somente cosine | Pares corretos | False merges | False splits | Precision | Recall |
-|---|---:|---:|---:|---:|---:|
-| Calibration | 18 | 0 | 7 | 100% | 72,0% |
-| Holdout, mesmo corte | 19 | 7 | 9 | 73,1% | 67,9% |
+## Prontidão para piloto pessoal
 
-O corte perdeu recorrências na calibration e não generalizou a separação de grupos no holdout. No holdout, pares diferentes chegaram a 0,935. Esse resultado justifica manter a decisão semântica e não converter distância em membership. A baseline existe apenas na avaliação, sem caminho alternativo no produto.
+O produto pode começar um piloto pessoal supervisionado **agora**, com banco vazio e conversas reais no formato canônico. Antes de usar cada novo prompt nas primeiras sessões, revise o audit das observações e preferências, especialmente suporte, hipótese de português e pedidos locais. Cole somente o Markdown no professor externo; não acrescente as conversas antigas.
 
-## Verifier: ablação e decisão
+O piloto deve observar se o professor novo respeita as instruções sem reexplicação, segue goals, cria conversa interessante, não fornece respostas antes de tentativas úteis e deixa dificuldades antigas em recuperação quando surge produção espontânea. Exportar essas novas conversas fornece a próxima fonte. Registre falsas preferências, oportunidades perdidas, priming, prática irrelevante e evidência omitida. São medidas do loop real, ainda não demonstradas pela campanha sintética.
 
-No conjunto adversarial, 12 propostas foram deliberadamente classificadas como dificuldades antes da revisão. O gold tinha 4 dificuldades sustentadas, 6 rejeições e 2 casos incertos. O reviewer acertou 12/12, reduziu falsas dificuldades de 8 para 0 e não perdeu as 4 válidas.
-
-Os casos cobrem suspeita legítima com `doubts`, pedido natural de café, British English, detalhes de STT, alternativa apenas estilística, atribuição desconhecida, registro inadequado em contexto explícito e diagnóstico indevido de tradução mental/avoidance. [Respostas e resultado](review/review-ablation.json).
-
-Decisão: manter uma única revisão por proposta. Ela mostrou valor nessa tarefa controlada e protege precisamente as interpretações que preocupam o produto. O resultado tem forte viés autoral, casos pequenos e alguns fáceis. **Não prova melhora independente do reviewer em conversas reais**, que precisa ser medida no piloto. Não há reviewer adicional do resolver nem loops automáticos de reparo.
-
-## Ruído, positivos e packs inspecionados
-
-O erro isolado `I am agree...` não virou Pattern nem prioridade. Três ocorrências de `suggested me to...` no mesmo dia foram agrupadas provisoriamente, mas não promovidas. O caso ambíguo com `doubt`, alternativas regionais, transporte físico, self-repair e `since` causal não foram juntados a dificuldades apenas pela sobreposição de palavras.
-
-Inspecionei manualmente os packs de incerteza, collocations de erros, preço alto e arrependimento, incluindo justificativas, fontes, membership e status. Exemplos efetivamente gerados:
-
-1. [Natural expression of personal uncertainty](holdout/artifacts/patterns/PAT-978494d19600.md): **4 observations em 4 sessões; 2 dificuldades e 2 sucessos espontâneos; recovery**. A descrição diz que a formulação é compatível com construções portuguesas, sem afirmar acesso ao processo mental.
-2. [Conventional verb combinations for mistakes](holdout/artifacts/patterns/PAT-99a09f69e93e.md): **2 observations em 2 sessões; collect**. Não foi fundido ao grupo de medicamentos nem virou prioridade por apenas duas ocorrências.
-3. [Spontaneous expression of past regret](holdout/artifacts/patterns/PAT-b2ff8bdfd9de.md): **2 oportunidades incertas e 1 sucesso controlado em 3 sessões; collect**. Nenhuma falha espontânea inventada. As paráfrases legítimas não são chamadas de erros, e non-use não prova avoidance.
-4. [Natural emphasis of high prices](holdout/artifacts/patterns/PAT-d11cbbe7f8d5.md): **2 dificuldades e 1 sucesso espontâneo em 3 sessões; practice**. `Extremely expensive` conta como sucesso; não há exigência de idiom. A hipótese portuguesa é cautelosa. Uma única melhora ainda não satisfaz o critério de recuperação.
-5. [Pack do loop completo de ingestão](ingest-demo/artifacts/patterns/PAT-d11f3afe31ab.md): a evidência foi extraída e revisada através do adapter, com report source, sugestões e razões de agrupamento. Não depende da IR pronta do benchmark.
-
-O [brief do holdout](holdout/artifacts/next-lesson.md) prioriza medicamentos e pedidos a colegas; coleta collocations de erros e expressão de arrependimento; observa recuperação de duração e incerteza. Preços continuam em practice no estado completo, mas ficam fora das duas prioridades do brief. O relatório da sessão e o audit preservam as evidências omitidas do resumo curto.
-
-## Verificação e limites práticos
-
-- **21 testes passaram**, incluindo embeddings locais reais, schema aberto/estrito, provenance Unicode, transações, imutabilidade, import manual, preservação de JSON inválido, não promoção em uma data, evidência positiva e recovery, validação de IDs e isolamento do holdout antes do freeze.
-- Uma instalação separada, criada do zero com `scripts/setup.sh`, passou pelos mesmos 21 testes e por `pip check`.
-- O adapter OpenAI teve apenas teste de contrato com HTTP simulado; não foi qualificado contra API paga.
-- Respostas e hashes do holdout e da calibration foram auditados; nenhuma resposta foi reparada semanticamente para melhorar o score.
-- O banco pessoal não contém fixtures nem perfis: começa com 0 sessões/observations/patterns. Os bancos de experimento são locais e excluídos do Git; inputs, respostas e packs são entregues para reprodução.
-
-Limitações observadas: retrieval de relações incompleto; embedding estático com grande sobreposição entre habilidades; gold IR mais limpa que relatórios reais; casos pequenos, compartilhamento de autoria e pouca diversidade; ausência de qualificação quantitativa de extração; dependência de contexto/intenção fornecidos no relatório; consumo manual de várias interações por sessão; grupos anteriores só recebem novas evidências, sem mecanismo automático de merge/split retrospectivo; não há comando de edição de uma associação já persistida. Um erro confirmado exige reconstrução de um banco separado a partir das fontes.
-
-## Como iniciar o piloto
-
-Comece com banco vazio e seus relatórios reais. Nas primeiras sessões, revise cada observação e associação antes de aceitar o learner model como orientação. Use o brief para criar oportunidades naturais e registre também usos corretos. Observe se os patterns são específicos, recorrentes e acionáveis; se as aulas ficam mais úteis; e se o mesmo propósito passa a ser produzido naturalmente em contextos novos.
-
-Registre associações inadequadas, padrões fragmentados, falsas dificuldades e evidências que o extractor perdeu. São essas medidas em dados reais que decidirão os próximos ajustes. Um resultado ruim exige corrigir a classe de problema, avaliar em development/calibration e preparar novos casos reservados. Estes resultados não justificam tuning por caso nem promessa de benefício adaptativo já comprovado.
-
-**Conclusão operacional:** o Thoth entregue pode começar esse piloto supervisionado. A hipótese de descobrir um learner model aberto passou pelo teste técnico controlado, com separação conservadora e positive evidence. A precisão em conversas reais e o ganho de aprendizado continuam em aberto.
+A implementação está pronta para esse experimento; uso sem revisão e promessa de eficácia não estão qualificados.

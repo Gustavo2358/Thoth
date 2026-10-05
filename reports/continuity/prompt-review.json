@@ -1,0 +1,135 @@
+{
+  "method": "Same-assistant qualitative prose/audit review against source conversations; no external teacher session observed. Ratings are rubric judgments, not probabilities.",
+  "rubric": "benchmark/prompt-rubric.md",
+  "prompts": [
+    {
+      "prompt": "adversarial/after-01/teacher-prompt.md",
+      "sha256": "1d5943e7e5c9094f7f08e4f90f6719c64348791138d061ba7da09e56a8107d57",
+      "characters": 2814,
+      "ratings": {
+        "continuity": "meets",
+        "evidence_fidelity": "meets",
+        "relevance": "meets",
+        "pedagogical_strategy": "meets",
+        "non_priming": "meets",
+        "conversational_freedom": "meets",
+        "compactness": "meets",
+        "goal_alignment": "meets"
+      },
+      "reason": "Only durable learner requests enter. Teacher psychological claims, local praise and local repeat/phrase requests do not become persistent directives. Valid alternatives remain non-difficult evidence."
+    },
+    {
+      "prompt": "adversarial/after-02/teacher-prompt.md",
+      "sha256": "04f8c0842b59bb45a9a166416a494e55a2e67cbbb727de1c2772fdc1030910a9",
+      "characters": 2885,
+      "ratings": {
+        "continuity": "meets",
+        "evidence_fidelity": "meets",
+        "relevance": "meets",
+        "pedagogical_strategy": "meets",
+        "non_priming": "meets",
+        "conversational_freedom": "meets",
+        "compactness": "meets",
+        "goal_alignment": "meets"
+      },
+      "reason": "Only durable learner requests enter. Teacher psychological claims, local praise and local repeat/phrase requests do not become persistent directives. Valid alternatives remain non-difficult evidence."
+    },
+    {
+      "prompt": "adversarial/after-03/teacher-prompt.md",
+      "sha256": "a3a3d911380c82b3b778d84f68be2165b401ba5cc0623a6bf96172aef41beb04",
+      "characters": 3051,
+      "ratings": {
+        "continuity": "meets",
+        "evidence_fidelity": "meets",
+        "relevance": "partial",
+        "pedagogical_strategy": "meets",
+        "non_priming": "meets",
+        "conversational_freedom": "meets",
+        "compactness": "meets",
+        "goal_alignment": "meets"
+      },
+      "reason": "Partial/explanation support and an unused opportunity do not become spontaneous mastery. Personal requests are source-backed. With no goal and several unrelated dimensions, the two observation choices remain a coarse priority heuristic."
+    },
+    {
+      "prompt": "continuity/after-01/teacher-prompt.md",
+      "sha256": "e844a33c210327a80f2e3503bdb39e912e74d164e6afb95fe59f5ec771cf5d07",
+      "characters": 2932,
+      "ratings": {
+        "continuity": "meets",
+        "evidence_fidelity": "meets",
+        "relevance": "meets",
+        "pedagogical_strategy": "meets",
+        "non_priming": "meets",
+        "conversational_freedom": "meets",
+        "compactness": "meets",
+        "goal_alignment": "meets"
+      },
+      "reason": "Two durable requests persist; singleton capabilities are observed without model wording. One local chunking request is omitted."
+    },
+    {
+      "prompt": "continuity/after-02/teacher-prompt.md",
+      "sha256": "f6293a3374b685a605ccb7f57f905930a31c884a95617311f7aaaf8d8945060e",
+      "characters": 3540,
+      "ratings": {
+        "continuity": "meets",
+        "evidence_fidelity": "meets",
+        "relevance": "meets",
+        "pedagogical_strategy": "meets",
+        "non_priming": "meets",
+        "conversational_freedom": "meets",
+        "compactness": "meets",
+        "goal_alignment": "meets"
+      },
+      "reason": "Current duration difficulties receive practice with supported success labelled. Later unassisted uncertainty receives transfer without target wording; software goals remain explicit."
+    },
+    {
+      "prompt": "continuity/after-03/teacher-prompt.md",
+      "sha256": "35294ba1d9c2b26527c5109d5a8ce2205d8f6c442205b6480c7be9c5030857f7",
+      "characters": 3375,
+      "ratings": {
+        "continuity": "meets",
+        "evidence_fidelity": "meets",
+        "relevance": "meets",
+        "pedagogical_strategy": "meets",
+        "non_priming": "meets",
+        "conversational_freedom": "meets",
+        "compactness": "meets",
+        "goal_alignment": "meets"
+      },
+      "reason": "Both capabilities move to transfer. Chunking is labelled a recurring hypothesis; learner rejection of grammar lectures persists, while the teacher false claim is excluded."
+    },
+    {
+      "prompt": "practice/after-01/teacher-prompt.md",
+      "sha256": "ee71dee5fc1b476edf0ddaa050775edc880de600019eba163fb6421781322a9f",
+      "characters": 2509,
+      "ratings": {
+        "continuity": "meets",
+        "evidence_fidelity": "meets",
+        "relevance": "meets",
+        "pedagogical_strategy": "meets",
+        "non_priming": "meets",
+        "conversational_freedom": "meets",
+        "compactness": "meets",
+        "goal_alignment": "meets"
+      },
+      "reason": "The first same-day medication attempts remain a provisional observation. A positive reaction to one explanation is omitted from personal teaching instructions."
+    },
+    {
+      "prompt": "practice/after-02/teacher-prompt.md",
+      "sha256": "a183de7166571fe7baba0f4b4e85a7d16bd41bfe77c5b5f38a9cf2e97225cbec",
+      "characters": 3002,
+      "ratings": {
+        "continuity": "meets",
+        "evidence_fidelity": "meets",
+        "relevance": "meets",
+        "pedagogical_strategy": "meets",
+        "non_priming": "meets",
+        "conversational_freedom": "meets",
+        "compactness": "meets",
+        "goal_alignment": "meets"
+      },
+      "reason": "Practice follows repeated unassisted difficulty, not supported successes. Technical goals lead the agenda; the unrelated medication purpose explicitly must not be forced."
+    }
+  ],
+  "remaining_uncertainty": "Actual fresh-teacher adherence, conversational quality and learning benefit require a personal pilot."
+}

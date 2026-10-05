@@ -1,0 +1,270 @@
+{
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / model of this conversation (operator declaration)",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "embedding": {
+    "model": "spaCy/en_core_web_md",
+    "package": "3.8.0",
+    "weights_sha256": "1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5",
+    "dimensions": 300,
+    "pooling": "mean of nonzero token vectors; L2 normalized"
+  },
+  "interactions": [
+    {
+      "stage": "extract",
+      "request": "d9c9fa12cfa14c60e99b26c94028c524658497ed2e4a69289d23741ec7272d7b",
+      "response_hash": "7092958a047ccbd9cc5948f3174ea6a0c11a74920a9d56a14db56206937f115d",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "4d3f496a6cd26bfc5959fb1b2e0573edb5506d4f5922608de1bd04bb3d7279d8",
+      "response_hash": "e8dc7b7471f7bcddb97ed78934b5a672c71d67e4355cf3a75b6fb4031090735c",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "6557e384e78ff62e56f114624961ad3597db8ba8830960090df00af69da6fe8e",
+      "response_hash": "87695cf4a546a68a38fb391d00bca144202bbf7f1b4de21fad588efedceafa62",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "a7aa51bd5107a8aa216e89f3c9fe5bd04c476f3f8d9d62364d5bf788579691c8",
+      "response_hash": "a84ee6469636bb841dd91133b7c1b6c06480f8d07851bd4a31630110a2528c24",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "407178ff563dbc21dde273f150d5309310ee952580d6bb3d8484b810dddcd568",
+      "response_hash": "419dc1445f273fc96284a71ae00de8beca532754d54c7285e16b5d70d9db1b5e",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "goal-review",
+      "request": "244bbca6389ac63130a76f379c4174f781abfa12ca90aeb8b90ed5d5d2de42f2",
+      "response_hash": "f2aedbc5cfc773a4c403dab68d02d919905dd383261293e68e74310c930e24a7",
+      "model": "Codex / model of this conversation (operator declaration)"
+    }
+  ],
+  "extraction": {
+    "observations": [
+      {
+        "turn": 3,
+        "source_excerpt": "Yesterday I ate my medicine later than usual because I was at work.",
+        "learner_quote": "Yesterday I ate my medicine later than usual because I was at work.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Describe a medication routine",
+        "learning_dimension": "Using conventional verb combinations to describe taking medication",
+        "observed_behavior": "Uses ate for medication in an unmodelled account of yesterday",
+        "suggested_forms": [
+          "Yesterday I took my medicine later than usual because I was at work."
+        ],
+        "hypothesis": null,
+        "support": "no_support",
+        "support_turns": []
+      },
+      {
+        "turn": 5,
+        "source_excerpt": "I took my medicine late, after dinner.",
+        "learner_quote": "I took my medicine late, after dinner.",
+        "production_mode": "controlled",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Describe a medication routine",
+        "learning_dimension": "Using conventional verb combinations to describe taking medication",
+        "observed_behavior": "Applies the supplied verb combination in a revised sentence",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "support": "model_phrase_available",
+        "support_turns": [
+          4
+        ]
+      }
+    ],
+    "teaching": [],
+    "goals": [
+      {
+        "ref": {
+          "turn": 1,
+          "quote": "I want to explain technical design trade-offs naturally, not just talk about medication."
+        },
+        "text": "Explain technical design trade-offs naturally in spoken English."
+      }
+    ]
+  },
+  "rejected": [],
+  "grouping": [
+    {
+      "observation_id": "OBS-9abd54af927c2b46",
+      "candidates": [
+        {
+          "candidate_id": "OBS-97e30ca34b46191f",
+          "root_id": "OBS-97e30ca34b46191f",
+          "similarity": 1.0,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-97e30ca34b46191f",
+              "date": "2026-05-01",
+              "turn": 1,
+              "source_excerpt": "I eat this medicine after breakfast every day.",
+              "learner_quote": "I eat this medicine after breakfast every day.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe a medication routine",
+              "learning_dimension": "Using conventional verb combinations to describe taking medication",
+              "observed_behavior": "Uses eat instead of conventional take for medicine",
+              "suggested_forms": [
+                "I take this medicine after breakfast every day."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 4,
+              "source_line_end": 4
+            },
+            {
+              "id": "OBS-1010158e86e2432e",
+              "date": "2026-05-01",
+              "turn": 3,
+              "source_excerpt": "I take this medicine after breakfast every day.",
+              "learner_quote": "I take this medicine after breakfast every day.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe a medication routine",
+              "learning_dimension": "Using conventional verb combinations to describe taking medication",
+              "observed_behavior": "Repeats the corrected verb combination after an explanation and teacher model",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "model_phrase_available",
+              "support_turns": [
+                2
+              ],
+              "source_line_start": 10,
+              "source_line_end": 10
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "same_pattern",
+        "candidate_id": "OBS-97e30ca34b46191f",
+        "reason": "The unassisted past account uses ate where the earlier routine used eat, both for medication. It is the same conventional verb capability across dates, with earlier supported success distinct.",
+        "pattern_label": "Conventional medication verb combinations",
+        "pattern_description": "Repeated unassisted use of eat for medication contrasts with correct take after teacher support; spontaneous availability still warrants practice.",
+        "conversation_contexts": [
+          "Discuss a change in a health routine"
+        ]
+      }
+    },
+    {
+      "observation_id": "OBS-ebe402d1ef8aa8e3",
+      "candidates": [
+        {
+          "candidate_id": "OBS-97e30ca34b46191f",
+          "root_id": "OBS-97e30ca34b46191f",
+          "similarity": 1.0,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-97e30ca34b46191f",
+              "date": "2026-05-01",
+              "turn": 1,
+              "source_excerpt": "I eat this medicine after breakfast every day.",
+              "learner_quote": "I eat this medicine after breakfast every day.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe a medication routine",
+              "learning_dimension": "Using conventional verb combinations to describe taking medication",
+              "observed_behavior": "Uses eat instead of conventional take for medicine",
+              "suggested_forms": [
+                "I take this medicine after breakfast every day."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 4,
+              "source_line_end": 4
+            },
+            {
+              "id": "OBS-1010158e86e2432e",
+              "date": "2026-05-01",
+              "turn": 3,
+              "source_excerpt": "I take this medicine after breakfast every day.",
+              "learner_quote": "I take this medicine after breakfast every day.",
+              "production_mode": "controlled",
+              "performance": "successful",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe a medication routine",
+              "learning_dimension": "Using conventional verb combinations to describe taking medication",
+              "observed_behavior": "Repeats the corrected verb combination after an explanation and teacher model",
+              "suggested_forms": [],
+              "hypothesis": null,
+              "support": "model_phrase_available",
+              "support_turns": [
+                2
+              ],
+              "source_line_start": 10,
+              "source_line_end": 10
+            },
+            {
+              "id": "OBS-9abd54af927c2b46",
+              "date": "2026-05-08",
+              "turn": 3,
+              "source_excerpt": "Yesterday I ate my medicine later than usual because I was at work.",
+              "learner_quote": "Yesterday I ate my medicine later than usual because I was at work.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe a medication routine",
+              "learning_dimension": "Using conventional verb combinations to describe taking medication",
+              "observed_behavior": "Uses ate for medication in an unmodelled account of yesterday",
+              "suggested_forms": [
+                "Yesterday I took my medicine later than usual because I was at work."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 10,
+              "source_line_end": 10
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "same_pattern",
+        "candidate_id": "OBS-97e30ca34b46191f",
+        "reason": "The successful application uses the verb supplied immediately in turn 4. It matches the medication capability while remaining model-supported, so it does not erase recent spontaneous difficulties.",
+        "pattern_label": "Conventional medication verb combinations",
+        "pattern_description": "Unassisted attempts use eat for medication; successful take follows a model. The next teacher can selectively practice the conventional combination.",
+        "conversation_contexts": [
+          "Discuss changes to a daily health routine"
+        ]
+      }
+    }
+  ],
+  "teaching": [],
+  "teaching_rejected": [],
+  "goals": [
+    {
+      "text": "Explain technical design trade-offs naturally in spoken English.",
+      "ref": {
+        "turn": 1,
+        "speaker": "learner",
+        "quote": "I want to explain technical design trade-offs naturally, not just talk about medication.",
+        "source_start": 64,
+        "source_end": 152,
+        "source_line_start": 4,
+        "source_line_end": 4
+      }
+    }
+  ]
+}

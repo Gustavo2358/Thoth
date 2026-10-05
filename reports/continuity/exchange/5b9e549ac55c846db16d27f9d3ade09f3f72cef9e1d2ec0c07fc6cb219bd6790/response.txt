@@ -1,0 +1,5 @@
+{
+  "decision": "same_directive",
+  "directive_id": "TD-bbd197f769b1",
+  "reason": "The teacher separated read and write paths; the learner explicitly reports that this helped the current explanation. This supports the existing contextual chunking hypothesis, but remains a reaction rather than a new durable best-method claim."
+}

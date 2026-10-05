@@ -1,0 +1,1 @@
+{"decision": "keep", "reason": "Learner means practical uncertainty, not distrust. The formulation is unnatural in that context; transfer is only a hypothesis. No target wording preceded this attempt."}

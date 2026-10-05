@@ -1,0 +1,5 @@
+{
+  "decision": "evidence_only",
+  "directive_id": null,
+  "reason": "The learner limits praise to one example and explicitly denies always wanting explanations. Persist the event without a lasting directive."
+}

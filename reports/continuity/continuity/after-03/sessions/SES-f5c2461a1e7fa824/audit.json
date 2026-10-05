@@ -1,0 +1,428 @@
+{
+  "model": {
+    "provider": "manual-chatgpt",
+    "model": "Codex / model of this conversation (operator declaration)",
+    "identity": "operator declaration, not automatically verified"
+  },
+  "embedding": {
+    "model": "spaCy/en_core_web_md",
+    "package": "3.8.0",
+    "weights_sha256": "1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5",
+    "dimensions": 300,
+    "pooling": "mean of nonzero token vectors; L2 normalized"
+  },
+  "interactions": [
+    {
+      "stage": "extract",
+      "request": "73411164436b8ad396702152de83a64a1f402c75c6bb021f2733c4d8c45a0e8e",
+      "response_hash": "c88a258642b65d9f733f89f679873dbee87809c893b4009bb0c4c660a99f5f5d",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "5d7633dc45a2500f3114bc4e93611f5c40515374d735693d930f4269f195b449",
+      "response_hash": "027ded6b67fb73542046fef7fb5c58c647f7afa2a6648db4617b745fb0480ffc",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "cc956b403a08bb093ceffa6e513d57aa983007d28cb151defca145cd68f901f9",
+      "response_hash": "44584e1404ef37cd1eefcbd48c886fce45a29e33eaf29cb4271ffdb296973c56",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "review",
+      "request": "42aa6a1a7dedac335c2c4a16823358d70e84a6315deec242f47ca028bc397052",
+      "response_hash": "3c6dfe4f77a703f3320baa539a221e897bd53e683d490b0ec7e92348ab1c9aea",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "8daf91fab66e940dbb1888a989d242a39936550dac74e6cce0bd32758a26f213",
+      "response_hash": "6b0cad1253cd4c4260a8a40e81a451e4e34869bac241eb5a65a7cde4df13dfc3",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "resolve",
+      "request": "4afa06b420d94ebeb4cf5071993e5680b579cd060b2842e6070d88633ad8628e",
+      "response_hash": "df171c8358cf90a0bd64b4e4a0c5a1a08b6049fe5f4a3c1e3f4c35c9eb5dba1f",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "teaching",
+      "request": "a900959fc4273c6d8ffaeb8426d4b11839e8f4f6ec4b26518bc9fff2f261cd8e",
+      "response_hash": "246302031a86c3ec6640868e8485b1886d4e45b5b82a2ccaab6ba86ee72de955",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "teaching",
+      "request": "1d8c39fad6cdc53a62196fab78f66c52fd05a44ee2b0a066dde6cb7af61b64e0",
+      "response_hash": "ff1696d5fa665eb9cd2e62645fd9f2dfe6ba25d8fdf22c8fe1b79e777eb61c5f",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "teaching",
+      "request": "b7902e943c0b4c83c96ebe79740e148fb656f61470ecc2ba6134a8d2d43444f5",
+      "response_hash": "95a47365a7b92b7ce27b077f7310694f98bd3b92921f079a74ab85b0f9d26b1a",
+      "model": "Codex / model of this conversation (operator declaration)"
+    },
+    {
+      "stage": "goal-review",
+      "request": "723a680c343eed85f61a36589cc8317ae361cfb75bec3fb8781e454b18cfa5ea",
+      "response_hash": "9c106194c437492458f37aa8d3917d18d6cc7bd155ca07dcb9dd73c5893dac81",
+      "model": "Codex / model of this conversation (operator declaration)"
+    }
+  ],
+  "extraction": {
+    "observations": [
+      {
+        "turn": 3,
+        "source_excerpt": "I'm with a doubt about the rollout.",
+        "learner_quote": "I'm with a doubt about the rollout.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Express uncertainty about a plan",
+        "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+        "observed_behavior": "Uses an unnatural uncertainty formulation for a practical question",
+        "suggested_forms": [
+          "I'm not sure about the rollout."
+        ],
+        "hypothesis": "This formulation is consistent with Portuguese transfer; mental translation is not observable.",
+        "support": "no_support",
+        "support_turns": []
+      },
+      {
+        "turn": 7,
+        "source_excerpt": "I work on this migration since January.",
+        "learner_quote": "I work on this migration since January.",
+        "production_mode": "spontaneous",
+        "performance": "difficulty",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Describe how long a current activity has continued",
+        "learning_dimension": "Describing a situation that began earlier and continues now",
+        "observed_behavior": "Uses simple present with a starting point for continuing work",
+        "suggested_forms": [
+          "I've been working on this migration since January."
+        ],
+        "hypothesis": null,
+        "support": "no_support",
+        "support_turns": []
+      },
+      {
+        "turn": 11,
+        "source_excerpt": "I've been working on this migration since January.",
+        "learner_quote": "I've been working on this migration since January.",
+        "production_mode": "controlled",
+        "performance": "successful",
+        "evidence_type": "observed_use",
+        "communicative_intent": "Describe how long a current activity has continued",
+        "learning_dimension": "Describing a situation that began earlier and continues now",
+        "observed_behavior": "Reconstructs the teacher model after chunk scaffolding",
+        "suggested_forms": [],
+        "hypothesis": null,
+        "support": "model_phrase_available",
+        "support_turns": [
+          8,
+          10
+        ]
+      }
+    ],
+    "teaching": [
+      {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence."
+          }
+        ],
+        "kind": "explicit_preference",
+        "interpretation": "The learner explicitly requests lasting explanations of meaningful changes, with reusable structure rather than sentence memorization.",
+        "instruction": "Explain the reason for meaningful reformulations and highlight reusable structures.",
+        "durable": true
+      },
+      {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "Also, don't correct every little thing; otherwise I lose the flow."
+          }
+        ],
+        "kind": "explicit_preference",
+        "interpretation": "The learner explicitly asks to avoid excessive correction because it interrupts conversational flow.",
+        "instruction": "Preserve flow by avoiding correction of every small detail.",
+        "durable": true
+      },
+      {
+        "refs": [
+          {
+            "turn": 9,
+            "quote": "Let's break this sentence into smaller meaningful pieces."
+          }
+        ],
+        "kind": "situational_request",
+        "interpretation": "Chunking was explicitly requested for this difficult sentence; one occurrence does not establish a permanent preference.",
+        "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+        "durable": false
+      }
+    ],
+    "goals": [
+      {
+        "ref": {
+          "turn": 1,
+          "quote": "I want to discuss software architecture naturally in English, especially explaining long chains of reasoning."
+        },
+        "text": "Discuss software architecture naturally in English, especially explaining long chains of reasoning."
+      }
+    ]
+  },
+  "rejected": [],
+  "grouping": [
+    {
+      "observation_id": "OBS-46e9b09e631191e5",
+      "candidates": [],
+      "decision": {
+        "decision": "new_pattern",
+        "candidate_id": null,
+        "reason": "No earlier supported evidence to compare; retain an isolated observation.",
+        "pattern_label": null,
+        "pattern_description": null,
+        "conversation_contexts": []
+      }
+    },
+    {
+      "observation_id": "OBS-69fdacc230c0eb3f",
+      "candidates": [
+        {
+          "candidate_id": "OBS-46e9b09e631191e5",
+          "root_id": "OBS-46e9b09e631191e5",
+          "similarity": 0.839293,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-46e9b09e631191e5",
+              "date": "2026-03-01",
+              "turn": 3,
+              "source_excerpt": "I'm with a doubt about the rollout.",
+              "learner_quote": "I'm with a doubt about the rollout.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express uncertainty about a plan",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Uses an unnatural uncertainty formulation for a practical question",
+              "suggested_forms": [
+                "I'm not sure about the rollout."
+              ],
+              "hypothesis": "This formulation is consistent with Portuguese transfer; mental translation is not observable.",
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 10,
+              "source_line_end": 10
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "new_pattern",
+        "candidate_id": null,
+        "reason": "Describing duration of ongoing work is different from expressing practical uncertainty. Shared project vocabulary does not establish the same capability.",
+        "pattern_label": null,
+        "pattern_description": null,
+        "conversation_contexts": []
+      }
+    },
+    {
+      "observation_id": "OBS-3ff1ae8686a4e639",
+      "candidates": [
+        {
+          "candidate_id": "OBS-69fdacc230c0eb3f",
+          "root_id": "OBS-69fdacc230c0eb3f",
+          "similarity": 1.0,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-69fdacc230c0eb3f",
+              "date": "2026-03-01",
+              "turn": 7,
+              "source_excerpt": "I work on this migration since January.",
+              "learner_quote": "I work on this migration since January.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Describe how long a current activity has continued",
+              "learning_dimension": "Describing a situation that began earlier and continues now",
+              "observed_behavior": "Uses simple present with a starting point for continuing work",
+              "suggested_forms": [
+                "I've been working on this migration since January."
+              ],
+              "hypothesis": null,
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 22,
+              "source_line_end": 22
+            }
+          ]
+        },
+        {
+          "candidate_id": "OBS-46e9b09e631191e5",
+          "root_id": "OBS-46e9b09e631191e5",
+          "similarity": 0.839293,
+          "pattern": null,
+          "evidence": [
+            {
+              "id": "OBS-46e9b09e631191e5",
+              "date": "2026-03-01",
+              "turn": 3,
+              "source_excerpt": "I'm with a doubt about the rollout.",
+              "learner_quote": "I'm with a doubt about the rollout.",
+              "production_mode": "spontaneous",
+              "performance": "difficulty",
+              "evidence_type": "observed_use",
+              "communicative_intent": "Express uncertainty about a plan",
+              "learning_dimension": "Expressing personal uncertainty naturally in conversation",
+              "observed_behavior": "Uses an unnatural uncertainty formulation for a practical question",
+              "suggested_forms": [
+                "I'm not sure about the rollout."
+              ],
+              "hypothesis": "This formulation is consistent with Portuguese transfer; mental translation is not observable.",
+              "support": "no_support",
+              "support_turns": [],
+              "source_line_start": 10,
+              "source_line_end": 10
+            }
+          ]
+        }
+      ],
+      "decision": {
+        "decision": "same_pattern",
+        "candidate_id": "OBS-69fdacc230c0eb3f",
+        "reason": "Both concern duration from a starting point through the present. This successful reconstruction follows a complete teacher model and chunks; membership does not make it spontaneous.",
+        "pattern_label": "Describing continuing situations from an earlier starting point",
+        "pattern_description": "The learner has difficulty expressing ongoing situations with a past starting point; reconstruction after a model succeeds. Mental retrieval causes are unobserved.",
+        "conversation_contexts": [
+          "Discuss the history of an ongoing activity or relationship"
+        ]
+      }
+    }
+  ],
+  "teaching": [
+    {
+      "id": "TE-3c2bedcb345a43ab",
+      "session_id": "SES-f5c2461a1e7fa824",
+      "occurred_on": "2026-03-01",
+      "data": {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence."
+          }
+        ],
+        "kind": "explicit_preference",
+        "interpretation": "The learner explicitly requests lasting explanations of meaningful changes, with reusable structure rather than sentence memorization.",
+        "instruction": "Explain the reason for meaningful reformulations and highlight reusable structures.",
+        "durable": true
+      },
+      "refs": [
+        {
+          "turn": 5,
+          "speaker": "learner",
+          "quote": "Please always explain why you changed my wording. I want to understand reusable structures, not memorize a sentence.",
+          "source_start": 495,
+          "source_end": 611,
+          "source_line_start": 16,
+          "source_line_end": 16
+        }
+      ],
+      "directive_id": "TD-3c2bedcb345a",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "Always explain why is an explicit durable learner instruction. The proposed teaching behavior faithfully includes reusable structure without adding psychological claims."
+      }
+    },
+    {
+      "id": "TE-40c2e10b9776a6bf",
+      "session_id": "SES-f5c2461a1e7fa824",
+      "occurred_on": "2026-03-01",
+      "data": {
+        "refs": [
+          {
+            "turn": 5,
+            "quote": "Also, don't correct every little thing; otherwise I lose the flow."
+          }
+        ],
+        "kind": "explicit_preference",
+        "interpretation": "The learner explicitly asks to avoid excessive correction because it interrupts conversational flow.",
+        "instruction": "Preserve flow by avoiding correction of every small detail.",
+        "durable": true
+      },
+      "refs": [
+        {
+          "turn": 5,
+          "speaker": "learner",
+          "quote": "Also, don't correct every little thing; otherwise I lose the flow.",
+          "source_start": 612,
+          "source_end": 678,
+          "source_line_start": 16,
+          "source_line_end": 16
+        }
+      ],
+      "directive_id": "TD-40c2e10b9776",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The learner explicitly asks to avoid pervasive small corrections. This concerns feedback selectivity and flow, distinct from explaining the reason for meaningful reformulations."
+      }
+    },
+    {
+      "id": "TE-bbd197f769b1e4a2",
+      "session_id": "SES-f5c2461a1e7fa824",
+      "occurred_on": "2026-03-01",
+      "data": {
+        "refs": [
+          {
+            "turn": 9,
+            "quote": "Let's break this sentence into smaller meaningful pieces."
+          }
+        ],
+        "kind": "situational_request",
+        "interpretation": "Chunking was explicitly requested for this difficult sentence; one occurrence does not establish a permanent preference.",
+        "instruction": "When a long production is difficult, break it into smaller meaningful chunks.",
+        "durable": false
+      },
+      "refs": [
+        {
+          "turn": 9,
+          "speaker": "learner",
+          "quote": "Let's break this sentence into smaller meaningful pieces.",
+          "source_start": 1016,
+          "source_end": 1073,
+          "source_line_start": 28,
+          "source_line_end": 28
+        }
+      ],
+      "directive_id": "TD-bbd197f769b1",
+      "decision": {
+        "decision": "new_directive",
+        "directive_id": null,
+        "reason": "The local chunking request supports a contextual provisional instruction for difficult long productions. It is not durable or proof of the best teaching method; recurrence must be counted in code."
+      }
+    }
+  ],
+  "teaching_rejected": [],
+  "goals": [
+    {
+      "text": "Discuss software architecture naturally in English, especially explaining long chains of reasoning.",
+      "ref": {
+        "turn": 1,
+        "speaker": "learner",
+        "quote": "I want to discuss software architecture naturally in English, especially explaining long chains of reasoning.",
+        "source_start": 39,
+        "source_end": 148,
+        "source_line_start": 4,
+        "source_line_end": 4
+      }
+    }
+  ]
+}

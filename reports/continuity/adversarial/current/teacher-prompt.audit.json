@@ -1,0 +1,365 @@
+{
+  "policy": {
+    "neighbors": 3,
+    "pattern_dates": 2,
+    "practice_dates": 2,
+    "recovery_dates": 1,
+    "stale_dates": 3,
+    "stale_days": 30,
+    "prompt_chars": 8000,
+    "practice_limit": 2,
+    "observe_limit": 2,
+    "transfer_limit": 2
+  },
+  "sources": {
+    "SES-dac0fc4b5aaae1b7": {
+      "sha256": "b615a509c27816140069ade2864e888bd7dbe01fb5a1ec3eb7c35f3c4f6812bb",
+      "date": "2026-04-01",
+      "path": "sessions/SES-dac0fc4b5aaae1b7/conversation.md"
+    },
+    "SES-eea299e3db46afa7": {
+      "sha256": "ce22977379ae007416ced80e7495198d115e3f67702ef61951b1d5f32d0571a9",
+      "date": "2026-04-08",
+      "path": "sessions/SES-eea299e3db46afa7/conversation.md"
+    },
+    "SES-793c692559865df5": {
+      "sha256": "b4bc1c65d93668063cac7a985f0513f239357dbe0b0f37cc137929c5ea0b2e9c",
+      "date": "2026-04-15",
+      "path": "sessions/SES-793c692559865df5/conversation.md"
+    }
+  },
+  "goals": [],
+  "directives": [
+    {
+      "id": "TD-2df8f45dba45",
+      "instruction": "Avoid long synonym lists; prefer one useful contrast when explaining a reformulation.",
+      "status": "explicit",
+      "rationale": "The learner explicitly rejects synonym lists as an ongoing approach.",
+      "evidence_ids": [
+        "TE-2df8f45dba454fc5"
+      ],
+      "dates": [
+        "2026-04-15"
+      ],
+      "evidence": [
+        {
+          "id": "TE-2df8f45dba454fc5",
+          "session_id": "SES-793c692559865df5",
+          "data": {
+            "refs": [
+              {
+                "turn": 13,
+                "quote": "Please don't give me long lists of synonyms; one useful contrast is enough for our conversations."
+              }
+            ],
+            "kind": "rejection",
+            "interpretation": "The learner explicitly rejects synonym lists as an ongoing approach.",
+            "instruction": "Avoid long synonym lists; prefer one useful contrast when explaining a reformulation.",
+            "durable": true
+          },
+          "refs": [
+            {
+              "turn": 13,
+              "speaker": "learner",
+              "quote": "Please don't give me long lists of synonyms; one useful contrast is enough for our conversations.",
+              "source_start": 1353,
+              "source_end": 1450,
+              "source_line_start": 40,
+              "source_line_end": 40
+            }
+          ],
+          "directive_id": "TD-2df8f45dba45",
+          "decision": {
+            "decision": "new_directive",
+            "directive_id": null,
+            "reason": "The learner explicitly rejects long synonym lists for ongoing conversations and asks for one useful contrast. This is more specific than avoiding memorization requests, and includes a distinct alternative teaching action, so retain an explicit separate directive rather than silently discard the refinement."
+          },
+          "occurred_on": "2026-04-15"
+        }
+      ]
+    },
+    {
+      "id": "TD-559d44e6c882",
+      "instruction": "Let the learner finish a thought before correction; avoid requests to memorize lists.",
+      "status": "explicit",
+      "rationale": "This is a durable learner request. The teacher statements about grammar preference and visual learning are not evidence.",
+      "evidence_ids": [
+        "TE-559d44e6c8824d5d"
+      ],
+      "dates": [
+        "2026-04-01"
+      ],
+      "evidence": [
+        {
+          "id": "TE-559d44e6c8824d5d",
+          "session_id": "SES-dac0fc4b5aaae1b7",
+          "data": {
+            "refs": [
+              {
+                "turn": 2,
+                "quote": "Please always let me finish my thought before correcting me, and don't ask me to memorize lists."
+              }
+            ],
+            "kind": "explicit_preference",
+            "interpretation": "This is a durable learner request. The teacher statements about grammar preference and visual learning are not evidence.",
+            "instruction": "Let the learner finish a thought before correction; avoid requests to memorize lists.",
+            "durable": true
+          },
+          "refs": [
+            {
+              "turn": 2,
+              "speaker": "learner",
+              "quote": "Please always let me finish my thought before correcting me, and don't ask me to memorize lists.",
+              "source_start": 179,
+              "source_end": 275,
+              "source_line_start": 7,
+              "source_line_end": 7
+            }
+          ],
+          "directive_id": "TD-559d44e6c882",
+          "decision": {
+            "decision": "new_directive",
+            "directive_id": null,
+            "reason": "This durable instruction is directly stated by the learner and rejects the teacher assumptions. It does not imply a visual learning style or grammar-explanation preference."
+          },
+          "occurred_on": "2026-04-01"
+        }
+      ]
+    },
+    {
+      "id": "TD-8278f37a65fa",
+      "instruction": "Let the learner attempt before supplying the answer.",
+      "status": "explicit",
+      "rationale": "The learner explicitly states a lasting request for retrieval before a model.",
+      "evidence_ids": [
+        "TE-8278f37a65faa9e1"
+      ],
+      "dates": [
+        "2026-04-08"
+      ],
+      "evidence": [
+        {
+          "id": "TE-8278f37a65faa9e1",
+          "session_id": "SES-eea299e3db46afa7",
+          "data": {
+            "refs": [
+              {
+                "turn": 1,
+                "quote": "Please always let me try before you tell me the answer."
+              }
+            ],
+            "kind": "explicit_preference",
+            "interpretation": "The learner explicitly states a lasting request for retrieval before a model.",
+            "instruction": "Let the learner attempt before supplying the answer.",
+            "durable": true
+          },
+          "refs": [
+            {
+              "turn": 1,
+              "speaker": "learner",
+              "quote": "Please always let me try before you tell me the answer.",
+              "source_start": 45,
+              "source_end": 100,
+              "source_line_start": 4,
+              "source_line_end": 4
+            }
+          ],
+          "directive_id": "TD-8278f37a65fa",
+          "decision": {
+            "decision": "new_directive",
+            "directive_id": null,
+            "reason": "The learner explicitly requests always attempting before the answer. It differs from finishing a thought before correction and from a situational exception for immediate messages; do not merge those scopes."
+          },
+          "occurred_on": "2026-04-08"
+        }
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "PAT-8498add85379",
+      "status": "collect",
+      "strategy": "observe",
+      "goal_overlap_terms": [],
+      "evidence": [
+        {
+          "observation_id": "OBS-8498add8537912b9",
+          "session_id": "SES-eea299e3db46afa7",
+          "date": "2026-04-08",
+          "performance": "uncertain",
+          "mode": "spontaneous",
+          "support": "no_support",
+          "production": {
+            "turn": 3,
+            "speaker": "learner",
+            "quote": "The price was very expensive. I mean, the laptop was extremely expensive.",
+            "source_start": 157,
+            "source_end": 230,
+            "source_line_start": 10,
+            "source_line_end": 10
+          },
+          "support_refs": []
+        },
+        {
+          "observation_id": "OBS-6813f6012a12396d",
+          "session_id": "SES-eea299e3db46afa7",
+          "date": "2026-04-08",
+          "performance": "successful",
+          "mode": "controlled",
+          "support": "immediate_repetition",
+          "production": {
+            "turn": 5,
+            "speaker": "learner",
+            "quote": "The laptop was extremely expensive, but it saves me several hours a week.",
+            "source_start": 284,
+            "source_end": 357,
+            "source_line_start": 16,
+            "source_line_end": 16
+          },
+          "support_refs": [
+            {
+              "turn": 3,
+              "speaker": "learner",
+              "quote": "The price was very expensive. I mean, the laptop was extremely expensive. Let me start again.\n\n",
+              "source_start": 157,
+              "source_end": 250,
+              "source_line_start": 10,
+              "source_line_end": 10
+            }
+          ]
+        },
+        {
+          "observation_id": "OBS-57eaa18b79025f3b",
+          "session_id": "SES-793c692559865df5",
+          "date": "2026-04-15",
+          "performance": "successful",
+          "mode": "prompted",
+          "support": "explanation_before_attempt",
+          "production": {
+            "turn": 9,
+            "speaker": "learner",
+            "quote": "My new chair was incredibly expensive, but it made long meetings more comfortable.",
+            "source_start": 998,
+            "source_end": 1080,
+            "source_line_start": 28,
+            "source_line_end": 28
+          },
+          "support_refs": [
+            {
+              "turn": 8,
+              "speaker": "teacher",
+              "quote": "Now tell me about your new chair. When referring to expense, put the expensive adjective on the item rather than on the price. Describe your purchase without copying a sentence.\n\n",
+              "source_start": 811,
+              "source_end": 988,
+              "source_line_start": 25,
+              "source_line_end": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "OBS-8526642f2f0796ad",
+      "status": "isolated",
+      "strategy": "observe",
+      "evidence": [
+        {
+          "observation_id": "OBS-8526642f2f0796ad",
+          "session_id": "SES-793c692559865df5",
+          "date": "2026-04-15",
+          "performance": "difficulty",
+          "mode": "spontaneous",
+          "support": "no_support",
+          "production": {
+            "turn": 1,
+            "speaker": "learner",
+            "quote": "If I know earlier, I would change the plan.",
+            "source_start": 109,
+            "source_end": 152,
+            "source_line_start": 4,
+            "source_line_end": 4
+          },
+          "support_refs": []
+        },
+        {
+          "observation_id": "OBS-fd176955b9438e55",
+          "session_id": "SES-793c692559865df5",
+          "date": "2026-04-15",
+          "performance": "uncertain",
+          "mode": "prompted",
+          "support": "contextual_prompt",
+          "production": {
+            "turn": 11,
+            "speaker": "learner",
+            "quote": "We were too late. Anyway, the new rollout worked.",
+            "source_start": 1214,
+            "source_end": 1263,
+            "source_line_start": 34,
+            "source_line_end": 34
+          },
+          "support_refs": [
+            {
+              "turn": 10,
+              "speaker": "teacher",
+              "quote": "How would things have been different if your team had learned earlier? Answer whichever way you find natural.\n\n",
+              "source_start": 1095,
+              "source_end": 1204,
+              "source_line_start": 31,
+              "source_line_end": 31
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "omitted": [
+    {
+      "kind": "directive",
+      "id": "TD-131e97c7b702",
+      "reason": "single-date tentative evidence; not a persistent instruction"
+    },
+    {
+      "kind": "directive",
+      "id": "TD-ed3113e598b9",
+      "reason": "single-date tentative evidence; not a persistent instruction"
+    },
+    {
+      "kind": "observation",
+      "id": "OBS-612600cf97d21d92",
+      "reason": "uncertain evidence or observation limit"
+    },
+    {
+      "kind": "observation",
+      "id": "OBS-7e2093d3693ccda8",
+      "reason": "uncertain evidence or observation limit"
+    },
+    {
+      "kind": "observation",
+      "id": "OBS-2d285ac6f57b7e04",
+      "reason": "uncertain evidence or observation limit"
+    },
+    {
+      "kind": "observation",
+      "id": "OBS-d4a4650cb8bd7c51",
+      "reason": "uncertain evidence or observation limit"
+    },
+    {
+      "kind": "observation",
+      "id": "OBS-09d99be4b1162d6b",
+      "reason": "uncertain evidence or observation limit"
+    }
+  ],
+  "product_policy": "General oral-production defaults in compiler.BASE; not learner-specific evidence",
+  "section_budgets": {
+    "goals": 1400,
+    "directives": 1800,
+    "reserved_structure": 300
+  },
+  "characters": 3051,
+  "sha256": "a3a3d911380c82b3b778d84f68be2165b401ba5cc0623a6bf96172aef41beb04",
+  "selection_counts": {
+    "practice": 0,
+    "observe": 2,
+    "transfer": 0
+  }
+}

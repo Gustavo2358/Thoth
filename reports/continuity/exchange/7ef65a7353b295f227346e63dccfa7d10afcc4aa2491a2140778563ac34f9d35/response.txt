@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-8498add8537912b9",
+  "reason": "The new successful description puts expensive on the item, matching the earlier price-to-laptop self-repair dimension. A conceptual explanation immediately preceded the attempt; this prompted success supports the group without proving spontaneous recovery.",
+  "pattern_label": "Appropriate combinations for describing high cost",
+  "pattern_description": "An uncertain self-repair and immediate self-echo are followed on another date by appropriate production after a conceptual explanation. Independent spontaneous difficulty or transfer is not established.",
+  "conversation_contexts": [
+    "Discuss the cost and value of a purchase"
+  ]
+}

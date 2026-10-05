@@ -1,0 +1,5 @@
+{
+  "decision": "new_directive",
+  "directive_id": null,
+  "reason": "The learner explicitly requests always attempting before the answer. It differs from finishing a thought before correction and from a situational exception for immediate messages; do not merge those scopes."
+}

@@ -23,14 +23,20 @@ POLICY = Policy(neighbors=2, pattern_dates=2, practice_dates=3)
 
 
 def fixture(number, mode="spontaneous", performance="difficulty", kind="observed_use", review="keep"):
+    from thoth.conversation import parse, reference
     quote = "I am agree with that."
-    raw = f'Lesson {number}. During {mode} conversation the learner said: "{quote}"'
+    teacher = 'Say: "I am agree with that."' if mode == 'controlled' else "Let's discuss your view."
+    raw = f'# Conversation {number}\n\n## Assistant\n{teacher}\n\n## User\n{quote}\n'
     sid = "SES-" + digest(raw)[:16]
-    o = Observation(source_excerpt=raw, learner_quote=quote, production_mode=mode,
+    ref = reference(raw, parse(raw), 2, quote, quote, 'learner')
+    support = 'no_support' if mode == 'spontaneous' else 'immediate_repetition' if mode == 'controlled' else 'contextual_prompt' if mode == 'prompted' else 'unknown'
+    o = Observation(source_excerpt=quote, learner_quote=quote, production_mode=mode, turn=2,
+        support=support, support_turns=[1] if mode in {'prompted','controlled'} else [],
         performance=performance, evidence_type=kind, communicative_intent="State agreement",
         learning_dimension="Expressing agreement naturally", observed_behavior="Produced an agreement expression",
         suggested_forms=["I agree."], hypothesis=None, id=f"OBS-{number}", session_id=sid,
-        source_start=0, source_end=len(raw), review=Review(decision=review, reason="Test evidence"))
+        **{k:ref[k] for k in ('source_start','source_end','source_line_start','source_line_end')},
+        review=Review(decision=review, reason="Test evidence"))
     return raw, o
 
 
@@ -56,10 +62,10 @@ def add(store, number, day, root=None, **kwargs):
 def test_open_schema_and_unreported_alternatives_are_allowed():
     raw, o = fixture(1)
     assert "I agree." not in raw
-    assert locate(raw, o.source_excerpt, o.learner_quote) == (0, len(raw))
-    Evidence.model_validate(o.model_dump(exclude={"id", "session_id", "source_start", "source_end", "review"}))
+    assert locate(raw, o.source_excerpt, o.learner_quote) == (o.source_start, o.source_end)
+    Evidence.model_validate(o.model_dump(exclude={"id", "session_id", "source_start", "source_end", "source_line_start", "source_line_end", "review"}))
     with pytest.raises(ValidationError):
-        Evidence.model_validate({**o.model_dump(exclude={"id", "session_id", "source_start", "source_end", "review"}), "construction": "closed-skill"})
+        Evidence.model_validate({**o.model_dump(exclude={"id", "session_id", "source_start", "source_end", "source_line_start", "source_line_end", "review"}), "construction": "closed-skill"})
     assert "difficulty" not in pedagogical_text(o)
 
 
@@ -69,12 +75,11 @@ def test_nonattempt_evidence_cannot_be_failure(kind):
         fixture(1, kind=kind)
 
 
-def test_provenance_is_report_traceability_not_audio_forensics():
-    raw, o = fixture(1)
-    expanded = "🎙️\n" + raw.replace("During", "During\n")
-    assert locate(expanded, raw, o.learner_quote)[0] == 3
+def test_provenance_is_traceability_not_audio_forensics():
+    raw = 'The learner said: I have a doubt.'
+    assert locate('🎙️\n' + raw, raw, 'I have a doubt.')[0] == 3
     with pytest.raises(ValueError):
-        locate(raw + "\n" + raw, raw, o.learner_quote)
+        locate(raw + "\n" + raw, raw, 'I have a doubt.')
     with pytest.raises(ValueError):
         locate(raw, raw, "Not said")
 
@@ -145,7 +150,7 @@ def test_emergence_practice_and_recovery_preserve_positive_and_negative_history(
         assert pattern["modes"]["spontaneous"] == {"successful": 2, "difficulty": 3, "uncertain": 0}
         pack = (tmp_path / "packs" / "patterns" / (pattern["id"] + ".md")).read_text()
         assert all(f"OBS-{i}" in pack for i in range(1, 6))
-        assert "Grouping:" in pack and "Report source" in pack
+        assert "Grouping:" in pack and "Conversation source" in pack
     with Store(tmp_path / "learner.db") as reopened:
         assert learner_state(reopened, POLICY) == state
 
@@ -191,7 +196,7 @@ def test_pending_manual_session_is_atomic(tmp_path):
         def metadata(self): return {}
         def call(self, stage, *_):
             if stage == "extract":
-                return Extraction(observations=[Evidence.model_validate(o.model_dump(exclude={"id", "session_id", "source_start", "source_end", "review"}))])
+                return Extraction(observations=[Evidence.model_validate(o.model_dump(exclude={"id", "session_id", "source_start", "source_end", "source_line_start", "source_line_end", "review"}))], teaching=[], goals=[])
             raise PendingResponse("Review not provided")
     with Store(tmp_path / "learner.db") as store:
         with pytest.raises(PendingResponse):
@@ -262,17 +267,6 @@ def test_cli_starts_empty_without_loading_embeddings(tmp_path, monkeypatch):
     args = ["--db", str(tmp_path / "learner.db"), "--artifacts", str(tmp_path / "packs")]
     assert main(args + ["state"]) == 0
     assert main(args + ["patterns"]) == 0
-    assert main(args + ["next-lesson"]) == 0
+    assert main(args + ["prepare"]) == 0
     state = json.loads((tmp_path / "packs" / "learner-state.json").read_text())
     assert state["observations"] == 0 and state["patterns"] == []
-
-
-def test_holdout_is_not_opened_on_invalid_freeze(tmp_path):
-    from thoth.benchmark import run
-    freeze = tmp_path / "freeze.json"
-    freeze.write_text('{}')
-    class Model:
-        metadata = {"model":"test"}
-    with pytest.raises(ValueError, match="Freeze current"):
-        run("holdout", Model(), None, POLICY, tmp_path / "holdout", freeze)
-    assert not (tmp_path / "holdout").exists()

@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-8498add8537912b9",
+  "reason": "This controlled self-echo realizes the same high-cost noun-adjective capability as the preceding self-repair. It must not be grouped with reliability doubts merely through purchase context.",
+  "pattern_label": "Appropriate combinations for describing high cost",
+  "pattern_description": "An uncertain self-repair is followed by controlled reuse of appropriate wording; recurrent unassisted difficulty is not established.",
+  "conversation_contexts": [
+    "Discuss the cost and value of a purchase"
+  ]
+}

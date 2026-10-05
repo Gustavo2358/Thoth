@@ -1,0 +1,66 @@
+{
+  "observations": [
+    {
+      "turn": 3,
+      "source_excerpt": "The price was very expensive. I mean, the laptop was extremely expensive.",
+      "learner_quote": "The price was very expensive. I mean, the laptop was extremely expensive.",
+      "production_mode": "spontaneous",
+      "performance": "uncertain",
+      "evidence_type": "self_correction",
+      "communicative_intent": "Emphasize the high cost of a purchase",
+      "learning_dimension": "Describing high cost with appropriate noun and adjective combinations",
+      "observed_behavior": "Self-repairs expensive price to expensive laptop; one repair event, not independent failure and success",
+      "suggested_forms": [],
+      "hypothesis": "The initial noun-adjective combination is consistent with Portuguese transfer, but the mental process is unobserved.",
+      "support": "no_support",
+      "support_turns": []
+    },
+    {
+      "turn": 5,
+      "source_excerpt": "The laptop was extremely expensive, but it saves me several hours a week.",
+      "learner_quote": "The laptop was extremely expensive, but it saves me several hours a week.",
+      "production_mode": "controlled",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Emphasize the high cost of a purchase",
+      "learning_dimension": "Describing high cost with appropriate noun and adjective combinations",
+      "observed_behavior": "Repeats the wording from the learner own immediately preceding repair, not independent spontaneous recovery",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "immediate_repetition",
+      "support_turns": [
+        3
+      ]
+    },
+    {
+      "turn": 7,
+      "source_excerpt": "I have a doubt...",
+      "learner_quote": "I have a doubt...",
+      "production_mode": "unknown",
+      "performance": "uncertain",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Express an unspecified doubt",
+      "learning_dimension": "Expressing doubt in an unresolved conversational context",
+      "observed_behavior": "Intended uncertainty versus suspicion remains unresolved because the learner declines clarification",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "unknown",
+      "support_turns": []
+    }
+  ],
+  "teaching": [
+    {
+      "refs": [
+        {
+          "turn": 1,
+          "quote": "Please always let me try before you tell me the answer."
+        }
+      ],
+      "kind": "explicit_preference",
+      "interpretation": "The learner explicitly states a lasting request for retrieval before a model.",
+      "instruction": "Let the learner attempt before supplying the answer.",
+      "durable": true
+    }
+  ],
+  "goals": []
+}

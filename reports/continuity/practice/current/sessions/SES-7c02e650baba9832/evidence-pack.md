@@ -1,0 +1,39 @@
+# Session Evidence Pack
+
+### OBS-9abd54af927c2b46
+
+Session: SES-7c02e650baba9832; date: 2026-05-08
+Mode: spontaneous; performance: difficulty; evidence: observed_use
+
+> Yesterday I ate my medicine later than usual because I was at work.
+
+Intent: Describe a medication routine
+Production ability: Using conventional verb combinations to describe taking medication
+Observed behavior: Uses ate for medication in an unmodelled account of yesterday
+Suggested alternatives (model suggestions, not reported corrections): Yesterday I took my medicine later than usual because I was at work.
+Hypothesis (not a mental-process fact): none
+Review: keep — Ate medicine repeats the inappropriate medication verb in a new unmodelled account; the contrast is a conventional collocation, not optional personal style.
+Grouping: same_pattern — The unassisted past account uses ate where the earlier routine used eat, both for medication. It is the same conventional verb capability across dates, with earlier supported success distinct.
+Compared evidence: OBS-97e30ca34b46191f; membership root: OBS-97e30ca34b46191f
+Conversation source [236, 303); learner turn 3; lines 10-10; support no_support from turns []:
+
+> Yesterday I ate my medicine later than usual because I was at work.
+
+### OBS-ebe402d1ef8aa8e3
+
+Session: SES-7c02e650baba9832; date: 2026-05-08
+Mode: controlled; performance: successful; evidence: observed_use
+
+> I took my medicine late, after dinner.
+
+Intent: Describe a medication routine
+Production ability: Using conventional verb combinations to describe taking medication
+Observed behavior: Applies the supplied verb combination in a revised sentence
+Suggested alternatives (model suggestions, not reported corrections): none
+Hypothesis (not a mental-process fact): none
+Review: keep — The learner varies the sentence but applies a verb combination just supplied in turn 4. Controlled success, not spontaneous recovery.
+Grouping: same_pattern — The successful application uses the verb supplied immediately in turn 4. It matches the medication capability while remaining model-supported, so it does not erase recent spontaneous difficulties.
+Compared evidence: OBS-97e30ca34b46191f; membership root: OBS-97e30ca34b46191f
+Conversation source [398, 436); learner turn 5; lines 16-16; support model_phrase_available from turns [4]:
+
+> I took my medicine late, after dinner.

@@ -1,0 +1,8 @@
+{
+  "decision": "new_pattern",
+  "candidate_id": null,
+  "reason": "The noun-adjective combination for high cost differs from reservations, causes, and regret. Self-repair is an uncertain event, not proof of recurrent difficulty.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

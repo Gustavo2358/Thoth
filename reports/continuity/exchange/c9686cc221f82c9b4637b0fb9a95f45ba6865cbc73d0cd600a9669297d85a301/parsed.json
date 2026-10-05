@@ -1,0 +1,8 @@
+{
+  "decision": "related_but_different",
+  "candidate_id": "OBS-d4a4650cb8bd7c51",
+  "reason": "Imagining a counterfactual condition and its result is related to regret about an omission, but requires expressing a condition-result relationship. Do not merge it into a broad past-regret capability merely because both concern an unreal past.",
+  "pattern_label": null,
+  "pattern_description": null,
+  "conversation_contexts": []
+}

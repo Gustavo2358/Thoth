@@ -1,0 +1,1 @@
+{"decision": "keep", "reason": "The teacher supplies only Even though, not the full proposition. The learner completes an appropriate concessive contrast with their own content, so partial scaffold and prompted success are accurate."}

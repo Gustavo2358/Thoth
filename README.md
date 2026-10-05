@@ -1,20 +1,23 @@
 # Thoth
 
-Thoth é um learner model local para produção de inglês em speaking. Ele observa relatórios de conversas e descobre padrões específicos daquela pessoa. As habilidades linguísticas são descritas livremente; nenhuma lista de construções existe no runtime.
-
-O loop é:
+Thoth compila o histórico de aprendizagem em **um prompt para o professor da próxima conversa**. É um persistent pedagogical brain local: aprende como seu inglês está evoluindo, como você pede para ser ensinado e quais objetivos definiu. Você continua praticando inglês falado no ChatGPT Voice ou em outro agente externo.
 
 ```text
-relatório → observations revisadas → embedding local → candidatos
-          → resolução semântica → padrões recorrentes
-          → learner state → brief para a próxima conversa
+conversa completa exportada em Markdown
+  → análise com provenance
+  → Learner Model + Teaching Model + Goals
+  → teacher-prompt.md
+  → colar numa conversa nova e praticar
+  → exportar a conversa completa → repetir
 ```
 
-O banco começa vazio. Exemplos e benchmarks sintéticos não são carregados automaticamente. O software não mede ganho de aprendizado nem está qualificado para uso sem revisão. A recomendação atual é um piloto pessoal supervisionado: [relatório experimental](reports/final.md).
+O output é o produto. Não existe tutor dentro do Thoth, dashboard, integração com a UI do ChatGPT ou relatório especial obrigatório no final da aula. O banco pessoal começa vazio; nenhum exemplo é carregado automaticamente.
 
-## Instalação
+A implementação é uma aplicação local modular, com SQLite e embeddings spaCy locais. Não há versões paralelas, migrações de bancos experimentais ou pipeline alternativo. O Git preserva o histórico. [Modelo conceitual](docs/product-model.md), [qualificação e limitações](reports/final.md) e [rubrica de qualidade do prompt](benchmark/prompt-rubric.md).
 
-Python 3.12+ em Linux/macOS, com acesso à internet durante a instalação:
+## Instalar
+
+Python 3.12+ em Linux/macOS:
 
 ```bash
 bash scripts/setup.sh
@@ -22,116 +25,126 @@ source .venv/bin/activate
 thoth state
 ```
 
-O setup instala dependências fixadas, o modelo oficial `en_core_web_md` do spaCy e roda os testes. O download do modelo tem aproximadamente 33,5 MB. A instalação limpa foi testada com Python 3.12. Embeddings e consultas posteriores funcionam localmente, sem rede. A rede continua necessária para usar ChatGPT ou a API opcional.
+O setup instala dependências fixadas, o modelo `en_core_web_md` 3.8.0 (aproximadamente 33,5 MB) e executa testes. Após a instalação, embeddings, SQLite e o compiler funcionam sem rede. O trabalho interno de interpretação ainda precisa de uma LLM, pelo adapter manual ou pela API interna opcional já existente.
 
-O modelo fornece vetores de palavras de 300 dimensões. Thoth calcula a média dos tokens conhecidos e normaliza o vetor. É uma solução simples, com limitações de representação contextual medidas no benchmark. O fingerprint combina a capacidade de produção e a intenção comunicativa normalizadas; não inclui a frase bruta nem o resultado da tentativa. Não há segundo modelo ou fallback remoto.
+## Entrada: conversa completa com papéis
 
-SQLite guarda relatórios, observations, memberships, decisões e vetores float32. A busca é um produto escalar exato sobre os poucos vetores locais. Isso dispensa extensão SQLite, servidor vetorial e índices adicionais. O hash dos pesos permite detectar uma troca acidental de modelo. Copiar o banco, os arquivos de intercâmbio e reinstalar as mesmas dependências basta para continuar; artifacts podem ser regenerados.
+Não há samples de exportação real do ChatGPT no repositório. Portanto o contrato canônico é explícito:
 
-## Sessões com sua assinatura do ChatGPT
+```markdown
+# Conversation
 
-Prepare um relatório depois da conversa contendo trechos atribuídos ao aluno, contexto/intenção, indicação de produção espontânea ou guiada e correções realmente feitas. Inclua produções bem-sucedidas, além de dificuldades. O relatório pode ser em português ou inglês; as descrições pedagógicas estruturadas devem ser em inglês para o embedding local.
+## User
+Yesterday I needed to explain a difficult decision...
 
-Não precisa de transcrição exata do áudio. Preserve o relatório como fonte pedagógica e indique quando a atribuição ou o modo forem desconhecidos. [Um exemplo](examples/session-01.md) mostra o formato livre; não existe template obrigatório.
+## Assistant
+What made the decision difficult?
 
-```bash
-thoth ingest minha-sessao.md --date 2026-10-04 --model 'ChatGPT / nome do modelo usado'
+## User
+Please always explain why you changed my wording.
 ```
 
-O comando informa um `request.txt` e um `response.txt` pendentes em `data/exchange/<hash>/`. A primeira chamada faz extração; depois vêm revisão e resolução, conforme necessário.
+Use `## User` / `## Assistant` ou `## Learner` / `## Teacher`, sem diferenciar maiúsculas. Cada heading abre um turno completo. Só um título Markdown de nível um e linhas vazias podem preceder os turnos. Dentro do corpo, headings de conteúdo usam nível três ou maior. Blocos cercados são preservados e não criam turnos. Ambos os papéis precisam existir; papéis desconhecidos, conteúdo sem atribuição, turnos vazios e cercas não fechadas falham explicitamente.
 
-1. Copie o conteúdo completo de `request.txt` para ChatGPT.
-2. Salve a resposta original em `response.txt`, sem editar nem remover cercas Markdown se o modelo as produziu. O contrato exige JSON puro; uma resposta inválida deve aparecer como falha.
-3. Repita o mesmo comando. Respostas anteriores são reutilizadas e a próxima interação fica pendente.
-4. Continue até a sessão terminar. Uma pendência retorna código 2; validação inválida retorna 1; sucesso retorna 0.
+Preserve a conversa completa, incluindo intervenções e pedidos pedagógicos. Não precisa de áudio, pronúncia ou transcrição forense. O Markdown disponível é a fonte. [Três exemplos completos](examples/).
 
-A sessão inteira só é gravada quando todas as etapas terminam. Repetir o mesmo relatório/data é idempotente. Ingira em ordem cronológica. Relatórios diferentes na mesma data não contam como recorrência longitudinal independente.
-
-Também é possível colar respostas no terminal:
+## O loop principal
 
 ```bash
-thoth ingest minha-sessao.md --date 2026-10-04 --model 'ChatGPT / nome do modelo usado' --interactive
+thoth goals add "Explain technical design trade-offs naturally in spoken English"
+thoth ingest conversation.md --date 2026-10-04 --model 'ChatGPT / nome do modelo interno'
+thoth prepare > teacher-prompt.md
 ```
 
-Finalize cada resposta com `END_JSON`. Para importar arquivos, nomeie cada resposta `<hash-da-request>.txt` e use:
+A data deve ser a data real da sessão; sem `--date`, usa hoje. Ingira sessões antigas em ordem cronológica. Várias conversas na mesma data não contam como recorrência independente.
+
+`ingest` solicita trabalho **interno** da LLM:
+
+1. O comando informa um `request.txt` e `response.txt` pendentes em `data/exchange/<hash>/`.
+2. Copie o request completo para uma conversa de análise no ChatGPT e salve a resposta original em `response.txt`. O contrato interno exige JSON puro; uma resposta inválida é preservada e rejeitada.
+3. Repita o mesmo comando. A resposta anterior é reutilizada e outra revisão/resolução pode ficar pendente.
+4. Continue até sucesso. Código 2 significa resposta pendente; 1 significa erro; 0 significa conclusão.
+
+A sessão só altera os modelos quando todas as etapas terminam. Repetir a mesma fonte/data é idempotente. O modo `--interactive` aceita respostas no terminal, terminadas por `END_JSON`. Para importar arquivos `<hash-da-request>.txt`, use `thoth import respostas/ --model 'ChatGPT / nome' --exchange data/exchange` e retome a ingestão.
+
+Depois de `prepare`, copie **somente `teacher-prompt.md`** para uma conversa nova e pratique. Esse é outro uso do ChatGPT: professor externo, sem acesso ao banco, fontes anteriores ou audit. Não peça um report ou JSON no final; exporte a conversa inteira para a próxima ingestão.
+
+## Inspeção e artifacts
 
 ```bash
-thoth import respostas/ --model 'ChatGPT / nome do modelo usado'
-```
-
-Depois retome o comando de ingestão. O modo por arquivos e o interativo usam o mesmo adapter e o mesmo payload lógico. A identidade do modelo é uma declaração do operador, não uma identificação automática. Não existe integração programática com sua assinatura ChatGPT.
-
-Requests, respostas originais, SHA-256 e parsed JSON ficam disponíveis para auditoria. Respostas anteriores não podem ser sobrescritas. Se quiser repetir uma interação inválida, use outra pasta `--exchange`. Uma associação já gravada não tem comando de edição: um erro confirmado exige reconstruir um banco novo a partir dos relatórios, com outro intercâmbio. Revise as respostas antes de concluir a ingestão durante o piloto.
-
-## Estado, padrões e próxima conversa
-
-```bash
-thoth patterns
 thoth state
-thoth next-lesson
+thoth patterns
+thoth teaching
+thoth goals
+thoth goals remove GOAL-<id>
 ```
 
-Os comandos escrevem:
+Os caminhos globais `--db`, `--artifacts` e `--policy` vêm antes do comando. `prepare` imprime somente o prompt em stdout, permitindo redirecionar. Artifacts são regenerados em:
 
 ```text
 artifacts/
+  teacher-prompt.md
+  teacher-prompt.audit.json
   learner-state.json
   learner-state.md
-  next-lesson.md
+  teaching-model.json
+  goals.json
   patterns/PAT-<id>.md
   sessions/SES-<id>/
-    report.md
+    conversation.md
     audit.json
     evidence-pack.md
 ```
 
-O Session Evidence Pack aponta trechos da fonte. O Pattern Evidence Pack mostra significado proposto, todas as observations, datas, modalidades, sucessos/dificuldades, justificativas das associações e lacunas. Contagens e memberships vêm do sistema; a descrição linguística é uma hipótese da LLM.
+O raw Markdown fica imutável no SQLite e é exportado byte-for-byte. Locators incluem sessão, speaker, turno, offsets em code points e linhas da fonte UTF-8 original. O prompt fica limpo; o audit explica cada seleção, suas evidências, turnos de suporte, estratégia, objetivos e omissões por limite/budget. Intercâmbios guardam requests, respostas originais, SHA-256 e JSON validado.
 
-Uma observation separa intenção comunicativa, dimensão de produção e comportamento nesta ocorrência. Modo, performance e tipo de evidência são conceitos pequenos da aplicação. A dificuldade linguística é texto livre. O verifier pode rejeitar uma preferência estilística, uma alternativa regional legítima ou uma afirmação infundada sobre tradução mental. Casos incertos continuam isolados.
+## O que os modelos significam
 
-A busca recupera até três grupos de evidências pelos seus exemplares mais próximos. O resolver examina seus membros e decide `same_pattern`, `related_but_different`, `new_pattern` ou `insufficient_evidence`. Similaridade nunca decide membership. `new_pattern` é uma decisão de separação: não cria automaticamente um Pattern.
+**Learner Model:** dimensões de produção abertas, com sucesso, dificuldade, incerteza e oportunidade. Produção espontânea, guiada e controlada permanecem distintas. Uma frase repetida após um modelo não conta como recuperação espontânea. A mesma capacidade pode reunir tentativas difíceis e sucessos posteriores. Cosine recupera candidatos; só a resolução semântica decide membership.
 
-A política calibrada exige evidência revisada em pelo menos duas datas para materializar um padrão emergente. A prioridade exige pelo menos três datas e dificuldades espontâneas em pelo menos duas das três últimas datas com tentativas. Duas datas recentes com sucessos espontâneos e sem dificuldades nelas sinalizam recuperação, preservando o histórico. Esses critérios são heurísticas conservadoras de organização, não medidas de domínio ou verdades pedagógicas universais.
+**Teaching Model:** evidência sobre pedidos e respostas a intervenções. Instruções duráveis explicitamente declaradas pelo aluno entram imediatamente. Um pedido local fica tentativo; recorrência em duas datas pode sustentar uma hipótese inferida, identificada como tal. Uma reação positiva isolada não vira “melhor método”. Uma afirmação do professor sobre a preferência do aluno não basta. Não há perfil psicológico.
 
-O brief distingue prática, coleta e força/recuperação recente. Sugere contextos comunicativos naturais, com até duas prioridades por bloco. O agente usa o brief para conduzir uma conversa, sem exigir uma expressão-alvo antes de observar produção espontânea. Formas sugeridas e evidências completas ficam nos packs para feedback posterior.
+**Goals:** objetivos explicitamente definidos pelo usuário ou declarados na conversa e revisados. Erros não inventam objetivos. Os goals orientam os assuntos da próxima sessão; patterns não monopolizam a agenda.
 
-Opportunities e self-corrections permanecem eventos incertos; não contam automaticamente como falhas. Sucessos controlados não provam disponibilidade espontânea. Hipóteses de transferência do português ou dificuldade de recuperação continuam hipóteses.
+O compiler seleciona poucos itens. Prática pede tentativa antes do modelo, feedback seletivo, nova produção e variação posterior. Observação cria oportunidade natural sem diagnosticar fraqueza. Recuperação testa transferência em outro contexto sem lembrar a resposta. Evidência antiga perde prioridade de prática. Os defaults gerais são identificados separadamente das preferências pessoais.
 
-## API opcional
+A política usa datas/contagens e um budget aproximado de 8.000 caracteres, com limites simples em `src/thoth/policy.json`. Omissões são de itens inteiros. Não há scores de domínio ou confiança inventada. Detalhes das heurísticas estão no [modelo](docs/product-model.md).
 
-Configure `OPENAI_API_KEY` fora do chat e selecione explicitamente um modelo compatível com Chat Completions e Structured Outputs:
+## Corrigir interpretações e reconstruir
 
-```bash
-thoth ingest minha-sessao.md --date 2026-10-04 --provider openai --model MODELO
-```
-
-Os contratos e mensagens são os mesmos do adapter manual. A API é cobrada separadamente da assinatura. Os experimentos deste repositório não fizeram chamadas pagas. O adapter foi testado com HTTP simulado; seu comportamento com um modelo remoto ainda não foi qualificado.
-
-## Experimentos
-
-[Resultados e limitações](reports/final.md), [calibração](reports/calibration.json), [holdout original](reports/holdout/result.json) e [diagnóstico posterior](reports/holdout/diagnostics.json) estão disponíveis. O benchmark principal isola retrieval e agrupamento usando observations sintéticas já revisadas. O teste completo de ingestão cobre três relatórios adicionais. Isso não equivale a uma avaliação independente de extração sobre conversas reais.
-
-O runtime não recebe o gold, que mora em arquivos separados de `benchmark/data/`. Development serviu para corrigir implementação; calibration escolheu parâmetros; código, dados, política, dependências e identidade declarada dos modelos foram congelados antes do holdout. `benchmark/freeze.json` é um registro experimental, não um formato versionado do produto.
-
-Para novas avaliações, use diretórios de saída/intercâmbio próprios:
+Fontes e respostas consumidas são imutáveis. Para corrigir extração ou associação, use um intercâmbio novo e reprocessamento:
 
 ```bash
-thoth benchmark --split development --output reports/experimento-development --exchange data/experimento-development --model 'ChatGPT / modelo'
-thoth benchmark --split calibrate --output reports
-thoth benchmark --split calibration --output reports/experimento-calibration --exchange data/experimento-calibration --model 'ChatGPT / modelo'
-thoth benchmark --split review --output reports/experimento-review --exchange data/experimento-review --model 'ChatGPT / modelo'
-thoth benchmark --split freeze --freeze-file benchmark/experimento-freeze.json --model 'ChatGPT / modelo'
-thoth benchmark --split holdout --freeze-file benchmark/experimento-freeze.json --output reports/experimento-holdout --exchange data/experimento-holdout --model 'ChatGPT / modelo'
+thoth ingest conversation.md --date DATA_ORIGINAL --reprocess \
+  --exchange data/reanalysis --model 'ChatGPT / nome do modelo interno'
 ```
 
-Responda prompts pelo mesmo fluxo manual. Um resultado concluído não é sobrescrito. O freeze entregue registra caminhos do ambiente desta execução; em outro checkout gere um freeze próprio para reproduzir os casos já conhecidos. Reproduzir respostas salvas não constitui um novo holdout. Para qualificar uma alteração após estudar estes resultados, prepare novos casos reservados.
+O arquivo precisa ser uma fonte já ingerida, sem alterações. O comando reanalisa **todo o histórico armazenado**, em ordem cronológica, e troca o estado derivado atomicamente após conclusão. Enquanto faltar uma resposta, o estado existente permanece intacto. Não duplica evidência. Goals manuais são preservados; um goal declarado na fonte pode ser registrado de novo pelo replay. Para começar outro experimento, use um SQLite novo, sem migrações.
 
-Os scripts `benchmark/build_dataset.py` e `benchmark/build_reviews.py` são a autoria explícita das fixtures. Não os execute sobre um experimento congelado. O script `benchmark/analyze_run.py` verifica hashes e produz diagnósticos posteriores, sem alterar previsões nem o resultado primário.
+## API interna opcional
 
-Para exercitar a ingestão com os intercâmbios originais já salvos, use um banco separado:
+O adapter OpenAI existente permanece apenas para análise interna, com os mesmos contratos. Não importa chats nem controla o professor externo. Configure `OPENAI_API_KEY` fora do chat e selecione explicitamente um modelo com Structured Outputs:
 
 ```bash
-thoth --db /tmp/thoth-demo.db --artifacts /tmp/thoth-demo-artifacts ingest examples/session-01.md --date 2026-03-01 --model 'Codex / modelo desta conversa' --exchange reports/ingest-demo/exchange
-thoth --db /tmp/thoth-demo.db --artifacts /tmp/thoth-demo-artifacts ingest examples/session-02.md --date 2026-03-08 --model 'Codex / modelo desta conversa' --exchange reports/ingest-demo/exchange
-thoth --db /tmp/thoth-demo.db --artifacts /tmp/thoth-demo-artifacts ingest examples/session-03.md --date 2026-03-15 --model 'Codex / modelo desta conversa' --exchange reports/ingest-demo/exchange
+thoth ingest conversation.md --date 2026-10-04 --provider openai --model MODELO
 ```
+
+Não houve chamadas pagas nesta campanha. O contrato HTTP tem teste simulado; comportamento semântico de modelos remotos continua sem qualificação independente.
+
+## Reproduzir a campanha
+
+```bash
+python -m pytest -q
+PYTHONPATH=src python benchmark/run_campaign.py \
+  --output /tmp/thoth-campaign --exchange reports/continuity/exchange
+```
+
+A campanha usa a CLI de produção, SQLite vazio e embeddings reais. São oito conversas em três históricos, gold separado, respostas originais de extração/revisão/resolução e prompts gerados após cada sessão. O harness só lê o gold depois da ingestão. Use outro diretório de saída para um replay independente; um novo intercâmbio pede novas respostas internas.
+
+Fluxo demonstrado:
+
+- [Sessão 1](examples/session-01.md) → [prompt 2](reports/continuity/continuity/after-01/teacher-prompt.md): prefere razões para reformulações, evita excesso de correção, observa capacidades emergentes; chunking local ainda fica fora.
+- [Sessão 2](examples/session-02.md) → [prompt 3](reports/continuity/continuity/after-02/teacher-prompt.md): transferência sem priming para incerteza reutilizada sem ajuda; prática para duração ainda difícil.
+- [Sessão 3](examples/session-03.md) → [prompt 4](reports/continuity/continuity/after-03/teacher-prompt.md): duas intenções de transferência e chunking como hipótese recorrente, além de rejeição explícita a aulas de gramática.
+
+[Resultados](reports/continuity/result.json) e [análise final](reports/final.md) distinguem prova técnica de eficácia pedagógica. A mesma assistência autorou conversas, respostas semânticas e gold: o replay não mede uma taxa populacional de extração. A recomendação é um piloto pessoal supervisionado, com revisão inicial das evidências e observação do comportamento real de um professor novo.

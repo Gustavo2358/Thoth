@@ -1,0 +1,1 @@
+{"decision": "keep", "reason": "The learner immediately reuses their own repaired wording from turn 3 after go ahead. This is controlled echo evidence, not independent transfer."}

@@ -1,0 +1,81 @@
+{
+  "baseline_head": "2d2560bd2acf11399e2970ea37d975e2454667df",
+  "content_sha256": {
+    "src/thoth/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/thoth/artifacts.py": "d3ad241c8dbf2af259ba0b26cd94e1a87f7bbdcba99501664ca2819040cbef69",
+    "src/thoth/benchmark.py": "bb126b3a817a6dd225e7d227a38391df1ed99784e43595008ebd7736e76a0838",
+    "src/thoth/cli.py": "0b32e76122fa2dc0a3ca6153c6684348c95e25128b0936e9efd85681e4232d7e",
+    "src/thoth/compiler.py": "9276c867bcabfe901e103b2b78fd62f8e84071358bc0800bb31ba4c5687c0ada",
+    "src/thoth/contracts.py": "df2423206d8f8b036eacb89240813e966dc94f1ab8b47307baa4a0aaa0907230",
+    "src/thoth/conversation.py": "ae9c9f97022832378b7e6c94e40264f95333a911ff753e5ef316d2b5d932465a",
+    "src/thoth/embeddings.py": "7d4c7b489f3626245a4b60debe72c04b976abcebcfbc479ffe9115379f7f3f09",
+    "src/thoth/engine.py": "54a33fd431aedc56aac7e49874f21f362b2aaebbdabc36788ebce7b2e7a90ea8",
+    "src/thoth/llm.py": "a3b2091a656b37b24c14a788d29ca87989a1b86dfbf39a352c8e7eeb44b70089",
+    "src/thoth/pipeline.py": "50ea14911f22859cf3fdf06a2d8b3eb815726ba336d202599c47d4327628522a",
+    "src/thoth/prompts.py": "294144d7c9fec8cadaf1ee4a914e5c3f7ce41ddcf0cce73dbce99b481f58c335",
+    "src/thoth/provenance.py": "78cba47da53058758d247998063ba7a4627c31744072cffe4346a4e0c753336c",
+    "src/thoth/storage.py": "44f6a2e88abb1a9d86e158f78665999ede6ce26447d0d55d9a31322d73068d74",
+    "src/thoth/teaching.py": "e805b2d7af0e11c57a37652a62a7bd3e7fe5678100775371db4558f69e566897",
+    "src/thoth/policy.json": "4c7f3599043b99e0634c2132c9bbb19b35eab5347e666f25b51ebfc3a45c8d4c",
+    "pyproject.toml": "66712c2d9f3a157fdbecf6e5eb5cd2408eb6885a8c06d2b59a6c5cab14085fc3",
+    "requirements.lock": "7495d65b8ab3a53a17c1431065170f39efb55b1c19969469ed72e4003d610051",
+    "tests/test_campaign.py": "c8e9de4047afc9bb7f4d8c015266fb9025ef9f62128867c4929228b8e98e49d6",
+    "tests/test_continuity.py": "b4ac4d4195d5b1012e6be4427b55456aa16f4964051759ee1545d7d96edae101",
+    "tests/test_core.py": "4ac1a23a6eb46fbd4687dbada3a220a50d16a9958344327354bca1e000c37308",
+    "benchmark/conversations/adversarial-01.md": "b615a509c27816140069ade2864e888bd7dbe01fb5a1ec3eb7c35f3c4f6812bb",
+    "benchmark/conversations/adversarial-02.md": "ce22977379ae007416ced80e7495198d115e3f67702ef61951b1d5f32d0571a9",
+    "benchmark/conversations/continuity-01.md": "99e89977c0d1adc21559a05cfb817c9d869a58a98111fdd80c7b6c028361047b",
+    "benchmark/conversations/continuity-02.md": "fc3019591e009b95a7ab67b1e35c4cebf70f9c0231297f3c4698ac54b6f25be8",
+    "benchmark/conversations/continuity-03.md": "76c523bfd045ac922ca24184ac23a0dbac158e7d9057f03d63078e7f58c06a30",
+    "benchmark/conversations/practice-01.md": "30872a01c912ec13ebb821fc8ea4bcaa25dfe9635720ab42407630cf770f53e6",
+    "benchmark/conversations/practice-02.md": "5b796833bfe5fe0859cc9df1ff32b17a450d46075a853c69010a39a9ed647b00",
+    "benchmark/conversations/scaffolding-01.md": "b4bc1c65d93668063cac7a985f0513f239357dbe0b0f37cc137929c5ea0b2e9c",
+    "benchmark/prompt-rubric.md": "6c88d1097e71eec24863b6668798c34f25121963ac28a7a5a5a27d51746dbec5",
+    "benchmark/campaign.json": "3eee5da4817ff29263b2a029aa4582b1077cfd50c427c73c8f026bf20c8491c3",
+    "benchmark/gold/campaign.json": "8e986d930731566323d71ac67cdf92131898d31f3674447de96b046b10ece400",
+    "benchmark/run_campaign.py": "a9439d28076f7a6aa9b4eaca9106dfa958e90d0894be9d6a7c6ad0586a81088d"
+  },
+  "embedding": {
+    "model": "spaCy/en_core_web_md",
+    "package": "3.8.0",
+    "weights_sha256": "1686d0286e854fd2274b7c8d86adb7f60905d5b089de02446045df941e05bcd5",
+    "dimensions": 300,
+    "pooling": "mean of nonzero token vectors; L2 normalized"
+  },
+  "sessions": 8,
+  "turns": 81,
+  "interactions": {
+    "extract": 8,
+    "review": 24,
+    "resolve": 20,
+    "teaching": 14,
+    "goal-review": 2
+  },
+  "performance": {
+    "difficulty": 6,
+    "successful": 15,
+    "uncertain": 3
+  },
+  "successful_modes": {
+    "controlled": 8,
+    "spontaneous": 4,
+    "prompted": 3
+  },
+  "newly_executed": {
+    "pytest": "45 passed in 30.25s; includes production CLI, atomic replay and twice-executed campaign harness",
+    "conversation_campaign": "8 sessions, 3 profiles, fresh state per invocation; controlled gates pass",
+    "response_hashes": "68/68 consumed original responses + parsed artifacts checked",
+    "pip_check": "No broken requirements found",
+    "git_diff_check": "pass"
+  },
+  "reused_evidence": "Previous static embedding choice/limits motivate unchanged model and fingerprint. Prior report-input qualification is not claimed for conversation extraction.",
+  "not_run": [
+    "Paid API semantic evaluation",
+    "Real exported-conversation corpus",
+    "External teacher/ChatGPT Voice behavioral evaluation",
+    "Learning-gain study",
+    "Removed historical report/IR freeze campaign"
+  ],
+  "readiness": "Supervised personal pilot; not independently qualified for unreviewed use",
+  "subjective_review": "prompt-review.json (same-author rubric; ratings are not probabilities)"
+}

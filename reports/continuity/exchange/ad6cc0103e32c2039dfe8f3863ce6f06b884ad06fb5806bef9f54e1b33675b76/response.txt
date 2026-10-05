@@ -1,0 +1,5 @@
+{
+  "decision": "new_directive",
+  "directive_id": null,
+  "reason": "The request concerns one immediate message. A contextual provisional group is appropriate, but it must remain tentative until repeated across dates; do not convert it into always providing answers."
+}

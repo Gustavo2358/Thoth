@@ -1,0 +1,10 @@
+{
+  "decision": "same_pattern",
+  "candidate_id": "OBS-69fdacc230c0eb3f",
+  "reason": "Both concern duration from a starting point through the present. This successful reconstruction follows a complete teacher model and chunks; membership does not make it spontaneous.",
+  "pattern_label": "Describing continuing situations from an earlier starting point",
+  "pattern_description": "The learner has difficulty expressing ongoing situations with a past starting point; reconstruction after a model succeeds. Mental retrieval causes are unobserved.",
+  "conversation_contexts": [
+    "Discuss the history of an ongoing activity or relationship"
+  ]
+}

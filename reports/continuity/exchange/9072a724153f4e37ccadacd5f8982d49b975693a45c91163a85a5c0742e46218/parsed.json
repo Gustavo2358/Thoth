@@ -1,0 +1,53 @@
+{
+  "observations": [
+    {
+      "turn": 1,
+      "source_excerpt": "I eat this medicine after breakfast every day.",
+      "learner_quote": "I eat this medicine after breakfast every day.",
+      "production_mode": "spontaneous",
+      "performance": "difficulty",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Describe a medication routine",
+      "learning_dimension": "Using conventional verb combinations to describe taking medication",
+      "observed_behavior": "Uses eat instead of conventional take for medicine",
+      "suggested_forms": [
+        "I take this medicine after breakfast every day."
+      ],
+      "hypothesis": null,
+      "support": "no_support",
+      "support_turns": []
+    },
+    {
+      "turn": 3,
+      "source_excerpt": "I take this medicine after breakfast every day.",
+      "learner_quote": "I take this medicine after breakfast every day.",
+      "production_mode": "controlled",
+      "performance": "successful",
+      "evidence_type": "observed_use",
+      "communicative_intent": "Describe a medication routine",
+      "learning_dimension": "Using conventional verb combinations to describe taking medication",
+      "observed_behavior": "Repeats the corrected verb combination after an explanation and teacher model",
+      "suggested_forms": [],
+      "hypothesis": null,
+      "support": "model_phrase_available",
+      "support_turns": [
+        2
+      ]
+    }
+  ],
+  "teaching": [
+    {
+      "refs": [
+        {
+          "turn": 5,
+          "quote": "That explanation helped with this sentence."
+        }
+      ],
+      "kind": "intervention_response",
+      "interpretation": "Positive feedback about one explanation remains local evidence.",
+      "instruction": "A brief contrast can help explain a medication collocation.",
+      "durable": false
+    }
+  ],
+  "goals": []
+}

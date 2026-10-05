@@ -1,0 +1,115 @@
+{
+  "sessions": 3,
+  "observations": 11,
+  "patterns": [
+    {
+      "id": "PAT-8498add85379",
+      "root_id": "OBS-8498add8537912b9",
+      "label": "Appropriate combinations for describing high cost",
+      "description": "An uncertain self-repair and immediate self-echo are followed on another date by appropriate production after a conceptual explanation. Independent spontaneous difficulty or transfer is not established.",
+      "conversation_contexts": [
+        "Discuss the cost and value of a purchase"
+      ],
+      "observations": 3,
+      "sessions": 2,
+      "dates": 2,
+      "modes": {
+        "spontaneous": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 1
+        },
+        "prompted": {
+          "successful": 1,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "controlled": {
+          "successful": 1,
+          "difficulty": 0,
+          "uncertain": 0
+        },
+        "unknown": {
+          "successful": 0,
+          "difficulty": 0,
+          "uncertain": 0
+        }
+      },
+      "opportunities": 0,
+      "self_corrections": 1,
+      "status": "collect",
+      "interpretation": "Emerging or incompletely sampled pattern; collect more independent spontaneous evidence.",
+      "mode_note": "Guided and spontaneous evidence remain separate.",
+      "last_seen": "2026-04-15",
+      "stale": false,
+      "recent_successes": 0,
+      "recent_difficulties": 0,
+      "evidence_ids": [
+        "OBS-8498add8537912b9",
+        "OBS-6813f6012a12396d",
+        "OBS-57eaa18b79025f3b"
+      ],
+      "practice_evidence_ids": [],
+      "unknowns": [
+        "Transfer to new topics and registers is untested.",
+        "Opportunities do not prove avoidance; L1 transfer and retrieval causes remain hypotheses.",
+        "Fewer than two dates with spontaneous attempts."
+      ]
+    }
+  ],
+  "isolated": [
+    {
+      "id": "OBS-2d285ac6f57b7e04",
+      "dimension": "Expressing causal relationships appropriately",
+      "performance": "successful",
+      "reason": "No earlier supported evidence to compare; retain an isolated observation."
+    },
+    {
+      "id": "OBS-57ceae2bbce63c16",
+      "dimension": "Expressing causal relationships appropriately",
+      "performance": "successful",
+      "reason": "Both correctly express a causal relationship. The second is an immediate teacher-model echo, which changes support but not the underlying communicative capability."
+    },
+    {
+      "id": "OBS-d4a4650cb8bd7c51",
+      "dimension": "Expressing past regret with an appropriate alternative construction",
+      "performance": "successful",
+      "reason": "Past regret and causal explanation are different capabilities. This is a valid alternative for regret after support, not an error for missing a prescribed form."
+    },
+    {
+      "id": "OBS-09d99be4b1162d6b",
+      "dimension": "Expressing reservations about reliability",
+      "performance": "successful",
+      "reason": "Reservations about data reliability differ from causal explanation and regret. Doubts is appropriate in this explicit suspicion context; no difficulty or relation is justified by those candidate meanings."
+    },
+    {
+      "id": "OBS-7e2093d3693ccda8",
+      "dimension": "Expressing doubt in an unresolved conversational context",
+      "performance": "uncertain",
+      "reason": "Observation review is unresolved; retain isolated evidence."
+    },
+    {
+      "id": "OBS-8526642f2f0796ad",
+      "dimension": "Expressing an unreal past condition and its possible result",
+      "performance": "difficulty",
+      "reason": "Imagining a counterfactual condition and its result is related to regret about an omission, but requires expressing a condition-result relationship. Do not merge it into a broad past-regret capability merely because both concern an unreal past."
+    },
+    {
+      "id": "OBS-fd176955b9438e55",
+      "dimension": "Expressing an unreal past condition and its possible result",
+      "performance": "uncertain",
+      "reason": "The teacher prompt creates an opportunity for the same unreal-past condition/result capability as the initial difficulty. The learner chooses actual-outcome wording instead. Group the opportunity with that dimension without counting non-use as error or inferring avoidance."
+    },
+    {
+      "id": "OBS-612600cf97d21d92",
+      "dimension": "Expressing a concessive contrast between a constraint and a decision",
+      "performance": "successful",
+      "reason": "Contrasting a constraint with a decision is related to explaining a causal reason, but the selected dimension is concession rather than causality. Partial scaffolding changes support and does not justify merging these distinct capabilities."
+    }
+  ],
+  "assumptions": [
+    "Counts describe selected conversation evidence, not mastery or a representative proficiency score.",
+    "Repeated conversations on one date do not establish longitudinal recurrence.",
+    "Pattern descriptions and causal interpretations are model hypotheses; quotes and memberships are auditable."
+  ]
+}
